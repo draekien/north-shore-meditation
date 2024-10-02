@@ -6,20 +6,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        royal: {
-          "50": "#eff2fe",
-          "100": "#e2e6fd",
-          "200": "#cbd1fa",
-          "300": "#abb3f6",
-          "400": "#898cf0",
-          "500": "#7973e8",
-          "600": "#6351da",
-          "700": "#5542c0",
-          "800": "#45389b",
-          "900": "#3b347b",
-          "950": "#241e48",
-        },
-
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
