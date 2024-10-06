@@ -43,51 +43,32 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
             {[
               {
                 icon: <Leaf className="h-10 w-10 text-sky-500" />,
-                title: 'Discover Inner Peace and Joy',
-                description:
-                  'Transcendental Meditation helps you tap into a deep sense of calm and inner contentment. By quieting the mind and letting go of external distractions, you can experience a profound state of peace and lasting happiness from within.',
               },
               {
                 icon: <Sun className="h-10 w-10 text-emerald-600" />,
-                title: 'Build Resilience from Whithin',
-                description:
-                  "Life's challenges become more manageable when you develop a strong foundation of resilience. Through regular practice of transcendental meditation, you cultivate the mental strength and emotional balance to stay grounded and composed, even in the face of adversity.",
               },
               {
                 icon: <Heart className="h-10 w-10 text-pink-500" />,
-                title: 'Enhance Your Relationships',
-                description:
-                  'A calm and centered mind naturally improves the quality of your interactions with others. Transcendental meditation helps reduce reactive tendencies and promotes greater empathy, patience, and understanding, leading to deeper, more fulfilling relationships.',
               },
               {
                 icon: <Coffee className="h-10 w-10 text-teal-400" />,
-                title: 'Experience Stress and Anxiety Relief',
-                description:
-                  'In a fast-paced world, stress and anxiety are common challenges. Transcendental meditation offers a scientifically proven way to calm the nervous system, lower cortisol levels, and bring a sense of ease and relaxation into your daily life.',
               },
               {
                 icon: <Palette className="h-10 w-10 text-purple-500" />,
-                title: 'Expand Your Creative Potential',
-                description:
-                  'Creativity flourishes when the mind is free from distractions and mental blocks. Transcendental meditation encourages a state of relaxed alertness, allowing ideas to flow more freely and enabling you to tap into your natural creative potential.',
               },
               {
                 icon: <BookOpenText className="h-10 w-10 text-indigo-600" />,
-                title: 'Achieve Academic Excellence',
-                description:
-                  'A clear and focused mind is key to excelling in academics. By reducing mental clutter and enhancing cognitive functioning, transcendental meditation sharpens your concentration, improves memory, and boosts your ability to learn and retain information.',
               },
               {
                 icon: <Brain className="h-10 w-10 text-rose-600" />,
-                title: 'Nurture Mental Health and Well-being',
-                description:
-                  'Regular practice of transcendental meditation supports better mental health by reducing symptoms of depression, anxiety, and burnout. It fosters emotional stability, self-awareness, and a balanced outlook on life, promoting long-term psychological well-being.',
               },
             ].map((benefit, index) => (
               <div key={index} className="w-80">
                 <div className="mb-4 flex justify-center">{benefit.icon}</div>
-                <h3 className="mb-2 text-center text-xl font-semibold text-primary">{benefit.title}</h3>
-                <p>{benefit.description}</p>
+                <h3 className="mb-2 text-center text-xl font-semibold text-primary">
+                  {dict.whyTmSection[index].title}
+                </h3>
+                <p>{dict.whyTmSection[index].description}</p>
               </div>
             ))}
           </div>
