@@ -1,11 +1,14 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import type { Locale } from '@/lib/constants';
 import teacherImage from '@/public/grace.jpg';
 import heroImage from '@/public/hero.jpg';
 import { BookOpenText, Brain, Coffee, Heart, Leaf, Palette, Sun } from 'lucide-react';
 import Image from 'next/image';
+import { getDictionary } from './dictionaries';
 
-export function LandingPageComponent() {
+export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+  const dict = await getDictionary(lang);
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -22,10 +25,10 @@ export function LandingPageComponent() {
         />
         <div className="absolute inset-0 bg-amber-600 opacity-5"></div>
         <div className="relative z-20 text-center text-yellow-900">
-          <h1 className="text-5xl font-bold mb-4">The Kingdom of Heaven is Within</h1>
+          <h1 className="text-5xl font-bold mb-4">{dict.tagline}</h1>
           <p className="text-xl mb-8">Discover the power of transcendental meditation®</p>
           <Button className="font-semibold text-lg px-8 py-3" size="lg">
-            Start Your Journey
+            {dict.callToAction}
           </Button>
         </div>
       </section>

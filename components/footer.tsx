@@ -6,7 +6,7 @@ export const Footer = () => (
       <div className="flex flex-col md:flex-row justify-between items-center">
         <div className="mb-4 md:mb-0">
           <h3 className="text-2xl font-semibold">North Shore Transcendental Meditation</h3>
-          <p className="text-emerald-50">The heaven of kingdom is within</p>
+          <p className="text-emerald-50">The kingdom of heaven is within</p>
         </div>
         <div className="text-center md:text-right">
           <p>133 Longueville Rd, Lane Cove NSW 2066</p>
