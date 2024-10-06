@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@/components/theme-provider';
 import { Button } from '@/components/ui/button';
 import {
+  MobileNavigationMenuListItem,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
@@ -10,12 +11,14 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { locales, type Locale } from '@/lib/constants';
 import { cn } from '@/lib/utils';
-import { Sparkles } from 'lucide-react';
+import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Link from 'next/link';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../components/ui/accordion';
 import { getDictionary } from './dictionaries';
 import './globals.css';
 
@@ -57,11 +60,77 @@ export default async function RootLayout({
           enableColorScheme
           disableTransitionOnChange
         >
-          <header className="shadow-sm">
-            <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-              <Link href="/" className="text-2xl font-bold ">
+          <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
+            <div className="container p-4">
+              <Link href="/" className="font-bold xl:text-2xl">
                 {dict.company}
               </Link>
+            </div>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="xl:hidden">
+                  <MenuIcon className="h-6 w-6" />
+                  <span className="sr-only">Toggle navigation menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right">
+                <div className="mt-4 flex flex-col gap-10">
+                  <Accordion type="single" collapsible>
+                    <AccordionItem value="tm">
+                      <AccordionTrigger>{dict.nav.tm.title}</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="grid gap-3">
+                          <li>
+                            <a
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                              href={dict.nav.tm.hero.href}
+                            >
+                              <Sparkles className={cn('h-6 w-6 text-amber-400')} />
+                              <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                              <p className="text-sm leading-tight text-muted-foreground">
+                                {dict.nav.tm.hero.description}
+                              </p>
+                            </a>
+                          </li>
+                          {dict.nav.tm.items.map((item) => (
+                            <MobileNavigationMenuListItem key={item.title} title={item.title} href={item.href}>
+                              {item.description}
+                            </MobileNavigationMenuListItem>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="programs">
+                      <AccordionTrigger>{dict.nav.programs.title}</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="grid gap-3">
+                          {dict.nav.programs.items.map((component) => (
+                            <MobileNavigationMenuListItem
+                              key={component.title}
+                              title={component.title}
+                              href={component.href}
+                            >
+                              {component.description}
+                            </MobileNavigationMenuListItem>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                    <AccordionItem value="more">
+                      <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="grid gap-3">
+                          <MobileNavigationMenuListItem href="/about-us" title={dict.nav.aboutUs} />
+                          <MobileNavigationMenuListItem href="/contact-us" title={dict.nav.contactUs} />
+                        </ul>
+                      </AccordionContent>
+                    </AccordionItem>
+                  </Accordion>
+                  <Button className="font-semibold">{dict.callToAction}</Button>
+                </div>
+              </SheetContent>
+            </Sheet>
+            <div className="container mx-auto hidden items-center justify-between p-4 xl:flex">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>
@@ -74,7 +143,7 @@ export default async function RootLayout({
                               className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
                               href={dict.nav.tm.hero.href}
                             >
-                              <Sparkles className={cn('w-6 h-6 text-amber-400')} />
+                              <Sparkles className={cn('h-6 w-6 text-amber-400')} />
                               <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
                               <p className="text-sm leading-tight text-muted-foreground">
                                 {dict.nav.tm.hero.description}
@@ -91,10 +160,10 @@ export default async function RootLayout({
                     </NavigationMenuContent>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger>Programs</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                        {dict.nav.programs.map((component) => (
+                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                        {dict.nav.programs.items.map((component) => (
                           <NavigationMenuListItem key={component.title} title={component.title} href={component.href}>
                             {component.description}
                           </NavigationMenuListItem>
@@ -118,14 +187,13 @@ export default async function RootLayout({
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
-              {/* <ModeToggle  /> */}
-              <Button className=" font-semibold">{dict.callToAction}</Button>
+              <Button className="font-semibold">{dict.callToAction}</Button>
             </div>
           </header>
           {children}
-          <footer className="bg-emerald-900 text-white py-8">
+          <footer className="bg-emerald-900 py-8 text-white">
             <div className="container mx-auto px-4">
-              <div className="flex flex-col md:flex-row justify-between items-center">
+              <div className="flex flex-col items-center justify-between md:flex-row">
                 <div className="mb-4 md:mb-0">
                   <h3 className="text-2xl font-semibold">{dict.company}</h3>
                   <p className="text-emerald-50">{dict.tagline}</p>
