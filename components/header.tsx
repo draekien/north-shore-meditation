@@ -1,7 +1,7 @@
-import { Sparkles } from "lucide-react";
-import Link from "next/link";
-import { cn } from "../lib/utils";
-import { Button } from "./ui/button";
+import { Sparkles } from 'lucide-react';
+import Link from 'next/link';
+import { cn } from '../lib/utils';
+import { Button } from './ui/button';
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,23 +11,24 @@ import {
   NavigationMenuListItem,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
-} from "./ui/navigation-menu";
+} from './ui/navigation-menu';
 
 const programs: { title: string; href: string; description: string }[] = [
   {
-    title: "Private Sessions",
-    href: "/docs/primitives/alert-dialog",
-    description: "A modal dialog that interrupts the user with important content and expects a response.",
+    title: 'Private Sessions',
+    href: '/docs/primitives/alert-dialog',
+    description: 'A modal dialog that interrupts the user with important content and expects a response.',
   },
   {
-    title: "Group Sessions",
-    href: "/docs/primitives/hover-card",
-    description: "For sighted users to preview content available behind a link.",
+    title: 'Group Sessions',
+    href: '/docs/primitives/hover-card',
+    description: 'For sighted users to preview content available behind a link.',
   },
   {
-    title: "Corporate Sessions",
-    href: "/docs/primitives/progress",
-    description: "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    title: 'Corporate Sessions',
+    href: '/docs/primitives/progress',
+    description:
+      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
   },
 ];
 
@@ -47,11 +48,13 @@ export const Header = () => (
                   <NavigationMenuLink asChild>
                     <a
                       className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                      href="/tm">
-                      <Sparkles className={cn("w-6 h-6 text-amber-400")} />
+                      href="/tm"
+                    >
+                      <Sparkles className={cn('w-6 h-6 text-amber-400')} />
                       <div className="mb-2 mt-4 text-lg font-medium">Effortlessly Yours</div>
                       <p className="text-sm leading-tight text-muted-foreground">
-                        Easy to learn and enjoyable to practice. Experience the peacefulness of your awareness and get to know your innermost self.
+                        Easy to learn and enjoyable to practice. Experience the peacefulness of your awareness and get
+                        to know your innermost self.
                       </p>
                     </a>
                   </NavigationMenuLink>

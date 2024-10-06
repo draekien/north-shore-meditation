@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from 'next/link';
 
 export const Footer = () => (
   <footer className="bg-emerald-900 text-white py-8">
@@ -14,7 +14,7 @@ export const Footer = () => (
             Email: <Link href="mailto:tm@northshoremeditation.com">tm@northshoremeditation.com</Link>
           </p>
           <p>
-            Phone: <Link href="tel:+61424450578">+61 424 450 578</Link>{" "}
+            Phone: <Link href="tel:+61424450578">+61 424 450 578</Link>{' '}
           </p>
         </div>
       </div>
