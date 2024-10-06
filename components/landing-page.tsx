@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { BookOpenText, Brain, Coffee, Heart, Leaf, Palette, Sun } from 'lucide-react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 export function LandingPageComponent() {
   return (
