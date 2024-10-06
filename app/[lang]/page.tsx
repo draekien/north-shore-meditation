@@ -1,9 +1,17 @@
 import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import type { Locale } from '@/lib/constants';
+import { cn } from '@/lib/utils';
+import academicsSvg from '@/public/academics.svg';
+import creativeSvg from '@/public/creative.svg';
+import dreamerSvg from '@/public/dreamer.svg';
 import teacherImage from '@/public/grace.jpg';
 import heroImage from '@/public/hero.jpg';
-import { BookOpenText, Brain, Coffee, Heart, Leaf, Palette, Sun } from 'lucide-react';
+import meditateSvg from '@/public/meditate.svg';
+import relationshipSvg from '@/public/relationship.svg';
+import relaxSvg from '@/public/relax.svg';
+import resilientSvg from '@/public/resilient.svg';
 import Image from 'next/image';
 import { getDictionary } from './dictionaries';
 
@@ -25,7 +33,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         />
         <div className="absolute inset-0 bg-amber-600 opacity-5"></div>
         <div className="relative z-20 text-center text-yellow-900">
-          <h1 className="mb-4 text-5xl font-bold">{dict.tagline}</h1>
+          <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
           <Button className="px-8 py-3 text-lg font-semibold" size="lg">
             {dict.callToAction}
@@ -36,40 +44,54 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center text-3xl font-semibold text-primary">
-            Why choose Transcendental Meditation®
-          </h2>
-          <div className="flex flex-wrap justify-around gap-8">
+          <h2 className="mb-12 text-center text-primary">Why choose Transcendental Meditation®</h2>
+          <div className="grid auto-rows-auto grid-cols-1 gap-4 md:grid-cols-3">
             {[
               {
-                icon: <Leaf className="h-10 w-10 text-sky-500" />,
+                color: 'text-sky-500',
+                bg: 'bg-sky-500',
+                src: dreamerSvg,
               },
               {
-                icon: <Sun className="h-10 w-10 text-emerald-600" />,
+                color: 'text-emerald-600',
+                bg: 'bg-emerald-600',
+                src: resilientSvg,
               },
               {
-                icon: <Heart className="h-10 w-10 text-pink-500" />,
+                color: 'text-pink-500',
+                bg: 'bg-pink-500',
+                src: relationshipSvg,
               },
               {
-                icon: <Coffee className="h-10 w-10 text-teal-400" />,
+                src: relaxSvg,
+                bg: 'bg-teal-400',
+                color: 'text-teal-400',
               },
               {
-                icon: <Palette className="h-10 w-10 text-purple-500" />,
+                src: creativeSvg,
+                bg: 'bg-purple-500',
+                color: 'text-purple-500',
               },
               {
-                icon: <BookOpenText className="h-10 w-10 text-indigo-600" />,
+                src: academicsSvg,
+                bg: 'bg-indigo-600',
+                color: 'text-indigo-600',
               },
               {
-                icon: <Brain className="h-10 w-10 text-rose-600" />,
+                src: meditateSvg,
+                bg: 'bg-rose-600',
+                color: 'text-rose-600',
               },
             ].map((benefit, index) => (
-              <div key={index} className="w-80">
-                <div className="mb-4 flex justify-center">{benefit.icon}</div>
-                <h3 className="mb-2 text-center text-xl font-semibold text-primary">
-                  {dict.whyTmSection[index].title}
-                </h3>
-                <p>{dict.whyTmSection[index].description}</p>
-              </div>
+              <Card key={index} className={cn(`row-span-1 ${index === 3 || index === 6 ? 'md:col-span-2' : ''}`)}>
+                <CardHeader>
+                  <Image src={benefit.src} alt="" style={{ objectFit: 'contain' }} />
+                </CardHeader>
+                <CardContent>
+                  <h4 className={cn(`${benefit.color}`)}>{dict.whyTmSection[index].title}</h4>
+                  <p> {dict.whyTmSection[index].description}</p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </div>

@@ -3,7 +3,19 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-geist-sans);
+}
+
+body:lang(zh-Hans) {
+  font-family: var(--font-noto-sans), sans-serif;
+}
+
+h1:lang(zh-Hans), h2:lang(zh-Hans), h3:lang(zh-Hans), h4:lang(zh-Hans) {
+  font-family: var(--font-ma-shan-zheng);
 }
 
 @layer utilities {
@@ -75,5 +87,23 @@ body {
   }
   body {
     @apply bg-background text-foreground;
+  }
+  h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl
+  }
+  h2 {
+    @apply scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0
+  }
+  h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight
+  }
+  h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight
+  }
+  p {
+    @apply leading-7 [&:not(:first-child)]:mt-6
+  }
+  blockquote {
+    @apply mt-6 border-l-2 pl-6 italic
   }
 }
