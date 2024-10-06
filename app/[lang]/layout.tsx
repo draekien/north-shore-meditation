@@ -75,7 +75,7 @@ export default async function RootLayout({
               </SheetTrigger>
               <SheetContent side="right">
                 <div className="mt-4 flex flex-col gap-10">
-                  <Accordion type="single" collapsible>
+                  <Accordion type="single" defaultValue="tm" collapsible>
                     <AccordionItem value="tm">
                       <AccordionTrigger>{dict.nav.tm.title}</AccordionTrigger>
                       <AccordionContent>
