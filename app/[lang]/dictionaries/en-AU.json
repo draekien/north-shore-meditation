@@ -4,23 +4,27 @@
   "nav": {
     "aboutUs": "About Us",
     "contactUs": "Contact Us",
-    "programs": [
-      {
-        "description": "",
-        "href": "",
-        "title": "Private Sessions"
-      },
-      {
-        "description": "",
-        "href": "",
-        "title": "Group Sessions"
-      },
-      {
-        "description": "",
-        "href": "",
-        "title": "Corporate Sessions"
-      }
-    ],
+    "more": "More",
+    "programs": {
+      "items": [
+        {
+          "description": "",
+          "href": "",
+          "title": "Private Sessions"
+        },
+        {
+          "description": "",
+          "href": "",
+          "title": "Group Sessions"
+        },
+        {
+          "description": "",
+          "href": "",
+          "title": "Corporate Sessions"
+        }
+      ],
+      "title": "Programs"
+    },
     "tm": {
       "hero": {
         "description": "Easy to learn and enjoyable to practice. Experience the peacefulness of your awareness and get to know your innermost self.",
