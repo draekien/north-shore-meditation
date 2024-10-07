@@ -32,7 +32,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           fill
         />
         <div className="absolute inset-0 bg-amber-600/5"></div>
-        <div className="relative z-20 text-center text-yellow-900">
+        <div className="relative text-center text-yellow-900">
           <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
           <Button className="px-8 py-3 text-lg font-semibold" size="lg">
@@ -44,9 +44,9 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {/* Benefits Section */}
 
       <section className="py-16">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 md:px-12 lg:px-24">
           <h2 className="mb-12 text-center text-primary">Why choose Transcendental Meditation®</h2>
-          <div className="grid auto-rows-auto grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
             {[
               {
                 color: 'text-sky-500',
@@ -94,10 +94,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
               >
                 <CardHeader>
                   <h4 className={cn(`${benefit.color}`)}>{dict.whyTmSection[index].title}</h4>
+                  <Image src={benefit.src} alt="" />
                 </CardHeader>
                 <CardContent>
-                  <Image src={benefit.src} alt="" style={{ objectFit: 'contain' }} />
-                  <p> {dict.whyTmSection[index].description}</p>
+                  <p>{dict.whyTmSection[index].description}</p>
                 </CardContent>
               </Card>
             ))}
@@ -108,20 +108,28 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       {/* About Us Section */}
       <section className="bg-neutral-100/30 py-16 backdrop:blur-3xl dark:bg-neutral-900/30">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col items-center md:flex-row">
-            <div className="mb-8 md:mb-0 md:w-1/2">
-              <Image src={teacherImage} alt="Meditation instructor" className="rounded-lg shadow-md" />
-            </div>
+          <div className="flex w-full flex-col items-center justify-center md:flex-row">
+            <Image
+              src={teacherImage}
+              alt="Meditation instructor"
+              className="mb-8 rounded-lg shadow-md md:mb-0 md:w-1/3"
+              height={600}
+            />
             <div className="md:w-1/2 md:pl-12">
               <h2 className="mb-4 text-3xl font-semibold text-primary">Begin your journey with Grace</h2>
-              <p className="mb-4">
+              <p>
                 A customer once told Grace that &quot;meditation is a very personal thing&quot;. We understand that. We
                 are attentive to your needs in understanding and developing the habits for this simple and natural
                 technique.
               </p>
               <p>
-                Join us in our serene, cozy studio and discover the transformative power of meditation for your personal
-                and professional growth.
+                Grace has been certified to teach Transcendental Meditation by the Maharashi Vedic University, and
+                authorized by the Maharashi Foundation of Australiat to teach TM at North Shore Meditation.
+              </p>
+              <p>
+                A certified TM teacher goes through five and half months of residence training, in addition to their 3
+                months preparation training program at home. Regular practice of TM, advanced techniques are basic
+                criteria for someone to receive teacher&apos;s training.
               </p>
             </div>
           </div>
