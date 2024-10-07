@@ -13,6 +13,7 @@ import relationshipSvg from '@/public/relationship.svg';
 import relaxSvg from '@/public/relax.svg';
 import resilientSvg from '@/public/resilient.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getDictionary } from './dictionaries';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
@@ -32,9 +33,11 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         <div className="relative text-center text-yellow-900 drop-shadow-2xl">
           <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
-          <Button className="px-8 py-3 text-lg font-semibold" size="lg">
-            {dict.callToAction}
-          </Button>
+          <Link href="https://au.tm.org/web/learn-tm/north-shore?" referrerPolicy="no-referrer">
+            <Button className="px-8 py-3 text-lg font-semibold" size="lg">
+              {dict.callToAction}
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -88,7 +91,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 )}
               >
                 <CardHeader>
-                  <h4 className={cn(`${benefit.color}`)}>{dict.whyTmSection[index].title}</h4>
+                  <h3 className={cn(`${benefit.color} text-xl`)}>{dict.whyTmSection[index].title}</h3>
                   <Image src={benefit.src} alt="" />
                 </CardHeader>
                 <CardContent>
@@ -109,6 +112,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
               alt="Meditation instructor"
               className="mb-8 rounded-lg shadow-md md:mb-0 md:w-1/3"
               height={600}
+              placeholder="blur"
             />
             <div className="md:w-1/2 md:pl-12">
               <h2 className="mb-4 text-3xl font-semibold text-primary">Begin your journey with Grace</h2>
