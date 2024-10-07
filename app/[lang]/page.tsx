@@ -24,15 +24,12 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         <Image
           src={heroImage}
           alt="Serene meditation background"
-          style={{
-            objectFit: 'cover',
-          }}
-          className="absolute inset-0 z-0"
+          className="absolute inset-0 object-cover opacity-65 blur-sm"
           placeholder="blur"
           fill
         />
-        <div className="absolute inset-0 bg-amber-600/5"></div>
-        <div className="relative text-center text-yellow-900">
+        <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px]"></div>
+        <div className="relative text-center text-yellow-900 drop-shadow-2xl dark:text-slate-50">
           <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
           <Button className="px-8 py-3 text-lg font-semibold" size="lg">
@@ -123,8 +120,8 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 technique.
               </p>
               <p>
-                Grace has been certified to teach Transcendental Meditation by the Maharashi Vedic University, and
-                authorized by the Maharashi Foundation of Australiat to teach TM at North Shore Meditation.
+                Grace has been certified to teach Transcendental Meditation by the Maharashi Vedic University, and is
+                authorized by the Maharashi Foundation of Australia to teach TM at North Shore Meditation.
               </p>
               <p>
                 A certified TM teacher goes through five and half months of residence training, in addition to their 3

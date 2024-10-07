@@ -154,7 +154,7 @@ export default async function RootLayout({
                 </div>
               </SheetContent>
             </Sheet>
-            <div className="container mx-auto hidden items-center justify-between p-4 xl:flex">
+            <div className="container mx-auto hidden items-center justify-between gap-4 p-4 xl:flex">
               <NavigationMenu>
                 <NavigationMenuList>
                   <NavigationMenuItem>

@@ -18,7 +18,7 @@ export const BackgroundGradientAnimation = ({
   className,
   interactive = true,
   containerClassName,
-}: {
+}: Readonly<{
   gradientBackgroundStart?: string;
   gradientBackgroundEnd?: string;
   firstColor?: string;
@@ -34,7 +34,7 @@ export const BackgroundGradientAnimation = ({
   interactive?: boolean;
   containerClassName?: string;
   opacity?: string;
-}) => {
+}>) => {
   const interactiveRef = useRef<HTMLDivElement>(null);
 
   const [curX, setCurX] = useState(0);
@@ -52,18 +52,7 @@ export const BackgroundGradientAnimation = ({
     document.body.style.setProperty('--pointer-color', pointerColor);
     document.body.style.setProperty('--size', size);
     document.body.style.setProperty('--blending-value', blendingValue);
-  }, [
-    blendingValue,
-    fifthColor,
-    firstColor,
-    fourthColor,
-    gradientBackgroundEnd,
-    gradientBackgroundStart,
-    pointerColor,
-    secondColor,
-    size,
-    thirdColor,
-  ]);
+  }, []);
 
   useEffect(() => {
     function move() {
