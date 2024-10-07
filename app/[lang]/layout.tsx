@@ -17,6 +17,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { locales, type Locale } from '@/lib/constants';
 import { cn } from '@/lib/utils';
+import { Analytics } from '@vercel/analytics/react';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
@@ -235,6 +236,7 @@ export default async function RootLayout({
             </div>
           </footer>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
