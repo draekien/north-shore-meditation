@@ -134,10 +134,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-emerald-50 py-16 text-emerald-800 dark:bg-emerald-800 dark:text-emerald-50">
+      <section className="bg-emerald-50/50 py-16 text-emerald-800 backdrop-blur-sm dark:bg-emerald-800 dark:text-emerald-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="mb-4 text-3xl font-semibold">Ready to Transform Yourself?</h2>
-          <p className="mb-8 text-xl">Book your personalized transcendental meditation session today.</p>
+          <p className="mb-8 text-xl">Book your Transcendental Meditation introductory session today.</p>
           <form className="mx-auto max-w-md">
             <div className="flex gap-4">
               <Input type="email" placeholder="Enter your email" className="bg-white text-neutral-800" />
