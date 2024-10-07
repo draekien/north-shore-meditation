@@ -150,7 +150,14 @@ export default async function RootLayout({
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
-                  <Button className="font-semibold">{dict.callToAction}</Button>
+                  <Link
+                    href="https://au.tm.org/web/learn-tm/north-shore?"
+                    referrerPolicy="no-referrer"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                  >
+                    <Button className="font-semibold">{dict.callToAction}</Button>
+                  </Link>
                 </div>
               </SheetContent>
             </Sheet>
@@ -212,20 +219,23 @@ export default async function RootLayout({
                 </NavigationMenuList>
               </NavigationMenu>
               <ModeToggle />
-              <Button className="font-semibold">{dict.callToAction}</Button>
+              <Link
+                href="https://au.tm.org/web/learn-tm/north-shore?"
+                referrerPolicy="no-referrer"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <Button className="font-semibold">{dict.callToAction}</Button>
+              </Link>
             </div>
           </header>
           {children}
           <footer className="bg-emerald-900 py-8 text-white">
             <div className="container mx-auto px-4">
-              <div className="flex flex-col items-center justify-between md:flex-row">
+              <div className="mb-8 flex flex-col items-center justify-between md:flex-row">
                 <div className="mb-4 md:mb-0">
                   <h2 className="text-2xl font-semibold">{dict.company}</h2>
                   <p className="text-emerald-50">{dict.tagline}</p>
-                  <sub>
-                    North Shore Meditation is authorised to teach Transcendental Meditation by the Maharashi Foundation
-                    of Australia
-                  </sub>
                 </div>
                 <ul className="text-center md:text-right">
                   <li>133 Longueville Rd, Lane Cove NSW 2066</li>
@@ -246,6 +256,13 @@ export default async function RootLayout({
                   </li>
                 </ul>
               </div>
+              <small>
+                Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharashi
+                Foundation of Australia. Clicking the &quot;Start Your Journey&quot; button below or elsewhere on this
+                website will open a new tab and take you to the official booking system of Maharashi Foundation
+                Australia where you will be able to book a free information session at the North Shore Transcendental
+                Meditation® Center.
+              </small>
             </div>
           </footer>
         </ThemeProvider>
