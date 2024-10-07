@@ -233,6 +233,10 @@ export default async function RootLayout({
                   </p>
                 </div>
               </div>
+              <sub>
+                North Shore Meditation is authorised to teach Transcendental Meditation by the Maharashi Foundation of
+                Australia
+              </sub>
             </div>
           </footer>
         </ThemeProvider>
