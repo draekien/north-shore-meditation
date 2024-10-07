@@ -82,7 +82,7 @@ export default async function RootLayout({
           disableTransitionOnChange
         >
           <BackgroundGradientAnimation containerClassName="fixed -z-50" />
-          <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
+          <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow backdrop-blur-2xl dark:bg-slate-900/50 md:px-6">
             <h3 className="container p-4">
               <Link href="/" className="font-bold xl:text-2xl">
                 {dict.company}

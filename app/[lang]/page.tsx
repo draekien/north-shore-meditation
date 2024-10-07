@@ -18,18 +18,18 @@ import { getDictionary } from './dictionaries';
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
   const dict = await getDictionary(lang);
   return (
-    <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative flex h-[calc(100vh-80px)] items-center justify-center">
+    <div className="min-h-dvh">
+      <section className="relative flex h-[calc(100dvh-5rem)] items-center justify-center">
         <Image
           src={heroImage}
           alt="Serene meditation background"
-          className="absolute inset-0 object-cover opacity-65 blur-sm"
+          className="absolute object-cover"
           placeholder="blur"
           fill
         />
-        <div className="absolute inset-0 bg-white/5 backdrop-blur-[1px]"></div>
-        <div className="relative text-center text-yellow-900 drop-shadow-2xl dark:text-slate-50">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-300/70 via-indigo-100/20 dark:from-indigo-900/40 dark:via-indigo-100/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-purple-300/70 via-white/5 dark:from-purple-900/20"></div>
+        <div className="relative text-center text-yellow-900 drop-shadow-2xl">
           <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
           <Button className="px-8 py-3 text-lg font-semibold" size="lg">
@@ -37,8 +37,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           </Button>
         </div>
       </section>
-
-      {/* Benefits Section */}
 
       <section className="py-16">
         <div className="container mx-auto px-4 md:px-12 lg:px-24">
