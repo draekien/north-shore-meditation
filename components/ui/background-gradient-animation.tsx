@@ -94,7 +94,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        'relative left-0 top-0 h-screen w-screen overflow-hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,var(--gradient-background-start),var(--gradient-background-end))]',
+        'relative left-0 top-0 h-screen w-screen overflow-hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,var(--gradient-background-start),var(--gradient-background-end))] dark:bg-slate-950',
         containerClassName
       )}
     >

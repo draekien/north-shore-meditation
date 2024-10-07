@@ -1,6 +1,7 @@
 import { ThemeProvider } from '@/components/theme-provider';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 import { Button } from '@/components/ui/button';
+import { ModeToggle } from '@/components/ui/mode-toggle';
 import {
   MobileNavigationMenuListItem,
   NavigationMenu,
@@ -12,6 +13,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
+import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { locales, type Locale } from '@/lib/constants';
 import { cn } from '@/lib/utils';
@@ -87,36 +89,38 @@ export default async function RootLayout({
             </h3>
             <Sheet>
               <SheetTrigger asChild>
-                <Button variant="outline" size="icon" className="xl:hidden">
+                <Button variant="ghost" size="icon" className="xl:hidden">
                   <MenuIcon className="h-6 w-6" />
                   <span className="sr-only">Toggle navigation menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right">
-                <div className="mt-4 flex flex-col gap-10">
+              <SheetContent side="right" className="bg-white backdrop-blur-md dark:bg-slate-950/75">
+                <div className="flex h-full flex-col justify-between gap-10 py-4">
                   <Accordion type="single" defaultValue="tm" collapsible>
                     <AccordionItem value="tm">
                       <AccordionTrigger>{dict.nav.tm.title}</AccordionTrigger>
                       <AccordionContent>
-                        <ul className="grid gap-3">
-                          <li>
-                            <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                              href={dict.nav.tm.hero.href}
-                            >
-                              <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                              <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                              <p className="text-sm leading-tight text-muted-foreground">
-                                {dict.nav.tm.hero.description}
-                              </p>
-                            </a>
-                          </li>
-                          {dict.nav.tm.items.map((item) => (
-                            <MobileNavigationMenuListItem key={item.title} title={item.title} href={item.href}>
-                              {item.description}
-                            </MobileNavigationMenuListItem>
-                          ))}
-                        </ul>
+                        <ScrollArea className="h-72">
+                          <ul className="grid gap-3">
+                            <li>
+                              <a
+                                className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:bg-accent focus:shadow-md"
+                                href={dict.nav.tm.hero.href}
+                              >
+                                <Sparkles className={cn('h-6 w-6 text-amber-400')} />
+                                <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                <p className="text-sm leading-tight text-muted-foreground">
+                                  {dict.nav.tm.hero.description}
+                                </p>
+                              </a>
+                            </li>
+                            {dict.nav.tm.items.map((item) => (
+                              <MobileNavigationMenuListItem key={item.title} title={item.title} href={item.href}>
+                                {item.description}
+                              </MobileNavigationMenuListItem>
+                            ))}
+                          </ul>
+                        </ScrollArea>
                       </AccordionContent>
                     </AccordionItem>
                     <AccordionItem value="programs">
@@ -159,7 +163,7 @@ export default async function RootLayout({
                         <li className="row-span-3">
                           <NavigationMenuLink asChild>
                             <a
-                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
+                              className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                               href={dict.nav.tm.hero.href}
                             >
                               <Sparkles className={cn('h-6 w-6 text-amber-400')} />
@@ -206,6 +210,7 @@ export default async function RootLayout({
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>
+              <ModeToggle />
               <Button className="font-semibold">{dict.callToAction}</Button>
             </div>
           </header>
