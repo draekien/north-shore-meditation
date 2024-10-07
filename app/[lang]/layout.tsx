@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@/components/theme-provider';
+import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 import { Button } from '@/components/ui/button';
 import {
   MobileNavigationMenuListItem,
@@ -77,6 +78,7 @@ export default async function RootLayout({
           enableColorScheme
           disableTransitionOnChange
         >
+          <BackgroundGradientAnimation containerClassName="fixed -z-50" />
           <header className="flex h-20 w-full shrink-0 items-center px-4 md:px-6">
             <h3 className="container p-4">
               <Link href="/" className="font-bold xl:text-2xl">
