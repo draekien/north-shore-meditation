@@ -1,6 +1,5 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
 import type { Locale } from '@/lib/constants';
 import { cn } from '@/lib/utils';
 import academicsSvg from '@/public/academics.svg';
@@ -33,7 +32,12 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
         <div className="relative text-center text-yellow-900 drop-shadow-2xl">
           <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
-          <Link href="https://au.tm.org/web/learn-tm/north-shore?" referrerPolicy="no-referrer">
+          <Link
+            href="https://au.tm.org/web/learn-tm/north-shore?"
+            referrerPolicy="no-referrer"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             <Button className="px-8 py-3 text-lg font-semibold" size="lg">
               {dict.callToAction}
             </Button>
@@ -122,7 +126,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 technique.
               </p>
               <p>
-                Grace has been certified to teach Transcendental Meditation by the Maharashi Vedic University, and is
+                Grace has been certified to teach Transcendental Meditation® by the Maharashi Vedic University, and is
                 authorized by the Maharashi Foundation of Australia to teach TM at North Shore Meditation.
               </p>
               <p>
@@ -137,17 +141,21 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
       {/* Call to Action Section */}
       <section className="bg-emerald-50/50 py-16 text-emerald-800 backdrop-blur-sm dark:bg-emerald-800 dark:text-emerald-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="mb-4 text-3xl font-semibold">Ready to Transform Yourself?</h2>
-          <p className="mb-8 text-xl">Book your Transcendental Meditation introductory session today.</p>
-          <form className="mx-auto max-w-md">
-            <div className="flex gap-4">
-              <Input type="email" placeholder="Enter your email" className="bg-white text-neutral-800" />
-              <Button className="bg-emerald-800 font-semibold hover:bg-emerald-700 dark:bg-emerald-50 dark:hover:bg-emerald-100">
-                Get Started
+        <div className="container mx-auto flex flex-col gap-8 px-4 text-center">
+          <h2 className="text-3xl font-semibold">Ready to Transform Yourself?</h2>
+          <h3 className="text-xl">Book your Transcendental Meditation® introductory session today.</h3>
+          <div>
+            <Link
+              href="https://au.tm.org/web/learn-tm/north-shore?"
+              referrerPolicy="no-referrer"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <Button className="px-8 py-3 text-lg font-semibold" size="lg">
+                {dict.callToAction}
               </Button>
-            </div>
-          </form>
+            </Link>
+          </div>
         </div>
       </section>
     </div>
