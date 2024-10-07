@@ -220,23 +220,32 @@ export default async function RootLayout({
             <div className="container mx-auto px-4">
               <div className="flex flex-col items-center justify-between md:flex-row">
                 <div className="mb-4 md:mb-0">
-                  <h3 className="text-2xl font-semibold">{dict.company}</h3>
+                  <h2 className="text-2xl font-semibold">{dict.company}</h2>
                   <p className="text-emerald-50">{dict.tagline}</p>
+                  <sub>
+                    North Shore Meditation is authorised to teach Transcendental Meditation by the Maharashi Foundation
+                    of Australia
+                  </sub>
                 </div>
-                <div className="text-center md:text-right">
-                  <p>133 Longueville Rd, Lane Cove NSW 2066</p>
-                  <p>
-                    Email: <Link href="mailto:tm@northshoremeditation.com">tm@northshoremeditation.com</Link>
-                  </p>
-                  <p>
-                    Phone: <Link href="tel:+61424450578">+61 424 450 578</Link>{' '}
-                  </p>
-                </div>
+                <ul className="text-center md:text-right">
+                  <li>133 Longueville Rd, Lane Cove NSW 2066</li>
+                  <li>
+                    Email:{' '}
+                    <Link
+                      href="mailto:tm@northshoremeditation.com"
+                      className="hover:text-emerald-100 focus:text-emerald-100"
+                    >
+                      tm@northshoremeditation.com
+                    </Link>
+                  </li>
+                  <li>
+                    Phone:{' '}
+                    <Link href="tel:+61424450578" className="hover:text-emerald-100 focus:text-emerald-100">
+                      +61 424 450 578
+                    </Link>{' '}
+                  </li>
+                </ul>
               </div>
-              <sub>
-                North Shore Meditation is authorised to teach Transcendental Meditation by the Maharashi Foundation of
-                Australia
-              </sub>
             </div>
           </footer>
         </ThemeProvider>
