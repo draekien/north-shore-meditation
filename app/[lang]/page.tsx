@@ -31,7 +31,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           placeholder="blur"
           fill
         />
-        <div className="absolute inset-0 bg-amber-600 opacity-5"></div>
+        <div className="absolute inset-0 bg-amber-600/5"></div>
         <div className="relative z-20 text-center text-yellow-900">
           <h1 className="mb-4">{dict.tagline}</h1>
           <p className="mb-8 text-xl">Discover the power of transcendental meditation®</p>
@@ -88,14 +88,15 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 key={index}
                 className={cn(
                   `row-span-1 ${index === 3 || index === 6 ? 'md:col-span-2' : ''}`,
-                  'border-0 bg-white/30 backdrop:blur-3xl'
+                  'border-0 bg-white/30 backdrop-blur-3xl',
+                  'dark:bg-slate-700/30'
                 )}
               >
                 <CardHeader>
-                  <Image src={benefit.src} alt="" style={{ objectFit: 'contain' }} />
+                  <h4 className={cn(`${benefit.color}`)}>{dict.whyTmSection[index].title}</h4>
                 </CardHeader>
                 <CardContent>
-                  <h4 className={cn(`${benefit.color}`)}>{dict.whyTmSection[index].title}</h4>
+                  <Image src={benefit.src} alt="" style={{ objectFit: 'contain' }} />
                   <p> {dict.whyTmSection[index].description}</p>
                 </CardContent>
               </Card>
@@ -105,7 +106,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section>
 
       {/* About Us Section */}
-      <section className="bg-neutral-100 py-16 dark:bg-neutral-900">
+      <section className="bg-neutral-100/30 py-16 backdrop:blur-3xl dark:bg-neutral-900/30">
         <div className="container mx-auto px-4">
           <div className="flex flex-col items-center md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
