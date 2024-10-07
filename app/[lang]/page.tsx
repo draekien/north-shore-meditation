@@ -42,6 +42,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       </section>
 
       {/* Benefits Section */}
+
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-primary">Why choose Transcendental Meditation®</h2>
@@ -83,7 +84,13 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
                 color: 'text-rose-600',
               },
             ].map((benefit, index) => (
-              <Card key={index} className={cn(`row-span-1 ${index === 3 || index === 6 ? 'md:col-span-2' : ''}`)}>
+              <Card
+                key={index}
+                className={cn(
+                  `row-span-1 ${index === 3 || index === 6 ? 'md:col-span-2' : ''}`,
+                  'border-0 bg-white/30 backdrop:blur-3xl'
+                )}
+              >
                 <CardHeader>
                   <Image src={benefit.src} alt="" style={{ objectFit: 'contain' }} />
                 </CardHeader>
