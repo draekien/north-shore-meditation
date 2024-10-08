@@ -1,4 +1,4 @@
-import TmStatsChart from '@/components/tm-stats-chart';
+import TmStatsChart, { type TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
@@ -69,7 +69,7 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
                   <CardTitle>{title}</CardTitle>
                   <CardDescription>{description}</CardDescription>
                 </CardHeader>
-                <CardContent>{chart && <TmStatsChart {...chart} />}</CardContent>
+                <CardContent>{chart && <TmStatsChart {...(chart as unknown as TmStatsChartProps)} />}</CardContent>
                 <CardFooter>
                   <div className="flex w-full items-start gap-2">
                     <Tooltip>

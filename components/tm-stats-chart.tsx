@@ -13,7 +13,7 @@ import {
 
 export type TmStatsChartProps = {
   xAxisKey: string;
-  type: 'bar' | 'area';
+  type?: 'bar' | 'area';
   data: Array<Record<string, unknown>>;
   config: ChartConfig;
   title?: string;
