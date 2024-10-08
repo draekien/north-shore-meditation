@@ -1,4 +1,5 @@
-import { Card, CardContent, CardFooter, CardHeader } from '@/components/ui/card';
+import TmStatsChart from '@/components/tm-stats-chart';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -55,7 +56,7 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
           <h2 className="text-primary">{choice.sections.science.title}</h2>
           <p className="mb-4">{choice.sections.science.description}</p>
           <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
-            {choice.sections.science.cards.map(({ title, description, citation }, index) => (
+            {choice.sections.science.cards.map(({ title, description, citation, chart }, index) => (
               <Card
                 key={title}
                 className={cn(
@@ -65,27 +66,28 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
                 )}
               >
                 <CardHeader>
-                  <h3>{title}</h3>
+                  <CardTitle>{title}</CardTitle>
+                  <CardDescription>{description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <p>{description}</p>
-                </CardContent>
+                <CardContent>{chart && <TmStatsChart {...chart} />}</CardContent>
                 <CardFooter>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <Link
-                        href={citation.doi}
-                        className="w-full hover:text-primary focus:text-primary"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        <small className="block truncate">{citation.name}</small>
-                      </Link>
-                    </TooltipTrigger>
-                    <TooltipContent>
-                      <p className="w-80">{citation.name}</p>
-                    </TooltipContent>
-                  </Tooltip>
+                  <div className="flex w-full items-start gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href={citation.doi}
+                          className="w-full hover:text-primary focus:text-primary"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <small className="block truncate">{citation.name}</small>
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="w-80">{citation.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
                 </CardFooter>
               </Card>
             ))}
