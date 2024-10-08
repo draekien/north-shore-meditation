@@ -70,6 +70,81 @@
     "toggleButtonAlt": "Toggle navigation menu"
   },
   "pages": {
+    "choice": {
+      "sections": {
+        "origins": {
+          "paragraphs": [
+            "Transcendental Meditation (TM) is more than just a relaxation technique — it's a journey rooted in one of the world's most ancient traditions. Developed from the thousands-of-years-old Vedic wisdom of India, TM offers a simple and effective way to experience profound inner peace and clarity.",
+            "TM as we know it today was introduced to the world by Maharishi Mahesh Yogi in the 1950s. Inspired by the rich spiritual teachings of the Vedic tradition, Maharishi developed a technique that allows anyone, regardless of background or lifestyle, to access a deep state of restful awareness."
+          ],
+          "title": "Origins of the Transcendental Meditation® Technique"
+        },
+        "science": {
+          "cards": [
+            {
+              "citation": {
+                "doi": "https://doi.org/10.1089/acm.2013.0204",
+                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014). The Transcendental Meditation program’s impact on the symptoms of post-traumatic stress disorder (PTSD) in veterans: A pilot randomized controlled trial. Journal of Alternative and Complementary Medicine, 20(5), 364-370. https://doi.org/10.1089/acm.2013.0204"
+              },
+              "description": "Research shows that TM significantly reduces stress and anxiety by lowering cortisol levels, which is a hormone associated with stress.",
+              "title": "Reduction of Stress and Anxiety"
+            },
+            {
+              "citation": {
+                "doi": "https://doi.org/10.1161/CIRCOUTCOMES.112.967406",
+                "name": "Schneider, R. H., Grim, C. E., Rainforth, M. V., Kotchen, T., Nidich, S. I., Gaylord-King, C., Salerno, J. W., & Kotchen, J. M. (2012). Stress reduction in the secondary prevention of cardiovascular disease: Randomized, controlled trial of Transcendental Meditation and health education in Blacks. Circulation: Cardiovascular Quality and Outcomes, 5(6), 750-758. https://doi.org/10.1161/CIRCOUTCOMES.112.967406"
+              },
+              "description": "TM has been shown to help with heart health by lowering blood pressure, reducing the risk of heart attacks, strokes, and other cardiovascular issues.",
+              "title": "Improved Cardiovascular Health"
+            },
+            {
+              "citation": {
+                "doi": "https://doi.org/10.1080/00207450600575482",
+                "name": "Travis, F., & Arenander, A. (2010). Cross-sectional and longitudinal study of effects of Transcendental Meditation practice on interhemispheric frontal coherence and cognitive development in university students. Cognitive Processing, 11(1), 21-30. https://doi.org/10.1080/00207450600575482"
+              },
+              "description": "TM can improve cognitive functions, including focus, memory, and decision-making. Studies suggest that TM increases brain coherence, which relates to improved learning abilities and intellectual performance.",
+              "title": "Enhanced Brain Function and Focus"
+            },
+            {
+              "citation": {
+                "doi": "https://doi.org/10.1016/S0002-9149(97)89184-9",
+                "name": "Zamarra, J. W., Schneider, R. H., Besseghini, I., Robinson, D. K., & Salerno, J. W. (1989). Usefulness of the Transcendental Meditation program in the treatment of patients with coronary artery disease. The American Journal of Cardiology, 61(15), 1206-1210. https://doi.org/10.1016/S0002-9149(97)89184-9"
+              },
+              "description": "People practicing TM often report better sleep quality, fewer instances of insomnia, and greater alertness during the day.",
+              "title": "Better Sleep Quality"
+            },
+            {
+              "citation": {
+                "doi": "https://doi.org/10.7205/milmed-d-10-00254",
+                "name": "Rosenthal, J. Z., Grosswald, S., Ross, R., & Rosenthal, N. (2011). Effects of transcendental meditation in veterans of Operation Enduring Freedom and Operation Iraqi Freedom with posttraumatic stress disorder: a pilot study. Military medicine, 176(6), 626-630. https://doi.org/10.7205/milmed-d-10-00254"
+              },
+              "description": "TM has been shown to be effective in reducing symptoms of post-traumatic stress disorder (PTSD), particularly in military veterans.",
+              "title": "Reduction in PTSD Symptoms"
+            },
+            {
+              "citation": {
+                "doi": "https://doi.org/10.1089/acm.1995.1.263",
+                "name": "Walton, K. G., Pugh, N. D., Gelderloos, P., & Macrae, P. (1995). Stress reduction and preventing hypertension: preliminary support for a psychoneuroendocrine mechanism. Journal of alternative and complementary medicine (New York, N.Y.), 1(3), 263-283. https://doi.org/10.1089/acm.1995.1.263"
+              },
+              "description": "Practicing TM has been linked to improvements in overall well-being, including increased happiness, self-realization, and life satisfaction.",
+              "title": "Overall Psychological Well-Being"
+            },
+            {
+              "citation": {
+                "doi": "https://doi.org/10.1037//0022-3514.57.6.950",
+                "name": "Alexander, C. N., Langer, E. J., Newman, R. I., Chandler, H. M., & Davies, J. L. (1989). Transcendental meditation, mindfulness, and longevity: an experimental study with the elderly. Journal of personality and social psychology, 57(6), 950-964. https://doi.org/10.1037//0022-3514.57.6.950"
+              },
+              "description": "Regular practice of TM has been linked to longer life expectancy and lower mortality rates, especially from cardiovascular diseases.",
+              "title": "Longevity and Reduced Mortality"
+            }
+          ],
+          "description": "Transcendental Meditation® is one of the most thoroughly researched meditation techniques. Studies published in peer-reviewed journals have shown that TM is associated with:",
+          "title": "Backed by Science"
+        }
+      },
+      "subtitle": "Discover the scientifically proven benefits that can transform your personal and professional life.",
+      "title": "Your Choice for a Better You"
+    },
     "contactUs": {
       "labels": {
         "email": "Email",
