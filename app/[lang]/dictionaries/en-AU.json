@@ -82,14 +82,62 @@
         "science": {
           "cards": [
             {
+              "chart": {
+                "config": {
+                  "stress": {
+                    "color": "#38bdf8",
+                    "label": "Perceived Stress Scale (over 5 years)"
+                  }
+                },
+                "data": [
+                  {
+                    "stress": 48,
+                    "type": "Pretest"
+                  },
+                  {
+                    "stress": 30,
+                    "type": "Posttest"
+                  }
+                ],
+                "title": "International Archives of Nursing and Health Care, 2015",
+                "xAxisKey": "type"
+              },
               "citation": {
                 "doi": "https://doi.org/10.1089/acm.2013.0204",
-                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014). The Transcendental Meditation program’s impact on the symptoms of post-traumatic stress disorder (PTSD) in veterans: A pilot randomized controlled trial. Journal of Alternative and Complementary Medicine, 20(5), 364-370. https://doi.org/10.1089/acm.2013.0204"
+                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014). The Transcendental Meditation program's impact on the symptoms of post-traumatic stress disorder (PTSD) in veterans: A pilot randomized controlled trial. Journal of Alternative and Complementary Medicine, 20(5), 364-370. https://doi.org/10.1089/acm.2013.0204"
               },
               "description": "Research shows that TM significantly reduces stress and anxiety by lowering cortisol levels, which is a hormone associated with stress.",
               "title": "Reduction of Stress and Anxiety"
             },
             {
+              "chart": {
+                "config": {
+                  "value": {
+                    "color": "#f87171",
+                    "label": "Systolic Blood Pressure (mmHg) - Lower is Better"
+                  }
+                },
+                "data": [
+                  {
+                    "type": "TM",
+                    "value": 125
+                  },
+                  {
+                    "type": "Mindfulness",
+                    "value": 131
+                  },
+                  {
+                    "type": "Relaxation Response",
+                    "value": 145
+                  },
+                  {
+                    "type": "Control",
+                    "value": 135
+                  }
+                ],
+                "title": "Decreased Systolic Blood Pressure",
+                "xAxisKey": "type"
+              },
               "citation": {
                 "doi": "https://doi.org/10.1161/CIRCOUTCOMES.112.967406",
                 "name": "Schneider, R. H., Grim, C. E., Rainforth, M. V., Kotchen, T., Nidich, S. I., Gaylord-King, C., Salerno, J. W., & Kotchen, J. M. (2012). Stress reduction in the secondary prevention of cardiovascular disease: Randomized, controlled trial of Transcendental Meditation and health education in Blacks. Circulation: Cardiovascular Quality and Outcomes, 5(6), 750-758. https://doi.org/10.1161/CIRCOUTCOMES.112.967406"
