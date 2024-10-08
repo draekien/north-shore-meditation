@@ -15,7 +15,8 @@ import {
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { locales, type Locale } from '@/lib/constants';
+import { locales } from '@/lib/constants';
+import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
 import { MenuIcon, Sparkles } from 'lucide-react';
@@ -23,6 +24,7 @@ import type { Metadata } from 'next';
 import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
 import localFont from 'next/font/local';
 import Link from 'next/link';
+import type { PropsWithChildren } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../components/ui/accordion';
 import { getDictionary } from './dictionaries';
 import './globals.css';
@@ -46,11 +48,6 @@ const geistSans = localFont({
   variable: '--font-geist-sans',
   weight: '100 900',
 });
-const geistMono = localFont({
-  src: '../fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-});
 
 export const metadata: Metadata = {
   title: 'North Shore Meditation',
@@ -61,19 +58,11 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function RootLayout({
-  children,
-  params,
-}: Readonly<{
-  children: React.ReactNode;
-  params: { lang: Locale };
-}>) {
+export default async function RootLayout({ children, params }: Readonly<PropsWithChildren<GlobalPageProps>>) {
   const dict = await getDictionary(params.lang);
   return (
     <html lang={params.lang}>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}
-      >
+      <body className={`${geistSans.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
@@ -92,7 +81,7 @@ export default async function RootLayout({
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="xl:hidden">
                   <MenuIcon className="h-6 w-6" />
-                  <span className="sr-only">Toggle navigation menu</span>
+                  <span className="sr-only">{dict.nav.toggleButtonAlt}</span>
                 </Button>
               </SheetTrigger>
               <SheetContent side="right" className="bg-white backdrop-blur-md dark:bg-slate-950/75">
@@ -124,7 +113,7 @@ export default async function RootLayout({
                         </ScrollArea>
                       </AccordionContent>
                     </AccordionItem>
-                    <AccordionItem value="programs">
+                    {/* <AccordionItem value="programs">
                       <AccordionTrigger>{dict.nav.programs.title}</AccordionTrigger>
                       <AccordionContent>
                         <ul className="grid gap-3">
@@ -139,7 +128,7 @@ export default async function RootLayout({
                           ))}
                         </ul>
                       </AccordionContent>
-                    </AccordionItem>
+                    </AccordionItem> */}
                     <AccordionItem value="more">
                       <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
                       <AccordionContent>
@@ -151,12 +140,12 @@ export default async function RootLayout({
                     </AccordionItem>
                   </Accordion>
                   <Link
-                    href="https://au.tm.org/web/learn-tm/north-shore?"
+                    href={dict.nav.callToAction.href}
                     referrerPolicy="no-referrer"
                     target="_blank"
                     rel="noreferrer noopener"
                   >
-                    <Button className="font-semibold">{dict.callToAction}</Button>
+                    <Button className="font-semibold">{dict.nav.callToAction.action}</Button>
                   </Link>
                 </div>
               </SheetContent>
@@ -190,7 +179,7 @@ export default async function RootLayout({
                       </ul>
                     </NavigationMenuContent>
                   </NavigationMenuItem>
-                  <NavigationMenuItem>
+                  {/* <NavigationMenuItem>
                     <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
                     <NavigationMenuContent>
                       <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -201,7 +190,7 @@ export default async function RootLayout({
                         ))}
                       </ul>
                     </NavigationMenuContent>
-                  </NavigationMenuItem>
+                  </NavigationMenuItem> */}
                   <NavigationMenuItem>
                     <Link href="/about-us" legacyBehavior passHref>
                       <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -220,12 +209,12 @@ export default async function RootLayout({
               </NavigationMenu>
               <ModeToggle />
               <Link
-                href="https://au.tm.org/web/learn-tm/north-shore?"
+                href={dict.nav.callToAction.href}
                 referrerPolicy="no-referrer"
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <Button className="font-semibold">{dict.callToAction}</Button>
+                <Button className="font-semibold">{dict.nav.callToAction.action}</Button>
               </Link>
             </div>
           </header>
@@ -238,31 +227,29 @@ export default async function RootLayout({
                   <p className="text-emerald-50">{dict.tagline}</p>
                 </div>
                 <ul className="text-center md:text-right">
-                  <li>133 Longueville Rd, Lane Cove NSW 2066</li>
+                  <li>{dict.contactDetails.address}</li>
                   <li>
                     Email:{' '}
                     <Link
-                      href="mailto:tm@northshoremeditation.com"
+                      href={dict.contactDetails.email.href}
                       className="hover:text-emerald-100 focus:text-emerald-100"
                     >
-                      tm@northshoremeditation.com
+                      {dict.contactDetails.email.display}
                     </Link>
                   </li>
                   <li>
                     Phone:{' '}
-                    <Link href="tel:+61424450578" className="hover:text-emerald-100 focus:text-emerald-100">
-                      +61 424 450 578
+                    <Link
+                      href={dict.contactDetails.phone.href}
+                      className="hover:text-emerald-100 focus:text-emerald-100"
+                    >
+                      {dict.contactDetails.phone.display}
                     </Link>{' '}
                   </li>
                 </ul>
               </div>
               <div className="flex flex-wrap-reverse items-end justify-center gap-8 md:justify-between">
-                <small className="w-80 md:w-1/3">
-                  Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharashi
-                  Foundation of Australia. Clicking the &quot;Start Your Journey&quot; button on this website will
-                  navigate you to the official booking system of Maharashi Foundation Australia where you will be able
-                  to book a free information session at the North Shore Transcendental Meditation® Center.
-                </small>
+                <small className="w-80 md:w-1/3">{dict.footer.disclaimer}</small>
                 <iframe
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.8973186975018!2d151.16486469475902!3d-33.81496280426766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12afedfeb57fd9%3A0x5f070473e99a3205!2sNorth%20Shore%20Transcendental%20Meditation%20Sydney!5e0!3m2!1sen!2sau!4v1728299134488!5m2!1sen!2sau"
                   className="h-80 w-80 rounded-lg border-0 md:h-[400px] md:w-[800px]"
