@@ -1,8 +1,95 @@
-import type { Locale } from '@/lib/constants';
+import CallToActionSection from '@/components/call-to-action.section';
+import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import type { GlobalPageProps } from '@/lib/types';
+import bird from '@/public/bird.jpg';
+import { Brain, Clock, Feather, Microscope } from 'lucide-react';
+import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
 
-export default async function Tm({ params: { lang } }: { params: { lang: Locale } }) {
-  const dict = await getDictionary(lang);
+export default async function Tm({ params: { lang } }: GlobalPageProps) {
+  const {
+    pages: { tm },
+  } = await getDictionary(lang);
 
-  return <div>{dict.transcendentalMeditation}</div>;
+  return (
+    <div className="min-h-dvh">
+      <section className="relative bg-emerald-50/30 py-20 backdrop-blur dark:bg-emerald-900/20">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
+            <div className="mb-8 md:mb-0 md:w-1/2">
+              <h1 className="text-primary">{tm.title}</h1>
+              <p className="mb-6 text-xl text-foreground">{tm.subtitle}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="bg-background/80 py-16 backdrop-blur-xl">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col items-center gap-16 md:flex-row">
+            <div className="mb-8 md:mb-0 md:w-1/2">
+              <Image src={bird} alt="" className="rounded-xl opacity-90" placeholder="blur" />
+            </div>
+            <div className="mb-8 md:mb-0 md:w-1/2">
+              <h2 className="mx-auto mb-12 max-w-3xl text-primary">{tm.sections.whatIsTm.title}</h2>
+              <div className="mx-auto max-w-3xl">
+                {tm.sections.whatIsTm.paragraphs.map((text) => (
+                  <p key={text} className="text-lg">
+                    {text}
+                  </p>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="relative bg-emerald-50/30 py-20 backdrop-blur dark:bg-emerald-900/20">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-12 text-primary">{tm.sections.keyFeatures.title}</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {[
+              { title: 'Effortless', icon: <Feather className="h-10 w-10 text-teal-500" /> },
+              { title: 'Natural', icon: <Brain className="h-10 w-10 text-amber-400" /> },
+              { title: 'Quick', icon: <Clock className="h-10 w-10 text-rose-400" /> },
+              { title: 'Effective', icon: <Microscope className="h-10 w-10 text-indigo-500" /> },
+            ]
+              .map(({ title, icon }) => {
+                const card = tm.sections.keyFeatures.cards.find((x) => x.title === title);
+
+                if (!card) throw new Error(`Missing card with title inside key features section ${title}`);
+
+                return {
+                  icon,
+                  ...card,
+                };
+              })
+              .map(({ title, icon, description }) => (
+                <Card key={title} className="bg-card/80 backdrop-blur-xl">
+                  <CardHeader>{icon}</CardHeader>
+                  <CardContent>
+                    <h3 className="text-primary">{title}</h3>
+                    <p>{description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-background/80 py-16 backdrop-blur-xl">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-8 text-center text-primary">{tm.sections.howItWorks.title}</h2>
+          <div className="mx-auto max-w-3xl">
+            <ol className="list-decimal space-y-6 text-lg">
+              {tm.sections.howItWorks.steps.map((step) => (
+                <li key={step.title}>
+                  <h3 className="text-lg text-primary">{step.title}</h3>
+                  {step.description}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+      </section>
+      <CallToActionSection {...tm.sections.callToAction} />
+    </div>
+  );
 }

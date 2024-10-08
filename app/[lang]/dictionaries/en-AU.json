@@ -1,8 +1,25 @@
 {
-  "callToAction": "Start Your Journey",
   "company": "North Shore Meditation",
+  "contactDetails": {
+    "address": "133 Loungueville Rd, Lane Cove NSW 2066",
+    "email": {
+      "display": "tm@northshoremeditation.com",
+      "href": "mailto:tm@northshoremeditation.com"
+    },
+    "phone": {
+      "display": "+614 2445 0578",
+      "href": "tel:+61424450578"
+    }
+  },
+  "footer": {
+    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharashi Foundation of Australia. Clicking the \"Start Your Journey\" or \"Book Your Free Session\" buttons on this website will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to book a free information session at the North Shore Transcendental Meditation® Center."
+  },
   "nav": {
     "aboutUs": "About Us",
+    "callToAction": {
+      "action": "Start Your Journey",
+      "href": "https://au.tm.org/web/learn-tm/north-shore"
+    },
     "contactUs": "Contact Us",
     "more": "More",
     "programs": {
@@ -27,7 +44,7 @@
     },
     "tm": {
       "hero": {
-        "description": "Easy to learn and enjoyable to practice. Experience the peacefulness of your awareness and get to know your innermost self.",
+        "description": "Learn about the simplicity and effortlessness that is Transcendental Meditation®",
         "href": "/tm",
         "title": "Effortlessly Yours"
       },
@@ -49,39 +66,149 @@
         }
       ],
       "title": "Transcendental Meditation®"
+    },
+    "toggleButtonAlt": "Toggle navigation menu"
+  },
+  "pages": {
+    "contactUs": {
+      "labels": {
+        "email": "Email",
+        "message": "Message"
+      },
+      "subtitle": "Send us an enquiry using the form below, or give us a ring!",
+      "title": "Your First Step Begins Here"
+    },
+    "tm": {
+      "sections": {
+        "callToAction": {
+          "action": "Book Your Free Session",
+          "href": "https://au.tm.org/web/learn-tm/north-shore",
+          "subtitle": "Join us for a free introductory session and discover the simplicity of Transcendental Meditation®.",
+          "title": "Ready to Experience Effortless Meditation?"
+        },
+        "howItWorks": {
+          "steps": [
+            {
+              "description": "A certified TM teacher will guide you through the process in a series of sessions.",
+              "title": "Learn the technique"
+            },
+            {
+              "description": "Find a quiet place and sit in a comfortable position with your eyes closed.",
+              "title": "Sit comfortably"
+            },
+            {
+              "description": "Silently repeat a personalized mantra that is given to you by your TM teacher.",
+              "title": "Use your mantra"
+            },
+            {
+              "description": "Don't try to control or surpress your thoughts. Let them pass naturally.",
+              "title": "Let thoughts come and go"
+            },
+            {
+              "description": "There's no need to concentrate or try hard. The technique works effortlessly.",
+              "title": "Enjoy the process"
+            },
+            {
+              "description": "All it takes is 15-20 minutes twice a day",
+              "title": "Practice daily"
+            }
+          ],
+          "title": "How Transcendental Meditation® Works"
+        },
+        "keyFeatures": {
+          "cards": [
+            {
+              "description": "No need to control your mind or thoughts",
+              "title": "Effortless"
+            },
+            {
+              "description": "Works with your mind's natural tendencies",
+              "title": "Natural"
+            },
+            {
+              "description": "Just 15-20 minutes, twice a day",
+              "title": "Quick"
+            },
+            {
+              "description": "Backed by more than 250 independent universities and research institutions",
+              "title": "Effective"
+            }
+          ],
+          "title": "Key Features of Transcendental Meditation®"
+        },
+        "whatIsTm": {
+          "paragraphs": [
+            "Transcendental Meditation® (TM) is a simple, natural technique practiced for 15-20 minutes twice a day while sitting comfortably with your eyes closed. It's easy to learn and enjoyable to practice. It is not a religion, philosophy, or lifestyle.",
+            "Unlike other forms of meditation, TM does not involve concentration, control of the mind, or monitoring your thoughts. It's an effortless technique that allows your mind to settle inward, beyond thought, to experience the silent reservoir of energy, creativity, and intelligence found within everyone.",
+            "This state of restful alertness reduces stress, refreshes the mind, and provides a broad range of benefits for your mind, body, and behaviour."
+          ],
+          "title": "What is Transcendental Meditation®?"
+        }
+      },
+      "subtitle": "Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.",
+      "title": "Simplicity in it's Effortlessness"
     }
   },
-  "tagline": "The Kingdom of Heaven is Within",
-  "tm": "TM",
-  "transcendentalMeditation": "Transcendental Meditation®",
-  "whyTmSection": [
-    {
-      "description": "Transcendental Meditation® helps you tap into a deep sense of calm and inner contentment. By quieting the mind and letting go of external distractions, you can experience a profound state of peace and lasting happiness from within.",
-      "title": "Discover Inner Peace and Joy"
+  "sections": {
+    "callToAction": {
+      "action": "Start Your Journey",
+      "href": "https://au.tm.org/web/learn-tm/north-shore",
+      "subtitle": "Book your Transcendental Meditation® introductory session today.",
+      "title": "Ready to Transform Yourself?"
     },
-    {
-      "description": "Life's challenges become more manageable when you develop a strong foundation of resilience. Through regular practice of transcendental meditation, you cultivate the mental strength and emotional balance to stay grounded and composed, even in the face of adversity.",
-      "title": "Build Resilience from Within"
+    "hero": {
+      "action": "Start Your Journey",
+      "href": "https://au.tm.org/web/learn-tm/north-shore",
+      "subtitle": "Discover the power of Transcendental Meditation®",
+      "title": "The Kingdom of Heaven is Within"
     },
-    {
-      "description": "A calm and centered mind naturally improves the quality of your interactions with others. Transcendental Meditation® helps reduce reactive tendencies and promotes greater empathy, patience, and understanding, leading to deeper, more fulfilling relationships.",
-      "title": "Enhance Your Relationships"
+    "learnFromGrace": {
+      "paragraphs": [
+        "A customer once told Grace that \"meditation is a very personal thing\". We understand that. We are attentive to your needs in understanding and developing the habits for this simple and natural technique.",
+        "Grace has been certified to teach Transcendental Meditation® by the Maharashi Vedic University, and is authorized by the Maharashi Foundation of Australia to teach TM at North Shore Meditation."
+      ],
+      "title": "Begin your journey with Grace"
     },
-    {
-      "description": "In a fast-paced world, stress and anxiety are common challenges. Transcendental Meditation® offers a scientifically proven way to calm the nervous system, lower cortisol levels, and bring a sense of ease and relaxation into your daily life.",
-      "title": "Relieve Stress and Anxiety"
-    },
-    {
-      "description": "Creativity flourishes when the mind is free from distractions and mental blocks. Transcendental Meditation® encourages a state of relaxed alertness, allowing ideas to flow more freely and enabling you to tap into your natural creative potential.",
-      "title": "Expand Your Creative Potential"
-    },
-    {
-      "description": "A clear and focused mind is key to excelling in academics. By reducing mental clutter and enhancing cognitive functioning, Transcendental Meditation® sharpens your concentration, improves memory, and boosts your ability to learn and retain information.",
-      "title": "Achieve Academic Excellence"
-    },
-    {
-      "description": "Regular practice of Transcendental Meditation® supports better mental health by reducing symptoms of depression, anxiety, and burnout. It fosters emotional stability, self-awareness, and a balanced outlook on life, promoting long-term psychological well-being.",
-      "title": "Nurture Mental Health and Well-being"
+    "whyTm": {
+      "cards": [
+        {
+          "description": "Transcendental Meditation® helps you tap into a deep sense of calm and inner contentment. By quieting the mind and letting go of external distractions, you can experience a profound state of peace and lasting happiness from within.",
+          "key": "dreamer",
+          "title": "Discover Inner Peace and Joy"
+        },
+        {
+          "description": "Life's challenges become more manageable when you develop a strong foundation of resilience. Through regular practice of transcendental meditation, you cultivate the mental strength and emotional balance to stay grounded and composed, even in the face of adversity.",
+          "key": "resilient",
+          "title": "Build Resilience from Within"
+        },
+        {
+          "description": "A calm and centered mind naturally improves the quality of your interactions with others. Transcendental Meditation® helps reduce reactive tendencies and promotes greater empathy, patience, and understanding, leading to deeper, more fulfilling relationships.",
+          "key": "relationship",
+          "title": "Enhance Your Relationships"
+        },
+        {
+          "description": "In a fast-paced world, stress and anxiety are common challenges. Transcendental Meditation® offers a scientifically proven way to calm the nervous system, lower cortisol levels, and bring a sense of ease and relaxation into your daily life.",
+          "key": "relax",
+          "title": "Relieve Stress and Anxiety"
+        },
+        {
+          "description": "Creativity flourishes when the mind is free from distractions and mental blocks. Transcendental Meditation® encourages a state of relaxed alertness, allowing ideas to flow more freely and enabling you to tap into your natural creative potential.",
+          "key": "creative",
+          "title": "Expand Your Creative Potential"
+        },
+        {
+          "description": "A clear and focused mind is key to excelling in academics. By reducing mental clutter and enhancing cognitive functioning, Transcendental Meditation® sharpens your concentration, improves memory, and boosts your ability to learn and retain information.",
+          "key": "academics",
+          "title": "Achieve Academic Excellence"
+        },
+        {
+          "description": "Regular practice of Transcendental Meditation® supports better mental health by reducing symptoms of depression, anxiety, and burnout. It fosters emotional stability, self-awareness, and a balanced outlook on life, promoting long-term psychological well-being.",
+          "key": "meditate",
+          "title": "Nurture Mental Health and Well-being"
+        }
+      ],
+      "title": "Why choose Transcendental Meditation®"
     }
-  ]
+  },
+  "tagline": "The Kingdom of Heaven is Within"
 }
