@@ -78,7 +78,7 @@ export default async function Tm({ params: { lang } }: GlobalPageProps) {
         <div className="container mx-auto px-4">
           <h2 className="mb-8 text-center text-primary">{tm.sections.howItWorks.title}</h2>
           <div className="mx-auto max-w-3xl">
-            <ol className="list-decimal space-y-6 text-lg">
+            <ol className="mx-4 list-decimal space-y-6 text-lg">
               {tm.sections.howItWorks.steps.map((step) => (
                 <li key={step.title}>
                   <h3 className="text-lg text-primary">{step.title}</h3>
