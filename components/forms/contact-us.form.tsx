@@ -60,32 +60,35 @@ export default function ContactUsForm({
 
   const [formStatus, setFormStatus] = useState<FormStatus>('waiting');
 
-  const onSubmit = useCallback(async (values: ContactUsFormFields) => {
-    try {
-      setFormStatus('submitting');
-      const response = await fetch('/api/send', {
-        method: 'POST',
-        body: JSON.stringify(values),
-      });
-
-      if (response.ok) {
-        toast({
-          title: 'Enquiry submitted',
-          description:
-            "We will get back to you within 1-2 business days. Please check your spam folder if you don't receive a reply",
+  const onSubmit = useCallback(
+    async (values: ContactUsFormFields) => {
+      try {
+        setFormStatus('submitting');
+        const response = await fetch('/api/send', {
+          method: 'POST',
+          body: JSON.stringify(values),
         });
-        setFormStatus('submitted');
-      }
 
-      throw new Error('Failed to send enquiry');
-    } catch (error) {
-      toast({
-        title: "We couldn't send your enquiry",
-        description: 'Please try again later, or contact us by giving us a call',
-      });
-      setFormStatus('errored');
-    }
-  }, []);
+        if (response.ok) {
+          toast({
+            title: 'Enquiry submitted',
+            description:
+              "We will get back to you within 1-2 business days. Please check your spam folder if you don't receive a reply",
+          });
+          setFormStatus('submitted');
+        }
+
+        throw new Error('Failed to send enquiry');
+      } catch {
+        toast({
+          title: "We couldn't send your enquiry",
+          description: 'Please try again later, or contact us by giving us a call',
+        });
+        setFormStatus('errored');
+      }
+    },
+    [toast]
+  );
 
   return (
     <Form {...form}>
