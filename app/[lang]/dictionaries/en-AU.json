@@ -72,6 +72,12 @@
   "pages": {
     "choice": {
       "sections": {
+        "callToAction": {
+          "action": "Start Your Journey",
+          "href": "https://au.tm.org/web/learn-tm/north-shore",
+          "subtitle": "Learn more about the science behind Transcendental Meditation® by joining us for a free introductory session.",
+          "title": "Unlock Your Inner Potential"
+        },
         "origins": {
           "paragraphs": [
             "Transcendental Meditation (TM) is more than just a relaxation technique — it's a journey rooted in one of the world's most ancient traditions. Developed from the thousands-of-years-old Vedic wisdom of India, TM offers a simple and effective way to experience profound inner peace and clarity.",
@@ -84,27 +90,34 @@
             {
               "chart": {
                 "config": {
-                  "stress": {
+                  "high": {
+                    "color": "#3b82f6",
+                    "label": "Anxiety Level (Max Percentile)"
+                  },
+                  "low": {
                     "color": "#38bdf8",
-                    "label": "Perceived Stress Scale (over 5 years)"
+                    "label": "Anxiety Level (Min Percentile)"
                   }
                 },
                 "data": [
                   {
-                    "stress": 48,
-                    "type": "Pretest"
+                    "high": 100,
+                    "low": 80,
+                    "years": "0 Years"
                   },
                   {
-                    "stress": 30,
-                    "type": "Posttest"
+                    "high": 62,
+                    "low": 53,
+                    "years": "3 Years"
                   }
                 ],
-                "title": "International Archives of Nursing and Health Care, 2015",
-                "xAxisKey": "type"
+                "title": "Effects of TM on High Anxiety Individuals",
+                "type": "line",
+                "xAxisKey": "years"
               },
               "citation": {
                 "doi": "https://doi.org/10.1089/acm.2013.0204",
-                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014). The Transcendental Meditation program's impact on the symptoms of post-traumatic stress disorder (PTSD) in veterans: A pilot randomized controlled trial. Journal of Alternative and Complementary Medicine, 20(5), 364-370. https://doi.org/10.1089/acm.2013.0204"
+                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014).Orme-Johnson, D. W., & Barnes, V. A. (2014). Effects of the transcendental meditation technique on trait anxiety: a meta-analysis of randomized controlled trials. Journal of alternative and complementary medicine (New York, N.Y.), 20(5), 330-341. https://doi.org/10.1089/acm.2013.0204"
               },
               "description": "Research shows that TM significantly reduces stress and anxiety by lowering cortisol levels, which is a hormone associated with stress.",
               "title": "Reduction of Stress and Anxiety"
@@ -112,31 +125,34 @@
             {
               "chart": {
                 "config": {
-                  "value": {
+                  "control": {
+                    "color": "#94a3b8",
+                    "label": "Control"
+                  },
+                  "mindfulness": {
                     "color": "#f87171",
-                    "label": "Systolic Blood Pressure (mmHg) - Lower is Better"
+                    "label": "Mindfulness"
+                  },
+                  "relaxation": {
+                    "color": "#f87171",
+                    "label": "Relaxation Response"
+                  },
+                  "tm": {
+                    "color": "#059669",
+                    "label": "TM"
                   }
                 },
                 "data": [
                   {
-                    "type": "TM",
-                    "value": 125
-                  },
-                  {
-                    "type": "Mindfulness",
-                    "value": 131
-                  },
-                  {
-                    "type": "Relaxation Response",
-                    "value": 145
-                  },
-                  {
-                    "type": "Control",
-                    "value": 135
+                    "control": 135,
+                    "label": "Systolic Blood Pressure (mmHg)",
+                    "mindfulness": 131,
+                    "relaxation": 145,
+                    "tm": 125
                   }
                 ],
                 "title": "Decreased Systolic Blood Pressure",
-                "xAxisKey": "type"
+                "xAxisKey": "label"
               },
               "citation": {
                 "doi": "https://doi.org/10.1161/CIRCOUTCOMES.112.967406",
@@ -146,6 +162,43 @@
               "title": "Improved Cardiovascular Health"
             },
             {
+              "chart": {
+                "config": {
+                  "alert": {
+                    "color": "#059669",
+                    "label": "TM Meditators (eyes-open)"
+                  },
+                  "meditating": {
+                    "color": "#059669",
+                    "label": "During TM Practice"
+                  }
+                },
+                "data": [
+                  {
+                    "alert": 0,
+                    "meditating": 0.33,
+                    "months": "Baseline"
+                  },
+                  {
+                    "alert": 0.25,
+                    "meditating": 0.47,
+                    "months": "2 Months"
+                  },
+                  {
+                    "alert": 0.3,
+                    "meditating": 0.47,
+                    "months": "4 Months"
+                  },
+                  {
+                    "alert": 0.32,
+                    "meditating": 0.47,
+                    "months": "6 Months"
+                  }
+                ],
+                "title": "Frontal Brain BroadBand Coherence (6-45hZ)",
+                "type": "area",
+                "xAxisKey": "months"
+              },
               "citation": {
                 "doi": "https://doi.org/10.1080/00207450600575482",
                 "name": "Travis, F., & Arenander, A. (2010). Cross-sectional and longitudinal study of effects of Transcendental Meditation practice on interhemispheric frontal coherence and cognitive development in university students. Cognitive Processing, 11(1), 21-30. https://doi.org/10.1080/00207450600575482"
@@ -154,14 +207,37 @@
               "title": "Enhanced Brain Function and Focus"
             },
             {
-              "citation": {
-                "doi": "https://doi.org/10.1016/S0002-9149(97)89184-9",
-                "name": "Zamarra, J. W., Schneider, R. H., Besseghini, I., Robinson, D. K., & Salerno, J. W. (1989). Usefulness of the Transcendental Meditation program in the treatment of patients with coronary artery disease. The American Journal of Cardiology, 61(15), 1206-1210. https://doi.org/10.1016/S0002-9149(97)89184-9"
+              "chart": {
+                "config": {
+                  "ptsdMilitary": {
+                    "color": "#34d399",
+                    "label": "PCL-M"
+                  },
+                  "ptsdScale": {
+                    "color": "#10b981",
+                    "label": "CAPS-5"
+                  },
+                  "qol": {
+                    "color": "#059669",
+                    "label": "Q-LES-Q"
+                  },
+                  "severity": {
+                    "color": "#047857",
+                    "label": "CGI-S"
+                  }
+                },
+                "data": [
+                  {
+                    "label": "Mean Change Score per Measure",
+                    "ptsdMilitary": -24,
+                    "ptsdScale": -31.4,
+                    "qol": 13,
+                    "severity": -1.6
+                  }
+                ],
+                "title": "Effects of TM on PTSD in Veterans",
+                "xAxisKey": "label"
               },
-              "description": "People practicing TM often report better sleep quality, fewer instances of insomnia, and greater alertness during the day.",
-              "title": "Better Sleep Quality"
-            },
-            {
               "citation": {
                 "doi": "https://doi.org/10.7205/milmed-d-10-00254",
                 "name": "Rosenthal, J. Z., Grosswald, S., Ross, R., & Rosenthal, N. (2011). Effects of transcendental meditation in veterans of Operation Enduring Freedom and Operation Iraqi Freedom with posttraumatic stress disorder: a pilot study. Military medicine, 176(6), 626-630. https://doi.org/10.7205/milmed-d-10-00254"
@@ -170,20 +246,55 @@
               "title": "Reduction in PTSD Symptoms"
             },
             {
-              "citation": {
-                "doi": "https://doi.org/10.1089/acm.1995.1.263",
-                "name": "Walton, K. G., Pugh, N. D., Gelderloos, P., & Macrae, P. (1995). Stress reduction and preventing hypertension: preliminary support for a psychoneuroendocrine mechanism. Journal of alternative and complementary medicine (New York, N.Y.), 1(3), 263-283. https://doi.org/10.1089/acm.1995.1.263"
+              "chart": {
+                "config": {
+                  "control": {
+                    "color": "#94a3b8",
+                    "label": "Control"
+                  },
+                  "tm": {
+                    "color": "#059669",
+                    "label": "TM"
+                  }
+                },
+                "data": [
+                  {
+                    "control": -5,
+                    "label": "Percentage Change in Plasma Cortisol",
+                    "tm": -30
+                  }
+                ],
+                "title": "Change in cortisol during TM Practice",
+                "xAxisKey": "label"
               },
-              "description": "Practicing TM has been linked to improvements in overall well-being, including increased happiness, self-realization, and life satisfaction.",
-              "title": "Overall Psychological Well-Being"
+              "citation": {
+                "doi": "https://doi.org/10.1016/0018-506x(78)90024-7",
+                "name": "Jevning, R., Wilson, A. F., & Davidson, J. M. (1978). Adrenocortical activity during meditation. Hormones and behavior, 10(1), 54-60. https://doi.org/10.1016/0018-506x(78)90024-7"
+              },
+              "description": "Neurologists have found that practicing TM natually both increases the levels of mood regulating hormones like serotonin and reduces the levels of stress-related hormones such as cortisol.",
+              "title": "Better Sleep Quality"
+            }
+          ],
+          "definitions": [
+            {
+              "href": "https://psycnet.apa.org/doiLanding?doi=10.1037/t05198-000",
+              "key": "PCL-M",
+              "value": "The PTSD Checklist--Military Version (PCL-M; Weathers et al., 1993) was developed to assess the presence and severity of PTSD symptoms as defined by the Diagnostic and Statistical Manual of Mental Disorders (4th ed.; DSM-IV; American Psychiatric Association, 1994) in military personnel."
             },
             {
-              "citation": {
-                "doi": "https://doi.org/10.1037//0022-3514.57.6.950",
-                "name": "Alexander, C. N., Langer, E. J., Newman, R. I., Chandler, H. M., & Davies, J. L. (1989). Transcendental meditation, mindfulness, and longevity: an experimental study with the elderly. Journal of personality and social psychology, 57(6), 950-964. https://doi.org/10.1037//0022-3514.57.6.950"
-              },
-              "description": "Regular practice of TM has been linked to longer life expectancy and lower mortality rates, especially from cardiovascular diseases.",
-              "title": "Longevity and Reduced Mortality"
+              "href": "https://www.ptsd.va.gov/professional/assessment/adult-int/caps.asp#obtain",
+              "key": "CAPS-5",
+              "value": "Clinician Administered PTSD Scale - the gold standard in PTSD assessment used to make diagnosis of PTSD and assess it's symptoms over the past week."
+            },
+            {
+              "href": "https://pubmed.ncbi.nlm.nih.gov/8290681/",
+              "key": "Q-LES-Q",
+              "value": "Quality of Life Enjoyment and Satisfaction Questionnaire is a self-report measure designed to enable investigators to easily obtain sensitive measures of the degree of enjoyment and satisfaction experienced by subjects in various areas of daily functioning."
+            },
+            {
+              "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2880930/#:~:text=The%20CGI%2DSeverity%20(CGI%2D,4%3Dmoderately%20ill%3B%205%3D",
+              "key": "CGI-S",
+              "value": "Clinitian's Global Inventory-Severity asks the clinician one question: “Considering your total clinical experience with this particular population, how mentally ill is the patient at this time?”"
             }
           ],
           "description": "Transcendental Meditation® is one of the most thoroughly researched meditation techniques. Studies published in peer-reviewed journals have shown that TM is associated with:",
