@@ -1,8 +1,10 @@
 'use client';
 
+import { useToast } from '@/hooks/use-toast';
 import { contactUsSchema, type ContactUsFormFields } from '@/lib/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
@@ -30,6 +32,8 @@ export type ContactUsFormProps = {
   };
 };
 
+type FormStatus = 'waiting' | 'submitting' | 'submitted' | 'errored';
+
 export default function ContactUsForm({
   form: {
     inputs: { givenNames, surname, email, phone, message, existing, privacy },
@@ -50,13 +54,35 @@ export default function ContactUsForm({
     },
   });
 
+  const { toast } = useToast();
+
+  const [formStatus, setFormStatus] = useState<FormStatus>('waiting');
+
   async function onSubmit(values: ContactUsFormFields) {
-    console.log(values);
-    const response = await fetch('/api/send', {
-      method: 'POST',
-      body: JSON.stringify(values),
-    });
-    console.log(response);
+    try {
+      setFormStatus('submitting');
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        body: JSON.stringify(values),
+      });
+
+      if (response.ok) {
+        toast({
+          title: 'Enquiry submitted',
+          description:
+            "We will get back to you within 1-2 business days. Please check your spam folder if you don't receive a reply",
+        });
+        setFormStatus('submitted');
+      }
+
+      throw new Error('Failed to send enquiry');
+    } catch (error) {
+      toast({
+        title: "We couldn't send your enquiry",
+        description: 'Please try again later, or contact us by giving us a call',
+      });
+      setFormStatus('errored');
+    }
   }
 
   return (
@@ -159,7 +185,9 @@ export default function ContactUsForm({
                   </FormItem>
                 )}
               />
-              <Button type="submit">{submit.label}</Button>
+              <Button type="submit" disabled={formStatus !== 'waiting' && formStatus !== 'errored'}>
+                {submit.label}
+              </Button>
               <small>
                 {disclaimer} <Link href="/">{privacyNotice}</Link>
               </small>
