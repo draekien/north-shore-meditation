@@ -350,7 +350,9 @@
         },
         "privacyNotice": "Privacy Notice",
         "submit": {
-          "label": "Send"
+          "label": "Send",
+          "loading": "Sending...",
+          "submitted": "Sent!"
         }
       },
       "subtitle": "Send us an enquiry using the form below, or give us a ring!",

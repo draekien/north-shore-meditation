@@ -4,7 +4,7 @@ import { useToast } from '@/hooks/use-toast';
 import { contactUsSchema, type ContactUsFormFields } from '@/lib/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button } from '../ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
@@ -26,6 +26,8 @@ export type ContactUsFormProps = {
     };
     submit: {
       label: string;
+      loading: string;
+      submitted: string;
     };
     privacyNotice: string;
     disclaimer: string;
@@ -58,7 +60,7 @@ export default function ContactUsForm({
 
   const [formStatus, setFormStatus] = useState<FormStatus>('waiting');
 
-  async function onSubmit(values: ContactUsFormFields) {
+  const onSubmit = useCallback(async (values: ContactUsFormFields) => {
     try {
       setFormStatus('submitting');
       const response = await fetch('/api/send', {
@@ -83,7 +85,7 @@ export default function ContactUsForm({
       });
       setFormStatus('errored');
     }
-  }
+  }, []);
 
   return (
     <Form {...form}>
@@ -186,7 +188,11 @@ export default function ContactUsForm({
                 )}
               />
               <Button type="submit" disabled={formStatus !== 'waiting' && formStatus !== 'errored'}>
-                {submit.label}
+                {formStatus === 'submitting'
+                  ? submit.loading
+                  : formStatus === 'submitted'
+                    ? submit.submitted
+                    : submit.label}
               </Button>
               <small>
                 {disclaimer} <Link href="/">{privacyNotice}</Link>
