@@ -15,6 +15,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { locales } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
@@ -220,7 +221,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                 </Link>
               </div>
             </header>
-            {children}
+            <main>{children}</main>
             <footer className="bg-emerald-900 py-8 text-white">
               <div className="container mx-auto px-4">
                 <div className="mb-8 flex flex-col items-center justify-between md:flex-row">
@@ -263,6 +264,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
               </div>
             </footer>
           </TooltipProvider>
+          <Toaster />
         </ThemeProvider>
         <Analytics />
       </body>
