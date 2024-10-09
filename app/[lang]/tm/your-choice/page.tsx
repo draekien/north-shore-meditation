@@ -1,4 +1,6 @@
-import TmStatsChart, { type TmStatsChartProps } from '@/components/tm-stats-chart';
+import CallToActionSection from '@/components/call-to-action.section';
+import { ChartSkeleton } from '@/components/skeletons/chart.skeleton';
+import { type TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
@@ -7,7 +9,10 @@ import maharishi from '@/public/maharishi.jpg';
 import omegaSvg from '@/public/undraw_omega_-4-kob.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Fragment, lazy, Suspense } from 'react';
 import { getDictionary } from '../../dictionaries';
+
+const LazyChart = lazy(() => import('@/components/tm-stats-chart'));
 
 export default async function YourChoicePage({ params: { lang } }: GlobalPageProps) {
   const {
@@ -69,7 +74,13 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
                   <CardTitle>{title}</CardTitle>
                   <CardDescription>{description}</CardDescription>
                 </CardHeader>
-                <CardContent>{chart && <TmStatsChart {...(chart as unknown as TmStatsChartProps)} />}</CardContent>
+                <CardContent>
+                  {chart && (
+                    <Suspense fallback={<ChartSkeleton />}>
+                      <LazyChart {...(chart as unknown as TmStatsChartProps)} />
+                    </Suspense>
+                  )}
+                </CardContent>
                 <CardFooter>
                   <div className="flex w-full items-start gap-2">
                     <Tooltip>
@@ -80,7 +91,7 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
                           target="_blank"
                           rel="noreferrer noopener"
                         >
-                          <small className="block truncate">{citation.name}</small>
+                          <cite className="block truncate text-sm">{citation.name}</cite>
                         </Link>
                       </TooltipTrigger>
                       <TooltipContent>
@@ -92,8 +103,30 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
               </Card>
             ))}
           </div>
+          <div className="mt-8 flex flex-col gap-4 md:mt-16">
+            <h3 className="mb-4 text-primary">Definitions</h3>
+            <dl>
+              {choice.sections.science.definitions.map(({ key, value, href }) => (
+                <Fragment key={key}>
+                  <dt className="font-semibold">
+                    {href ? (
+                      <Link href={href} className="hover:text-primary focus:text-primary" rel="noreferrer noopener">
+                        {key}
+                      </Link>
+                    ) : (
+                      key
+                    )}
+                  </dt>
+                  <dd className="mb-2">
+                    <blockquote>{value}</blockquote>
+                  </dd>
+                </Fragment>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
+      <CallToActionSection {...choice.sections.callToAction} />
     </div>
   );
 }
