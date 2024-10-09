@@ -22,7 +22,7 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
     <PageContent>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <div className="flex flex-col gap-16 md:flex-row md:gap-24">
+          <div className="flex flex-col items-center gap-8 py-8 md:min-h-[50dvh] md:flex-row">
             <div>
               <Image src={guidanceSvg} alt="" />
             </div>
