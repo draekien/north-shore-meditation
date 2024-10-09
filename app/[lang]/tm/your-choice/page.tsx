@@ -1,7 +1,10 @@
 import CallToActionSection from '@/components/call-to-action.section';
-import { ChartSkeleton } from '@/components/skeletons/chart.skeleton';
-import { type TmStatsChartProps } from '@/components/tm-stats-chart';
+import TmStatsChart, { type TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import PageContent from '@/components/ui/page-content';
+import PageSectionContainer from '@/components/ui/page-section.container';
+import PrimaryPageSection from '@/components/ui/page-section.primary';
+import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
@@ -9,10 +12,8 @@ import maharishi from '@/public/maharishi.jpg';
 import omegaSvg from '@/public/undraw_omega_-4-kob.svg';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Fragment, lazy, Suspense } from 'react';
+import { Fragment } from 'react';
 import { getDictionary } from '../../dictionaries';
-
-const LazyChart = lazy(() => import('@/components/tm-stats-chart'));
 
 export default async function YourChoicePage({ params: { lang } }: GlobalPageProps) {
   const {
@@ -20,9 +21,9 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
   } = await getDictionary(lang);
 
   return (
-    <div className="min-h-dvh">
-      <section className="relative bg-emerald-50/30 py-20 backdrop-blur dark:bg-emerald-900/20">
-        <div className="container mx-auto px-4">
+    <PageContent>
+      <PrimaryPageSection>
+        <PageSectionContainer>
           <div className="flex flex-col items-center gap-8 py-8 md:min-h-[50dvh] md:flex-row">
             <div className="md:mb-0 md:w-1/2">
               <h1 className="text-primary">{choice.title}</h1>
@@ -32,10 +33,10 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
               <Image src={omegaSvg} alt="" />
             </div>
           </div>
-        </div>
-      </section>
-      <section className="bg-background/80 py-16 backdrop-blur-xl">
-        <div className="container mx-auto px-4">
+        </PageSectionContainer>
+      </PrimaryPageSection>
+      <SecondaryPageSection>
+        <PageSectionContainer>
           <div className="flex flex-col items-center gap-16 md:flex-row">
             <div className="md:w-1/3">
               <Image
@@ -54,10 +55,10 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
               ))}
             </div>
           </div>
-        </div>
-      </section>
-      <section className="relative bg-emerald-50/30 py-20 backdrop-blur dark:bg-emerald-900/20">
-        <div className="container mx-auto px-4">
+        </PageSectionContainer>
+      </SecondaryPageSection>
+      <PrimaryPageSection>
+        <PageSectionContainer>
           <h2 className="text-primary">{choice.sections.science.title}</h2>
           <p className="mb-4">{choice.sections.science.description}</p>
           <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
@@ -74,13 +75,7 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
                   <CardTitle>{title}</CardTitle>
                   <CardDescription>{description}</CardDescription>
                 </CardHeader>
-                <CardContent>
-                  {chart && (
-                    <Suspense fallback={<ChartSkeleton />}>
-                      <LazyChart {...(chart as unknown as TmStatsChartProps)} />
-                    </Suspense>
-                  )}
-                </CardContent>
+                <CardContent>{chart && <TmStatsChart {...(chart as unknown as TmStatsChartProps)} />}</CardContent>
                 <CardFooter>
                   <div className="flex w-full items-start gap-2">
                     <Tooltip>
@@ -124,9 +119,9 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
               ))}
             </dl>
           </div>
-        </div>
-      </section>
+        </PageSectionContainer>
+      </PrimaryPageSection>
       <CallToActionSection {...choice.sections.callToAction} />
-    </div>
+    </PageContent>
   );
 }

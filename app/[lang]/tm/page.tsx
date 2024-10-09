@@ -1,5 +1,9 @@
 import CallToActionSection from '@/components/call-to-action.section';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
+import PageContent from '@/components/ui/page-content';
+import PageSectionContainer from '@/components/ui/page-section.container';
+import PrimaryPageSection from '@/components/ui/page-section.primary';
+import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import type { GlobalPageProps } from '@/lib/types';
 import bird from '@/public/bird.jpg';
 import { Brain, Clock, Feather, Microscope } from 'lucide-react';
@@ -12,21 +16,21 @@ export default async function Tm({ params: { lang } }: GlobalPageProps) {
   } = await getDictionary(lang);
 
   return (
-    <div className="min-h-dvh">
-      <section className="relative bg-emerald-50/30 py-20 backdrop-blur dark:bg-emerald-900/20">
-        <div className="container mx-auto px-4">
+    <PageContent>
+      <PrimaryPageSection>
+        <PageSectionContainer>
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
               <h1 className="text-primary">{tm.title}</h1>
               <p className="mb-6 text-xl text-foreground">{tm.subtitle}</p>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="bg-background/80 py-16 backdrop-blur-xl">
-        <div className="container mx-auto px-4">
+        </PageSectionContainer>
+      </PrimaryPageSection>
+      <SecondaryPageSection>
+        <PageSectionContainer>
           <div className="flex flex-col items-center gap-16 md:flex-row">
-            <div className="mb-8 md:mb-0 md:w-1/2">
+            <div className="md:w-1/2">
               <Image src={bird} alt="" className="rounded-xl opacity-90" placeholder="blur" />
             </div>
             <div className="mb-8 md:mb-0 md:w-1/2">
@@ -40,10 +44,10 @@ export default async function Tm({ params: { lang } }: GlobalPageProps) {
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section className="relative bg-emerald-50/30 py-20 backdrop-blur dark:bg-emerald-900/20">
-        <div className="container mx-auto px-4">
+        </PageSectionContainer>
+      </SecondaryPageSection>
+      <PrimaryPageSection>
+        <PageSectionContainer>
           <h2 className="mb-12 text-primary">{tm.sections.keyFeatures.title}</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
@@ -72,10 +76,10 @@ export default async function Tm({ params: { lang } }: GlobalPageProps) {
                 </Card>
               ))}
           </div>
-        </div>
-      </section>
-      <section className="bg-background/80 py-16 backdrop-blur-xl">
-        <div className="container mx-auto px-4">
+        </PageSectionContainer>
+      </PrimaryPageSection>
+      <SecondaryPageSection>
+        <PageSectionContainer>
           <h2 className="mb-8 text-center text-primary">{tm.sections.howItWorks.title}</h2>
           <div className="mx-auto max-w-3xl">
             <ol className="mx-4 list-decimal space-y-6 text-lg">
@@ -87,9 +91,9 @@ export default async function Tm({ params: { lang } }: GlobalPageProps) {
               ))}
             </ol>
           </div>
-        </div>
-      </section>
+        </PageSectionContainer>
+      </SecondaryPageSection>
       <CallToActionSection {...tm.sections.callToAction} />
-    </div>
+    </PageContent>
   );
 }
