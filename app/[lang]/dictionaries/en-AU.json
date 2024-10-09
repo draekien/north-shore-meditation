@@ -381,6 +381,60 @@
       },
       "subtitle": "Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.",
       "title": "Simplicity in it's Effortlessness"
+    },
+    "way": {
+      "sections": {
+        "callToAction": {
+          "action": "Start Your Journey",
+          "href": "https://au.tm.org/web/learn-tm/north-shore",
+          "subtitle": "Book your Transcendental Meditation® introductory session today.",
+          "title": "Ready to Transform Yourself?"
+        },
+        "faq": {
+          "cards": [
+            {
+              "a": "The TM course is taught over four consecutive days, about 1-2 hours per day.",
+              "q": "How long does it take to learn TM?"
+            },
+            {
+              "a": "No, TM doesn't require any change in lifestyle, beliefs, or diet. It's a simple mental technique.",
+              "q": "Do I need to change my lifestyle to practice TM?"
+            },
+            {
+              "a": "TM is effortless and doesn't involve concentration or control of the mind. It's based on the natural tendency of the mind to move towards greater satisfaction.",
+              "q": "How is TM different from other meditation techniques?"
+            },
+            {
+              "a": "While introductory talks may be available online, personal instruction is always conducted with a certified TM teacher when you begin learning the TM technique.",
+              "q": "Can I learn TM online?"
+            },
+            {
+              "a": "For best results, practice TM for 15-20 minutes twice daily, once in the morning and once in the late afternoon or early evening.",
+              "q": "How often should I practice TM?"
+            }
+          ],
+          "title": "Frequently Asked Questions"
+        },
+        "steps": {
+          "steps": [
+            {
+              "description": "Take your first step by attending a group info session to learn about the TM technique from a certified TM instructor.",
+              "title": "Attend a Free Info Session"
+            },
+            {
+              "description": "Learn the TM technique with the guidance of a certified TM instructor. They personalise the technique to you so you can get the most out of practicing Transcendental Meditation®.",
+              "title": "Unlock the TM Technique"
+            },
+            {
+              "description": "We are committed to providing support and guidance whenever you need it. Reach out anytime for personal one-on-one check-ins of your TM practice, group meditation sessions, TM refresher courses, and more.",
+              "title": "A Lifetime of Support"
+            }
+          ],
+          "title": "3 Steps to Begin Your Transformation"
+        }
+      },
+      "subtitle": "Allow our certified Transcendental Meditation® teachers to personally guide you on your journey of learning the TM technique.",
+      "title": "Uncover Your Way of Practicing Transcendental Meditation®"
     }
   },
   "sections": {
