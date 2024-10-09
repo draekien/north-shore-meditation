@@ -65,12 +65,35 @@
     "toggleButtonAlt": "Toggle navigation menu"
   },
   "pages": {
+    "aboutUs": {
+      "heroAlt": "A photo of grace looking left with a smile",
+      "sections": {
+        "callToAction": {
+          "action": "Book Your Free Session",
+          "href": "https://au.tm.org/web/learn-tm/north-shore",
+          "subtitle": "Join us for a free introductory session and discover the simplicity of Transcendental Meditation®",
+          "title": "Join Grace on Your Journey to Inner Peace"
+        },
+        "grace": {
+          "imageAlt": "A photo of grace laughing happily",
+          "paragraphs": [
+            "Dr. Grace Pei, a former urological surgeon and leader in global clinical research, brings a wealth of medical expertise and personal experience to her Transcendental Meditation® (TM) Centre in Lane Cove. After spending over two decades in the pharmaceutical industry, working across China, Australia, Japan, and Germany, Dr. Pei realized that modern medicine often treats symptoms rather than addressing the root cause of health issues—stress.",
+            "While excelling in her high-stress career, Dr. Pei began to feel the toll of constant pressure on her health. Traditional practices, such as yoga, no longer provided the relief she needed. Her search for a more effective solution led her to TM, a simple and well-researched meditation technique. TM not only transformed her ability to manage stress but also significantly improved her health, leadership skills, and overall sense of well-being.",
+            "Now, Dr. Pei is passionate about sharing this life-changing practice with others. At her new centre, she teaches TM as a holistic approach to health, helping individuals cultivate inner peace and resilience to prevent stress-related conditions before they manifest.",
+            "Whether you're looking to reduce stress, improve focus, or enhance your overall well-being, Dr. Pei's centre offers a supportive space to learn and practice TM, under the guidance of someone who truly understands the balance between modern medicine and natural health solutions."
+          ],
+          "title": "Meet Dr. Grace Pei: Founder of Lane Cove's Transcendental Meditation® Centre"
+        }
+      },
+      "subtitle": "Discover the story behind Grace, our centre, and our commitment to bringing inner peace to our community.",
+      "title": "About North Shore Meditation"
+    },
     "choice": {
       "sections": {
         "callToAction": {
           "action": "Start Your Journey",
           "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Learn more about the science behind Transcendental Meditation® by joining us for a free introductory session.",
+          "subtitle": "Learn more about the science behind Transcendental Meditation® by joining us for a free introductory session",
           "title": "Unlock Your Inner Potential"
         },
         "origins": {
@@ -312,7 +335,7 @@
         "callToAction": {
           "action": "Book Your Free Session",
           "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Join us for a free introductory session and discover the simplicity of Transcendental Meditation®.",
+          "subtitle": "Join us for a free introductory session and discover the simplicity of Transcendental Meditation®",
           "title": "Ready to Experience Effortless Meditation?"
         },
         "howItWorks": {
@@ -382,7 +405,7 @@
         "callToAction": {
           "action": "Start Your Journey",
           "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Book your Transcendental Meditation® introductory session today.",
+          "subtitle": "Book your Transcendental Meditation® introductory session today",
           "title": "Ready to Transform Yourself?"
         },
         "faq": {
@@ -436,7 +459,7 @@
     "callToAction": {
       "action": "Start Your Journey",
       "href": "https://au.tm.org/web/learn-tm/north-shore",
-      "subtitle": "Book your Transcendental Meditation® introductory session today.",
+      "subtitle": "Book your Transcendental Meditation® introductory session today",
       "title": "Ready to Transform Yourself?"
     },
     "hero": {
