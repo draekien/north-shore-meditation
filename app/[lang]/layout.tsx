@@ -21,6 +21,7 @@ import { locales } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
@@ -267,6 +268,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
           <Toaster />
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
