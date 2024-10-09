@@ -103,7 +103,7 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
             <dl>
               {choice.sections.science.definitions.map(({ key, value, href }) => (
                 <Fragment key={key}>
-                  <dt className="font-semibold">
+                  <dt className="font-semibold underline underline-offset-1">
                     {href ? (
                       <Link href={href} className="hover:text-primary focus:text-primary" rel="noreferrer noopener">
                         {key}
