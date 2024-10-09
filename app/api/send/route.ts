@@ -9,7 +9,7 @@ const enquiryEmailAddress = process.env.ENQUIRY_EMAIL_ADDRESS ?? 'delivered@rese
 export async function POST(request: NextRequest) {
   try {
     const formData = await request.json();
-    var contactUsData = await contactUsSchema.parseAsync(formData);
+    const contactUsData = await contactUsSchema.parseAsync(formData);
 
     const { data, error } = await resend.emails.send({
       from: 'Website Enquiries <enquiries@northshoremeditation.au>',
