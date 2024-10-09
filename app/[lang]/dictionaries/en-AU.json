@@ -323,12 +323,38 @@
       "title": "Your Choice for a Better You"
     },
     "contactUs": {
-      "labels": {
-        "email": "Email",
-        "message": "Message"
+      "form": {
+        "disclaimer": "North Shore Meditation does not sell your information or use it for any purpose other than to assist with your learning of Transcendental Meditation®. See our ",
+        "inputs": {
+          "email": {
+            "label": "Email Address"
+          },
+          "existing": {
+            "label": "I have already learned TM"
+          },
+          "givenNames": {
+            "label": "Given Name(s)"
+          },
+          "message": {
+            "label": "Message"
+          },
+          "phone": {
+            "label": "Phone Number"
+          },
+          "privacy": {
+            "label": "I accept the Privacy Notice"
+          },
+          "surname": {
+            "label": "Surname"
+          }
+        },
+        "privacyNotice": "Privacy Notice",
+        "submit": {
+          "label": "Send"
+        }
       },
       "subtitle": "Send us an enquiry using the form below, or give us a ring!",
-      "title": "Your First Step Begins Here"
+      "title": "Let's get in touch"
     },
     "tm": {
       "sections": {
