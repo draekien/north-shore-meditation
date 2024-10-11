@@ -1,3 +1,4 @@
+import ProgressBar from '@/components/progress-bar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 import { Button } from '@/components/ui/button';
@@ -269,6 +270,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        <ProgressBar />
       </body>
     </html>
   );
