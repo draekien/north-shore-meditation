@@ -4,7 +4,7 @@ import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import type { GlobalPageProps } from '@/lib/types';
-import graceAbout from '@/public/grace_about.jpg';
+import graceAbout from '@/public/grace_about.webp';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
 

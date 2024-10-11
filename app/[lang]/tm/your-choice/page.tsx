@@ -8,7 +8,7 @@ import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import maharishi from '@/public/maharishi.jpg';
+import maharishi from '@/public/maharishi.webp';
 import omegaSvg from '@/public/undraw_omega_-4-kob.svg';
 import Image from 'next/image';
 import Link from 'next/link';
