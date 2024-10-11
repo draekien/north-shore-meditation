@@ -1,4 +1,5 @@
 import CallToActionSection from '@/components/call-to-action.section';
+import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
@@ -11,6 +12,7 @@ import guidanceSvg from '@/public/undraw_fatherhood_-7-i19.svg';
 import professorSvg from '@/public/undraw_professor_re_mj1s.svg';
 import supportSvg from '@/public/undraw_showing_support_re_5f2v.svg';
 import Image from 'next/image';
+import Link from 'next/link';
 import { getDictionary } from '../../dictionaries';
 
 export default async function YourWayPage({ params: { lang } }: GlobalPageProps) {
@@ -46,7 +48,7 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
                 ...image,
                 ...way.sections.steps.steps[idx],
               }))
-              .map(({ src, alt, title, description }, index) => (
+              .map(({ src, alt, title, description, action }, index) => (
                 <div
                   key={title}
                   className={cn('flex flex-col gap-4 md:flex-row md:gap-16', index === 1 ? 'md:flex-row-reverse' : '')}
@@ -57,6 +59,11 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
                   <div className="md:max-w-1/2 mx-8">
                     <h3>{title}</h3>
                     <p>{description}</p>
+                    {action && (
+                      <Link href={action.href}>
+                        <Button className="mt-4">{action.label}</Button>
+                      </Link>
+                    )}
                   </div>
                 </div>
               ))}
