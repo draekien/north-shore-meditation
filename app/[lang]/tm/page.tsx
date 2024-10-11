@@ -5,7 +5,7 @@ import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import type { GlobalPageProps } from '@/lib/types';
-import bird from '@/public/bird.jpg';
+import bird from '@/public/bird.webp';
 import { Brain, Clock, Feather, Microscope } from 'lucide-react';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
