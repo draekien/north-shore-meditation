@@ -1,4 +1,3 @@
-import CallToActionSection from '@/components/call-to-action.section';
 import TmStatsChart, { type TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
@@ -121,7 +120,6 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
           </div>
         </PageSectionContainer>
       </PrimaryPageSection>
-      <CallToActionSection {...choice.sections.callToAction} />
     </PageContent>
   );
 }

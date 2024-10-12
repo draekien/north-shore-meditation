@@ -1,3 +1,5 @@
+import IntroCallToActionSection from '@/components/call-to-actions/intro.cta';
+import LearnCallToActionSection from '@/components/call-to-actions/learn.cta';
 import ProgressBar from '@/components/progress-bar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
@@ -223,7 +225,12 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                 </Link>
               </div>
             </header>
-            <main>{children}</main>
+            <main>
+              {children}
+
+              <IntroCallToActionSection {...dict.sections.ctas.intro} />
+              <LearnCallToActionSection {...dict.sections.ctas.learn} />
+            </main>
             <footer className="bg-emerald-900 py-8 text-white">
               <div className="container mx-auto px-4">
                 <div className="mb-8 flex flex-col items-center justify-between md:flex-row">

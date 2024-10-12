@@ -22,7 +22,7 @@ export type WhyTmSectionProps = {
 
 export default function WhyTmSection({ title, cards = [] }: WhyTmSectionProps) {
   return (
-    <section className="py-16">
+    <section id="why-tm" className="py-16">
       <div className="container mx-auto px-4 md:px-12 lg:px-24">
         <h2 className="mb-12 text-center text-primary">{title}</h2>
         <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">

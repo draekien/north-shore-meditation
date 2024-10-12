@@ -1,4 +1,3 @@
-import CallToActionSection from '@/components/call-to-action.section';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
@@ -40,7 +39,6 @@ export default async function AboutUsPage({ params: { lang } }: GlobalPageProps)
           </div>
         </PageSectionContainer>
       </SecondaryPageSection>
-      <CallToActionSection {...aboutUs.sections.callToAction} />
     </PageContent>
   );
 }
