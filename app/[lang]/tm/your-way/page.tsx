@@ -7,8 +7,8 @@ import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import meditateSvg from '@/public/meditate.svg';
+import introSvg from '@/public/undraw_educator_re_ju47.svg';
 import guidanceSvg from '@/public/undraw_fatherhood_-7-i19.svg';
-import professorSvg from '@/public/undraw_professor_re_mj1s.svg';
 import supportSvg from '@/public/undraw_showing_support_re_5f2v.svg';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -38,29 +38,33 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
         <PageSectionContainer>
           <h2 className="mb-24 text-center text-primary">{way.sections.steps.title}</h2>
           <div className="mx-auto flex flex-col justify-around gap-24 md:w-2/3">
-            {[
-              { src: professorSvg, alt: '' },
-              { src: meditateSvg, alt: '' },
-              { src: supportSvg, alt: '' },
-            ]
+            {(
+              [
+                { src: introSvg, textColor: 'text-secondary', buttonVariant: 'secondary' },
+                { src: meditateSvg, textColor: 'text-emerald-600 dark:text-emerald-500', buttonVariant: 'default' },
+                { src: supportSvg, textColor: 'text-purple-500 dark:text-purple-600', buttonVariant: '' },
+              ] as const
+            )
               .map((image, idx) => ({
                 ...image,
                 ...way.sections.steps.steps[idx],
               }))
-              .map(({ src, alt, title, description, action }, index) => (
+              .map(({ src, title, description, action, textColor, buttonVariant }, index) => (
                 <div
                   key={title}
                   className={cn('flex flex-col gap-4 md:flex-row md:gap-16', index === 1 ? 'md:flex-row-reverse' : '')}
                 >
                   <div className="mx-8 md:mx-0">
-                    <Image src={src} alt={alt} />
+                    <Image src={src} alt="" />
                   </div>
                   <div className="md:max-w-1/2 mx-8">
-                    <h3>{title}</h3>
+                    <h3 className={textColor}>{title}</h3>
                     <p>{description}</p>
                     {action && (
                       <Link href={action.href}>
-                        <Button className="mt-4">{action.label}</Button>
+                        <Button className="mt-4" variant={buttonVariant || 'default'}>
+                          {action.label}
+                        </Button>
                       </Link>
                     )}
                   </div>
