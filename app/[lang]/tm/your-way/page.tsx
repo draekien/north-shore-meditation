@@ -48,7 +48,7 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
               [
                 { src: introSvg, textColor: 'text-secondary', buttonVariant: 'secondary' },
                 { src: meditateSvg, textColor: 'text-emerald-600 dark:text-emerald-500', buttonVariant: 'default' },
-                { src: supportSvg, textColor: 'text-purple-500 dark:text-purple-600', buttonVariant: '' },
+                { src: supportSvg, textColor: 'text-purple-500 dark:text-purple-600', buttonVariant: 'tertiary' },
               ] as const
             )
               .map((image, idx) => ({

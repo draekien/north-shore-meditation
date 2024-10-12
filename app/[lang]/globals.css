@@ -42,6 +42,8 @@ h1:lang(zh-Hans), h2:lang(zh-Hans), h3:lang(zh-Hans), h4:lang(zh-Hans) {
     --accent-foreground: 240 5.9% 10%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
+    --tertiary: 271.5 81.3% 55.9%;
+    --tertiary-foreground: 355.7 100% 97.3%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 142.1 76.2% 36.3%;
@@ -70,6 +72,8 @@ h1:lang(zh-Hans), h2:lang(zh-Hans), h3:lang(zh-Hans), h4:lang(zh-Hans) {
     --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 85.7% 97.3%;
+    --tertiary: 271.5 81.3% 55.9%;
+    --tertiary-foreground: 355.7 100% 97.3%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 142.4 71.8% 29.2%;

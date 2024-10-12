@@ -456,7 +456,11 @@
               "title": "Unlock the TM Technique"
             },
             {
-              "description": "We are committed to providing support and guidance whenever you need it. Reach out anytime for personal one-on-one check-ins of your TM practice, group meditation sessions, TM refresher courses, and more.",
+              "action": {
+                "href": "/contact-us",
+                "label": "Contact Us"
+              },
+              "description": "We are committed to providing support and guidance whenever you need it. Reach out anytime to learn about personal one-on-one check-ins of your TM practice, group meditation sessions, TM refresher courses, and more.",
               "title": "A Lifetime of Support"
             }
           ],
