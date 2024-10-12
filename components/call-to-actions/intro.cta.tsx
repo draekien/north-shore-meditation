@@ -1,9 +1,9 @@
 import { cn } from '@/lib/utils';
 import searching from '@/public/undraw_searching_re_3ra9.svg';
 import Image from 'next/image';
-import Link from 'next/link';
 import { Suspense } from 'react';
 import { Button } from '../ui/button';
+import ButtonLink from '../ui/button-link';
 import {
   Dialog,
   DialogContent,
@@ -47,11 +47,9 @@ export default function IntroCallToActionSection({
           <div className="md:w-1/2">
             <p className="my-4 text-xl text-foreground">{subtitle}</p>
             <div className="flex flex-col gap-4 md:flex-row">
-              <Link href={href} referrerPolicy="no-referrer">
-                <Button className="px-8 py-3 text-lg font-semibold" size="lg" variant="secondary">
-                  {action}
-                </Button>
-              </Link>
+              <ButtonLink href={href} referrerPolicy="no-referrer" size="lg" variant="secondary">
+                {action}
+              </ButtonLink>
               <Dialog>
                 <DialogTrigger asChild>
                   <Button variant="outline" size="lg">
@@ -69,11 +67,9 @@ export default function IntroCallToActionSection({
                   <DialogFooter>
                     <div className="flex items-center justify-between gap-4">
                       <small className="text-sm">{dialogFooter}</small>
-                      <Link href={href} referrerPolicy="no-referrer">
-                        <Button variant="link" size="sm">
-                          {dialogFooterCta}
-                        </Button>
-                      </Link>
+                      <ButtonLink href={href} referrerPolicy="no-referrer" variant="link" size="sm">
+                        {dialogFooterCta}
+                      </ButtonLink>
                     </div>
                   </DialogFooter>
                 </DialogContent>

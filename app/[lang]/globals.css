@@ -87,7 +87,7 @@ h1:lang(zh-Hans), h2:lang(zh-Hans), h3:lang(zh-Hans), h4:lang(zh-Hans) {
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border box-border;
   }
   body {
     @apply bg-background text-foreground;

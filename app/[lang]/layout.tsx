@@ -4,6 +4,7 @@ import ProgressBar from '@/components/progress-bar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
 import { Button } from '@/components/ui/button';
+import ButtonLink from '@/components/ui/button-link';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import {
   MobileNavigationMenuListItem,
@@ -154,14 +155,14 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
-                    <Link
+                    <ButtonLink
                       href={dict.nav.callToAction.href}
                       referrerPolicy="no-referrer"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
-                      <Button className="font-semibold">{dict.nav.callToAction.action}</Button>
-                    </Link>
+                      {dict.nav.callToAction.action}
+                    </ButtonLink>
                   </div>
                 </SheetContent>
               </Sheet>
@@ -223,14 +224,14 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                   </NavigationMenuList>
                 </NavigationMenu>
                 <ModeToggle />
-                <Link
+                <ButtonLink
                   href={dict.nav.callToAction.href}
                   referrerPolicy="no-referrer"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  <Button className="font-semibold">{dict.nav.callToAction.action}</Button>
-                </Link>
+                  {dict.nav.callToAction.action}
+                </ButtonLink>
               </div>
             </header>
             <main>
