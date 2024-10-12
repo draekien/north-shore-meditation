@@ -481,15 +481,15 @@
         "title": "Curious about TM?",
         "video": {
           "dialogDescription": "Watch a short TM information session hosted by Bob Roth where he explains how the TM technique works.",
-          "dialogFooter": "Learn more about the TM technique by attending a free information session",
-          "dialogFooterCta": "Find one now",
+          "dialogFooter": "Curiosity sated? Learn TM now by enroling in a 4 day course with North Shore Meditation.",
+          "dialogFooterCta": "Start Your Journey",
           "dialogTitle": "Introduction to Transcendental Meditation®",
           "dialogTrigger": "Watch a Video"
         }
       },
       "learn": {
-        "action": "Learn TM Now",
-        "helpText": "Clicking on the \"Learn TM Now\" button above will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to enrole into a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
+        "action": "Start Your Journey",
+        "helpText": "Clicking on the \"Start Your Journey\" button above will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to enrole into a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
         "href": "https://au.tm.org/web/learn-tm/north-shore",
         "subtitle": "Enrole in a TM course through North Shore Meditation centre today",
         "title": "Ready to Transform Yourself?"

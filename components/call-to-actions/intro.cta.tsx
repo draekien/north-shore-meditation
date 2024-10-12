@@ -67,14 +67,14 @@ export default function IntroCallToActionSection({
                     <IntroVideo dialogTitle={dialogTitle} />
                   </Suspense>
                   <DialogFooter>
-                    <p className="flex gap-4 text-sm">
-                      <span>{dialogFooter}</span>
+                    <div className="flex items-center justify-between gap-4">
+                      <small className="text-sm">{dialogFooter}</small>
                       <Link href={href} referrerPolicy="no-referrer">
                         <Button variant="link" size="sm">
                           {dialogFooterCta}
                         </Button>
                       </Link>
-                    </p>
+                    </div>
                   </DialogFooter>
                 </DialogContent>
               </Dialog>
