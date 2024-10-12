@@ -25,6 +25,7 @@ import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { VercelToolbar } from '@vercel/toolbar/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
@@ -66,6 +67,7 @@ export async function generateStaticParams() {
 
 export default async function RootLayout({ children, params }: Readonly<PropsWithChildren<GlobalPageProps>>) {
   const dict = await getDictionary(params.lang);
+  const shouldInjectToolbar = process.env.NODE_ENV === 'development';
   return (
     <html lang={params.lang}>
       <body className={`${geistSans.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}>
@@ -277,6 +279,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
         </ThemeProvider>
         <Analytics />
         <SpeedInsights />
+        {shouldInjectToolbar && <VercelToolbar />}
         <ProgressBar />
       </body>
     </html>
