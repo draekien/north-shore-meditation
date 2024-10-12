@@ -4,8 +4,14 @@ import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import type { GlobalPageProps } from '@/lib/types';
 import graceAbout from '@/public/grace_about.webp';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
+
+export const metadata: Metadata = {
+  title: 'North Shore Meditation | About Us',
+  description: 'Get to know the North Shore Meditation Centre',
+};
 
 export default async function AboutUsPage({ params: { lang } }: GlobalPageProps) {
   const {

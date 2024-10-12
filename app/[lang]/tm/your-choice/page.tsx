@@ -9,10 +9,16 @@ import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import maharishi from '@/public/maharishi.webp';
 import omegaSvg from '@/public/undraw_omega_-4-kob.svg';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { getDictionary } from '../../dictionaries';
+
+export const metadata: Metadata = {
+  title: 'North Shore Meditation | Science behind TM',
+  description: 'Discover the science behind TM',
+};
 
 export default async function YourChoicePage({ params: { lang } }: GlobalPageProps) {
   const {

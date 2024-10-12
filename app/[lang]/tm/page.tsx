@@ -6,8 +6,15 @@ import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import type { GlobalPageProps } from '@/lib/types';
 import bird from '@/public/bird.webp';
 import { Brain, Clock, Feather, Microscope } from 'lucide-react';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
+
+export const metadata: Metadata = {
+  title: 'North Shore Meditation | What Is TM',
+  description:
+    'Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.',
+};
 
 export default async function Tm({ params: { lang } }: GlobalPageProps) {
   const {

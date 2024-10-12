@@ -10,9 +10,15 @@ import meditateSvg from '@/public/meditate.svg';
 import introSvg from '@/public/undraw_educator_re_ju47.svg';
 import guidanceSvg from '@/public/undraw_fatherhood_-7-i19.svg';
 import supportSvg from '@/public/undraw_showing_support_re_5f2v.svg';
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getDictionary } from '../../dictionaries';
+
+export const metadata: Metadata = {
+  title: 'North Shore Meditation | Steps To Learn TM',
+  description: 'Uncover your way of practicing TM.',
+};
 
 export default async function YourWayPage({ params: { lang } }: GlobalPageProps) {
   const {
