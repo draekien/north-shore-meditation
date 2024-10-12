@@ -29,7 +29,7 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
             </div>
             <div>
               <h1 className="text-primary">{way.title}</h1>
-              <p>{way.subtitle}</p>
+              <p className="text-xl">{way.subtitle}</p>
             </div>
           </div>
         </PageSectionContainer>
