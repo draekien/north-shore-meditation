@@ -3,7 +3,15 @@ import searching from '@/public/undraw_searching_re_3ra9.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '../ui/button';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '../ui/dialog';
 import type { CallToAction } from './types';
 
 export type IntroCallToAction = {
@@ -11,6 +19,8 @@ export type IntroCallToAction = {
     dialogTitle: string;
     dialogDescription: string;
     dialogTrigger: string;
+    dialogFooter: string;
+    dialogFooterCta: string;
   };
 } & CallToAction;
 
@@ -21,7 +31,7 @@ export default function IntroCallToActionSection({
   subtitle,
   helpText,
   className,
-  video: { dialogTitle, dialogTrigger, dialogDescription },
+  video: { dialogTitle, dialogTrigger, dialogDescription, dialogFooter, dialogFooterCta },
 }: IntroCallToAction) {
   return (
     <section id="intro-cta" className={cn('py-16 backdrop-blur-sm', className)}>
@@ -32,11 +42,16 @@ export default function IntroCallToActionSection({
             <Image src={searching} alt="" height={300} />
           </div>
           <div className="md:w-1/2">
-            <p className="my-4 text-xl text-foreground">
-              {subtitle}
+            <p className="my-4 text-xl text-foreground">{subtitle}</p>
+            <div className="flex flex-col gap-4 md:flex-row">
+              <Link href={href} referrerPolicy="no-referrer">
+                <Button className="px-8 py-3 text-lg font-semibold" size="lg" variant="secondary">
+                  {action}
+                </Button>
+              </Link>
               <Dialog>
-                <DialogTrigger>
-                  <Button variant="link" className="px-1 text-lg">
+                <DialogTrigger asChild>
+                  <Button variant="outline" size="lg">
                     {dialogTrigger}
                   </Button>
                 </DialogTrigger>
@@ -54,15 +69,18 @@ export default function IntroCallToActionSection({
                     allowFullScreen
                     loading="lazy"
                   ></iframe>
+                  <DialogFooter>
+                    <p className="flex gap-4 text-sm">
+                      <span>{dialogFooter}</span>
+                      <Link href={href} referrerPolicy="no-referrer">
+                        <Button variant="link" size="sm">
+                          {dialogFooterCta}
+                        </Button>
+                      </Link>
+                    </p>
+                  </DialogFooter>
                 </DialogContent>
               </Dialog>
-            </p>
-            <div className="flex flex-row gap-4 align-middle">
-              <Link href={href} referrerPolicy="no-referrer">
-                <Button className="px-8 py-3 text-lg font-semibold" size="lg" variant="secondary">
-                  {action}
-                </Button>
-              </Link>
             </div>
             <div className="mt-16 text-sm">
               <small>{helpText}</small>
