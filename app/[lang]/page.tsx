@@ -1,4 +1,3 @@
-import CallToActionSection from '@/components/call-to-action.section';
 import HeroSection from '@/components/hero.section';
 import LearnFromGraceSection from '@/components/learn-from-grace.section';
 import WhyTmSection from '@/components/why-tm.section';
@@ -12,7 +11,6 @@ export default async function Home({ params: { lang } }: GlobalPageProps) {
       <HeroSection {...dict.sections.hero} />
       <WhyTmSection {...dict.sections.whyTm} />
       <LearnFromGraceSection {...dict.sections.learnFromGrace} />
-      <CallToActionSection {...dict.sections.callToAction} />
     </div>
   );
 }

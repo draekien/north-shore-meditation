@@ -1,4 +1,3 @@
-import CallToActionSection from '@/components/call-to-action.section';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
@@ -87,7 +86,6 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
           </div>
         </PageSectionContainer>
       </PrimaryPageSection>
-      <CallToActionSection {...way.sections.callToAction} />
     </PageContent>
   );
 }

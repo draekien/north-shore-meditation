@@ -1,4 +1,3 @@
-import CallToActionSection from '@/components/call-to-action.section';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
@@ -93,7 +92,6 @@ export default async function Tm({ params: { lang } }: GlobalPageProps) {
           </div>
         </PageSectionContainer>
       </SecondaryPageSection>
-      <CallToActionSection {...tm.sections.callToAction} />
     </PageContent>
   );
 }

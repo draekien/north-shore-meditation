@@ -12,7 +12,7 @@
     }
   },
   "footer": {
-    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharishi Foundation Australia. Clicking the \"Start Your Journey\" or \"Book Your Free Session\" buttons on this website will navigate you to the official booking system of Maharishi Foundation Australia where you will be able to book a free information session at the North Shore Transcendental Meditation® Center."
+    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharishi Foundation Australia. Clicking the \"Start Your Journey\" button on this website will navigate you to the official booking system of Maharishi Foundation Australia where you will be able to enrole into a 4 day Transcendental Meditation® course at the North Shore Meditation Center."
   },
   "nav": {
     "aboutUs": "About Us",
@@ -68,12 +68,6 @@
     "aboutUs": {
       "heroAlt": "A photo of grace looking left with a smile",
       "sections": {
-        "callToAction": {
-          "action": "Book Your Free Session",
-          "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Join us for a free introductory session and discover the simplicity of Transcendental Meditation®",
-          "title": "Join Grace on Your Journey to Inner Peace"
-        },
         "grace": {
           "imageAlt": "A photo of grace laughing happily",
           "paragraphs": [
@@ -90,12 +84,6 @@
     },
     "choice": {
       "sections": {
-        "callToAction": {
-          "action": "Start Your Journey",
-          "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Learn more about the science behind Transcendental Meditation® by joining us for a free introductory session",
-          "title": "Unlock Your Inner Potential"
-        },
         "origins": {
           "paragraphs": [
             "Transcendental Meditation (TM) is more than just a relaxation technique — it's a journey rooted in one of the world's most ancient traditions. Developed from the thousands-of-years-old Vedic wisdom of India, TM offers a simple and effective way to experience profound inner peace and clarity.",
@@ -360,12 +348,6 @@
     },
     "tm": {
       "sections": {
-        "callToAction": {
-          "action": "Book Your Free Session",
-          "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Join us for a free introductory session and discover the simplicity of Transcendental Meditation®",
-          "title": "Ready to Experience Effortless Meditation?"
-        },
         "howItWorks": {
           "steps": [
             {
@@ -430,12 +412,6 @@
     },
     "way": {
       "sections": {
-        "callToAction": {
-          "action": "Start Your Journey",
-          "href": "https://au.tm.org/web/learn-tm/north-shore",
-          "subtitle": "Book your Transcendental Meditation® introductory session today",
-          "title": "Ready to Transform Yourself?"
-        },
         "faq": {
           "cards": [
             {
@@ -492,11 +468,21 @@
     }
   },
   "sections": {
-    "callToAction": {
-      "action": "Start Your Journey",
-      "href": "https://au.tm.org/web/learn-tm/north-shore",
-      "subtitle": "Book your Transcendental Meditation® introductory session today",
-      "title": "Ready to Transform Yourself?"
+    "ctas": {
+      "intro": {
+        "action": "Find a Session",
+        "helpText": "Clicking on the \"Find a Session\" button above will navigate you to the official website of Maharashi Foundation Australia where you will be able to reserve a place in a free, 45 minute information session about the Transcendental Meditation® technique at the North Shore Meditation Centre.",
+        "href": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
+        "subtitle": "Sate your curiosity by attending a free information session about the TM technique",
+        "title": "Curious about TM?"
+      },
+      "learn": {
+        "action": "Learn TM Now",
+        "helpText": "Clicking on the \"Learn TM Now\" button above will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to enrole into a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
+        "href": "https://au.tm.org/web/learn-tm/north-shore",
+        "subtitle": "Enrole in a TM course through North Shore Meditation centre today",
+        "title": "Ready to Transform Yourself?"
+      }
     },
     "hero": {
       "action": "Start Your Journey",
