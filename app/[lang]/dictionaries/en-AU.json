@@ -473,12 +473,12 @@
         "action": "Find a Session",
         "helpText": "Clicking on the \"Find a Session\" button above will navigate you to the official website of Maharashi Foundation Australia where you will be able to reserve a place in a free, 45 minute information session about the Transcendental Meditation® technique at the North Shore Meditation Centre.",
         "href": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
-        "subtitle": "Sate your curiosity by attending a free information session about the TM technique. Not quite ready? Watch Bob Roth describe the TM technique",
+        "subtitle": "Sate your curiosity by attending a free information session about the TM technique. Not quite ready?",
         "title": "Curious about TM?",
         "video": {
-          "dialogDescription": "",
-          "dialogTitle": "Introduction to Transcendental Meditation® by Bob Roth",
-          "dialogTrigger": "Watch"
+          "dialogDescription": "Watch a short TM information session hosted by Bob Roth where he explains how the TM technique works.",
+          "dialogTitle": "Introduction to Transcendental Meditation®",
+          "dialogTrigger": "Watch a video about the TM technique."
         }
       },
       "learn": {
