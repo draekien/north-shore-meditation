@@ -498,6 +498,8 @@
     "hero": {
       "action": "Start Your Journey",
       "href": "https://au.tm.org/web/learn-tm/north-shore",
+      "session": "Free Info Session",
+      "sessionHref": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
       "subtitle": "Discover the power of Transcendental Meditation®",
       "title": "The Kingdom of Heaven is Within"
     },

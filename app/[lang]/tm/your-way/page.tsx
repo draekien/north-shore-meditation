@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import ButtonLink from '@/components/ui/button-link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
@@ -12,7 +12,6 @@ import guidanceSvg from '@/public/undraw_fatherhood_-7-i19.svg';
 import supportSvg from '@/public/undraw_showing_support_re_5f2v.svg';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { getDictionary } from '../../dictionaries';
 
 export const metadata: Metadata = {
@@ -67,11 +66,9 @@ export default async function YourWayPage({ params: { lang } }: GlobalPageProps)
                     <h3 className={textColor}>{title}</h3>
                     <p>{description}</p>
                     {action && (
-                      <Link href={action.href}>
-                        <Button className="mt-4" variant={buttonVariant || 'default'}>
-                          {action.label}
-                        </Button>
-                      </Link>
+                      <ButtonLink href={action.href} className="mt-4" variant={buttonVariant || 'default'}>
+                        {action.label}
+                      </ButtonLink>
                     )}
                   </div>
                 </div>

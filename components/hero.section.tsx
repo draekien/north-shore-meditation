@@ -1,16 +1,17 @@
 import heroImage from '@/public/hero.webp';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from './ui/button';
+import ButtonLink from './ui/button-link';
 
 export type HeroSectionProps = {
   title: string;
   subtitle: string;
   action: string;
   href: string;
+  session: string;
+  sessionHref: string;
 };
 
-export default function HeroSection({ title, subtitle, action, href }: HeroSectionProps) {
+export default function HeroSection({ title, subtitle, action, href, session, sessionHref }: HeroSectionProps) {
   return (
     <section className="relative flex h-[calc(100dvh-5rem)] items-center justify-center">
       <Image
@@ -25,11 +26,22 @@ export default function HeroSection({ title, subtitle, action, href }: HeroSecti
       <div className="relative text-center text-yellow-900 drop-shadow-2xl">
         <h1 className="mb-4">{title}</h1>
         <p className="mb-8 text-xl">{subtitle}</p>
-        <Link href={href} referrerPolicy="no-referrer" target="_blank" rel="noreferrer noopener">
-          <Button className="px-8 py-3 text-lg font-semibold" size="lg">
+        <div className="flex justify-center gap-4">
+          <ButtonLink
+            href={sessionHref}
+            referrerPolicy="no-referrer"
+            target="_blank"
+            rel="noreferrer noopener"
+            size="lg"
+            variant="outline-secondary"
+            className="border-yellow-900 text-yellow-900 hover:text-yellow-900/50 focus:text-yellow-900/50"
+          >
+            {session}
+          </ButtonLink>
+          <ButtonLink href={href} referrerPolicy="no-referrer" target="_blank" rel="noreferrer noopener" size="lg">
             {action}
-          </Button>
-        </Link>
+          </ButtonLink>
+        </div>
       </div>
     </section>
   );

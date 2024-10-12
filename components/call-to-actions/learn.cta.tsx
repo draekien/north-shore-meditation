@@ -1,8 +1,7 @@
 import { cn } from '@/lib/utils';
 import studying from '@/public/undraw_studying_re_deca.svg';
 import Image from 'next/image';
-import Link from 'next/link';
-import { Button } from '../ui/button';
+import ButtonLink from '../ui/button-link';
 import type { CallToAction } from './types';
 
 export default function LearnCallToActionSection({ action, href, title, subtitle, helpText, className }: CallToAction) {
@@ -22,11 +21,9 @@ export default function LearnCallToActionSection({ action, href, title, subtitle
           </div>
           <div className="text-right md:w-1/2">
             <p className="my-4 text-xl">{subtitle}</p>
-            <Link href={href} referrerPolicy="no-referrer">
-              <Button className="px-8 py-3 text-lg font-semibold" size="lg">
-                {action}
-              </Button>
-            </Link>
+            <ButtonLink href={href} referrerPolicy="no-referrer" size="lg">
+              {action}
+            </ButtonLink>
             <div className="mt-16 text-left text-sm md:text-right">
               <small>{helpText}</small>
             </div>
