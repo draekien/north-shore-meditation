@@ -1,19 +1,25 @@
-import TmStatsChart, { type TmStatsChartProps } from '@/components/tm-stats-chart';
+import { type TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import maharishi from '@/public/maharishi.webp';
 import omegaSvg from '@/public/undraw_omega_-4-kob.svg';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Fragment } from 'react';
 import { getDictionary } from '../../dictionaries';
+
+const DynamicChart = dynamic(() => import('@/components/tm-stats-chart'), {
+  loading: () => <Skeleton className="h-[200px] w-full" />,
+});
 
 export const metadata: Metadata = {
   title: 'North Shore Meditation | Science behind TM',
@@ -80,7 +86,7 @@ export default async function YourChoicePage({ params: { lang } }: GlobalPagePro
                   <CardTitle>{title}</CardTitle>
                   <CardDescription>{description}</CardDescription>
                 </CardHeader>
-                <CardContent>{chart && <TmStatsChart {...(chart as unknown as TmStatsChartProps)} />}</CardContent>
+                <CardContent>{chart && <DynamicChart {...(chart as unknown as TmStatsChartProps)} />}</CardContent>
                 <CardFooter>
                   <div className="flex w-full items-start gap-2">
                     <Tooltip>
