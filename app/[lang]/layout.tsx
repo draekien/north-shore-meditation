@@ -18,6 +18,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Skeleton } from '@/components/ui/skeleton';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { locales } from '@/lib/constants';
@@ -28,6 +29,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
 import localFont from 'next/font/local';
 import Link from 'next/link';
@@ -35,6 +37,10 @@ import type { PropsWithChildren } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../components/ui/accordion';
 import { getDictionary } from './dictionaries';
 import './globals.css';
+
+const DynamicMap = dynamic(() => import('@/components/gmap'), {
+  loading: () => <Skeleton className="h-80 w-80 rounded-lg md:h-[400px] md:w-[800px]" />,
+});
 
 const maShanZheng = Ma_Shan_Zheng({
   display: 'swap',
@@ -264,13 +270,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                 </div>
                 <div className="flex flex-wrap-reverse items-end justify-center gap-8 md:justify-between">
                   <small className="w-80 md:w-1/3">{dict.footer.disclaimer}</small>
-                  <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3314.8973186975018!2d151.16486469475902!3d-33.81496280426766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12afedfeb57fd9%3A0x5f070473e99a3205!2sNorth%20Shore%20Transcendental%20Meditation%20Sydney!5e0!3m2!1sen!2sau!4v1728299134488!5m2!1sen!2sau"
-                    className="h-80 w-80 rounded-lg border-0 md:h-[400px] md:w-[800px]"
-                    allowFullScreen={false}
-                    loading="lazy"
-                    referrerPolicy="no-referrer-when-downgrade"
-                  ></iframe>
+                  <DynamicMap />
                 </div>
               </div>
             </footer>
