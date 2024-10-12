@@ -2,6 +2,7 @@ import { cn } from '@/lib/utils';
 import searching from '@/public/undraw_searching_re_3ra9.svg';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Suspense } from 'react';
 import { Button } from '../ui/button';
 import {
   Dialog,
@@ -12,6 +13,8 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '../ui/dialog';
+import { Skeleton } from '../ui/skeleton';
+import IntroVideo from './intro-video';
 import type { CallToAction } from './types';
 
 export type IntroCallToAction = {
@@ -60,15 +63,9 @@ export default function IntroCallToActionSection({
                     <DialogTitle>{dialogTitle}</DialogTitle>
                     <DialogDescription>{dialogDescription}</DialogDescription>
                   </DialogHeader>
-                  <iframe
-                    className="aspect-video w-full rounded-md border-0"
-                    src="https://www.youtube-nocookie.com/embed/fHBUjQCIiqg?si=uBj1TNDTPR7Xgcuk"
-                    title={dialogTitle}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                    loading="lazy"
-                  ></iframe>
+                  <Suspense fallback={<Skeleton className="aspect-video w-full" />}>
+                    <IntroVideo dialogTitle={dialogTitle} />
+                  </Suspense>
                   <DialogFooter>
                     <p className="flex gap-4 text-sm">
                       <span>{dialogFooter}</span>
