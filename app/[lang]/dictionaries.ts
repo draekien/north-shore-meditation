@@ -9,7 +9,7 @@ export type Dictionaries = {
 };
 
 const dictionaries: Dictionaries = {
-  'en-AU': () => import('./dictionaries/en-AU.json').then((module) => module.default),
+  en: () => import('./dictionaries/en.json').then((module) => module.default),
   // 'zh-Hans': () => import('./dictionaries/zh-Hans.json').then((module) => module.default),
 };
 
