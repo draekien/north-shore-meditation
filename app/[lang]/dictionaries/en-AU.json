@@ -68,6 +68,22 @@
     "aboutUs": {
       "heroAlt": "A photo of grace looking left with a smile",
       "sections": {
+        "centre": {
+          "bus": {
+            "description": "North Shore Meditation Centre is conveniently located in the Lane Cove Village near the Lane Cove Library, within easy walking distance from the Lane Cove Interchange.",
+            "title": "Taking the Bus?"
+          },
+          "driving": {
+            "description": "There are more than 1,000 free parking spaces around the centre in the Lane Cove Village, making it an easy place for anyone in the North Shore, Hills districts, and Ryde areas to learn TM. We recommend parking at the Lane Cove Market Square Carpark.",
+            "title": "Driving?"
+          },
+          "remote": {
+            "action": "Get in touch",
+            "description": "We also support keen learners and TM meditators from the Central Coast, Newcastle, Northern Beaches, and Blue Mountains. Contact us to find out how you can be supported.",
+            "title": "Can't Come to Us?"
+          },
+          "title": "At the Centre of the North Shore"
+        },
         "grace": {
           "imageAlt": "A photo of grace laughing happily",
           "paragraphs": [

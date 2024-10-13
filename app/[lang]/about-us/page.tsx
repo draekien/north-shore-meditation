@@ -1,3 +1,6 @@
+import MarketSquareCarParkMap from '@/components/maps/car-park-market-square';
+import WalkingDirections from '@/components/maps/walk-directions';
+import ButtonLink from '@/components/ui/button-link';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
@@ -45,6 +48,34 @@ export default async function AboutUsPage({ params: { lang } }: GlobalPageProps)
           </div>
         </PageSectionContainer>
       </SecondaryPageSection>
+      <PrimaryPageSection>
+        <PageSectionContainer>
+          <h2 className="mb-12 text-center text-primary">{aboutUs.sections.centre.title}</h2>
+          <div className="flex flex-col justify-center gap-8 md:min-h-[50dvh] md:flex-row md:flex-wrap md:gap-16">
+            <div className="flex flex-col gap-8 lg:w-3/4 lg:flex-row-reverse">
+              <div className="lg:w-1/2">
+                <h3>{aboutUs.sections.centre.bus.title}</h3>
+                <p>{aboutUs.sections.centre.bus.description}</p>
+              </div>
+              <WalkingDirections className="lg:h-80 lg:w-1/2" />
+            </div>
+            <div className="flex flex-col gap-8 lg:w-3/4 lg:flex-row">
+              <div className="lg:w-1/2">
+                <h3>{aboutUs.sections.centre.driving.title}</h3>
+                <p>{aboutUs.sections.centre.driving.description}</p>
+              </div>
+              <MarketSquareCarParkMap className="lg:h-80 lg:w-1/2" />
+            </div>
+            <div className="flex flex-col lg:w-1/2 lg:items-center lg:justify-center">
+              <h3>{aboutUs.sections.centre.remote.title}</h3>
+              <p className="mb-4">{aboutUs.sections.centre.remote.description}</p>
+              <div>
+                <ButtonLink href="/contact-us">{aboutUs.sections.centre.remote.action}</ButtonLink>
+              </div>
+            </div>
+          </div>
+        </PageSectionContainer>
+      </PrimaryPageSection>
     </PageContent>
   );
 }
