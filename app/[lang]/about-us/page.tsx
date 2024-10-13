@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   title: 'About Us',
   description: 'Get to know Grace and the North Shore Meditation Centre',
   keywords: [...baseKeywords, 'North Shore', 'Centre', 'About'],
+  alternates: {
+    canonical: '/about-us',
+    languages: {
+      en: '/en/about-us',
+    },
+  },
 };
 
 export default async function AboutUsPage({ params: { lang } }: GlobalPageProps) {

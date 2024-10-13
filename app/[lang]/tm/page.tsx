@@ -16,6 +16,12 @@ export const metadata: Metadata = {
   description:
     'Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.',
   keywords: [...baseKeywords, 'How', 'Work', 'Natural', 'Technique'],
+  alternates: {
+    canonical: '/tm',
+    languages: {
+      en: '/en/tm',
+    },
+  },
 };
 
 export default async function Tm({ params: { lang } }: GlobalPageProps) {

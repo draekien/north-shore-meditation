@@ -11,6 +11,12 @@ export const metadata: Metadata = {
   title: 'Contact Us',
   description: 'Connect with North Shore Meditation by sending us an inquiry',
   keywords: [...baseKeywords, 'Contact Us'],
+  alternates: {
+    canonical: '/contact-us',
+    languages: {
+      en: '/en/contact-us',
+    },
+  },
 };
 
 export default async function ContactUsPage({ params: { lang } }: GlobalPageProps) {

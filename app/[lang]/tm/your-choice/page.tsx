@@ -26,6 +26,12 @@ export const metadata: Metadata = {
   title: 'The Science behind Transcendental Meditation®',
   description: 'Discover the science backing the TM technique along with its origins with Maharishi Yogi',
   keywords: [...baseKeywords, 'Science', 'Health', 'Origins', 'History'],
+  alternates: {
+    canonical: '/tm/your-choice',
+    languages: {
+      en: '/en/tm/your-choice',
+    },
+  },
 };
 
 export default async function YourChoicePage({ params: { lang } }: GlobalPageProps) {
