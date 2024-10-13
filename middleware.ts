@@ -1,7 +1,14 @@
 import { defaultLocale, locales } from '@/lib/constants';
 import { match } from '@formatjs/intl-localematcher';
+import { Ratelimit } from '@upstash/ratelimit';
+import { kv } from '@vercel/kv';
 import Negotiator from 'negotiator';
 import { NextResponse, type NextRequest } from 'next/server';
+
+const ratelimit = new Ratelimit({
+  redis: kv,
+  limiter: Ratelimit.slidingWindow(10, '10 s'),
+});
 
 function getLocale({ headers }: NextRequest) {
   const languageHeader = { 'accept-language': headers.get('accept-language') || '' };
@@ -9,12 +16,20 @@ function getLocale({ headers }: NextRequest) {
   return match(languages, locales, defaultLocale);
 }
 
-export function middleware(request: NextRequest) {
+export default async function middleware(request: NextRequest) {
+  const ip = request.ip ?? '127.0.0.1';
+  const { success } = await ratelimit.limit(ip);
+
+  if (!success) {
+    console.warn(`Too many requests from ${ip}`);
+    return NextResponse.redirect(new URL('/blocked', request.url));
+  }
+
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl;
   const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
 
-  if (pathnameHasLocale) return;
+  if (pathnameHasLocale) return NextResponse.next();
 
   // Redirect if there is no locale
   const locale = getLocale(request);
@@ -27,7 +42,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    '/((?!_next|favicon|icon|apple-icon|api|sitemap|robots).*)',
+    '/((?!_next|favicon|icon|apple-icon|api|sitemap|robots|blocked).*)',
     // Optional: only run on root (/) URL
     // '/'
   ],
