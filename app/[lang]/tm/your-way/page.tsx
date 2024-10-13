@@ -4,6 +4,7 @@ import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
+import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import meditateSvg from '@/public/meditate.svg';
@@ -15,8 +16,9 @@ import Image from 'next/image';
 import { getDictionary } from '../../dictionaries';
 
 export const metadata: Metadata = {
-  title: 'North Shore Meditation | Steps To Learn TM',
-  description: 'Uncover your way of practicing TM.',
+  title: '3 Easy Steps To Learn TM',
+  description: 'Uncover your way of practicing the TM technique by enroling in a course with North Shore Meditation.',
+  keywords: [...baseKeywords, 'Learn', 'Technique', 'Process'],
 };
 
 export default async function YourWayPage({ params: { lang } }: GlobalPageProps) {

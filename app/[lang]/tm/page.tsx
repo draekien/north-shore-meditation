@@ -3,6 +3,7 @@ import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
+import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import bird from '@/public/bird.webp';
 import { Brain, Clock, Feather, Microscope } from 'lucide-react';
@@ -11,9 +12,10 @@ import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
 
 export const metadata: Metadata = {
-  title: 'North Shore Meditation | What Is TM',
+  title: 'What Is Transcendental Meditation®',
   description:
     'Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.',
+  keywords: [...baseKeywords, 'How', 'Work', 'Natural', 'Technique'],
 };
 
 export default async function Tm({ params: { lang } }: GlobalPageProps) {

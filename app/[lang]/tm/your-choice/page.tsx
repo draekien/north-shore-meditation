@@ -6,6 +6,7 @@ import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
+import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import maharishi from '@/public/maharishi.webp';
@@ -22,8 +23,9 @@ const DynamicChart = dynamic(() => import('@/components/tm-stats-chart'), {
 });
 
 export const metadata: Metadata = {
-  title: 'North Shore Meditation | Science behind TM',
-  description: 'Discover the science behind TM',
+  title: 'The Science behind Transcendental Meditation®',
+  description: 'Discover the science backing the TM technique along with its origins with Maharishi Yogi',
+  keywords: [...baseKeywords, 'Science', 'Health', 'Origins', 'History'],
 };
 
 export default async function YourChoicePage({ params: { lang } }: GlobalPageProps) {
