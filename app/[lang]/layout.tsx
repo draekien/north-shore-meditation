@@ -59,6 +59,13 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.northshoremeditation.au'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      en: '/en',
+    },
+  },
   title: {
     template: '%s | North Shore Meditation',
     default: 'Welcome to North Shore Meditation | Why Choose TM',
