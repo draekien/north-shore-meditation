@@ -329,7 +329,7 @@
     },
     "contactUs": {
       "form": {
-        "disclaimer": "North Shore Meditation does not sell your information or use it for any purpose other than to assist with your learning of Transcendental Meditation®. See our ",
+        "disclaimer": "North Shore Meditation does not sell your information or use it for any purpose other than to assist with your learning of Transcendental Meditation®.",
         "inputs": {
           "email": {
             "label": "Email Address"
@@ -362,6 +362,54 @@
       },
       "subtitle": "Send us an enquiry using the form below, or give us a ring!",
       "title": "Let's get in touch"
+    },
+    "privacyNotice": {
+      "effectiveDate": "Effective Date: 13th Oct 2024",
+      "intro": "North Shore Meditation (\"we\", \"us\", or \"our\") is committed to protecting your privacy. This Privacy Notice explains how we collect, use, and safeguard your personal information when you use our website: https://northshoremeditation.au (the \"Site\").",
+      "sections": [
+        {
+          "intro": "When you use our \"Contact Us\" form, we collect the following Personally Identifiable Information (PII):",
+          "points": [
+            "Given Name(s)",
+            "Surname",
+            "Email Address",
+            "Phone Number",
+            "Any personal information you choose to include in your message to us"
+          ],
+          "title": "Information We Collect"
+        },
+        {
+          "intro": "We only use your personal information for the following purposes:",
+          "points": [
+            "To communicate with you regarding your inquiries or course information",
+            "To contact you regarding Transcendental Meditation® courses",
+            "To assist you with enroling into TM courses with Maharishi Foundation Australia"
+          ],
+          "title": "How We Use Your Information"
+        },
+        {
+          "intro": "We do not sell, rent, or share your personal information with third parties for marketing purposes. However, we may share your information with:",
+          "points": [
+            "Maharishi Foundation Australia for enrolment and course administration purposes (with your consent)"
+          ],
+          "title": "Sharing Your Information"
+        },
+        {
+          "footer": "To exercise any of these rights, please contact us at tm@northshoremeditation.au",
+          "intro": "You have the right to:",
+          "points": [
+            "Access the personal information we hold about you",
+            "Request corrections or updates to your personal information",
+            "Request the deletion of your personal information"
+          ],
+          "title": "Your Data Rights"
+        },
+        {
+          "intro": "We may update this Privacy Notice from time to time. Any changes will be posted on this page with an updated effective date.",
+          "title": "Changes to This Privacy Notice"
+        }
+      ],
+      "title": "Privacy Notice"
     },
     "tm": {
       "sections": {

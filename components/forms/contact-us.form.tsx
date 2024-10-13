@@ -6,7 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Button } from '../ui/button';
+import { Button, buttonVariants } from '../ui/button';
 import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { Checkbox } from '../ui/checkbox';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from '../ui/form';
@@ -198,7 +198,16 @@ export default function ContactUsForm({
                     : submit.label}
               </Button>
               <small>
-                {disclaimer} <Link href="/">{privacyNotice}</Link>
+                {disclaimer}
+                <Link
+                  href="/privacy-notice"
+                  className={buttonVariants({
+                    variant: 'link',
+                    size: 'sm',
+                  })}
+                >
+                  {privacyNotice}
+                </Link>
               </small>
             </div>
           </CardFooter>
