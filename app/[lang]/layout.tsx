@@ -1,5 +1,6 @@
 import IntroCallToActionSection from '@/components/call-to-actions/intro.cta';
 import LearnCallToActionSection from '@/components/call-to-actions/learn.cta';
+import TmCentreMap from '@/components/maps/tm-centre.map';
 import ProgressBar from '@/components/progress-bar';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
@@ -19,7 +20,6 @@ import {
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Skeleton } from '@/components/ui/skeleton';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { locales } from '@/lib/constants';
@@ -30,7 +30,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
 import localFont from 'next/font/local';
 import Link from 'next/link';
@@ -38,10 +37,6 @@ import type { PropsWithChildren } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../components/ui/accordion';
 import { getDictionary } from './dictionaries';
 import './globals.css';
-
-const DynamicMap = dynamic(() => import('@/components/gmap'), {
-  loading: () => <Skeleton className="h-80 w-80 rounded-lg md:h-[400px] md:w-[800px]" />,
-});
 
 const maShanZheng = Ma_Shan_Zheng({
   display: 'swap',
@@ -271,7 +266,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                 </div>
                 <div className="flex flex-wrap-reverse items-end justify-center gap-8 md:justify-between">
                   <small className="w-80 md:w-1/3">{dict.footer.disclaimer}</small>
-                  <DynamicMap />
+                  <TmCentreMap />
                 </div>
               </div>
             </footer>
