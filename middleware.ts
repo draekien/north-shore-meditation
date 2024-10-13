@@ -7,7 +7,7 @@ import { NextResponse, type NextRequest } from 'next/server';
 
 const ratelimit = new Ratelimit({
   redis: kv,
-  limiter: Ratelimit.slidingWindow(10, '10 s'),
+  limiter: Ratelimit.slidingWindow(20, '10 s'),
 });
 
 function getLocale({ headers }: NextRequest) {
