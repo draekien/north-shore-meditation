@@ -59,8 +59,22 @@ const geistSans = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'North Shore Meditation',
-  description: 'Discover the power of Transcendental Meditation®',
+  title: {
+    template: '%s | North Shore Meditation',
+    default: 'Welcome to North Shore Meditation | Why Choose TM',
+  },
+  description:
+    'Learn about the technique and history behind Transcendental Meditation®. Discover the simplicity and power of the TM technique',
+  keywords: [
+    'Transcendental Meditation',
+    'Transcendental',
+    'Meditation',
+    'TM',
+    'Maharishi',
+    'Yogi',
+    'Inner Peace',
+    'Stress Relief',
+  ],
 };
 
 export async function generateStaticParams() {

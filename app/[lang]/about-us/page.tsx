@@ -5,6 +5,7 @@ import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
+import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import graceAbout from '@/public/grace_about.webp';
 import type { Metadata } from 'next';
@@ -12,8 +13,9 @@ import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
 
 export const metadata: Metadata = {
-  title: 'North Shore Meditation | About Us',
-  description: 'Get to know the North Shore Meditation Centre',
+  title: 'About Us',
+  description: 'Get to know Grace and the North Shore Meditation Centre',
+  keywords: [...baseKeywords, 'North Shore', 'Centre', 'About'],
 };
 
 export default async function AboutUsPage({ params: { lang } }: GlobalPageProps) {

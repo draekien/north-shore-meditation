@@ -2,13 +2,15 @@ import ContactUsForm from '@/components/forms/contact-us.form';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
+import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import type { Metadata } from 'next';
 import { getDictionary } from '../dictionaries';
 
 export const metadata: Metadata = {
-  title: 'North Shore Meditation | Contact Us',
-  description: 'Connect with North Shore Meditation',
+  title: 'Contact Us',
+  description: 'Connect with North Shore Meditation by sending us an inquiry',
+  keywords: [...baseKeywords, 'Contact Us'],
 };
 
 export default async function ContactUsPage({ params: { lang } }: GlobalPageProps) {
