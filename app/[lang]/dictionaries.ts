@@ -1,6 +1,6 @@
 import 'server-only';
 import type { Locale } from '../../lib/constants';
-import type LocalisedStrings from './dictionaries/en-AU.json';
+import type LocalisedStrings from './dictionaries/en.json';
 
 export type Dictionary = typeof LocalisedStrings;
 
