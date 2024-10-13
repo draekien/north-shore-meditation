@@ -76,6 +76,7 @@ export default function ContactUsForm({
               "We will get back to you within 1-2 business days. Please check your spam folder if you don't receive a reply",
           });
           setFormStatus('submitted');
+          return;
         }
 
         throw new Error('Failed to send enquiry');
