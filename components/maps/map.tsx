@@ -7,9 +7,10 @@ export type SharedMapProps = {
 
 export type GoogleMapProps = {
   src: string;
+  title: string;
 } & SharedMapProps;
 
-export default async function Map({ className, src }: GoogleMapProps) {
+export default async function Map({ className, src, title }: GoogleMapProps) {
   return (
     <iframe
       src={src}
@@ -17,6 +18,7 @@ export default async function Map({ className, src }: GoogleMapProps) {
       allowFullScreen
       loading="lazy"
       referrerPolicy="no-referrer-when-downgrade"
+      title={title}
     ></iframe>
   );
 }
