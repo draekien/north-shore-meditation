@@ -7,6 +7,12 @@ import { getDictionary } from '../dictionaries';
 
 export const metadata: Metadata = {
   title: 'Privacy Notice',
+  alternates: {
+    canonical: '/privacy-notice',
+    languages: {
+      en: '/en/privacy-notice',
+    },
+  },
 };
 
 export default async function PrivacyNoticePage({ params: { lang } }: GlobalPageProps) {

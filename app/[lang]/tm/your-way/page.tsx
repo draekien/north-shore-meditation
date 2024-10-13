@@ -19,6 +19,12 @@ export const metadata: Metadata = {
   title: '3 Easy Steps To Learn TM',
   description: 'Uncover your way of practicing the TM technique by enroling in a course with North Shore Meditation.',
   keywords: [...baseKeywords, 'Learn', 'Technique', 'Process'],
+  alternates: {
+    canonical: '/tm/your-way',
+    languages: {
+      en: '/en/tm/your-way',
+    },
+  },
 };
 
 export default async function YourWayPage({ params: { lang } }: GlobalPageProps) {
