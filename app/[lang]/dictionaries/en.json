@@ -12,7 +12,7 @@
     }
   },
   "footer": {
-    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharishi Foundation Australia. Clicking the \"Start Your Journey\" button on this website will navigate you to the official booking system of Maharishi Foundation Australia where you will be able to enrole into a 4 day Transcendental Meditation® course at the North Shore Meditation Center."
+    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharishi Foundation Australia. Clicking the \"Start Your Journey\" button on this website will navigate you to the official booking system of Maharishi Foundation Australia where you will be able to enrol into a 4 day Transcendental Meditation® course at the North Shore Meditation Center."
   },
   "nav": {
     "aboutUs": "About Us",
@@ -554,9 +554,9 @@
       },
       "learn": {
         "action": "Start Your Journey",
-        "helpText": "Clicking on the \"Start Your Journey\" button above will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to enrole into a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
+        "helpText": "Clicking on the \"Start Your Journey\" button above will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to enrol into a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
         "href": "https://au.tm.org/web/learn-tm/north-shore",
-        "subtitle": "Enrole in a TM course through North Shore Meditation centre today",
+        "subtitle": "Enrol in a TM course through North Shore Meditation centre today",
         "title": "Ready to Transform Yourself?"
       }
     },
