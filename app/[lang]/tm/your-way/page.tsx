@@ -27,7 +27,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function YourWayPage({ params: { lang } }: GlobalPageProps) {
+export default async function YourWayPage(props: GlobalPageProps) {
+  const { lang } = await props.params;
+
   const {
     pages: { way },
   } = await getDictionary(lang);

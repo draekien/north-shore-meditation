@@ -24,7 +24,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AboutUsPage({ params: { lang } }: GlobalPageProps) {
+export default async function AboutUsPage(props: GlobalPageProps) {
+  const { lang } = await props.params;
+
   const {
     pages: { aboutUs },
   } = await getDictionary(lang);
