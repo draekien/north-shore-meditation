@@ -1,13 +1,13 @@
 import { MetadataRoute } from 'next';
 
 function createUrl(path?: string) {
-  return `https://www.northshoremeditation.au${path}`;
+  return `https://www.northshoremeditation.au${path || ''}`;
 }
 
 function createLocalizedUrls(path?: string) {
   return {
     languages: {
-      en: `${createUrl()}/en${path}`,
+      en: `${createUrl()}/en${path || ''}`,
     },
   };
 }
@@ -24,7 +24,7 @@ function createSitemapEntry(options?: CreateSitemapEntryOptions): MetadataRoute.
     alternates: createLocalizedUrls(options?.path),
     lastModified: new Date(),
     priority: options?.priority ?? 0.5,
-    changeFrequency: options?.changeFrequency ?? 'monthly',
+    changeFrequency: options?.changeFrequency ?? 'weekly',
   };
 }
 
