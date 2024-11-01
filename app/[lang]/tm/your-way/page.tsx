@@ -20,9 +20,17 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
-    title: '3 Easy Steps To Learn TM',
-    description: 'Uncover your way of practicing the TM technique by enroling in a course with North Shore Meditation.',
-    keywords: [...baseKeywords, 'Learn', 'Technique', 'Process'],
+    title: 'Uncover Your Way of Practicing TM',
+    description:
+      'Follow 3 easy steps to begin your TM journey: attend a free info session, learn TM from a certified instructor, and contact us for support and guidance whenever you need it.',
+    keywords: [
+      ...baseKeywords,
+      'FAQ',
+      'frequently asked questions about TM',
+      'Steps for learning transcendental meditation',
+      'Steps for learning TM',
+      'How do I learn TM',
+    ],
     alternates: {
       canonical: `/${lang}/tm/your-way`,
       languages: {

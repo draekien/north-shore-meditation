@@ -17,8 +17,14 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   return {
     title: 'What Is Transcendental Meditation®',
     description:
-      'Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.',
-    keywords: [...baseKeywords, 'How', 'Work', 'Natural', 'Technique'],
+      'Transcendental Meditation® is a simple, natural technique practiced for 15-20 mminutes twice a day while sitting comfortably with your eyes closed. It is effortless, natural, quick, and effective.',
+    keywords: [
+      ...baseKeywords,
+      'What is TM',
+      'What is transcendental meditation',
+      'How does TM work',
+      'How does transcendental meditation work',
+    ],
     alternates: {
       canonical: `/${lang}/tm`,
       languages: {
