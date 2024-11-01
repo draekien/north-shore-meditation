@@ -12,17 +12,22 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
 
-export const metadata: Metadata = {
-  title: 'About Us',
-  description: 'Get to know Grace and the North Shore Meditation Centre',
-  keywords: [...baseKeywords, 'North Shore', 'Centre', 'About'],
-  alternates: {
-    canonical: '/about-us',
-    languages: {
-      en: '/en/about-us',
+
+export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
+  const { lang } = await props.params;
+
+  return {
+    title: 'About Us',
+    description: 'Get to know Grace and the North Shore Meditation Centre',
+    keywords: [...baseKeywords, 'North Shore', 'Centre', 'About'],
+    alternates: {
+      canonical: `/${lang}/about-us`,
+      languages: {
+        en: '/en/about-us',
+      },
     },
-  },
-};
+  };
+}
 
 export default async function AboutUsPage(props: GlobalPageProps) {
   const { lang } = await props.params;

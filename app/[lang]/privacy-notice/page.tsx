@@ -15,6 +15,20 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
+  const { lang } = await props.params;
+
+  return {
+    title: 'Privacy Notice',
+    alternates: {
+      canonical: `/${lang}/privacy-notice`,
+      languages: {
+        en: '/en/privacy-notice',
+      },
+    },
+  };
+}
+
 export default async function PrivacyNoticePage(props: GlobalPageProps) {
   const { lang } = await props.params;
 

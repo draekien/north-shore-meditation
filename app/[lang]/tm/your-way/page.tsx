@@ -15,17 +15,22 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../../dictionaries';
 
-export const metadata: Metadata = {
-  title: '3 Easy Steps To Learn TM',
-  description: 'Uncover your way of practicing the TM technique by enroling in a course with North Shore Meditation.',
-  keywords: [...baseKeywords, 'Learn', 'Technique', 'Process'],
-  alternates: {
-    canonical: '/tm/your-way',
-    languages: {
-      en: '/en/tm/your-way',
+
+export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
+  const { lang } = await props.params;
+
+  return {
+    title: '3 Easy Steps To Learn TM',
+    description: 'Uncover your way of practicing the TM technique by enroling in a course with North Shore Meditation.',
+    keywords: [...baseKeywords, 'Learn', 'Technique', 'Process'],
+    alternates: {
+      canonical: `/${lang}/tm/your-way`,
+      languages: {
+        en: '/en/tm/your-way',
+      },
     },
-  },
-};
+  };
+}
 
 export default async function YourWayPage(props: GlobalPageProps) {
   const { lang } = await props.params;

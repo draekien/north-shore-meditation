@@ -22,17 +22,22 @@ const DynamicChart = dynamic(() => import('@/components/tm-stats-chart'), {
   loading: () => <Skeleton className="h-[200px] w-full" />,
 });
 
-export const metadata: Metadata = {
-  title: 'The Science behind Transcendental Meditation®',
-  description: 'Discover the science backing the TM technique along with its origins with Maharishi Yogi',
-  keywords: [...baseKeywords, 'Science', 'Health', 'Origins', 'History'],
-  alternates: {
-    canonical: '/tm/your-choice',
-    languages: {
-      en: '/en/tm/your-choice',
+
+export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
+  const { lang } = await props.params;
+
+  return {
+    title: 'The Science behind Transcendental Meditation®',
+    description: 'Discover the science backing the TM technique along with its origins with Maharishi Yogi',
+    keywords: [...baseKeywords, 'Science', 'Health', 'Origins', 'History'],
+    alternates: {
+      canonical: `/${lang}/tm/your-choice`,
+      languages: {
+        en: '/en/tm/your-choice',
+      },
     },
-  },
-};
+  };
+}
 
 export default async function YourChoicePage(props: GlobalPageProps) {
   const { lang } = await props.params;
