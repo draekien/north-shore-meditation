@@ -37,7 +37,7 @@ export default function IntroCallToActionSection({
   video: { dialogTitle, dialogTrigger, dialogDescription, dialogFooter, dialogFooterCta },
 }: IntroCallToAction) {
   return (
-    <section id="intro-cta" className={cn('py-16 backdrop-blur-sm', className)}>
+    <section className={cn('py-16 backdrop-blur-sm', className)}>
       <div className="container mx-auto flex flex-col gap-8 px-4">
         <h2 className="text-center text-secondary">{title}</h2>
         <div className="flex flex-col justify-center md:flex-row md:gap-8">
