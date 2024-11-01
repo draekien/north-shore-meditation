@@ -4,7 +4,9 @@ import WhyTmSection from '@/components/why-tm.section';
 import type { GlobalPageProps } from '@/lib/types';
 import { getDictionary } from './dictionaries';
 
-export default async function Home({ params: { lang } }: GlobalPageProps) {
+export default async function Home(props: GlobalPageProps) {
+  const { lang } = await props.params;
+
   const dict = await getDictionary(lang);
   return (
     <div className="min-h-dvh">

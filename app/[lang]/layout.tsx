@@ -30,7 +30,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
 import localFont from 'next/font/local';
 import Link from 'next/link';
 import type { PropsWithChildren } from 'react';
@@ -38,19 +37,19 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 import { getDictionary } from './dictionaries';
 import './globals.css';
 
-const maShanZheng = Ma_Shan_Zheng({
-  display: 'swap',
-  variable: '--font-ma-shan-zheng',
-  weight: '400',
-  subsets: ['latin'],
-});
+// const maShanZheng = Ma_Shan_Zheng({
+//   display: 'swap',
+//   variable: '--font-ma-shan-zheng',
+//   weight: '400',
+//   subsets: ['latin'],
+// });
 
-const notoSans = Noto_Sans_SC({
-  display: 'swap',
-  variable: '--font-noto-sans',
-  weight: 'variable',
-  subsets: ['latin'],
-});
+// const notoSans = Noto_Sans_SC({
+//   display: 'swap',
+//   variable: '--font-noto-sans',
+//   weight: 'variable',
+//   subsets: ['latin'],
+// });
 
 const geistSans = localFont({
   src: '../fonts/GeistVF.woff',
@@ -85,12 +84,15 @@ export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function RootLayout({ children, params }: Readonly<PropsWithChildren<GlobalPageProps>>) {
-  const dict = await getDictionary(params.lang);
+export default async function RootLayout(props: Readonly<PropsWithChildren<GlobalPageProps>>) {
+  const { children, params } = props;
+  const { lang } = await params;
+
+  const dict = await getDictionary(lang);
   const shouldInjectToolbar = process.env.NODE_ENV === 'development';
   return (
-    <html lang={params.lang}>
-      <body className={`${geistSans.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}>
+    <html lang={lang}>
+      <body className={`${geistSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

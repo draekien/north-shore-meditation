@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function ContactUsPage({ params: { lang } }: GlobalPageProps) {
+export default async function ContactUsPage(props: GlobalPageProps) {
+  const { lang } = await props.params;
+
   const {
     pages: { contactUs },
   } = await getDictionary(lang);
