@@ -34,9 +34,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function Tm(props: GlobalPageProps) {
-  const { lang } = await props.params;
-
+export default async function Tm({ params: { lang } }: GlobalPageProps) {
   const {
     pages: { tm },
   } = await getDictionary(lang);
