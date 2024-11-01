@@ -76,7 +76,7 @@ export default async function AboutUsPage({ params: { lang } }: GlobalPageProps)
             </div>
             <div className="flex flex-col lg:w-1/2 lg:items-center lg:justify-center">
               <h3>{aboutUs.sections.centre.remote.title}</h3>
-              <p className="mb-4 text-center">{aboutUs.sections.centre.remote.description}</p>
+              <p className="mb-4 md:text-center">{aboutUs.sections.centre.remote.description}</p>
               <div>
                 <ButtonLink href="/contact-us">{aboutUs.sections.centre.remote.action}</ButtonLink>
               </div>

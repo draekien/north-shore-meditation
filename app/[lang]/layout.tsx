@@ -22,7 +22,7 @@ import { ScrollArea } from '@/components/ui/scroll-area';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
-import { locales } from '@/lib/constants';
+import { baseKeywords, locales } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
@@ -68,19 +68,16 @@ export const metadata: Metadata = {
   },
   title: {
     template: '%s | North Shore Meditation',
-    default: 'Welcome to North Shore Meditation | Why Choose TM',
+    default: 'Learn Transcendental Meditation at North Shore Meditation',
   },
   description:
-    'Learn about the technique and history behind Transcendental Meditation®. Discover the simplicity and power of the TM technique',
+    'Transcendental Meditation® helps you to discover inner peace and joy, build resilience, enhance relationships, relieve stress and anxiety, expand your creative potential, achieve academic excellence, and nurture mental health and well-being. Discover why you should learn TM with Grace through North Shore Meditation.',
   keywords: [
-    'Transcendental Meditation',
-    'Transcendental',
-    'Meditation',
-    'TM',
-    'Maharishi',
-    'Yogi',
-    'Inner Peace',
-    'Stress Relief',
+    ...baseKeywords,
+    'learn transcendental meditation',
+    'why should I learn tm',
+    'why transcendental meditation',
+    'why tm',
   ],
 };
 
