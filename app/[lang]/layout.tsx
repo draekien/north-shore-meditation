@@ -70,6 +70,10 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
         en: '/en',
       },
     },
+    openGraph: {
+      url: `/${lang}`,
+      type: 'website',
+    },
     title: {
       template: '%s | North Shore Meditation',
       default: 'Learn Transcendental Meditation at North Shore Meditation',

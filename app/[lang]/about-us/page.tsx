@@ -18,13 +18,22 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 
   return {
     title: 'About Us',
-    description: 'Get to know Grace and the North Shore Meditation Centre',
-    keywords: [...baseKeywords, 'North Shore', 'Centre', 'About'],
+    description:
+      'Meet Dr. Grace Pei, a former urological surgeon who has dedicated her career to medicinal research and global pharmaceutical development. Now at her Transcendental Meditation® (TM) Centre in Lane Cove, she draws on her wealth of corporate experience and personal journey to guide others towards finding balance and peace.',
+    keywords: [
+      ...baseKeywords,
+      'Dr. Grace Pei',
+      'How do I get to North Shore Meditation Centre',
+      'Can the teachers at North Shore Meditation Centre travel to me',
+    ],
     alternates: {
       canonical: `/${lang}/about-us`,
       languages: {
         en: '/en/about-us',
       },
+    },
+    openGraph: {
+      url: `/${lang}/about-us`,
     },
   };
 }

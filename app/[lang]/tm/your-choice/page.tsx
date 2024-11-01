@@ -44,6 +44,9 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
         en: '/en/tm/your-choice',
       },
     },
+    openGraph: {
+      url: `/${lang}/tm/your-choice`,
+    },
   };
 }
 

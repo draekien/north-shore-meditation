@@ -10,11 +10,16 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 
   return {
     title: 'Privacy Notice',
+    description:
+      'North Shore Meditation ("we", "us", or "our") is committed to protecting your privacy. This Privacy Notice explains how we collect, use, and safeguard your personal information when you use our website',
     alternates: {
       canonical: `/${lang}/privacy-notice`,
       languages: {
         en: '/en/privacy-notice',
       },
+    },
+    openGraph: {
+      url: `/${lang}/privacy-notice`,
     },
   };
 }

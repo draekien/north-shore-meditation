@@ -21,6 +21,9 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
         en: '/en/contact-us',
       },
     },
+    openGraph: {
+      url: `/${lang}/contact-us`,
+    },
   };
 }
 
