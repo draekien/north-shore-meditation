@@ -11,19 +11,6 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
 
-export const metadata: Metadata = {
-  title: 'What Is Transcendental Meditation®',
-  description:
-    'Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.',
-  keywords: [...baseKeywords, 'How', 'Work', 'Natural', 'Technique'],
-  alternates: {
-    canonical: '/tm',
-    languages: {
-      en: '/en/tm',
-    },
-  },
-};
-
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
 

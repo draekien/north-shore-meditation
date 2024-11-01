@@ -5,16 +5,6 @@ import type { GlobalPageProps } from '@/lib/types';
 import type { Metadata } from 'next';
 import { getDictionary } from '../dictionaries';
 
-export const metadata: Metadata = {
-  title: 'Privacy Notice',
-  alternates: {
-    canonical: '/privacy-notice',
-    languages: {
-      en: '/en/privacy-notice',
-    },
-  },
-};
-
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
 
