@@ -24,6 +24,23 @@ export const metadata: Metadata = {
   },
 };
 
+export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
+  const { lang } = await props.params;
+
+  return {
+    title: 'What Is Transcendental Meditation®',
+    description:
+      'Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.',
+    keywords: [...baseKeywords, 'How', 'Work', 'Natural', 'Technique'],
+    alternates: {
+      canonical: `/${lang}/tm`,
+      languages: {
+        en: '/en/tm',
+      },
+    },
+  };
+}
+
 export default async function Tm(props: GlobalPageProps) {
   const { lang } = await props.params;
 

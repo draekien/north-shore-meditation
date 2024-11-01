@@ -57,28 +57,33 @@ const geistSans = localFont({
   weight: '100 900',
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://www.northshoremeditation.au'),
-  alternates: {
-    canonical: '/',
-    languages: {
-      en: '/en',
+
+export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
+  const { lang } = await props.params;
+
+  return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
+    alternates: {
+      canonical: `/${lang}`,
+      languages: {
+        en: '/en',
+      },
     },
-  },
-  title: {
-    template: '%s | North Shore Meditation',
-    default: 'Learn Transcendental Meditation at North Shore Meditation',
-  },
-  description:
-    'Transcendental Meditation® helps you to discover inner peace and joy, build resilience, enhance relationships, relieve stress and anxiety, expand your creative potential, achieve academic excellence, and nurture mental health and well-being. Discover why you should learn TM with Grace through North Shore Meditation.',
-  keywords: [
-    ...baseKeywords,
-    'learn transcendental meditation',
-    'why should I learn tm',
-    'why transcendental meditation',
-    'why tm',
-  ],
-};
+    title: {
+      template: '%s | North Shore Meditation',
+      default: 'Learn Transcendental Meditation at North Shore Meditation',
+    },
+    description:
+      'Transcendental Meditation® helps you to discover inner peace and joy, build resilience, enhance relationships, relieve stress and anxiety, expand your creative potential, achieve academic excellence, and nurture mental health and well-being. Discover why you should learn TM with Grace through North Shore Meditation.',
+    keywords: [
+      ...baseKeywords,
+      'learn transcendental meditation',
+      'why should I learn tm',
+      'why transcendental meditation',
+      'why tm',
+    ],
+  };
+}
 
 export async function generateStaticParams() {
   return locales.map((locale) => ({ lang: locale }));
