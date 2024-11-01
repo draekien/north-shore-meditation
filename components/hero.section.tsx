@@ -26,13 +26,13 @@ export default function HeroSection({ title, subtitle, action, href, session, se
       <div className="relative text-center text-yellow-900 drop-shadow-2xl">
         <div className="mb-4 scroll-m-20 border-b-0 text-4xl font-extrabold tracking-tight lg:text-5xl">{title}</div>
         <div className="mb-8 text-xl">{subtitle}</div>
-        <div className="flex justify-center gap-4">
+        <div className="flex flex-wrap justify-center gap-4">
           <ButtonLink
             href={sessionHref}
             referrerPolicy="no-referrer"
             size="lg"
             variant="outline-secondary"
-            className="border-yellow-900 text-yellow-900 hover:text-yellow-900/50 focus:text-yellow-900/50"
+            className="border-yellow-900 bg-white/70 text-yellow-900 hover:border-yellow-900/50 hover:text-yellow-900/50 focus:text-yellow-900/50 md:bg-transparent"
           >
             {session}
           </ButtonLink>
