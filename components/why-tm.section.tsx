@@ -24,7 +24,9 @@ export default function WhyTmSection({ title, cards = [] }: WhyTmSectionProps) {
   return (
     <section id="why-tm" className="py-16">
       <div className="container mx-auto px-4 md:px-12 lg:px-24">
-        <h2 className="mb-12 text-center text-primary">{title}</h2>
+        <h1 className="mb-12 scroll-m-20 border-b pb-2 text-center text-3xl font-semibold tracking-tight text-primary first:mt-0">
+          {title}
+        </h1>
         <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
           {[
             { src: dreamerSvg, textColor: 'text-sky-500', key: 'dreamer' },
