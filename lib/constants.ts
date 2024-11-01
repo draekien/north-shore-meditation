@@ -4,11 +4,8 @@ export type Locale = (typeof locales)[number];
 
 export const baseKeywords = [
   'Transcendental Meditation',
-  'Transcendental',
+  'Transcendental Meditation Sydney',
+  'Transcendental Meditation Shorth Shore',
   'Meditation',
   'TM',
-  'Maharishi',
-  'Yogi',
-  'Inner Peace',
-  'Stress Relief',
 ] as const;
