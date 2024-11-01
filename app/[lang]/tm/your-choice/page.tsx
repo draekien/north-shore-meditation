@@ -29,7 +29,15 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   return {
     title: 'The Science behind Transcendental Meditation®',
     description: 'Discover the science backing the TM technique along with its origins with Maharishi Yogi',
-    keywords: [...baseKeywords, 'Science', 'Health', 'Origins', 'History'],
+    keywords: [
+      ...baseKeywords,
+      'Science of TM',
+      'Science of transcendental meditation',
+      'TM studies',
+      'How did TM start',
+      'Effects of TM',
+      'Effects of transcendental meditation',
+    ],
     alternates: {
       canonical: `/${lang}/tm/your-choice`,
       languages: {
