@@ -151,22 +151,22 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                           </ScrollArea>
                         </AccordionContent>
                       </AccordionItem>
-                      {/* <AccordionItem value="programs">
-                      <AccordionTrigger>{dict.nav.programs.title}</AccordionTrigger>
-                      <AccordionContent>
-                        <ul className="grid gap-3">
-                          {dict.nav.programs.items.map((component) => (
-                            <MobileNavigationMenuListItem
-                              key={component.title}
-                              title={component.title}
-                              href={component.href}
-                            >
-                              {component.description}
-                            </MobileNavigationMenuListItem>
-                          ))}
-                        </ul>
-                      </AccordionContent>
-                    </AccordionItem> */}
+                      <AccordionItem value="programs">
+                        <AccordionTrigger>{dict.nav.programs.title}</AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="grid gap-3">
+                            {dict.nav.programs.items.map((component) => (
+                              <MobileNavigationMenuListItem
+                                key={component.title}
+                                title={component.title}
+                                href={component.href}
+                              >
+                                {component.description}
+                              </MobileNavigationMenuListItem>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
                       <AccordionItem value="more">
                         <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
                         <AccordionContent>
@@ -217,18 +217,18 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         </ul>
                       </NavigationMenuContent>
                     </NavigationMenuItem>
-                    {/* <NavigationMenuItem>
-                    <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                        {dict.nav.programs.items.map((component) => (
-                          <NavigationMenuListItem key={component.title} title={component.title} href={component.href}>
-                            {component.description}
-                          </NavigationMenuListItem>
-                        ))}
-                      </ul>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem> */}
+                    <NavigationMenuItem>
+                      <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
+                      <NavigationMenuContent>
+                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                          {dict.nav.programs.items.map((component) => (
+                            <NavigationMenuListItem key={component.title} title={component.title} href={component.href}>
+                              {component.description}
+                            </NavigationMenuListItem>
+                          ))}
+                        </ul>
+                      </NavigationMenuContent>
+                    </NavigationMenuItem>
                     <NavigationMenuItem>
                       <Link href="/about-us" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
