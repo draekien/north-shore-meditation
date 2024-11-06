@@ -25,19 +25,14 @@
     "programs": {
       "items": [
         {
-          "description": "",
-          "href": "",
-          "title": "Private Sessions"
+          "description": "Learn about our available courses and our one day meditation retreat",
+          "href": "/programs/individuals",
+          "title": "Individual Meditation"
         },
         {
-          "description": "",
-          "href": "",
-          "title": "Group Sessions"
-        },
-        {
-          "description": "",
-          "href": "",
-          "title": "Corporate Sessions"
+          "description": "Discover how our tailored meditation programs can help your business",
+          "href": "/programs/corporate",
+          "title": "Corporate Meditation"
         }
       ],
       "title": "Programs"
