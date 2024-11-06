@@ -24,12 +24,12 @@ export default function HeroSection({ title, subtitle, action, href, session, se
       />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-indigo-300/70 via-indigo-100/20 dark:from-indigo-900/40 dark:via-indigo-100/10"></div>
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,_var(--tw-gradient-stops))] from-purple-300/70 via-white/5 dark:from-purple-900/20"></div>
-      <div className="relative text-center text-yellow-900 drop-shadow-2xl">
-        <div className="mb-12 scroll-m-20 border-b-0 text-4xl font-extrabold tracking-tight lg:text-5xl">
+      <div className="relative p-4 text-center text-yellow-900 drop-shadow-2xl">
+        <div className="mb-12 scroll-m-20 border-b-0 text-3xl font-extrabold tracking-tight lg:text-5xl">
           <div>{title}</div>
           <small className="text-sm">{author}</small>
         </div>
-        <div className="mb-6 text-xl">{subtitle}</div>
+        <div className="mb-6 text-lg md:text-xl">{subtitle}</div>
         <div className="flex flex-wrap justify-center gap-4">
           <ButtonLink
             href={sessionHref}
