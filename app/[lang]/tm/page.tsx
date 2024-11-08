@@ -1,3 +1,4 @@
+import bird from '@/assets/bird.webp';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
@@ -5,7 +6,6 @@ import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
-import bird from '@/public/bird.webp';
 import { Brain, Clock, Feather, Microscope } from 'lucide-react';
 import type { Metadata } from 'next';
 import Image from 'next/image';

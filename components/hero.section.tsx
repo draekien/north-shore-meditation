@@ -1,4 +1,4 @@
-import heroImage from '@/public/hero.webp';
+import heroImage from '@/assets/hero.webp';
 import Image from 'next/image';
 import ButtonLink from './ui/button-link';
 
