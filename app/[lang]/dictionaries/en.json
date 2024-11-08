@@ -135,7 +135,7 @@
               },
               "citation": {
                 "doi": "https://doi.org/10.1089/acm.2013.0204",
-                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014).Orme-Johnson, D. W., & Barnes, V. A. (2014). Effects of the transcendental meditation technique on trait anxiety: a meta-analysis of randomized controlled trials. Journal of alternative and complementary medicine (New York, N.Y.), 20(5), 330-341. https://doi.org/10.1089/acm.2013.0204"
+                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014).Orme-Johnson, D. W., & Barnes, V. A. (2014). Effects of the transcendental meditation technique on trait anxiety: a meta-analysis of randomised controlled trials. Journal of alternative and complementary medicine (New York, N.Y.), 20(5), 330-341. https://doi.org/10.1089/acm.2013.0204"
               },
               "description": "Research shows that TM significantly reduces stress and anxiety by lowering cortisol levels, which is a hormone associated with stress.",
               "title": "Reduction of Stress and Anxiety"
@@ -174,7 +174,7 @@
               },
               "citation": {
                 "doi": "https://doi.org/10.1161/CIRCOUTCOMES.112.967406",
-                "name": "Schneider, R. H., Grim, C. E., Rainforth, M. V., Kotchen, T., Nidich, S. I., Gaylord-King, C., Salerno, J. W., & Kotchen, J. M. (2012). Stress reduction in the secondary prevention of cardiovascular disease: Randomized, controlled trial of Transcendental Meditation and health education in Blacks. Circulation: Cardiovascular Quality and Outcomes, 5(6), 750-758. https://doi.org/10.1161/CIRCOUTCOMES.112.967406"
+                "name": "Schneider, R. H., Grim, C. E., Rainforth, M. V., Kotchen, T., Nidich, S. I., Gaylord-King, C., Salerno, J. W., & Kotchen, J. M. (2012). Stress reduction in the secondary prevention of cardiovascular disease: Randomised, controlled trial of Transcendental Meditation and health education in Blacks. Circulation: Cardiovascular Quality and Outcomes, 5(6), 750-758. https://doi.org/10.1161/CIRCOUTCOMES.112.967406"
               },
               "description": "TM has been shown to help with heart health by lowering blood pressure, reducing the risk of heart attacks, strokes, and other cardiovascular issues.",
               "title": "Improved Cardiovascular Health"
@@ -357,6 +357,112 @@
       },
       "subtitle": "Send us an enquiry using the form below, or give us a ring!",
       "title": "Let's get in touch"
+    },
+    "corporateMeditation": {
+      "cta": {
+        "action": "Contact Dr. Grace Pei for Corporate Programs",
+        "href": "/contact-us?q=corporate-program",
+        "subtitle": "Bring the benefits of Transcendental Meditation® to your organisation. Boost productivity, improve workplace relationships, and create a more resilient team.",
+        "title": "Transform Your Workplace"
+      },
+      "title": "Meditation Programs for Your Business"
+    },
+    "individualMeditation": {
+      "tabs": [
+        {
+          "cta": {
+            "action": "Find Available Courses",
+            "href": "https://au.tm.org/web/learn-tm/north-shore",
+            "subtitle": "Join our next Group Course and learn Transcendental Meditation® in a supportive environment. Spaces are limited, so reserve your spot today!",
+            "title": "Ready to Start Your TM Journey?"
+          },
+          "keyFeatures": [
+            {
+              "description": "Our Group Course is structured to provide a comprehensive introduction to Transcendental Meditation over four days. Each session is approximately two hours long, allowing for in-depth instruction and practice. This format ensures that you have time to absorb the teachings and gradually build your meditation practice.",
+              "title": "Four sessions totaling 8 hours over 4 days"
+            },
+            {
+              "description": "On the first day, you'll receive one-on-one instruction from a certified TM teacher. This personalised session allows the teacher to tailor the instruction to your specific needs and ensures that you learn the technique correctly from the start. You'll receive your personal mantra and learn how to use it effectively in your meditation practice.",
+              "title": "Day 1: Private session for learning the TM technique"
+            },
+            {
+              "description": "Following your personal instruction, you'll join a small group for the remaining three days. These sessions focus on deepening your understanding of the TM technique, refining your practice, and learning about the benefits of regular meditation. You'll have opportunities to meditate with the group, ask questions, and share experiences with fellow learners.",
+              "title": "Days 2-4: Group sessions to further practice and understanding"
+            },
+            {
+              "description": "We understand that everyone's schedule and preferences are different. That's why we offer both fully in-person courses and a hybrid model. The hybrid option combines in-center learning with online sessions via our app and Zoom. This flexibility allows you to choose the learning environment that best suits your needs while still receiving the full benefits of our Group Course.",
+              "title": "Offered fully in-person or as a hybrid model"
+            },
+            {
+              "description": "To accommodate various schedules, we offer our Group Courses on both weekends and weekdays. This allows you to choose a time that fits best with your work and personal commitments. Whether you prefer to learn over a long weekend or spread your sessions across weekday evenings, we have options to suit your lifestyle.",
+              "title": "Available on weekends and weekdays"
+            }
+          ],
+          "subtitle": "The recommended way of learning Transcendental Meditation®. Join a group of like-minded individuals and learn TM in a supportive group setting.",
+          "title": "Group Meditation"
+        },
+        {
+          "cta": {
+            "action": "Enquire About a Private Course",
+            "href": "/contact-us?q=private-course",
+            "subtitle": "Get on-on-one instruction tailored to your needs. Our Private Course offers the ultimate flexibility and personalised attention.",
+            "title": "Personalise Your TM Experience"
+          },
+          "keyFeatures": [
+            {
+              "description": "Our Private Course offers an exclusive, one-on-one learning experience over four consecutive days. This intensive format allows for a deep dive into the Transcendental Meditation® technique, with each session tailored specifically to your needs and progress. You'll receive undivided attention from your instructor throughout the course.",
+              "title": "Four consecutive days of private instruction totaling 8 hours over 4 days"
+            },
+            {
+              "description": "In the Private Course, your instructor will adapt the teaching style and pace to your individual learning preferences. This personalised approach ensures that you fully grasp each aspect of the TM technique. You'll have ample opportunity to ask questions, receive immediate feedback, and explore how TM can best integrate into your daily life.",
+              "title": "Tailored approach for a personalised experience"
+            },
+            {
+              "description": "While the first day of instruction typically takes place at our center, we offer flexibility for the locations of the following three days. This could mean continuing at the center, meeting in your home, or even in your office if that's more convenient. This flexibility allows you to learn in an environment where you feel most comfortable and relaxed.",
+              "title": "Flexible teaching locations for days 2-4"
+            },
+            {
+              "description": "The Private Course is perfect for individuals with busy or unpredictable schedules, as well as those who prefer or require more individualised attention. It's also an excellent option for those who may have specific questions or concerns about meditation, or who simply learn better in a one-on-one setting. This course ensures that you receive the most personalised and comprehensive introduction to Transcendental Meditation possible.",
+              "title": "Ideal for those with busy schedules or seeking individualised guidance"
+            }
+          ],
+          "subtitle": "Delve deeper into your practice by enroling into a personalised one-on-one Transcendental Meditation® course.",
+          "title": "Private Meditation"
+        },
+        {
+          "cta": {
+            "action": "Enquire About the Next One Day Retreat",
+            "href": "/contact-us?q=one-day-retreat",
+            "subtitle": "Join our One Day Meditation Retreat for an immersive experience. Enhance your practice, connect with other meditators, and find profound relaxation.",
+            "title": "Deepen Your TM Practice"
+          },
+          "keyFeatures": [
+            {
+              "description": "Start your day with gentle Maharishi Yoga Asanas and breathwork exercises. These practices are specifically designed to complement your TM practice, helping to prepare your body and mind for deeper meditation. The asanas focus on flexibility and balance, while the breathwork techniques help to calm the nervous system and increase mindfulness.",
+              "title": "Maharishi Yoga Asanas and breathwork"
+            },
+            {
+              "description": "Experience the power of meditating in a group setting. These sessions allow you to deepen your practice in a supportive environment. Many practitioners report that group meditation enhances their experience, leading to deeper states of relaxation and clearer thinking. You'll have multiple opportunities throughout the day to meditate with fellow TM practitioners.",
+              "title": "Group meditation sessions"
+            },
+            {
+              "description": "Benefit from group checking sessions led by an experienced TM teacher. These sessions provide an opportunity to refine your meditation technique, ask questions, and gain deeper insights into your practice. The teacher will guide you through the checking process, ensuring that you're practicing correctly and getting the most out of your meditation.",
+              "title": "Group checking with TM teacher"
+            },
+            {
+              "description": "Connect with like-minded individuals who share your interest in personal growth and meditation. The One Day Program provides ample opportunities for discussion, sharing experiences, and building relationships with fellow TM practitioners. This sense of community can be a valuable support system for your ongoing meditation practice.",
+              "title": "Opportunities for growth and community building"
+            },
+            {
+              "description": "The cumulative effect of a full day dedicated to TM practice and related activities is often a deep sense of relaxation and inner peace. Many participants report feeling refreshed, rejuvenated, and more in touch with themselves by the end of the program. This experience can provide a powerful reset and inspire you to maintain a consistent meditation practice in your daily life.",
+              "title": "Experience profound relaxation and inner peace"
+            }
+          ],
+          "subtitle": "Immersive experience to enhance your Transcendental Meditation® practice",
+          "title": "One Day Meditation Retreat"
+        }
+      ],
+      "title": "Meditation Programs for You"
     },
     "privacyNotice": {
       "effectiveDate": "Effective Date: 13th Oct 2024",
@@ -567,7 +673,7 @@
     "learnFromGrace": {
       "paragraphs": [
         "A customer once told Grace that \"meditation is a very personal thing\". We understand that. We are attentive to your needs in understanding and developing the habits for this simple and natural technique.",
-        "Grace has been certified to teach Transcendental Meditation® by the Maharishi Vedic University, and is authorized by the Maharishi Foundation Australia to teach TM at North Shore Meditation."
+        "Grace has been certified to teach Transcendental Meditation® by the Maharishi Vedic University, and is authorised by the Maharishi Foundation Australia to teach TM at North Shore Meditation."
       ],
       "title": "Begin your journey at North Shore Meditation with Grace"
     },
