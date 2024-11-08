@@ -1,5 +1,5 @@
+import searching from '@/assets/undraw_searching_re_3ra9.svg';
 import { cn } from '@/lib/utils';
-import searching from '@/public/undraw_searching_re_3ra9.svg';
 import Image from 'next/image';
 import { Suspense } from 'react';
 import { Button } from '../ui/button';

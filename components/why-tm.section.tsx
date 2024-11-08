@@ -1,11 +1,11 @@
+import academicsSvg from '@/assets/academics.svg';
+import creativeSvg from '@/assets/creative.svg';
+import dreamerSvg from '@/assets/dreamer.svg';
+import meditateSvg from '@/assets/meditate.svg';
+import relationshipSvg from '@/assets/relationship.svg';
+import relaxSvg from '@/assets/relax.svg';
+import resilientSvg from '@/assets/resilient.svg';
 import { cn } from '@/lib/utils';
-import academicsSvg from '@/public/academics.svg';
-import creativeSvg from '@/public/creative.svg';
-import dreamerSvg from '@/public/dreamer.svg';
-import meditateSvg from '@/public/meditate.svg';
-import relationshipSvg from '@/public/relationship.svg';
-import relaxSvg from '@/public/relax.svg';
-import resilientSvg from '@/public/resilient.svg';
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from './ui/card';
 

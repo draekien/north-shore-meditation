@@ -1,3 +1,5 @@
+import maharishi from '@/assets/maharishi.webp';
+import omegaSvg from '@/assets/undraw_omega_-4-kob.svg';
 import { type TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
@@ -9,8 +11,6 @@ import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip
 import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import maharishi from '@/public/maharishi.webp';
-import omegaSvg from '@/public/undraw_omega_-4-kob.svg';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
@@ -21,7 +21,6 @@ import { getDictionary } from '../../dictionaries';
 const DynamicChart = dynamic(() => import('@/components/tm-stats-chart'), {
   loading: () => <Skeleton className="h-[200px] w-full" />,
 });
-
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;

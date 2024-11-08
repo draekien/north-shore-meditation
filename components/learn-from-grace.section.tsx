@@ -1,4 +1,4 @@
-import teacherImage from '@/public/grace.webp';
+import teacherImage from '@/assets/grace.webp';
 import Image from 'next/image';
 
 export type LearnFromGraceSectionProps = {

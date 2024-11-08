@@ -1,3 +1,7 @@
+import meditateSvg from '@/assets/meditate.svg';
+import introSvg from '@/assets/undraw_educator_re_ju47.svg';
+import guidanceSvg from '@/assets/undraw_fatherhood_-7-i19.svg';
+import supportSvg from '@/assets/undraw_showing_support_re_5f2v.svg';
 import ButtonLink from '@/components/ui/button-link';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
@@ -7,14 +11,9 @@ import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import { cn } from '@/lib/utils';
-import meditateSvg from '@/public/meditate.svg';
-import introSvg from '@/public/undraw_educator_re_ju47.svg';
-import guidanceSvg from '@/public/undraw_fatherhood_-7-i19.svg';
-import supportSvg from '@/public/undraw_showing_support_re_5f2v.svg';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../../dictionaries';
-
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
