@@ -1,3 +1,4 @@
+import graceAbout from '@/assets/grace_about.webp';
 import MarketSquareCarParkMap from '@/components/maps/car-park-market-square';
 import WalkingDirections from '@/components/maps/walk-directions';
 import ButtonLink from '@/components/ui/button-link';
@@ -7,11 +8,9 @@ import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
-import graceAbout from '@/public/grace_about.webp';
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { getDictionary } from '../dictionaries';
-
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;

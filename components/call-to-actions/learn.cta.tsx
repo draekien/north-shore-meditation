@@ -1,5 +1,5 @@
+import studying from '@/assets/undraw_studying_re_deca.svg';
 import { cn } from '@/lib/utils';
-import studying from '@/public/undraw_studying_re_deca.svg';
 import Image from 'next/image';
 import ButtonLink from '../ui/button-link';
 import type { CallToAction } from './types';
