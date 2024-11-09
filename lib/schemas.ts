@@ -10,6 +10,7 @@ export const contactUsSchema = z.object({
   privacy: z.boolean().refine((x) => x === true, { message: 'Accept the Privacy Notice to continue.' }),
   existing: z.boolean().default(false),
   message: z.string().optional(),
+  enquiryType: z.string().optional(),
 });
 
 export type ContactUsFormFields = z.infer<typeof contactUsSchema>;

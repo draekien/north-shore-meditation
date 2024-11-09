@@ -4,6 +4,7 @@ import { useToast } from '@/hooks/use-toast';
 import { contactUsSchema, type ContactUsFormFields } from '@/lib/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { useCallback, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Button, buttonVariants } from '../ui/button';
@@ -11,12 +12,15 @@ import { Card, CardContent, CardFooter, CardHeader } from '../ui/card';
 import { Checkbox } from '../ui/checkbox';
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel } from '../ui/form';
 import { Input } from '../ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select';
 import { Switch } from '../ui/switch';
 import { Textarea } from '../ui/textarea';
 
 export type InputItem = {
   label: string;
   helpText?: string;
+  placeholder?: string;
+  options?: Array<{ text: string; value: string }>;
 };
 
 export type ContactUsFormProps = {
@@ -38,12 +42,15 @@ type FormStatus = 'waiting' | 'submitting' | 'submitted' | 'errored';
 
 export default function ContactUsForm({
   form: {
-    inputs: { givenNames, surname, email, phone, message, existing, privacy },
+    inputs: { givenNames, surname, email, phone, message, existing, privacy, enquiryType },
     submit,
     privacyNotice,
     disclaimer,
   },
 }: ContactUsFormProps) {
+  const searchParams = useSearchParams();
+  const preselectedEnquiryType = searchParams.get('q') ?? undefined;
+
   const form = useForm<ContactUsFormFields>({
     resolver: zodResolver(contactUsSchema),
     defaultValues: {
@@ -53,6 +60,7 @@ export default function ContactUsForm({
       phone: '',
       privacy: false,
       existing: false,
+      enquiryType: preselectedEnquiryType,
     },
   });
 
@@ -146,6 +154,30 @@ export default function ContactUsForm({
                     <Input className="bg-background" {...field} />
                   </FormControl>
                   {phone.helpText && <FormDescription>{phone.helpText}</FormDescription>}
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="enquiryType"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>{enquiryType.label}</FormLabel>
+                  <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <FormControl>
+                      <SelectTrigger>
+                        <SelectValue placeholder={enquiryType.placeholder} />
+                      </SelectTrigger>
+                    </FormControl>
+                    <SelectContent>
+                      {enquiryType.options!.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.text}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  {enquiryType.helpText && <FormDescription>{enquiryType.helpText}</FormDescription>}
                 </FormItem>
               )}
             />
