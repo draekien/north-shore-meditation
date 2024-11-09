@@ -329,6 +329,28 @@
           "email": {
             "label": "Email Address"
           },
+          "enquiryType": {
+            "label": "Enquiry Type",
+            "options": [
+              {
+                "text": "Private meditation courses",
+                "value": "private-course"
+              },
+              {
+                "text": "Corporate meditation programs",
+                "value": "corporate-program"
+              },
+              {
+                "text": "One day meditation retreats",
+                "value": "one-day-retreat"
+              },
+              {
+                "text": "Other",
+                "value": "other"
+              }
+            ],
+            "placeholder": "Select a reason for your enquiry"
+          },
           "existing": {
             "label": "I have already learned TM"
           },

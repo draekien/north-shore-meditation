@@ -11,7 +11,15 @@ export const TestTemplate: React.FC<Readonly<EmailTemplateProps>> = ({ firstName
   </div>
 );
 
-export function ContactUsTemplate({ givenNames, surname, email, phone, existing, message }: ContactUsFormFields) {
+export function ContactUsTemplate({
+  givenNames,
+  surname,
+  email,
+  phone,
+  existing,
+  message,
+  enquiryType,
+}: ContactUsFormFields) {
   return (
     <div>
       <h1>An enquiry has been submitted</h1>
@@ -26,6 +34,8 @@ export function ContactUsTemplate({ givenNames, surname, email, phone, existing,
         <dd>{phone}</dd>
         <dt>Already Learned TM</dt>
         <dd>{existing ? 'Yes' : 'No'}</dd>
+        <dt>Enquiry Type</dt>
+        <dd>{enquiryType ?? 'general'}</dd>
       </dl>
       <h2>Message</h2>
       <p>{message}</p>
