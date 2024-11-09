@@ -4,6 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
+import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import type { GlobalPageProps } from '@/lib/types';
 import type { Metadata } from 'next';
@@ -37,9 +38,18 @@ export default async function IndividualProgramsPage({ params: { lang } }: Globa
     <PageContent>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <h1 className="text-primary">{individualMeditation.title}</h1>
-          <Tabs className="mt-8" defaultValue={individualMeditation.tabs[0].title}>
-            <TabsList className="bg-muted/50">
+          <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
+            <div className="md:w-1/2">
+              <h1 className="text-primary">{individualMeditation.title}</h1>
+              <p className="mb-6 text-xl text-foreground">{individualMeditation.subtitle}</p>
+            </div>
+          </div>
+        </PageSectionContainer>
+      </PrimaryPageSection>
+      <SecondaryPageSection>
+        <PageSectionContainer>
+          <Tabs defaultValue={individualMeditation.tabs[0].title}>
+            <TabsList className="h-auto flex-wrap bg-muted/50">
               {individualMeditation.tabs.map((tab) => (
                 <TabsTrigger key={tab.title} value={tab.title}>
                   {tab.title}
@@ -48,38 +58,36 @@ export default async function IndividualProgramsPage({ params: { lang } }: Globa
             </TabsList>
             {individualMeditation.tabs.map((tab) => (
               <TabsContent key={tab.title} value={tab.title} className="mt-6">
-                <article>
-                  <h2 className="hidden">{tab.title}</h2>
-                  <p>{tab.subtitle}</p>
-                  <Accordion type="multiple" className="my-4">
-                    {tab.keyFeatures.map((feature) => (
-                      <AccordionItem key={feature.title} value={feature.title}>
-                        <AccordionTrigger className="flex-row-reverse justify-end gap-2">
-                          {feature.title}
-                        </AccordionTrigger>
-                        <AccordionContent>{feature.description}</AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                  <Card>
-                    <CardHeader>
-                      <CardTitle>{tab.cta.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p>{tab.cta.subtitle}</p>
-                    </CardContent>
-                    <CardFooter>
-                      <ButtonLink size="lg" className="w-full" href={tab.cta.href}>
-                        {tab.cta.action}
-                      </ButtonLink>
-                    </CardFooter>
-                  </Card>
-                </article>
+                <h2 className="hidden">{tab.title}</h2>
+                <p>{tab.subtitle}</p>
+                <Accordion type="multiple" className="my-4">
+                  {tab.keyFeatures.map((feature) => (
+                    <AccordionItem key={feature.title} value={feature.title}>
+                      <AccordionTrigger className="flex-row-reverse justify-end gap-2 text-left">
+                        {feature.title}
+                      </AccordionTrigger>
+                      <AccordionContent className="text-left">{feature.description}</AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+                <Card className="border-0 bg-white/30 backdrop-blur-3xl dark:bg-slate-700/30">
+                  <CardHeader>
+                    <CardTitle>{tab.cta.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p>{tab.cta.subtitle}</p>
+                  </CardContent>
+                  <CardFooter>
+                    <ButtonLink size="lg" className="w-full" href={tab.cta.href}>
+                      {tab.cta.action}
+                    </ButtonLink>
+                  </CardFooter>
+                </Card>
               </TabsContent>
             ))}
           </Tabs>
         </PageSectionContainer>
-      </PrimaryPageSection>
+      </SecondaryPageSection>
     </PageContent>
   );
 }
