@@ -1,12 +1,13 @@
-import ContactUsForm from '@/components/forms/contact-us.form';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { getDictionary } from '../dictionaries';
 
+const ContactUsForm = dynamic(() => import('@/components/forms/contact-us.form'));
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
