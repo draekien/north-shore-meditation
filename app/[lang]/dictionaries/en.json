@@ -382,7 +382,7 @@
     },
     "corporateMeditation": {
       "cta": {
-        "action": "Contact Dr. Grace Pei for Corporate Programs",
+        "action": "Enquire About Our Corporate Programs",
         "href": "/contact-us?q=corporate-program",
         "subtitle": "Bring the benefits of Transcendental Meditation® to your organisation. Boost productivity, improve workplace relationships, and create a more resilient team.",
         "title": "Transform Your Workplace"
@@ -593,7 +593,7 @@
         },
         {
           "cta": {
-            "action": "Enquire About the Next One Day Retreat",
+            "action": "Enquire About the Next Retreat",
             "href": "/contact-us?q=one-day-retreat",
             "subtitle": "Join our One Day Meditation Retreat for an immersive experience. Enhance your practice, connect with other meditators, and find profound relaxation.",
             "title": "Deepen Your TM Practice"
