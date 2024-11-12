@@ -57,5 +57,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       path: '/privacy-notice',
       priority: 0.1,
     }),
+    createSitemapEntry({
+      path: '/programs/individuals',
+      priority: 0.7,
+    }),
+    createSitemapEntry({
+      path: '/programs/corporate',
+      priority: 0.7,
+    }),
   ];
 }
