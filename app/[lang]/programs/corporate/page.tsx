@@ -1,13 +1,23 @@
+import type { TmStatsChartProps } from '@/components/tm-stats-chart';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import ButtonLink from '@/components/ui/button-link';
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@/components/ui/tooltip';
 import type { GlobalPageProps } from '@/lib/types';
+import { cn } from '@/lib/utils';
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { getDictionary } from '../../dictionaries';
+
+const DynamicChart = dynamic(() => import('@/components/tm-stats-chart'), {
+  loading: () => <Skeleton className="h-[200px] w-full" />,
+});
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -46,12 +56,8 @@ export default async function CorporateProgramsPage({ params: { lang } }: Global
       </PrimaryPageSection>
       <SecondaryPageSection>
         <PageSectionContainer>
-          <h2>Lorem Ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eaque aliquam corrupti suscipit soluta
-            nulla temporibus at quam, consectetur commodi. A rem dolore nobis incidunt qui nulla consequuntur eaque
-            officia.
-          </p>
+          <h2 className="text-primary">{corporateMeditation.introduction.title}</h2>
+          <p>{corporateMeditation.introduction.paragraph}</p>
           <Accordion type="multiple" className="my-4">
             {corporateMeditation.keyFeatures.map((feature) => (
               <AccordionItem key={feature.title} value={feature.title}>
@@ -62,6 +68,43 @@ export default async function CorporateProgramsPage({ params: { lang } }: Global
               </AccordionItem>
             ))}
           </Accordion>
+          <div className="mb-4 grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
+            {corporateMeditation.science.cards.map(({ title, description, citation, chart }, index) => (
+              <Card
+                key={title}
+                className={cn(
+                  `row-span-1 ${index === 3 || index === 6 ? 'md:col-span-2' : ''}`,
+                  'border-0 bg-white/30 backdrop-blur-3xl',
+                  'dark:bg-slate-700/30'
+                )}
+              >
+                <CardHeader>
+                  <CardTitle>{title}</CardTitle>
+                  <CardDescription>{description}</CardDescription>
+                </CardHeader>
+                <CardContent>{chart && <DynamicChart {...(chart as unknown as TmStatsChartProps)} />}</CardContent>
+                <CardFooter>
+                  <div className="flex w-full items-start gap-2">
+                    <Tooltip>
+                      <TooltipTrigger asChild>
+                        <Link
+                          href={citation.doi}
+                          className="w-full hover:text-primary focus:text-primary"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          <cite className="block truncate text-sm">{citation.name}</cite>
+                        </Link>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p className="w-80">{citation.name}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </div>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
           <Card className="border-0 bg-white/30 backdrop-blur-3xl dark:bg-slate-700/30">
             <CardHeader>
               <CardTitle>{corporateMeditation.cta.title}</CardTitle>

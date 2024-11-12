@@ -19,9 +19,10 @@ export type TmStatsChartProps = {
   data: Array<Record<string, unknown>>;
   config: ChartConfig;
   title?: string;
+  dataPadding?: number;
 };
 
-function TmAreaChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 'type'>) {
+function TmAreaChart({ xAxisKey, data, config, title, dataPadding = 20 }: Omit<TmStatsChartProps, 'type'>) {
   return (
     <ChartContainer id={title} config={config} className="min-h-[200px] w-full">
       <AreaChart accessibilityLayer data={data} margin={{ left: 12, right: 12 }}>
@@ -32,7 +33,7 @@ function TmAreaChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 
           tickLine={false}
           axisLine={false}
           hide
-          domain={[(dataMin: number) => Math.max(0, dataMin - 20), 'dataMax']}
+          domain={[(dataMin: number) => Math.max(0, dataMin - dataPadding), 'dataMax']}
         />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
@@ -44,7 +45,7 @@ function TmAreaChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 
   );
 }
 
-function TmLineChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 'type'>) {
+function TmLineChart({ xAxisKey, data, config, title, dataPadding = 20 }: Omit<TmStatsChartProps, 'type'>) {
   return (
     <ChartContainer id={title} config={config} className="min-h-[200px] w-full">
       <LineChart accessibilityLayer data={data} margin={{ left: 12, right: 12 }}>
@@ -56,7 +57,7 @@ function TmLineChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 
           tickLine={false}
           axisLine={false}
           hide
-          domain={[(dataMin: number) => Math.max(0, dataMin - 20), 'dataMax']}
+          domain={[(dataMin: number) => Math.max(0, dataMin - dataPadding), 'dataMax']}
         />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />
@@ -68,7 +69,7 @@ function TmLineChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 
   );
 }
 
-function TmBarChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, 'type'>) {
+function TmBarChart({ xAxisKey, data, config, title, dataPadding = 10 }: Omit<TmStatsChartProps, 'type'>) {
   return (
     <ChartContainer id={title} config={config} className="min-h-[200px] w-full">
       <BarChart accessibilityLayer data={data}>
@@ -79,7 +80,7 @@ function TmBarChart({ xAxisKey, data, config, title }: Omit<TmStatsChartProps, '
           tickLine={false}
           axisLine={false}
           hide
-          domain={[(dataMin: number) => dataMin - 10, (dataMax: number) => dataMax + 10]}
+          domain={[(dataMin: number) => dataMin - dataPadding, (dataMax: number) => dataMax + dataPadding]}
         />
         <ChartTooltip content={<ChartTooltipContent />} />
         <ChartLegend content={<ChartLegendContent />} />

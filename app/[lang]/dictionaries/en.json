@@ -135,7 +135,7 @@
               },
               "citation": {
                 "doi": "https://doi.org/10.1089/acm.2013.0204",
-                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014).Orme-Johnson, D. W., & Barnes, V. A. (2014). Effects of the transcendental meditation technique on trait anxiety: a meta-analysis of randomised controlled trials. Journal of alternative and complementary medicine (New York, N.Y.), 20(5), 330-341. https://doi.org/10.1089/acm.2013.0204"
+                "name": "Orme-Johnson, D. W., Barnes, V. A., Travis, F., & Wallace, R. K. (2014).Orme-Johnson, D. W., & Barnes, V. A. (2014). Effects of the transcendental meditation technique on trait anxiety: a meta-analysis of randomised controlled trials. Journal of alternative and complementary medicine (New York, N.Y.), 20(5), 330-341."
               },
               "description": "Research shows that TM significantly reduces stress and anxiety by lowering cortisol levels, which is a hormone associated with stress.",
               "title": "Reduction of Stress and Anxiety"
@@ -174,7 +174,7 @@
               },
               "citation": {
                 "doi": "https://doi.org/10.1161/CIRCOUTCOMES.112.967406",
-                "name": "Schneider, R. H., Grim, C. E., Rainforth, M. V., Kotchen, T., Nidich, S. I., Gaylord-King, C., Salerno, J. W., & Kotchen, J. M. (2012). Stress reduction in the secondary prevention of cardiovascular disease: Randomised, controlled trial of Transcendental Meditation and health education in Blacks. Circulation: Cardiovascular Quality and Outcomes, 5(6), 750-758. https://doi.org/10.1161/CIRCOUTCOMES.112.967406"
+                "name": "Schneider, R. H., Grim, C. E., Rainforth, M. V., Kotchen, T., Nidich, S. I., Gaylord-King, C., Salerno, J. W., & Kotchen, J. M. (2012). Stress reduction in the secondary prevention of cardiovascular disease: Randomised, controlled trial of Transcendental Meditation and health education in Blacks. Circulation: Cardiovascular Quality and Outcomes, 5(6), 750-758."
               },
               "description": "TM has been shown to help with heart health by lowering blood pressure, reducing the risk of heart attacks, strokes, and other cardiovascular issues.",
               "title": "Improved Cardiovascular Health"
@@ -219,7 +219,7 @@
               },
               "citation": {
                 "doi": "https://doi.org/10.1080/00207450600575482",
-                "name": "Travis, F., & Arenander, A. (2010). Cross-sectional and longitudinal study of effects of Transcendental Meditation practice on interhemispheric frontal coherence and cognitive development in university students. Cognitive Processing, 11(1), 21-30. https://doi.org/10.1080/00207450600575482"
+                "name": "Travis, F., & Arenander, A. (2010). Cross-sectional and longitudinal study of effects of Transcendental Meditation practice on interhemispheric frontal coherence and cognitive development in university students. Cognitive Processing, 11(1), 21-30."
               },
               "description": "TM can improve cognitive functions, including focus, memory, and decision-making. Studies suggest that TM increases brain coherence, which relates to improved learning abilities and intellectual performance.",
               "title": "Enhanced Brain Function and Focus"
@@ -258,7 +258,7 @@
               },
               "citation": {
                 "doi": "https://doi.org/10.7205/milmed-d-10-00254",
-                "name": "Rosenthal, J. Z., Grosswald, S., Ross, R., & Rosenthal, N. (2011). Effects of transcendental meditation in veterans of Operation Enduring Freedom and Operation Iraqi Freedom with posttraumatic stress disorder: a pilot study. Military medicine, 176(6), 626-630. https://doi.org/10.7205/milmed-d-10-00254"
+                "name": "Rosenthal, J. Z., Grosswald, S., Ross, R., & Rosenthal, N. (2011). Effects of transcendental meditation in veterans of Operation Enduring Freedom and Operation Iraqi Freedom with posttraumatic stress disorder: a pilot study. Military medicine, 176(6), 626-630."
               },
               "description": "TM has been shown to be effective in reducing symptoms of post-traumatic stress disorder (PTSD), particularly in military veterans.",
               "title": "Reduction in PTSD Symptoms"
@@ -387,6 +387,10 @@
         "subtitle": "Bring the benefits of Transcendental Meditation® to your organisation. Boost productivity, improve workplace relationships, and create a more resilient team.",
         "title": "Transform Your Workplace"
       },
+      "introduction": {
+        "paragraph": "Introduce your staff to the simple and elegant practice of TM. Watch workplace well-being and productivity soar as they become better equiped to deal with stress and difficult problems.",
+        "title": "Workplace Transcendental Meditation®"
+      },
       "keyFeatures": [
         {
           "description": "Transcendental Meditation® has been shown to reduce stress and increase emotional intelligence. In a corporate setting, this translates to improved interpersonal relationships. Employees who practice TM often report better communication with colleagues, increased empathy, and a more harmonious work environment. This can lead to more effective teamwork and a positive company culture.",
@@ -409,6 +413,118 @@
           "title": "Create a more engaged and resilient team"
         }
       ],
+      "science": {
+        "cards": [
+          {
+            "chart": {
+              "config": {
+                "control": {
+                  "color": "#94a3b8",
+                  "label": "Control"
+                },
+                "tm": {
+                  "color": "#059669",
+                  "label": "TM"
+                }
+              },
+              "data": [
+                {
+                  "control": 36.7,
+                  "label": "Baseline",
+                  "tm": 38.9
+                },
+                {
+                  "control": 38.49,
+                  "label": "4 Months",
+                  "tm": 34.25
+                }
+              ],
+              "dataPadding": 0,
+              "title": "Effects of TM on Perceived Stress",
+              "type": "line",
+              "xAxisKey": "label"
+            },
+            "citation": {
+              "doi": "https://doi.org/10.7812/TPP/13-102",
+              "name": "Elder, C., Nidich, S., Moriarty, F., & Nidich, R. (2014). Effect of transcendental meditation on employee stress, depression, and burnout: a randomized controlled study. The Permanente journal, 18(1), 19-23."
+            },
+            "description": "TM significantly reduces stress over time. At 4 months, participants practicing TM reported a notable decrease in stress levels compared to a slight increase in the control group.",
+            "title": "Roll Back Stress"
+          },
+          {
+            "chart": {
+              "config": {
+                "control": {
+                  "color": "#94a3b8",
+                  "label": "Control"
+                },
+                "tm": {
+                  "color": "#059669",
+                  "label": "TM"
+                }
+              },
+              "data": [
+                {
+                  "control": 13.1,
+                  "label": "Baseline",
+                  "tm": 12.95
+                },
+                {
+                  "control": 12.78,
+                  "label": "4 Months",
+                  "tm": 10.12
+                }
+              ],
+              "dataPadding": 1,
+              "title": "Changes to Mental Health Inventory-5 (Depression)",
+              "type": "area",
+              "xAxisKey": "label"
+            },
+            "citation": {
+              "doi": "https://doi.org/10.7812/TPP/13-102",
+              "name": "Elder, C., Nidich, S., Moriarty, F., & Nidich, R. (2014). Effect of transcendental meditation on employee stress, depression, and burnout: a randomized controlled study. The Permanente journal, 18(1), 19-23."
+            },
+            "description": "TM has a positive impact on the fight against depression. Participants who practiced TM experienced a significant reduction in their perceived levels of depression.",
+            "title": "Fight Depression"
+          },
+          {
+            "chart": {
+              "config": {
+                "control": {
+                  "color": "#94a3b8",
+                  "label": "Control"
+                },
+                "tm": {
+                  "color": "#059669",
+                  "label": "TM"
+                }
+              },
+              "data": [
+                {
+                  "control": 37.5,
+                  "label": "Baseline",
+                  "tm": 37.6
+                },
+                {
+                  "control": 39.08,
+                  "label": "4 Months",
+                  "tm": 31.99
+                }
+              ],
+              "dataPadding": 1,
+              "title": "TM practice and the Maslach Burnout Inventory",
+              "type": "line",
+              "xAxisKey": "label"
+            },
+            "citation": {
+              "doi": "https://doi.org/10.7812/TPP/13-102",
+              "name": "Elder, C., Nidich, S., Moriarty, F., & Nidich, R. (2014). Effect of transcendental meditation on employee stress, depression, and burnout: a randomized controlled study. The Permanente journal, 18(1), 19-23."
+            },
+            "description": "Participants practicing the TM technique over 4 months reduced their risk of burnout by decreasing their emotional exhaustion and increasing their sense of personal achievement.",
+            "title": "Prevent Burnout"
+          }
+        ]
+      },
       "subtitle": "Let North Shore Meditation help you enhance the workplace well-being and productivity of your business with our corporate meditation program",
       "title": "Meditation Programs for Your Business"
     },
