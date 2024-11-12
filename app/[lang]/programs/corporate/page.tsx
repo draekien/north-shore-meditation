@@ -24,7 +24,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 
   return {
     title: 'Transcendental Meditation Programs for Businesses',
-    description: '',
+    description:
+      'Transcendental Meditation is proven to improve workplace relations, forster a culture of collaboration, boost productivity and job satisfaction, prevent workplace mental health issues, and create a more engaged and resilient team. Discover corporate TM programs at North Shore Meditation.',
     alternates: {
       canonical: `/${lang}/programs/corporate`,
       languages: {
@@ -68,7 +69,7 @@ export default async function CorporateProgramsPage({ params: { lang } }: Global
               </AccordionItem>
             ))}
           </Accordion>
-          <div className="mb-4 grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
+          <div className="my-4 grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
             {corporateMeditation.science.cards.map(({ title, description, citation, chart }, index) => (
               <Card
                 key={title}
