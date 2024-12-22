@@ -29,7 +29,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function IndividualProgramsPage({ params: { lang } }: GlobalPageProps) {
+export default async function IndividualProgramsPage({ params }: GlobalPageProps) {
+  const { lang } = await params;
   const {
     pages: { individualMeditation },
   } = await getDictionary(lang);

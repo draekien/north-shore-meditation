@@ -1,7 +1,7 @@
 import type { Locale } from './constants';
 
 export type GlobalPageProps = {
-  params: {
+  params: Promise<{
     lang: Locale;
-  };
+  }>;
 };

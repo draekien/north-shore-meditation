@@ -24,7 +24,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function PrivacyNoticePage({ params: { lang } }: GlobalPageProps) {
+export default async function PrivacyNoticePage({ params }: GlobalPageProps) {
+  const { lang } = await params;
   const {
     pages: { privacyNotice },
   } = await getDictionary(lang);

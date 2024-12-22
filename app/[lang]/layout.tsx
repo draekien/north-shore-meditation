@@ -95,10 +95,11 @@ export async function generateStaticParams() {
 }
 
 export default async function RootLayout({ children, params }: Readonly<PropsWithChildren<GlobalPageProps>>) {
-  const dict = await getDictionary(params.lang);
+  const lang = (await params).lang;
+  const dict = await getDictionary(lang);
   const shouldInjectToolbar = process.env.NODE_ENV === 'development';
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body className={`${geistSans.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"

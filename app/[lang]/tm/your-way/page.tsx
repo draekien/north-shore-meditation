@@ -42,7 +42,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function YourWayPage({ params: { lang } }: GlobalPageProps) {
+export default async function YourWayPage({ params }: GlobalPageProps) {
+  const { lang } = await params;
   const {
     pages: { way },
   } = await getDictionary(lang);
