@@ -28,7 +28,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function ContactUsPage({ params: { lang } }: GlobalPageProps) {
+export default async function ContactUsPage({ params }: GlobalPageProps) {
+  const { lang } = await params;
   const {
     pages: { contactUs },
   } = await getDictionary(lang);
