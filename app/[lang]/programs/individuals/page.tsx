@@ -34,6 +34,11 @@ export default async function IndividualProgramsPage({ params: { lang } }: Globa
     pages: { individualMeditation },
   } = await getDictionary(lang);
 
+  const now = new Date();
+  const currentMonth = now.getMonth();
+  const currentDate = now.getDate();
+  const giftCardVisible = currentMonth === 11 && currentDate >= 10 && currentDate <= 24;
+
   return (
     <PageContent>
       <PrimaryPageSection>
@@ -86,6 +91,36 @@ export default async function IndividualProgramsPage({ params: { lang } }: Globa
               </TabsContent>
             ))}
           </Tabs>
+          {giftCardVisible && (
+            <Card className="relative mt-10 overflow-clip border-0 bg-white/30 backdrop-blur-3xl dark:bg-slate-700/30">
+              <CardHeader>
+                <CardTitle className="text-center">🎁 Give the Gift of TM 🎁</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="flex flex-col text-center">
+                  <span className="text-secondary">Looking for a last minute gift idea for the holiday season?</span>
+                  <span>Call us to find out how you can gift your loved ones</span>
+                  <em className="text-secondary">the simplest technique</em>
+                  <span>that will benefit all aspects of their life</span>
+                  <small className="mt-10">
+                    Gift the entire TM Course, or give a gift voucher that contributes to part of the tuition to learn
+                    TM at North Shore TM centre in Lane Cove NSW Australia
+                  </small>
+                </p>
+                <p className="text-center">
+                  Call
+                  <ButtonLink href="tel:0424450578" variant="link" className="px-2" prefetch={false}>
+                    0424 450 578
+                  </ButtonLink>
+                  or email
+                  <ButtonLink href="mailto:tm@northshoremeditation.au" variant="link" className="px-2" prefetch={false}>
+                    tm@northshoremeditation.au
+                  </ButtonLink>
+                  for more details
+                </p>
+              </CardContent>
+            </Card>
+          )}
         </PageSectionContainer>
       </SecondaryPageSection>
     </PageContent>
