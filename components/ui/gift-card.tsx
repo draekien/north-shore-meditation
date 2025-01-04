@@ -56,4 +56,3 @@ const GiftCard = ({ visible, title = '🎁 Give the Gift of TM 🎁', children }
 
 export { GiftCard, useVisibleInDecember };
 export type { GiftCardProps };
-
