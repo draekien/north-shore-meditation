@@ -24,7 +24,7 @@ const GiftCard = ({ visible, title = '🎁 Give the Gift of TM 🎁', children }
         <CardTitle className="text-center">{title}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="flex flex-col text-center">
+        <div className="flex flex-col text-center">
           {children || (
             <>
               <span className="text-secondary">Looking for a last minute gift idea for the holiday season?</span>
@@ -37,7 +37,7 @@ const GiftCard = ({ visible, title = '🎁 Give the Gift of TM 🎁', children }
             Gift the entire TM Course, or give a gift voucher that contributes to part of the tuition to learn TM at
             North Shore TM centre in Lane Cove NSW Australia
           </small>
-        </p>
+        </div>
         <p className="text-center">
           Call
           <ButtonLink href="tel:0424450578" variant="link" className="px-2" prefetch={false}>
