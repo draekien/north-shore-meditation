@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@contentful/rich-text-react-renderer": "^16.0.1",
+    "@contentful/rich-text-types": "^17.0.0",
     "@formatjs/intl-localematcher": "^0.5.9",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "^1.2.2",

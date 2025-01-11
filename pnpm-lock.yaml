@@ -11,6 +11,9 @@ importers:
       '@contentful/rich-text-react-renderer':
         specifier: ^16.0.1
         version: 16.0.1(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
+      '@contentful/rich-text-types':
+        specifier: ^17.0.0
+        version: 17.0.0
       '@formatjs/intl-localematcher':
         specifier: ^0.5.9
         version: 0.5.9
