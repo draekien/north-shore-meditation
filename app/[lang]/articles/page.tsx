@@ -3,11 +3,13 @@ import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { getAllBlogPosts } from '@/lib/contentful-api';
+import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default async function BlogPage() {
-  const blogPosts = await getAllBlogPosts();
+export default async function ArticlesPage() {
+  const { isEnabled } = await draftMode();
+  const blogPosts = await getAllBlogPosts(10, isEnabled);
 
   return (
     <PageContent>
@@ -22,7 +24,7 @@ export default async function BlogPage() {
             {blogPosts?.map((article) => (
               <article key={article.sys.id} className="flex h-full flex-col overflow-hidden rounded-lg shadow-lg">
                 <Image
-                  alt={article.image.title}
+                  alt={article.image.title ?? `Image for ${article.title}`}
                   className="aspect-[4/3] w-full object-cover"
                   height="263"
                   src={article.image.url}
@@ -41,7 +43,7 @@ export default async function BlogPage() {
                   <div className="flex justify-end">
                     <Link
                       className="inline-flex h-10 items-center justify-center text-sm font-medium"
-                      href={`/blog/${article.slug}`}
+                      href={`/articles/${article.slug}`}
                     >
                       Read More →
                     </Link>

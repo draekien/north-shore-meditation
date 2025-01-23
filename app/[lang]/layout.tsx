@@ -172,6 +172,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
                         <AccordionContent>
                           <ul className="grid gap-3">
+                            <MobileNavigationMenuListItem href="/articles" title="Articles" />
                             <MobileNavigationMenuListItem href="/about-us" title={dict.nav.aboutUs} />
                             <MobileNavigationMenuListItem href="/contact-us" title={dict.nav.contactUs} />
                           </ul>
@@ -229,6 +230,11 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                           ))}
                         </ul>
                       </NavigationMenuContent>
+                    </NavigationMenuItem>
+                    <NavigationMenuItem>
+                      <Link href="/articles" legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>Articles</NavigationMenuLink>
+                      </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
                       <Link href="/about-us" legacyBehavior passHref>
