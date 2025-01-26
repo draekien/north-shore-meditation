@@ -11,7 +11,7 @@ type Article = Awaited<ReturnType<typeof getArticles>>['items'][0];
 function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
   return (
     <article className="w-full md:max-w-80">
-      <Card className="overflow-clip">
+      <Card className="overflow-clip bg-card/70 backdrop-blur">
         {image?.url && (
           <Image
             src={image.url}
