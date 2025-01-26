@@ -73,8 +73,6 @@ export default async function ArticlesPage({ params }: GlobalPageProps) {
 
   const article = await getArticlesBySlug({ slug, preview: isEnabled });
 
-  console.log(article);
-
   if (!article?.content) return notFound();
 
   const relatedArticles = article.relatedPostsCollection?.items?.filter((x) => !!x) ?? [];

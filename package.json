@@ -35,6 +35,7 @@
     "@radix-ui/react-tooltip": "^1.1.6",
     "@tanstack/react-query": "^5.64.2",
     "@vercel/analytics": "^1.4.1",
+    "@vercel/og": "^0.6.5",
     "@vercel/speed-insights": "^1.1.0",
     "@vercel/toolbar": "^0.1.30",
     "class-variance-authority": "^0.7.1",
@@ -56,7 +57,6 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@apollo/client": "^3.12.7",
     "@graphql-codegen/add": "^5.0.3",
     "@graphql-codegen/cli": "^5.0.3",
     "@graphql-codegen/typescript": "^4.1.2",
@@ -78,5 +78,5 @@
   "overrides": {
     "react-is": "^19"
   },
-  "packageManager": "pnpm@9.15.0+sha256.09a8fe31a34fda706354680619f4002f4ccef6dadff93240d24ef6c831f0fd28"
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
 }

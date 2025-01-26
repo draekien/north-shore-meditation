@@ -31,33 +31,12 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
-import { Ma_Shan_Zheng, Noto_Sans_SC } from 'next/font/google';
-import localFont from 'next/font/local';
 import Link from 'next/link';
 import type { PropsWithChildren } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../components/ui/accordion';
 import { getDictionary } from './dictionaries';
+import { geistSans, maShanZheng, notoSans } from './fonts';
 import './globals.css';
-
-const maShanZheng = Ma_Shan_Zheng({
-  display: 'swap',
-  variable: '--font-ma-shan-zheng',
-  weight: '400',
-  subsets: ['latin'],
-});
-
-const notoSans = Noto_Sans_SC({
-  display: 'swap',
-  variable: '--font-noto-sans',
-  weight: 'variable',
-  subsets: ['latin'],
-});
-
-const geistSans = localFont({
-  src: '../fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
