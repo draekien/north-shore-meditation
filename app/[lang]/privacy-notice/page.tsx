@@ -9,6 +9,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Privacy Notice',
     description:
       'North Shore Meditation ("we", "us", or "our") is committed to protecting your privacy. This Privacy Notice explains how we collect, use, and safeguard your personal information when you use our website',

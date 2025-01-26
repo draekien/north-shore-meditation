@@ -17,6 +17,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Articles',
     description: 'Learn about TM from the teachers at North Shore Meditation',
     keywords: [...baseKeywords, 'articles'],

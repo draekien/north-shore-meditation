@@ -19,6 +19,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Uncover Your Way of Practicing TM',
     description:
       'Follow 3 easy steps to begin your TM journey: attend a free info session, learn TM from a certified instructor, and contact us for support and guidance whenever you need it.',

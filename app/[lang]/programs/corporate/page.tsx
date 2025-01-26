@@ -23,6 +23,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Transcendental Meditation Programs for Businesses',
     description:
       'Transcendental Meditation is proven to improve workplace relations, forster a culture of collaboration, boost productivity and job satisfaction, prevent workplace mental health issues, and create a more engaged and resilient team. Discover corporate TM programs at North Shore Meditation.',

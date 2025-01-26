@@ -13,6 +13,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Contact Us',
     description: 'Connect with North Shore Meditation by sending us an inquiry',
     keywords: [...baseKeywords, 'Contact Us'],

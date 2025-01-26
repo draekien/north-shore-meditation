@@ -50,6 +50,7 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
   const keywordsSet = new Set([...baseKeywords, ...blogKeywords]);
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: blogPost.title,
     description: blogPost.summary,
     keywords: [...keywordsSet],
