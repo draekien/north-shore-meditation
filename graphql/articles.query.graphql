@@ -1,4 +1,4 @@
-query BlogPosts($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
+query Articles($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
   blogPostCollection(
     where: { slug_exists: true }
     order: sys_publishedAt_DESC

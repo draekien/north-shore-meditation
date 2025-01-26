@@ -4,7 +4,7 @@ import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import { baseKeywords } from '@/lib/constants';
-import { getBlogPosts } from '@/lib/contentful-api';
+import { getArticles } from '@/lib/contentful-api';
 import type { GlobalPageProps } from '@/lib/types';
 import type { Metadata } from 'next';
 import { draftMode } from 'next/headers';
@@ -32,7 +32,7 @@ export default async function ArticlesPage({ searchParams }: GlobalPageProps) {
   const { page = 1 } = await searchParams;
   const { isEnabled } = await draftMode();
 
-  const blogPosts = await getBlogPosts({
+  const articles = await getArticles({
     limit: 10,
     preview: isEnabled,
     skip: (+page - 1) * 10,
@@ -52,10 +52,10 @@ export default async function ArticlesPage({ searchParams }: GlobalPageProps) {
             </div>
           </div>
           <div className="pt-20" id="articles-list">
-            <Articles articles={blogPosts.items} />
+            <Articles articles={articles.items} />
           </div>
           <div className="mt-16">
-            <ArticlePagination total={blogPosts.total || 0} limit={10} />
+            <ArticlePagination total={articles.total || 0} limit={10} />
           </div>
         </PageSectionContainer>
       </PrimaryPageSection>

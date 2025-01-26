@@ -223,7 +223,7 @@ export enum AssetOrder {
   WidthDesc = 'width_DESC'
 }
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPost = Entry & _Node & {
   __typename?: 'BlogPost';
   _id: Scalars['ID']['output'];
@@ -241,32 +241,32 @@ export type BlogPost = Entry & _Node & {
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostAuthorArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostContentArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostImageArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostLinkedFromArgs = {
   allowedLocales: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostRelatedPostsCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale: InputMaybe<Scalars['String']['input']>;
@@ -277,25 +277,25 @@ export type BlogPostRelatedPostsCollectionArgs = {
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSeoArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSlugArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSummaryArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
 };
 
 
-/** A blog post [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
+/** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostTitleArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
 };
@@ -834,27 +834,27 @@ export type CfBlogPostNestedFilter = {
   title_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
-export type BlogPostBySlugQueryVariables = Exact<{
+export type ArticlesBySlugQueryVariables = Exact<{
   slug: InputMaybe<Scalars['String']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
 
-export type BlogPostBySlugQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, seo: Array<string | null> | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, content: { __typename?: 'BlogPostContent', json: any, links: { __typename?: 'BlogPostContentLinks', assets: { __typename?: 'BlogPostContentAssets', block: Array<{ __typename?: 'Asset', url: string | null, description: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null, image: { __typename?: 'Asset', url: string | null } | null, relatedPostsCollection: { __typename?: 'BlogPostRelatedPostsCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, description: string | null, url: string | null, width: number | null, height: number | null } | null } | null> } | null } | null> } | null };
+export type ArticlesBySlugQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, seo: Array<string | null> | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, content: { __typename?: 'BlogPostContent', json: any, links: { __typename?: 'BlogPostContentLinks', assets: { __typename?: 'BlogPostContentAssets', block: Array<{ __typename?: 'Asset', url: string | null, description: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null, image: { __typename?: 'Asset', url: string | null } | null, relatedPostsCollection: { __typename?: 'BlogPostRelatedPostsCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, description: string | null, url: string | null, width: number | null, height: number | null } | null } | null> } | null } | null> } | null };
 
-export type BlogPostsQueryVariables = Exact<{
+export type ArticlesQueryVariables = Exact<{
   limit?: InputMaybe<Scalars['Int']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
 
-export type BlogPostsQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, url: string | null, description: string | null, width: number | null, height: number | null } | null } | null> } | null };
+export type ArticlesQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, url: string | null, description: string | null, width: number | null, height: number | null } | null } | null> } | null };
 
 
 
-export const BlogPostBySlugDocument = `
-    query BlogPostBySlug($slug: String, $preview: Boolean = false) {
+export const ArticlesBySlugDocument = `
+    query ArticlesBySlug($slug: String, $preview: Boolean = false) {
   blogPostCollection(where: {slug: $slug}, limit: 1, preview: $preview) {
     items {
       sys {
@@ -907,89 +907,89 @@ export const BlogPostBySlugDocument = `
 }
     `;
 
-export const useBlogPostBySlugQuery = <
-      TData = BlogPostBySlugQuery,
+export const useArticlesBySlugQuery = <
+      TData = ArticlesBySlugQuery,
       TError = unknown
     >(
-      variables?: BlogPostBySlugQueryVariables,
-      options?: Omit<UseQueryOptions<BlogPostBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<BlogPostBySlugQuery, TError, TData>['queryKey'] }
+      variables?: ArticlesBySlugQueryVariables,
+      options?: Omit<UseQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useQuery<BlogPostBySlugQuery, TError, TData>(
+    return useQuery<ArticlesBySlugQuery, TError, TData>(
       {
-    queryKey: variables === undefined ? ['BlogPostBySlug'] : ['BlogPostBySlug', variables],
-    queryFn: fetcher<BlogPostBySlugQuery, BlogPostBySlugQueryVariables>(BlogPostBySlugDocument, variables),
+    queryKey: variables === undefined ? ['ArticlesBySlug'] : ['ArticlesBySlug', variables],
+    queryFn: fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables),
     ...options
   }
     )};
 
-useBlogPostBySlugQuery.getKey = (variables?: BlogPostBySlugQueryVariables) => variables === undefined ? ['BlogPostBySlug'] : ['BlogPostBySlug', variables];
+useArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlug'] : ['ArticlesBySlug', variables];
 
-export const useSuspenseBlogPostBySlugQuery = <
-      TData = BlogPostBySlugQuery,
+export const useSuspenseArticlesBySlugQuery = <
+      TData = ArticlesBySlugQuery,
       TError = unknown
     >(
-      variables?: BlogPostBySlugQueryVariables,
-      options?: Omit<UseSuspenseQueryOptions<BlogPostBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<BlogPostBySlugQuery, TError, TData>['queryKey'] }
+      variables?: ArticlesBySlugQueryVariables,
+      options?: Omit<UseSuspenseQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useSuspenseQuery<BlogPostBySlugQuery, TError, TData>(
+    return useSuspenseQuery<ArticlesBySlugQuery, TError, TData>(
       {
-    queryKey: variables === undefined ? ['BlogPostBySlugSuspense'] : ['BlogPostBySlugSuspense', variables],
-    queryFn: fetcher<BlogPostBySlugQuery, BlogPostBySlugQueryVariables>(BlogPostBySlugDocument, variables),
+    queryKey: variables === undefined ? ['ArticlesBySlugSuspense'] : ['ArticlesBySlugSuspense', variables],
+    queryFn: fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables),
     ...options
   }
     )};
 
-useSuspenseBlogPostBySlugQuery.getKey = (variables?: BlogPostBySlugQueryVariables) => variables === undefined ? ['BlogPostBySlugSuspense'] : ['BlogPostBySlugSuspense', variables];
+useSuspenseArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlugSuspense'] : ['ArticlesBySlugSuspense', variables];
 
-export const useInfiniteBlogPostBySlugQuery = <
-      TData = InfiniteData<BlogPostBySlugQuery>,
+export const useInfiniteArticlesBySlugQuery = <
+      TData = InfiniteData<ArticlesBySlugQuery>,
       TError = unknown
     >(
-      variables: BlogPostBySlugQueryVariables,
-      options: Omit<UseInfiniteQueryOptions<BlogPostBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<BlogPostBySlugQuery, TError, TData>['queryKey'] }
+      variables: ArticlesBySlugQueryVariables,
+      options: Omit<UseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useInfiniteQuery<BlogPostBySlugQuery, TError, TData>(
+    return useInfiniteQuery<ArticlesBySlugQuery, TError, TData>(
       (() => {
     const { queryKey: optionsQueryKey, ...restOptions } = options;
     return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['BlogPostBySlug.infinite'] : ['BlogPostBySlug.infinite', variables],
-      queryFn: (metaData) => fetcher<BlogPostBySlugQuery, BlogPostBySlugQueryVariables>(BlogPostBySlugDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      queryKey: optionsQueryKey ?? variables === undefined ? ['ArticlesBySlug.infinite'] : ['ArticlesBySlug.infinite', variables],
+      queryFn: (metaData) => fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, {...variables, ...(metaData.pageParam ?? {})})(),
       ...restOptions
     }
   })()
     )};
 
-useInfiniteBlogPostBySlugQuery.getKey = (variables?: BlogPostBySlugQueryVariables) => variables === undefined ? ['BlogPostBySlug.infinite'] : ['BlogPostBySlug.infinite', variables];
+useInfiniteArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlug.infinite'] : ['ArticlesBySlug.infinite', variables];
 
-export const useSuspenseInfiniteBlogPostBySlugQuery = <
-      TData = InfiniteData<BlogPostBySlugQuery>,
+export const useSuspenseInfiniteArticlesBySlugQuery = <
+      TData = InfiniteData<ArticlesBySlugQuery>,
       TError = unknown
     >(
-      variables: BlogPostBySlugQueryVariables,
-      options: Omit<UseSuspenseInfiniteQueryOptions<BlogPostBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<BlogPostBySlugQuery, TError, TData>['queryKey'] }
+      variables: ArticlesBySlugQueryVariables,
+      options: Omit<UseSuspenseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useSuspenseInfiniteQuery<BlogPostBySlugQuery, TError, TData>(
+    return useSuspenseInfiniteQuery<ArticlesBySlugQuery, TError, TData>(
       (() => {
     const { queryKey: optionsQueryKey, ...restOptions } = options;
     return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['BlogPostBySlug.infiniteSuspense'] : ['BlogPostBySlug.infiniteSuspense', variables],
-      queryFn: (metaData) => fetcher<BlogPostBySlugQuery, BlogPostBySlugQueryVariables>(BlogPostBySlugDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      queryKey: optionsQueryKey ?? variables === undefined ? ['ArticlesBySlug.infiniteSuspense'] : ['ArticlesBySlug.infiniteSuspense', variables],
+      queryFn: (metaData) => fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, {...variables, ...(metaData.pageParam ?? {})})(),
       ...restOptions
     }
   })()
     )};
 
-useSuspenseInfiniteBlogPostBySlugQuery.getKey = (variables?: BlogPostBySlugQueryVariables) => variables === undefined ? ['BlogPostBySlug.infiniteSuspense'] : ['BlogPostBySlug.infiniteSuspense', variables];
+useSuspenseInfiniteArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlug.infiniteSuspense'] : ['ArticlesBySlug.infiniteSuspense', variables];
 
 
-useBlogPostBySlugQuery.fetcher = (variables?: BlogPostBySlugQueryVariables, options?: RequestInit['headers']) => fetcher<BlogPostBySlugQuery, BlogPostBySlugQueryVariables>(BlogPostBySlugDocument, variables, options);
+useArticlesBySlugQuery.fetcher = (variables?: ArticlesBySlugQueryVariables, options?: RequestInit['headers']) => fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables, options);
 
-export const BlogPostsDocument = `
-    query BlogPosts($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
+export const ArticlesDocument = `
+    query Articles($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
   blogPostCollection(
     where: {slug_exists: true}
     order: sys_publishedAt_DESC
@@ -1021,83 +1021,83 @@ export const BlogPostsDocument = `
 }
     `;
 
-export const useBlogPostsQuery = <
-      TData = BlogPostsQuery,
+export const useArticlesQuery = <
+      TData = ArticlesQuery,
       TError = unknown
     >(
-      variables?: BlogPostsQueryVariables,
-      options?: Omit<UseQueryOptions<BlogPostsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<BlogPostsQuery, TError, TData>['queryKey'] }
+      variables?: ArticlesQueryVariables,
+      options?: Omit<UseQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useQuery<BlogPostsQuery, TError, TData>(
+    return useQuery<ArticlesQuery, TError, TData>(
       {
-    queryKey: variables === undefined ? ['BlogPosts'] : ['BlogPosts', variables],
-    queryFn: fetcher<BlogPostsQuery, BlogPostsQueryVariables>(BlogPostsDocument, variables),
+    queryKey: variables === undefined ? ['Articles'] : ['Articles', variables],
+    queryFn: fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables),
     ...options
   }
     )};
 
-useBlogPostsQuery.getKey = (variables?: BlogPostsQueryVariables) => variables === undefined ? ['BlogPosts'] : ['BlogPosts', variables];
+useArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['Articles'] : ['Articles', variables];
 
-export const useSuspenseBlogPostsQuery = <
-      TData = BlogPostsQuery,
+export const useSuspenseArticlesQuery = <
+      TData = ArticlesQuery,
       TError = unknown
     >(
-      variables?: BlogPostsQueryVariables,
-      options?: Omit<UseSuspenseQueryOptions<BlogPostsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<BlogPostsQuery, TError, TData>['queryKey'] }
+      variables?: ArticlesQueryVariables,
+      options?: Omit<UseSuspenseQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useSuspenseQuery<BlogPostsQuery, TError, TData>(
+    return useSuspenseQuery<ArticlesQuery, TError, TData>(
       {
-    queryKey: variables === undefined ? ['BlogPostsSuspense'] : ['BlogPostsSuspense', variables],
-    queryFn: fetcher<BlogPostsQuery, BlogPostsQueryVariables>(BlogPostsDocument, variables),
+    queryKey: variables === undefined ? ['ArticlesSuspense'] : ['ArticlesSuspense', variables],
+    queryFn: fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables),
     ...options
   }
     )};
 
-useSuspenseBlogPostsQuery.getKey = (variables?: BlogPostsQueryVariables) => variables === undefined ? ['BlogPostsSuspense'] : ['BlogPostsSuspense', variables];
+useSuspenseArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['ArticlesSuspense'] : ['ArticlesSuspense', variables];
 
-export const useInfiniteBlogPostsQuery = <
-      TData = InfiniteData<BlogPostsQuery>,
+export const useInfiniteArticlesQuery = <
+      TData = InfiniteData<ArticlesQuery>,
       TError = unknown
     >(
-      variables: BlogPostsQueryVariables,
-      options: Omit<UseInfiniteQueryOptions<BlogPostsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<BlogPostsQuery, TError, TData>['queryKey'] }
+      variables: ArticlesQueryVariables,
+      options: Omit<UseInfiniteQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useInfiniteQuery<BlogPostsQuery, TError, TData>(
+    return useInfiniteQuery<ArticlesQuery, TError, TData>(
       (() => {
     const { queryKey: optionsQueryKey, ...restOptions } = options;
     return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['BlogPosts.infinite'] : ['BlogPosts.infinite', variables],
-      queryFn: (metaData) => fetcher<BlogPostsQuery, BlogPostsQueryVariables>(BlogPostsDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      queryKey: optionsQueryKey ?? variables === undefined ? ['Articles.infinite'] : ['Articles.infinite', variables],
+      queryFn: (metaData) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, {...variables, ...(metaData.pageParam ?? {})})(),
       ...restOptions
     }
   })()
     )};
 
-useInfiniteBlogPostsQuery.getKey = (variables?: BlogPostsQueryVariables) => variables === undefined ? ['BlogPosts.infinite'] : ['BlogPosts.infinite', variables];
+useInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['Articles.infinite'] : ['Articles.infinite', variables];
 
-export const useSuspenseInfiniteBlogPostsQuery = <
-      TData = InfiniteData<BlogPostsQuery>,
+export const useSuspenseInfiniteArticlesQuery = <
+      TData = InfiniteData<ArticlesQuery>,
       TError = unknown
     >(
-      variables: BlogPostsQueryVariables,
-      options: Omit<UseSuspenseInfiniteQueryOptions<BlogPostsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<BlogPostsQuery, TError, TData>['queryKey'] }
+      variables: ArticlesQueryVariables,
+      options: Omit<UseSuspenseInfiniteQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
     ) => {
     
-    return useSuspenseInfiniteQuery<BlogPostsQuery, TError, TData>(
+    return useSuspenseInfiniteQuery<ArticlesQuery, TError, TData>(
       (() => {
     const { queryKey: optionsQueryKey, ...restOptions } = options;
     return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['BlogPosts.infiniteSuspense'] : ['BlogPosts.infiniteSuspense', variables],
-      queryFn: (metaData) => fetcher<BlogPostsQuery, BlogPostsQueryVariables>(BlogPostsDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      queryKey: optionsQueryKey ?? variables === undefined ? ['Articles.infiniteSuspense'] : ['Articles.infiniteSuspense', variables],
+      queryFn: (metaData) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, {...variables, ...(metaData.pageParam ?? {})})(),
       ...restOptions
     }
   })()
     )};
 
-useSuspenseInfiniteBlogPostsQuery.getKey = (variables?: BlogPostsQueryVariables) => variables === undefined ? ['BlogPosts.infiniteSuspense'] : ['BlogPosts.infiniteSuspense', variables];
+useSuspenseInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['Articles.infiniteSuspense'] : ['Articles.infiniteSuspense', variables];
 
 
-useBlogPostsQuery.fetcher = (variables?: BlogPostsQueryVariables, options?: RequestInit['headers']) => fetcher<BlogPostsQuery, BlogPostsQueryVariables>(BlogPostsDocument, variables, options);
+useArticlesQuery.fetcher = (variables?: ArticlesQueryVariables, options?: RequestInit['headers']) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables, options);

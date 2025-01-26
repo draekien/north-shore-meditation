@@ -13,7 +13,7 @@ import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { baseKeywords } from '@/lib/constants';
-import { getBlogPostBySlug, getBlogPosts } from '@/lib/contentful-api';
+import { getArticles, getArticlesBySlug } from '@/lib/contentful-api';
 import type { GlobalPageProps } from '@/lib/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
@@ -28,7 +28,7 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const allPosts = await getBlogPosts({
+  const allPosts = await getArticles({
     limit: 10,
   });
 
@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
 
   if (!slug) return {};
 
-  const blogPost = await getBlogPostBySlug({ slug });
+  const blogPost = await getArticlesBySlug({ slug });
 
   if (!blogPost) return {};
 
@@ -65,19 +65,19 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
   };
 }
 
-export default async function BlogPostPage({ params }: GlobalPageProps) {
+export default async function ArticlesPage({ params }: GlobalPageProps) {
   const slug = (await params).slug;
   const { isEnabled } = await draftMode();
 
   if (!slug) return notFound();
 
-  const blogPost = await getBlogPostBySlug({ slug, preview: isEnabled });
+  const article = await getArticlesBySlug({ slug, preview: isEnabled });
 
-  console.log(blogPost);
+  console.log(article);
 
-  if (!blogPost?.content) return notFound();
+  if (!article?.content) return notFound();
 
-  const relatedArticles = blogPost.relatedPostsCollection?.items?.filter((x) => !!x) ?? [];
+  const relatedArticles = article.relatedPostsCollection?.items?.filter((x) => !!x) ?? [];
   const hasRelatedArticles = !!relatedArticles.length;
 
   return (
@@ -92,16 +92,16 @@ export default async function BlogPostPage({ params }: GlobalPageProps) {
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                  <BreadcrumbPage>{blogPost.title}</BreadcrumbPage>
+                  <BreadcrumbPage>{article.title}</BreadcrumbPage>
                 </BreadcrumbItem>
               </BreadcrumbList>
             </Breadcrumb>
-            <h1 className="text-primary">{blogPost.title}</h1>
+            <h1 className="text-primary">{article.title}</h1>
             <p className="mb-10 text-sm text-muted-foreground">
-              {blogPost.author} | {new Date(blogPost.sys.publishedAt).toLocaleDateString()}
+              {article.author} | {new Date(article.sys.publishedAt).toLocaleDateString()}
             </p>
             <div className="max-w-[900px] space-y-4 md:text-xl lg:text-base xl:text-xl">
-              {documentToReactComponents(blogPost.content.json, {
+              {documentToReactComponents(article.content.json, {
                 renderNode: {
                   [INLINES.HYPERLINK]: (node, children) => (
                     <ButtonLink
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: GlobalPageProps) {
                     </ButtonLink>
                   ),
                   [BLOCKS.EMBEDDED_ASSET]: (node) => {
-                    const embeddedAsset = blogPost.content!.links.assets.block.find(
+                    const embeddedAsset = article.content!.links.assets.block.find(
                       (x) => x!.sys.id == node.data.target.sys.id
                     );
                     if (!embeddedAsset) return null;

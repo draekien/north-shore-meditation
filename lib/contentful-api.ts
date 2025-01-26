@@ -1,17 +1,17 @@
 import {
-  BlogPostBySlugQuery,
-  BlogPostsQuery,
-  useBlogPostBySlugQuery,
-  useBlogPostsQuery,
-  type BlogPostBySlugQueryVariables,
-  type BlogPostsQueryVariables,
+  useArticlesBySlugQuery,
+  useArticlesQuery,
+  type ArticlesBySlugQuery,
+  type ArticlesBySlugQueryVariables,
+  type ArticlesQuery,
+  type ArticlesQueryVariables,
 } from '@/graphql/generated/gql.g';
 import { queryClient } from './query-client';
 
-export async function getBlogPosts(variables: BlogPostsQueryVariables) {
-  const response = await queryClient.fetchQuery<BlogPostsQuery>({
-    queryKey: useBlogPostsQuery.getKey(),
-    queryFn: useBlogPostsQuery.fetcher(variables),
+export async function getArticles(variables: ArticlesQueryVariables) {
+  const response = await queryClient.fetchQuery<ArticlesQuery>({
+    queryKey: useArticlesQuery.getKey(),
+    queryFn: useArticlesQuery.fetcher(variables),
   });
 
   return {
@@ -21,10 +21,10 @@ export async function getBlogPosts(variables: BlogPostsQueryVariables) {
   };
 }
 
-export async function getBlogPostBySlug(variables: BlogPostBySlugQueryVariables) {
-  const response = await queryClient.fetchQuery<BlogPostBySlugQuery>({
-    queryKey: useBlogPostBySlugQuery.getKey(),
-    queryFn: useBlogPostBySlugQuery.fetcher(variables),
+export async function getArticlesBySlug(variables: ArticlesBySlugQueryVariables) {
+  const response = await queryClient.fetchQuery<ArticlesBySlugQuery>({
+    queryKey: useArticlesBySlugQuery.getKey(),
+    queryFn: useArticlesBySlugQuery.fetcher(variables),
   });
 
   return response.blogPostCollection?.items.at(0);

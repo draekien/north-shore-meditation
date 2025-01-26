@@ -1,4 +1,4 @@
-import type { getBlogPosts } from '@/lib/contentful-api';
+import type { getArticles } from '@/lib/contentful-api';
 import { cn } from '@/lib/utils';
 import type { ClassValue } from 'clsx';
 import { ArrowRight } from 'lucide-react';
@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ButtonLink from './ui/button-link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 
-type Article = Awaited<ReturnType<typeof getBlogPosts>>['items'][0];
+type Article = Awaited<ReturnType<typeof getArticles>>['items'][0];
 
 function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
   return (
@@ -39,7 +39,7 @@ function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
 }
 
 type ArticlesProps = {
-  articles: Awaited<ReturnType<typeof getBlogPosts>>['items'];
+  articles: Awaited<ReturnType<typeof getArticles>>['items'];
   className?: ClassValue;
   id?: string;
 };
