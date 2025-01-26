@@ -7,7 +7,9 @@ export async function generateSitemaps() {
     limit: 1,
   });
 
-  const pages = Math.ceil(allPosts.total! / 100);
+  const pages = Math.ceil(allPosts.total ?? 0 / 100);
+
+  if (pages === 0) return [];
 
   return [...new Array(pages).keys().map((i) => ({ id: i }))];
 }
