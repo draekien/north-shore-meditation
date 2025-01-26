@@ -20,7 +20,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { baseKeywords, locales } from '@/lib/constants';
@@ -58,7 +58,6 @@ const geistSans = localFont({
   variable: '--font-geist-sans',
   weight: '100 900',
 });
-
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -126,6 +125,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                     </Button>
                   </SheetTrigger>
                   <SheetContent side="right" className="bg-white backdrop-blur-md dark:bg-slate-950/75">
+                    <SheetTitle className="sr-only">Menu</SheetTitle>
                     <div className="flex h-full flex-col justify-between gap-10 py-4">
                       <Accordion type="single" defaultValue="tm" collapsible>
                         <AccordionItem value="tm">
