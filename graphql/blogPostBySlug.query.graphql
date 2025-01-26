@@ -1,0 +1,50 @@
+query BlogPostBySlug($slug: String, $preview: Boolean = false) {
+  blogPostCollection(where: { slug: $slug }, limit: 1, preview: $preview) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      title
+      slug
+      summary
+      content {
+        json
+        links {
+          assets {
+            block {
+              sys {
+                id
+              }
+              url
+              description
+            }
+          }
+        }
+      }
+      author
+      image {
+        url
+      }
+      relatedPostsCollection {
+        items {
+          title
+          slug
+          summary
+          author
+          sys {
+            id
+            publishedAt
+          }
+          image {
+            title
+            description
+            url
+            width
+            height
+          }
+        }
+      }
+    }
+  }
+}

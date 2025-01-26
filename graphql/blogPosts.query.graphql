@@ -1,0 +1,27 @@
+query BlogPosts($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
+  blogPostCollection(
+    where: { slug_exists: true }
+    order: sys_publishedAt_DESC
+    limit: $limit
+    skip: $skip
+    preview: $preview
+  ) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      title
+      slug
+      summary
+      author
+      image {
+        title
+        url
+        description
+        width
+        height
+      }
+    }
+  }
+}

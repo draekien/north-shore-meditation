@@ -1,4 +1,4 @@
-import { getBlogPost } from '@/lib/contentful-api';
+import { getBlogPostBySlug } from '@/lib/contentful-api';
 import { draftMode } from 'next/headers';
 import { redirect } from 'next/navigation';
 import type { NextRequest } from 'next/server';
@@ -16,7 +16,10 @@ export async function GET(request: NextRequest) {
     return new Response('Invalid token', { status: 401 });
   }
 
-  const blog = await getBlogPost(slug, true);
+  const blog = await getBlogPostBySlug({
+    slug,
+    preview: true,
+  });
 
   if (!blog) {
     return new Response('Article not found', { status: 404 });
