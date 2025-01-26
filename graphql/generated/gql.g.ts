@@ -840,7 +840,7 @@ export type BlogPostBySlugQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostBySlugQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, content: { __typename?: 'BlogPostContent', json: any, links: { __typename?: 'BlogPostContentLinks', assets: { __typename?: 'BlogPostContentAssets', block: Array<{ __typename?: 'Asset', url: string | null, description: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null, image: { __typename?: 'Asset', url: string | null } | null, relatedPostsCollection: { __typename?: 'BlogPostRelatedPostsCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, description: string | null, url: string | null, width: number | null, height: number | null } | null } | null> } | null } | null> } | null };
+export type BlogPostBySlugQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, seo: Array<string | null> | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, content: { __typename?: 'BlogPostContent', json: any, links: { __typename?: 'BlogPostContentLinks', assets: { __typename?: 'BlogPostContentAssets', block: Array<{ __typename?: 'Asset', url: string | null, description: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null, image: { __typename?: 'Asset', url: string | null } | null, relatedPostsCollection: { __typename?: 'BlogPostRelatedPostsCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, description: string | null, url: string | null, width: number | null, height: number | null } | null } | null> } | null } | null> } | null };
 
 export type BlogPostsQueryVariables = Exact<{
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -864,6 +864,7 @@ export const BlogPostBySlugDocument = `
       title
       slug
       summary
+      seo
       content {
         json
         links {

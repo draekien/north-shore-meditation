@@ -8,6 +8,7 @@ query BlogPostBySlug($slug: String, $preview: Boolean = false) {
       title
       slug
       summary
+      seo
       content {
         json
         links {

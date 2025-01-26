@@ -1,25 +1,66 @@
+import { Articles } from '@/components/articles';
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from '@/components/ui/breadcrumb';
 import ButtonLink from '@/components/ui/button-link';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
+import { baseKeywords } from '@/lib/constants';
 import { getBlogPostBySlug, getBlogPosts } from '@/lib/contentful-api';
 import type { GlobalPageProps } from '@/lib/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
+import type { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import Image from 'next/image';
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
 export async function generateStaticParams() {
+  const { isEnabled } = await draftMode();
   const allPosts = await getBlogPosts({
     limit: 10,
+    preview: isEnabled,
   });
 
   return allPosts.map((post) => ({
-    slug: post.slug,
+    slug: post.slug!,
   }));
+}
+
+export async function generateMetadata({ params }: GlobalPageProps): Promise<Metadata> {
+  const { lang, slug } = await params;
+  const { isEnabled } = await draftMode();
+
+  if (!slug) return {};
+
+  const blogPost = await getBlogPostBySlug({ slug, preview: isEnabled });
+
+  if (!blogPost) return {};
+
+  const blogKeywords = blogPost.seo?.map((x) => x!) ?? [];
+  const keywordsSet = new Set([...baseKeywords, ...blogKeywords]);
+
+  return {
+    title: blogPost.title,
+    description: blogPost.summary,
+    keywords: [...keywordsSet],
+    alternates: {
+      canonical: `/${lang}/articles/${slug}`,
+      languages: {
+        en: `/en/articles/${slug}`,
+      },
+    },
+    openGraph: {
+      url: `/${lang}/articles/${slug}`,
+    },
+  };
 }
 
 export default async function BlogPostPage({ params }: GlobalPageProps) {
@@ -41,8 +82,19 @@ export default async function BlogPostPage({ params }: GlobalPageProps) {
     <PageContent>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <div className="grid grid-cols-1 justify-items-center">
-            <h1>{blogPost.title}</h1>
+          <div className="mx-auto grid max-w-prose grid-cols-1 justify-items-center">
+            <Breadcrumb className="mb-8 justify-self-start">
+              <BreadcrumbList>
+                <BreadcrumbItem>
+                  <BreadcrumbLink href="/articles">Articles</BreadcrumbLink>
+                </BreadcrumbItem>
+                <BreadcrumbSeparator />
+                <BreadcrumbItem>
+                  <BreadcrumbPage>{blogPost.title}</BreadcrumbPage>
+                </BreadcrumbItem>
+              </BreadcrumbList>
+            </Breadcrumb>
+            <h1 className="text-primary">{blogPost.title}</h1>
             <p className="mb-10 text-sm text-muted-foreground">
               {blogPost.author} | {new Date(blogPost.sys.publishedAt).toLocaleDateString()}
             </p>
@@ -76,41 +128,8 @@ export default async function BlogPostPage({ params }: GlobalPageProps) {
         <SecondaryPageSection>
           <PageSectionContainer>
             <div className="space-y-14">
-              <h2 className="mb-8">Want to keep reading?</h2>
-              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {relatedArticles.map((article) => (
-                  <article key={article.sys.id} className="flex h-full flex-col overflow-hidden rounded-lg shadow-lg">
-                    {article.image?.url && (
-                      <Image
-                        alt={article.image.title ?? `Image for ${article.title}`}
-                        className="aspect-[4/3] w-full object-cover"
-                        height={article.image.height ?? '263'}
-                        src={article.image.url}
-                        width={article.image.width ?? '350'}
-                      />
-                    )}
-                    <div className="flex-1 p-6">
-                      <Link href={`/articles/${article.slug}`}>
-                        <h3 className="py-4 text-2xl font-bold leading-tight text-zinc-900 dark:text-zinc-50">
-                          {article.title}
-                        </h3>
-                      </Link>
-                      <p className="mb-2 mt-4 max-w-none text-sm text-zinc-500 dark:text-zinc-400">{article.summary}</p>
-                      <p className="mb-2 mt-2 max-w-none text-sm font-bold text-zinc-600 dark:text-zinc-400">
-                        Written by: {article.author}
-                      </p>
-                      <div className="flex justify-end">
-                        <Link
-                          className="inline-flex h-10 items-center justify-center text-sm font-medium"
-                          href={`/articles/${article.slug}`}
-                        >
-                          Read More →
-                        </Link>
-                      </div>
-                    </div>
-                  </article>
-                ))}
-              </div>
+              <h2 className="mb-8 text-center text-primary">Want to keep reading?</h2>
+              <Articles articles={relatedArticles} />
             </div>
           </PageSectionContainer>
         </SecondaryPageSection>

@@ -1,4 +1,6 @@
 import {
+  BlogPostBySlugQuery,
+  BlogPostsQuery,
   useBlogPostBySlugQuery,
   useBlogPostsQuery,
   type BlogPostBySlugQueryVariables,
@@ -7,7 +9,7 @@ import {
 import { queryClient } from './query-client';
 
 export async function getBlogPosts(variables: BlogPostsQueryVariables) {
-  const response = await queryClient.fetchQuery({
+  const response = await queryClient.fetchQuery<BlogPostsQuery>({
     queryKey: useBlogPostsQuery.getKey(),
     queryFn: useBlogPostsQuery.fetcher(variables),
   });
@@ -16,7 +18,7 @@ export async function getBlogPosts(variables: BlogPostsQueryVariables) {
 }
 
 export async function getBlogPostBySlug(variables: BlogPostBySlugQueryVariables) {
-  const response = await queryClient.fetchQuery({
+  const response = await queryClient.fetchQuery<BlogPostBySlugQuery>({
     queryKey: useBlogPostBySlugQuery.getKey(),
     queryFn: useBlogPostBySlugQuery.fetcher(variables),
   });
