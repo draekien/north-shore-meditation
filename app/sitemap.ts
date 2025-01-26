@@ -18,7 +18,7 @@ type CreateSitemapEntryOptions = {
   changeFrequency?: MetadataRoute.Sitemap[0]['changeFrequency'];
 };
 
-function createSitemapEntry(options?: CreateSitemapEntryOptions): MetadataRoute.Sitemap[0] {
+export function createSitemapEntry(options?: CreateSitemapEntryOptions): MetadataRoute.Sitemap[0] {
   return {
     url: createUrl(options?.path),
     alternates: createLocalizedUrls(options?.path),
@@ -64,6 +64,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     createSitemapEntry({
       path: '/programs/corporate',
       priority: 0.7,
+    }),
+    createSitemapEntry({
+      path: '/articles',
+      priority: 0.8,
     }),
   ];
 }
