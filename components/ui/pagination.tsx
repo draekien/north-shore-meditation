@@ -29,8 +29,13 @@ type PaginationLinkProps = {
   isActive?: boolean;
 } & ButtonLinkProps;
 
-const PaginationLink = ({ className, isActive, size = 'icon', ...props }: PaginationLinkProps) => (
-  <ButtonLink aria-current={isActive ? 'page' : undefined} variant={isActive ? 'outline' : 'ghost'} {...props} />
+const PaginationLink = ({ isActive, size = 'icon', ...props }: PaginationLinkProps) => (
+  <ButtonLink
+    aria-current={isActive ? 'page' : undefined}
+    variant={isActive ? 'outline' : 'ghost'}
+    {...props}
+    size={size}
+  />
 );
 PaginationLink.displayName = 'PaginationLink';
 
@@ -67,3 +72,4 @@ export {
   PaginationNext,
   PaginationPrevious,
 };
+
