@@ -5,4 +5,5 @@ export type GlobalPageProps = {
     lang: Locale;
     slug?: string;
   }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };

@@ -1,3 +1,4 @@
+import ArticlePagination from '@/components/article-pagination';
 import { Articles } from '@/components/articles';
 import PageContent from '@/components/ui/page-content';
 import PageSectionContainer from '@/components/ui/page-section.container';
@@ -27,12 +28,14 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function ArticlesPage() {
+export default async function ArticlesPage({ searchParams }: GlobalPageProps) {
+  const { page = 1 } = await searchParams;
   const { isEnabled } = await draftMode();
 
   const blogPosts = await getBlogPosts({
     limit: 10,
     preview: isEnabled,
+    skip: (+page - 1) * 10,
   });
 
   return (
@@ -48,7 +51,12 @@ export default async function ArticlesPage() {
               </p>
             </div>
           </div>
-          <Articles articles={blogPosts} />
+          <div className="pt-20" id="articles-list">
+            <Articles articles={blogPosts.items} />
+          </div>
+          <div className="mt-16">
+            <ArticlePagination total={blogPosts.total || 0} limit={10} />
+          </div>
         </PageSectionContainer>
       </PrimaryPageSection>
     </PageContent>

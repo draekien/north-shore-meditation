@@ -23,5 +23,8 @@ query BlogPosts($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
         height
       }
     }
+    skip
+    limit
+    total
   }
 }

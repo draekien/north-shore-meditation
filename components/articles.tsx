@@ -10,7 +10,7 @@ type Article = Awaited<ReturnType<typeof getBlogPosts>>[0];
 
 function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
   return (
-    <article className="w-full sm:max-w-80">
+    <article className="w-full md:max-w-80">
       <Card className="overflow-clip">
         {image?.url && (
           <Image
@@ -39,13 +39,14 @@ function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
 }
 
 type ArticlesProps = {
-  articles: Awaited<ReturnType<typeof getBlogPosts>>;
+  articles: Awaited<ReturnType<typeof getBlogPosts>>['items'];
   className?: ClassValue;
+  id?: string;
 };
 
-export function Articles({ articles, className }: ArticlesProps) {
+export function Articles({ id, articles, className }: ArticlesProps) {
   return (
-    <div className={cn('flex flex-wrap items-center justify-around gap-4 md:gap-8 lg:gap-16', className)}>
+    <div id={id} className={cn('flex flex-wrap items-center justify-around gap-4 md:gap-8 lg:gap-16', className)}>
       {articles.map((article) => (
         <ArticleCard key={article.sys.id} {...article} />
       ))}

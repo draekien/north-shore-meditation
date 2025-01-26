@@ -22,6 +22,11 @@ import { draftMode } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+// 1 hr
+export const revalidate = 60 * 60;
+
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const { isEnabled } = await draftMode();
   const allPosts = await getBlogPosts({
@@ -29,7 +34,7 @@ export async function generateStaticParams() {
     preview: isEnabled,
   });
 
-  return allPosts.map((post) => ({
+  return allPosts.items.map((post) => ({
     slug: post.slug!,
   }));
 }

@@ -14,7 +14,11 @@ export async function getBlogPosts(variables: BlogPostsQueryVariables) {
     queryFn: useBlogPostsQuery.fetcher(variables),
   });
 
-  return response.blogPostCollection?.items.filter((x) => !!x) ?? [];
+  return {
+    items: response.blogPostCollection?.items.filter((x) => !!x) ?? [],
+    total: response.blogPostCollection?.total,
+    skip: response.blogPostCollection?.skip,
+  };
 }
 
 export async function getBlogPostBySlug(variables: BlogPostBySlugQueryVariables) {

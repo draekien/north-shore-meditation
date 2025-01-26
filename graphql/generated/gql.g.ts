@@ -849,7 +849,7 @@ export type BlogPostsQueryVariables = Exact<{
 }>;
 
 
-export type BlogPostsQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, url: string | null, description: string | null, width: number | null, height: number | null } | null } | null> } | null };
+export type BlogPostsQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, url: string | null, description: string | null, width: number | null, height: number | null } | null } | null> } | null };
 
 
 
@@ -1014,6 +1014,9 @@ export const BlogPostsDocument = `
         height
       }
     }
+    skip
+    limit
+    total
   }
 }
     `;
