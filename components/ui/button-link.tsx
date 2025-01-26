@@ -11,5 +11,14 @@ export type ButtonLinkProps = ComponentProps<typeof Link> &
   };
 
 export default function ButtonLink({ variant, size, className, ...rest }: ButtonLinkProps) {
-  return <Link {...rest} className={cn(buttonVariants({ variant, size, className }))} />;
+  return (
+    <Link
+      {...rest}
+      className={cn(
+        buttonVariants({ variant, size, className }),
+        'aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:text-muted-foreground'
+      )}
+      tabIndex={rest['aria-disabled'] ? -1 : undefined}
+    />
+  );
 }

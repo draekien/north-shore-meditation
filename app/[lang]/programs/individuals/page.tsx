@@ -16,6 +16,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Transcendental Meditation Programs for Individuals',
     description:
       'North Shore Meditation offers a range of Transcendental Meditation® programs for individuals ranging from Group Sessions, Private Sessions, and One Day Meditation Retreats.',

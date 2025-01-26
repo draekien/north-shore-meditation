@@ -26,6 +26,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'The Science behind Transcendental Meditation®',
     description: 'Discover the science backing the TM technique along with its origins with Maharishi Yogi',
     keywords: [

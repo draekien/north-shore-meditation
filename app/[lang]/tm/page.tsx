@@ -15,6 +15,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'What Is Transcendental Meditation®',
     description:
       'Transcendental Meditation® is a simple, natural technique practiced for 15-20 mminutes twice a day while sitting comfortably with your eyes closed. It is effortless, natural, quick, and effective.',

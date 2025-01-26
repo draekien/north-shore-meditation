@@ -16,6 +16,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   const { lang } = await props.params;
 
   return {
+    metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'About Us',
     description:
       'Meet Dr. Grace Pei, a former urological surgeon who has dedicated her career to medicinal research and global pharmaceutical development. Now at her Transcendental Meditation® (TM) Centre in Lane Cove, she draws on her wealth of corporate experience and personal journey to guide others towards finding balance and peace.',
