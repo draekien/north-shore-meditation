@@ -42,15 +42,13 @@ export default function ArticlePagination({ total, limit }: PaginationProps) {
         <PaginationItem>
           <PaginationPrevious aria-disabled={!hasPrevPage} href={prevPageURL} />
         </PaginationItem>
-        {Array(pageButtons)
-          .keys()
-          .map((i) => (
-            <PaginationItem key={i}>
-              <PaginationLink href={createPageURL(i + 1)} isActive={currentPage === i + 1}>
-                {i + 1}
-              </PaginationLink>
-            </PaginationItem>
-          ))}
+        {[...Array(pageButtons).keys()].map((i) => (
+          <PaginationItem key={i}>
+            <PaginationLink href={createPageURL(i + 1)} isActive={currentPage === i + 1}>
+              {i + 1}
+            </PaginationLink>
+          </PaginationItem>
+        ))}
         {moreThanThreePages && <PaginationEllipsis />}
         <PaginationItem>
           <PaginationNext aria-disabled={!hasNextPage} href={nextPageURL} />

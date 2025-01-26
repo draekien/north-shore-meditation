@@ -28,10 +28,8 @@ export const revalidate = 60 * 60;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const { isEnabled } = await draftMode();
   const allPosts = await getBlogPosts({
     limit: 10,
-    preview: isEnabled,
   });
 
   return allPosts.items.map((post) => ({
@@ -41,11 +39,10 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: GlobalPageProps): Promise<Metadata> {
   const { lang, slug } = await params;
-  const { isEnabled } = await draftMode();
 
   if (!slug) return {};
 
-  const blogPost = await getBlogPostBySlug({ slug, preview: isEnabled });
+  const blogPost = await getBlogPostBySlug({ slug });
 
   if (!blogPost) return {};
 
