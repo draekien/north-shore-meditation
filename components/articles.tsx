@@ -6,7 +6,7 @@ import Image from 'next/image';
 import ButtonLink from './ui/button-link';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 
-type Article = Awaited<ReturnType<typeof getBlogPosts>>[0];
+type Article = Awaited<ReturnType<typeof getBlogPosts>>['items'][0];
 
 function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
   return (
