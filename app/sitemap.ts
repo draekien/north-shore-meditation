@@ -29,7 +29,7 @@ export function createSitemapEntry(options?: CreateSitemapEntryOptions): Metadat
   };
 }
 
-export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const allPosts = await getAllArticles();
 
   return [
