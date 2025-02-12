@@ -66,7 +66,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     }),
     createSitemapEntry({
-      path: '/articles',
+      path: '/journals',
       priority: 0.8,
     }),
   ];

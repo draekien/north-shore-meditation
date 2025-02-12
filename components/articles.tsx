@@ -29,7 +29,7 @@ function ArticleCard({ title, summary, slug, image, author, sys }: Article) {
         </CardHeader>
         <CardContent>{summary}</CardContent>
         <CardFooter>
-          <ButtonLink href={`/articles/${slug}`} variant="link" className="ml-auto">
+          <ButtonLink href={`/journals/${slug}`} variant="link" className="ml-auto">
             Read More <ArrowRight size={14} />
           </ButtonLink>
         </CardFooter>

@@ -1,16 +1,18 @@
 import {
   useArticlesBySlugQuery,
   useArticlesQuery,
+  useInfiniteArticlesQuery,
   type ArticlesBySlugQuery,
   type ArticlesBySlugQueryVariables,
   type ArticlesQuery,
   type ArticlesQueryVariables,
 } from '@/graphql/generated/gql.g';
+import { cache } from 'react';
 import { queryClient } from './query-client';
 
-export async function getArticles(variables: ArticlesQueryVariables) {
+export const getArticles = cache(async (variables: ArticlesQueryVariables) => {
   const response = await queryClient.fetchQuery<ArticlesQuery>({
-    queryKey: useArticlesQuery.getKey(),
+    queryKey: useArticlesQuery.getKey(variables),
     queryFn: useArticlesQuery.fetcher(variables),
   });
 
@@ -19,13 +21,30 @@ export async function getArticles(variables: ArticlesQueryVariables) {
     total: response.blogPostCollection?.total,
     skip: response.blogPostCollection?.skip,
   };
-}
+});
 
-export async function getArticlesBySlug(variables: ArticlesBySlugQueryVariables) {
+export const getAllArticles = cache(async () => {
+  const response = await queryClient.fetchInfiniteQuery({
+    queryKey: useInfiniteArticlesQuery.getKey(),
+    queryFn: (metaData) => useArticlesQuery.fetcher({ skip: metaData.pageParam })(),
+    initialPageParam: 0,
+    getNextPageParam: (lastPage: ArticlesQuery) => {
+      if (!lastPage.blogPostCollection) return;
+      if (lastPage.blogPostCollection.total <= lastPage.blogPostCollection.skip) return;
+      return lastPage.blogPostCollection.limit + lastPage.blogPostCollection.skip;
+    },
+  });
+
+  return {
+    items: response.pages.flatMap((x) => x.blogPostCollection?.items).filter(Boolean),
+  };
+});
+
+export const getArticlesBySlug = cache(async (variables: ArticlesBySlugQueryVariables) => {
   const response = await queryClient.fetchQuery<ArticlesBySlugQuery>({
-    queryKey: useArticlesBySlugQuery.getKey(),
+    queryKey: useArticlesBySlugQuery.getKey(variables),
     queryFn: useArticlesBySlugQuery.fetcher(variables),
   });
 
   return response.blogPostCollection?.items.at(0);
-}
+});

@@ -22,7 +22,7 @@ export default async function sitemap({ id }: { id: number }): Promise<MetadataR
 
   return allPosts.items.map((post) => ({
     ...createSitemapEntry({
-      path: `/articles/${post.slug}`,
+      path: `/journal/${post.slug}`,
       priority: 0.7,
     }),
     lastModified: post.sys.publishedAt,

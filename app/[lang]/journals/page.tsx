@@ -18,26 +18,26 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 
   return {
     metadataBase: new URL('https://www.northshoremeditation.au'),
-    title: 'Articles',
+    title: 'Journals',
     description: 'Learn about TM from the teachers at North Shore Meditation',
-    keywords: [...baseKeywords, 'articles'],
+    keywords: [...baseKeywords, 'journal'],
     alternates: {
-      canonical: `/${lang}/articles`,
+      canonical: `/${lang}/journals`,
       languages: {
-        en: '/en/articles',
+        en: '/en/journals',
       },
     },
     openGraph: {
-      url: `/${lang}/articles`,
+      url: `/${lang}/journals`,
     },
   };
 }
 
-export default async function ArticlesPage({ searchParams }: GlobalPageProps) {
+export default async function JournalsPage({ searchParams }: GlobalPageProps) {
   const { page = 1 } = await searchParams;
   const { isEnabled } = await draftMode();
 
-  const articles = await getArticles({
+  const journals = await getArticles({
     limit: 10,
     preview: isEnabled,
     skip: (+page - 1) * 10,
@@ -49,20 +49,20 @@ export default async function ArticlesPage({ searchParams }: GlobalPageProps) {
         <PageSectionContainer>
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
-              <h1 className="text-primary">Articles</h1>
+              <h1 className="text-primary">Journals</h1>
               <p className="mb-6 text-xl text-foreground">
                 Take a deep dive into Transcendental Meditation® with the guidance of the teachers at North Shore
                 Meditation
               </p>
             </div>
           </div>
-          {articles.total ? (
+          {journals.total ? (
             <>
-              <div className="pt-20" id="articles-list">
-                <Articles articles={articles.items} />
+              <div className="pt-20" id="journals-list">
+                <Articles articles={journals.items} />
               </div>
               <div className="mt-16">
-                <ArticlePagination total={articles.total || 0} limit={10} />
+                <ArticlePagination total={journals.total || 0} limit={10} />
               </div>
             </>
           ) : (
@@ -71,7 +71,7 @@ export default async function ArticlesPage({ searchParams }: GlobalPageProps) {
                 <BookDashed className="h-4 w-4" />
                 <AlertTitle>You&apos;re Early!</AlertTitle>
                 <AlertDescription>
-                  We are still in the process of writing and finalising articles. Please check back in with us a bit
+                  We are still in the process of writing and finalising journals. Please check back in with us a bit
                   later.
                 </AlertDescription>
               </Alert>
