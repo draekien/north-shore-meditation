@@ -21,6 +21,7 @@ export function middleware(request: NextRequest) {
   const pathnameHasLocale = locales.some((locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`);
 
   if (pathnameHasLocale) return NextResponse.next();
+  if (pathname === '/sitemap.xml') return NextResponse.next();
 
   // Redirect if there is no locale
   const locale = getLocale(request);
@@ -33,7 +34,7 @@ export function middleware(request: NextRequest) {
 export const config = {
   matcher: [
     // Skip all internal paths (_next)
-    '/((?!_next|favicon|icon|apple-icon|api|sitemap|robots|fonts).*)',
+    '/((?!_next|favicon|icon|apple-icon|api|sitemap.xml|robots).*)',
     // Optional: only run on root (/) URL
     // '/'
   ],

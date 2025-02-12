@@ -1,3 +1,4 @@
+import { getAllArticles } from '@/lib/contentful-api';
 import { MetadataRoute } from 'next';
 
 function createUrl(path?: string) {
@@ -28,7 +29,9 @@ export function createSitemapEntry(options?: CreateSitemapEntryOptions): Metadat
   };
 }
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap({ id }: { id: number }): Promise<MetadataRoute.Sitemap> {
+  const allPosts = await getAllArticles();
+
   return [
     createSitemapEntry({
       priority: 1,
@@ -67,7 +70,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }),
     createSitemapEntry({
       path: '/journals',
-      priority: 0.8,
+      priority: 0.7,
     }),
+    ...allPosts.items.map((post) => ({
+      ...createSitemapEntry({
+        path: `/journals/${post!.slug}`,
+        priority: 0.8,
+      }),
+      lastModified: post!.sys.publishedAt,
+    })),
   ];
 }
