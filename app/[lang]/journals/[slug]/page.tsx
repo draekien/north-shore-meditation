@@ -13,7 +13,7 @@ import PageSectionContainer from '@/components/ui/page-section.container';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import { baseKeywords } from '@/lib/constants';
-import { getArticles, getArticlesBySlug } from '@/lib/contentful-api';
+import { getAllArticles, getArticlesBySlug } from '@/lib/contentful-api';
 import type { GlobalPageProps } from '@/lib/types';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { BLOCKS, INLINES } from '@contentful/rich-text-types';
@@ -28,13 +28,13 @@ export const revalidate = 3600;
 export const dynamicParams = true;
 
 export async function generateStaticParams() {
-  const allPosts = await getArticles({
-    limit: 10,
-  });
+  const allPosts = await getAllArticles();
 
-  return allPosts.items.map((post) => ({
-    slug: post.slug!,
-  }));
+  return allPosts.items
+    .filter((post) => post?.slug)
+    .map((post) => ({
+      slug: post!.slug,
+    }));
 }
 
 export async function generateMetadata({ params }: GlobalPageProps): Promise<Metadata> {
@@ -42,7 +42,14 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
 
   if (!slug) return {};
 
-  const blogPost = await getArticlesBySlug({ slug });
+  let blogPost;
+
+  try {
+    blogPost = await getArticlesBySlug({ slug });
+  } catch (error) {
+    console.log('Failed to get article by slug: ', error);
+    return {};
+  }
 
   if (!blogPost) return {};
 
@@ -55,18 +62,18 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
     description: blogPost.summary,
     keywords: [...keywordsSet],
     alternates: {
-      canonical: `/${lang}/articles/${slug}`,
+      canonical: `/${lang}/journals/${slug}`,
       languages: {
-        en: `/en/articles/${slug}`,
+        en: `/en/journals/${slug}`,
       },
     },
     openGraph: {
-      url: `/${lang}/articles/${slug}`,
+      url: `/${lang}/journals/${slug}`,
     },
   };
 }
 
-export default async function ArticlesPage({ params }: GlobalPageProps) {
+export default async function JournalPage({ params }: GlobalPageProps) {
   const slug = (await params).slug;
   const { isEnabled } = await draftMode();
 
@@ -87,7 +94,7 @@ export default async function ArticlesPage({ params }: GlobalPageProps) {
             <Breadcrumb className="mb-8 justify-self-start">
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/articles">Articles</BreadcrumbLink>
+                  <BreadcrumbLink href="/journals">Journals</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>

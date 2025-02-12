@@ -27,7 +27,7 @@ export default function ArticlePagination({ total, limit }: PaginationProps) {
   const createPageURL = (pageNumber: number | string) => {
     const params = new URLSearchParams(searchParams);
     params.set('page', pageNumber.toString());
-    return `${pathname}?${params.toString()}#articles-list`;
+    return `${pathname}?${params.toString()}#journals-list`;
   };
 
   const nextPageURL = hasNextPage ? createPageURL(currentPage + 1) : '#';

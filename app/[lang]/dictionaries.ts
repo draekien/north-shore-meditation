@@ -13,4 +13,9 @@ const dictionaries: Dictionaries = {
   // 'zh-Hans': () => import('./dictionaries/zh-Hans.json').then((module) => module.default),
 };
 
-export const getDictionary = async (locale: keyof Dictionaries) => dictionaries[locale]();
+export const getDictionary = async (locale: keyof Dictionaries) => {
+  if (!(locale in dictionaries)) {
+    throw new Error(`Unsupported locale: ${locale}`);
+  }
+  return await dictionaries[locale]();
+};
