@@ -22,9 +22,9 @@ export async function GET(request: NextRequest) {
   });
 
   if (!blog) {
-    return new Response('Article not found', { status: 404 });
+    return new Response('Journal not found', { status: 404 });
   }
 
   (await draftMode()).enable();
-  redirect(`/articles/${blog.slug}`);
+  redirect(`/journals/${blog.slug}`);
 }
