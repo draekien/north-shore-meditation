@@ -385,11 +385,17 @@
         "action": "Enquire About Our Corporate Programs",
         "href": "/contact-us?q=corporate-program",
         "subtitle": "Bring the benefits of Transcendental Meditation® to your organisation. Boost productivity, improve workplace relationships, and create a more resilient team.",
+
         "title": "Transform Your Workplace"
       },
       "introduction": {
         "paragraph": "Introduce your staff to the simple and elegant practice of TM. Watch workplace well-being and productivity soar as they become better equiped to deal with stress and difficult problems.",
-        "title": "Workplace Transcendental Meditation®"
+        "paragraphs": [
+          "We support companies with tailored mental wellbeing programs that foster genuine connection and reflection in the workplace.",
+          "But employee wellbeing isn't something that should be reserved for a special occasion. Every day is an opportunity to check in - with ourselves and with each other. A culture of care is built moment by moment, and it begins by giving people the tools to manage stress, recharge, and reconnect from within.",
+          "That's why our corporate meditation programs are available year-round - because supporting your people isn't a box to tick, it's a long-term investment into your company's health, culture, and performance."
+        ],
+        "title": "Wellbeing is More than a Calendar Event"
       },
       "keyFeatures": [
         {

@@ -60,8 +60,10 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
       <SecondaryPageSection>
         <PageSectionContainer>
           <h2 className="text-primary">{corporateMeditation.introduction.title}</h2>
-          <p>{corporateMeditation.introduction.paragraph}</p>
-          <Accordion type="multiple" className="my-4">
+          {corporateMeditation.introduction.paragraphs.map((paragraph, i) => (
+            <p key={i}>{paragraph}</p>
+          ))}
+          <Accordion type="multiple" className="my-8">
             {corporateMeditation.keyFeatures.map((feature) => (
               <AccordionItem key={feature.title} value={feature.title}>
                 <AccordionTrigger className="flex-row-reverse justify-end gap-2 text-left">
