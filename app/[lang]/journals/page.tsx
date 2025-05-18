@@ -33,8 +33,9 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function JournalsPage({ searchParams }: GlobalPageProps) {
+export default async function JournalsPage({ searchParams, params }: GlobalPageProps) {
   const { page = 1 } = await searchParams;
+  const { lang } = await params;
   const { isEnabled } = await draftMode();
 
   const journals = await getArticles({
@@ -59,7 +60,7 @@ export default async function JournalsPage({ searchParams }: GlobalPageProps) {
           {journals.total ? (
             <>
               <div className="pt-20" id="journals-list">
-                <Articles articles={journals.items} />
+                <Articles articles={journals.items} lang={lang} />
               </div>
               <div className="mt-16">
                 <ArticlePagination total={journals.total || 0} limit={10} />

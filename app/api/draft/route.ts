@@ -26,5 +26,5 @@ export async function GET(request: NextRequest) {
   }
 
   (await draftMode()).enable();
-  redirect(`/journals/${blog.slug}`);
+  redirect(`/en/journals/${blog.slug}`);
 }

@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
 }
 
 export default async function JournalPage({ params }: GlobalPageProps) {
-  const slug = (await params).slug;
+  const { slug, lang } = await params;
   const { isEnabled } = await draftMode();
 
   if (!slug) return notFound();
@@ -94,7 +94,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
             <Breadcrumb className="mb-8 justify-self-start">
               <BreadcrumbList>
                 <BreadcrumbItem>
-                  <BreadcrumbLink href="/journals">Journals</BreadcrumbLink>
+                  <BreadcrumbLink href="/journals">Notes from Stillness</BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
@@ -137,7 +137,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
           <PageSectionContainer>
             <div className="space-y-14">
               <h2 className="mb-8 text-center text-primary">Want to keep reading?</h2>
-              <Articles articles={relatedArticles} />
+              <Articles articles={relatedArticles} lang={lang} />
             </div>
           </PageSectionContainer>
         </SecondaryPageSection>
