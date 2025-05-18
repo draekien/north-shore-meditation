@@ -126,6 +126,16 @@ export default async function JournalPage({ params }: GlobalPageProps) {
 
                     return <Image src={embeddedAsset.url!} alt={embeddedAsset.description!} width={400} height={270} />;
                   },
+                  [BLOCKS.PARAGRAPH]: (node, children) => {
+                    const { content } = node;
+                    const isEmpty = content.every((x) => x.nodeType === 'text' && x.value === '');
+
+                    return isEmpty ? (
+                      <br />
+                    ) : (
+                      <p className="text-base text-foreground md:text-xl lg:text-base xl:text-xl">{children}</p>
+                    );
+                  },
                 },
               })}
             </div>
