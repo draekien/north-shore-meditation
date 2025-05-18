@@ -34,7 +34,7 @@ export default async function Image() {
             lineHeight: 1.1,
           }}
         >
-          Journals
+          Notes from Stillness
         </h1>
         <p
           style={{

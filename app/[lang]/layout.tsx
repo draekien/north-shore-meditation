@@ -1,5 +1,6 @@
 import IntroCallToActionSection from '@/components/call-to-actions/intro.cta';
 import LearnCallToActionSection from '@/components/call-to-actions/learn.cta';
+import { DisableDraftMode } from '@/components/draft-mode';
 import TmCentreMap from '@/components/maps/tm-centre.map';
 import ProgressBar from '@/components/progress-bar';
 import QueryClientProvider from '@/components/query-client-provider';
@@ -31,6 +32,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelToolbar } from '@vercel/toolbar/next';
 import { MenuIcon, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
+import { draftMode } from 'next/headers';
 import Link from 'next/link';
 import type { PropsWithChildren } from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../../components/ui/accordion';
@@ -77,6 +79,8 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
   const lang = (await params).lang;
   const dict = await getDictionary(lang);
   const shouldInjectToolbar = process.env.NODE_ENV === 'development';
+  const { isEnabled: draftModeEnabled } = await draftMode();
+
   return (
     <html lang={lang}>
       <body className={`${geistSans.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}>
@@ -91,10 +95,11 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
             <QueryClientProvider>
               <BackgroundGradientAnimation containerClassName="fixed -z-50" />
               <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow backdrop-blur-2xl dark:bg-slate-900/50 md:px-6">
-                <h3 className="container p-4">
+                <h3 className="container flex items-center gap-4 p-4">
                   <Link href="/" className="font-bold text-primary xl:text-2xl">
                     {dict.company}
                   </Link>
+                  <DisableDraftMode enabled={draftModeEnabled} />
                 </h3>
                 <Sheet>
                   <SheetTrigger asChild>
@@ -153,7 +158,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                           <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
                           <AccordionContent>
                             <ul className="grid gap-3">
-                              <MobileNavigationMenuListItem href="/journals" title="Journals" />
+                              <MobileNavigationMenuListItem href="/journals" title={dict.nav.journals} />
                               <MobileNavigationMenuListItem href="/about-us" title={dict.nav.aboutUs} />
                               <MobileNavigationMenuListItem href="/contact-us" title={dict.nav.contactUs} />
                             </ul>
@@ -218,7 +223,9 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                       </NavigationMenuItem>
                       <NavigationMenuItem>
                         <Link href="/journals" legacyBehavior passHref>
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>Journals</NavigationMenuLink>
+                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                            {dict.nav.journals}
+                          </NavigationMenuLink>
                         </Link>
                       </NavigationMenuItem>
                       <NavigationMenuItem>

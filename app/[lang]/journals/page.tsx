@@ -18,7 +18,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 
   return {
     metadataBase: new URL('https://www.northshoremeditation.au'),
-    title: 'Journals',
+    title: 'Notes from Stillness',
     description: 'Learn about TM from the teachers at North Shore Meditation',
     keywords: [...baseKeywords, 'journal'],
     alternates: {
@@ -33,8 +33,9 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   };
 }
 
-export default async function JournalsPage({ searchParams }: GlobalPageProps) {
+export default async function JournalsPage({ searchParams, params }: GlobalPageProps) {
   const { page = 1 } = await searchParams;
+  const { lang } = await params;
   const { isEnabled } = await draftMode();
 
   const journals = await getArticles({
@@ -49,7 +50,7 @@ export default async function JournalsPage({ searchParams }: GlobalPageProps) {
         <PageSectionContainer>
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
-              <h1 className="text-primary">Journals</h1>
+              <h1 className="text-primary">Notes from Stillness</h1>
               <p className="mb-6 text-xl text-foreground">
                 Take a deep dive into Transcendental Meditation® with the guidance of the teachers at North Shore
                 Meditation
@@ -59,7 +60,7 @@ export default async function JournalsPage({ searchParams }: GlobalPageProps) {
           {journals.total ? (
             <>
               <div className="pt-20" id="journals-list">
-                <Articles articles={journals.items} />
+                <Articles articles={journals.items} lang={lang} />
               </div>
               <div className="mt-16">
                 <ArticlePagination total={journals.total || 0} limit={10} />
