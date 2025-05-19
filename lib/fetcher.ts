@@ -32,7 +32,10 @@ export const fetcher = <TData, TVariables extends ContentfulQuery>(
           ...restOptions,
         },
         body: JSON.stringify({ query, variables }),
-        next,
+        next: {
+          ...(next ?? {}),
+          tags: ['articles'],
+        },
         cache,
       }
     );

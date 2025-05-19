@@ -32,7 +32,7 @@ export const getAllArticles = cache(async () => {
       if (!lastPage.blogPostCollection) return;
       if (lastPage.blogPostCollection.total <= lastPage.blogPostCollection.skip) return;
       return lastPage.blogPostCollection.limit + lastPage.blogPostCollection.skip;
-    },
+    }
   });
 
   return {
