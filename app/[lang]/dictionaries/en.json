@@ -334,6 +334,14 @@
             "label": "Enquiry Type",
             "options": [
               {
+                "text": "TM for women",
+                "value": "tm-women"
+              },
+              {
+                "text": "Group meditation courses",
+                "value": "group-course"
+              },
+              {
                 "text": "Private meditation courses",
                 "value": "private-course"
               },
