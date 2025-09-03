@@ -12,7 +12,7 @@
     }
   },
   "footer": {
-    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharishi Foundation Australia. Clicking the \"Start Your Journey\" button on this website will navigate you to the official booking system of Maharishi Foundation Australia where you will be able to enrol into a 4 day Transcendental Meditation® course at the North Shore Meditation Center."
+    "disclaimer": "Disclaimer: North Shore Meditation is authorised to teach Transcendental Meditation® by the Maharishi Foundation Australia and TM for Women."
   },
   "nav": {
     "aboutUs": "About Us",
@@ -338,7 +338,7 @@
                 "value": "tm-women"
               },
               {
-                "text": "Group meditation courses",
+                "text": "I want to learn TM",
                 "value": "group-course"
               },
               {
@@ -548,8 +548,8 @@
       "tabs": [
         {
           "cta": {
-            "action": "Find Available Courses",
-            "href": "https://au.tm.org/web/learn-tm/north-shore",
+            "action": "Enquire About Available Courses",
+            "href": "/contact-us?q=group-course",
             "subtitle": "Join our next Group Course and learn Transcendental Meditation® in a supportive environment. Spaces are limited, so reserve your spot today!",
             "title": "Ready to Start Your TM Journey?"
           },
@@ -832,8 +832,8 @@
       },
       "learn": {
         "action": "Start Your Journey",
-        "helpText": "Clicking on the \"Start Your Journey\" button above will navigate you to the official booking system of Maharashi Foundation Australia where you will be able to enrol into a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
-        "href": "https://au.tm.org/web/learn-tm/north-shore",
+        "helpText": "Enquire about the 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
+        "href": "/contact-us?q=group-course",
         "subtitle": "Enrol in a TM course through North Shore Meditation today",
         "title": "Ready to Transform Yourself?"
       }
@@ -841,7 +841,7 @@
     "hero": {
       "action": "Start Your Journey",
       "author": "- Maharashi Maheshi Yogi -",
-      "href": "https://au.tm.org/web/learn-tm/north-shore",
+      "href": "/contact-us?q=group-course",
       "session": "Free Info Session",
       "sessionHref": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
       "subtitle": "Discover the power of Transcendental Meditation® at North Shore Meditation",
