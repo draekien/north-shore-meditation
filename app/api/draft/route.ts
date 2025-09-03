@@ -5,6 +5,10 @@ import type { NextRequest } from 'next/server';
 
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
+  if (!searchParams) {
+    return new Response('Missing parameters', { status: 400 });
+  }
+
   const secret = searchParams.get('secret');
   const slug = searchParams.get('slug');
 

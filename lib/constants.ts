@@ -1,6 +1,6 @@
 export const defaultLocale = 'en';
 export const locales = ['en'] as const;
-export type Locale = (typeof locales)[number];
+export type Locale = (typeof locales)[number] | string;
 
 export const baseKeywords = [
   'Transcendental Meditation',

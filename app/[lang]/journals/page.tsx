@@ -34,6 +34,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 }
 
 export default async function JournalsPage({ searchParams, params }: GlobalPageProps) {
+  if (!searchParams) throw new Error("Missing search params");
   const { page = 1 } = await searchParams;
   const { lang } = await params;
   const { isEnabled } = await draftMode();
