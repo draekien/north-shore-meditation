@@ -18,7 +18,7 @@
     "aboutUs": "About Us",
     "callToAction": {
       "action": "Start Your Journey",
-      "href": "https://au.tm.org/web/learn-tm/north-shore"
+      "href": "/contact-us?q=group-course"
     },
     "journals": "Notes from Stillness",
     "contactUs": "Contact Us",
@@ -336,6 +336,10 @@
               {
                 "text": "TM for women",
                 "value": "tm-women"
+              },
+              {
+                "text": "I want to attend a TM intro session",
+                "value": "intro-session"
               },
               {
                 "text": "I want to learn TM",
@@ -784,7 +788,7 @@
           "steps": [
             {
               "action": {
-                "href": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
+                "href": "/contact-us?q=intro-session",
                 "label": "Find a Session"
               },
               "description": "Take your first step by attending a group info session to learn about the TM technique from a certified TM instructor.",
@@ -792,7 +796,7 @@
             },
             {
               "action": {
-                "href": "https://au.tm.org/web/learn-tm/north-shore",
+                "href": "/contact-us?q=group-course",
                 "label": "Learn From Grace"
               },
               "description": "Learn the TM technique with the guidance of a certified TM instructor. They provide you with the support you need so you can get the most out of practicing Transcendental Meditation®.",
@@ -818,8 +822,8 @@
     "ctas": {
       "intro": {
         "action": "Find a Session",
-        "helpText": "Clicking on the \"Find a Session\" button above will navigate you to the official website of Maharashi Foundation Australia where you will be able to reserve a place in a free, 45 minute information session about the Transcendental Meditation® technique at the North Shore Meditation Centre.",
-        "href": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
+        "helpText": "Register your interest for our upcoming intro sessions.",
+        "href": "/contact-us?q=intro-session",
         "subtitle": "Sate your curiosity by attending a free information session about the TM technique.",
         "title": "Curious about TM?",
         "video": {
@@ -843,7 +847,7 @@
       "author": "- Maharashi Maheshi Yogi -",
       "href": "/contact-us?q=group-course",
       "session": "Free Info Session",
-      "sessionHref": "https://tm.org.au/transcendental-meditation-north-shore/#info-sessions",
+      "sessionHref": "/contact-us?q=intro-session",
       "subtitle": "Discover the power of Transcendental Meditation® at North Shore Meditation",
       "title": "Success in Anything is Through Happiness"
     },
