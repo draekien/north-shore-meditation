@@ -58,6 +58,11 @@
       ],
       "title": "Transcendental Meditation®"
     },
+    "tmForWomen": {
+      "title": "TM for Women",
+      "description": "Discover a support network dedicated to women practicing TM.",
+      "href": "/tm-for-women"
+    },
     "toggleButtonAlt": "Toggle navigation menu"
   },
   "pages": {
@@ -756,6 +761,10 @@
       },
       "subtitle": "Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.",
       "title": "Simplicity in it's Effortlessness"
+    },
+    "tmForWomen": {
+      "title": "TM for Women",
+      "subtitle": "Whether you are a mother, executive, student, or carer, North Shore Meditation offers a supportive environment where you can recharge, gain clarity, and strengthen inner resiliencec."
     },
     "way": {
       "sections": {
