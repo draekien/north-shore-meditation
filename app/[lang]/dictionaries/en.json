@@ -58,6 +58,11 @@
       ],
       "title": "Transcendental Meditation®"
     },
+    "tmForWomen": {
+      "title": "TM for Women",
+      "description": "Discover a support network dedicated to women practicing TM.",
+      "href": "/tm-for-women"
+    },
     "toggleButtonAlt": "Toggle navigation menu"
   },
   "pages": {
@@ -336,6 +341,10 @@
               {
                 "text": "TM for women",
                 "value": "tm-women"
+              },
+              {
+                "text": "TM for women - events",
+                "value": "tm-women-events"
               },
               {
                 "text": "I want to attend a TM intro session",
@@ -756,6 +765,69 @@
       },
       "subtitle": "Explore the simplicity and power of a practice that requires no concentration, no control of the mind, and no monitoring of thoughts.",
       "title": "Simplicity in it's Effortlessness"
+    },
+    "tmForWomen": {
+      "title": "Meditation designed for the Modern Women",
+      "subtitle": "Recharge, gain clarity, and strengthen inner resilience in a supportive women-only environment.",
+      "sections": {
+        "community": {
+          "title": "A Community by Women, for Women",
+          "paragraphs": [
+            "TM for Women is more than just a meditation practice - it's a movement. Our mission is to empower women to create progress, abundance, and peace for themselves, their families, their communities, and the world.",
+            "At a time when women's empowerment is rising globally, the TM technique provides something essential: a way to nourish the deepest level of your being - the silent field of pure consciousness within. From this place of inner strength, everything else flows naturally."
+          ]
+        },
+        "why": {
+          "title": "TM for Women is Built Different",
+          "cards": {
+            "safe": {
+              "title": "A safe space to explore",
+              "description": "Women often carry multiple roles. TM for Women offers a setting that provides focused support and a safe space to practice and share."
+            },
+            "support": {
+              "title": "Support through your life's stages",
+              "description": "From pregnancy and postpartum to menopause, career transitions, and parenting challenges - we understand the unique journeys women navigate."
+            },
+            "movement": {
+              "title": "A global movement",
+              "description": "Connect with the worldwide TM for Women network through seminars, online talks, group meditations, and transformative retreats."
+            }
+          }
+        },
+        "begin": {
+          "title": "Begin Your Journey",
+          "cards": {
+            "learn": {
+              "title": "Lets learn TM",
+              "description": "Choose to learn in a women-only setting with TM for Women, or join our welcoming mixed-group courses. Either way, you'll receive personalized instruction from certified teachers who understand your needs.",
+              "cta": {
+                "href": "/contact-us?q=tm-women",
+                "title": "Enquire Now"
+              }
+            },
+            "join": {
+              "title": "Join our community",
+              "description": "Deepen your practice through group meditations, inspiring seminars, and enriching talks. Connect with women who understand your journey and celebrate your growth.",
+              "cta": {
+                "href": "/contact-us?q=tm-women-events",
+                "title": "Contact Us"
+              }
+            },
+            "choice": {
+              "title": "Your Choice, Your Comfort",
+              "description": "The TM technique is the same for everyone, but TM for Women offers you the option to learn and practice in a women-only environment if that feels right for you. Choose what makes you most comfortable."
+            }
+          }
+        },
+        "certified": {
+          "title": "Certified and Trusted",
+          "description": "North Shore Meditation is officially authorized to teach TM on behalf of TM for Women. You're in expert hands with instructors who are fully certified and deeply committed to supporting your journey.",
+          "cta": {
+            "title": "Verify our TM for Women Authorization",
+            "href": "https://www.tmforwomen.org.au/find-a-teacher"
+          }
+        }
+      }
     },
     "way": {
       "sections": {

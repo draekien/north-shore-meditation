@@ -134,6 +134,12 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                                     {item.description}
                                   </MobileNavigationMenuListItem>
                                 ))}
+                                <MobileNavigationMenuListItem
+                                  title={dict.nav.tmForWomen.title}
+                                  href={dict.nav.tmForWomen.href}
+                                >
+                                  {dict.nav.tmForWomen.description}
+                                </MobileNavigationMenuListItem>
                               </ul>
                             </ScrollArea>
                           </AccordionContent>
@@ -206,6 +212,11 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                          <Link href={dict.nav.tmForWomen.href}>{dict.nav.tmForWomen.title}</Link>
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                      <NavigationMenuItem>
                         <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
                         <NavigationMenuContent>
                           <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
@@ -222,25 +233,19 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <Link href="/journals" legacyBehavior passHref>
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            {dict.nav.journals}
-                          </NavigationMenuLink>
-                        </Link>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                          <Link href="/journals">{dict.nav.journals}</Link>
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <Link href="/about-us" legacyBehavior passHref>
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            {dict.nav.aboutUs}
-                          </NavigationMenuLink>
-                        </Link>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                          <Link href="/about-us">{dict.nav.aboutUs}</Link>
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <Link href="/contact-us" legacyBehavior passHref>
-                          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            {dict.nav.contactUs}
-                          </NavigationMenuLink>
-                        </Link>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
+                          <Link href="/contact-us">{dict.nav.contactUs}</Link>
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                     </NavigationMenuList>
                   </NavigationMenu>
