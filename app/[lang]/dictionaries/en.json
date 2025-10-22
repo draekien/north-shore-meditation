@@ -860,7 +860,7 @@
           "steps": [
             {
               "action": {
-                "href": "/contact-us?q=intro-session",
+                "href": "https://tidycal.com/mnrg7q1/tm-introductory-talk",
                 "label": "Find a Session"
               },
               "description": "Take your first step by attending a group info session to learn about the TM technique from a certified TM instructor.",
@@ -895,7 +895,7 @@
       "intro": {
         "action": "Find a Session",
         "helpText": "Register your interest for our upcoming intro sessions.",
-        "href": "/contact-us?q=intro-session",
+        "href": "https://tidycal.com/mnrg7q1/tm-introductory-talk",
         "subtitle": "Sate your curiosity by attending a free information session about the TM technique.",
         "title": "Curious about TM?",
         "video": {
@@ -919,7 +919,7 @@
       "author": "- Maharashi Maheshi Yogi -",
       "href": "/contact-us?q=group-course",
       "session": "Free Info Session",
-      "sessionHref": "/contact-us?q=intro-session",
+      "sessionHref": "https://tidycal.com/mnrg7q1/tm-introductory-talk",
       "subtitle": "Discover the power of Transcendental Meditation® at North Shore Meditation",
       "title": "Success in Anything is Through Happiness"
     },
