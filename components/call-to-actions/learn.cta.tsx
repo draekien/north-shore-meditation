@@ -8,7 +8,7 @@ export default function LearnCallToActionSection({ action, href, title, subtitle
   return (
     <section
       className={cn(
-        'bg-emerald-50/50 py-16 text-emerald-800 backdrop-blur-sm dark:bg-emerald-800/50 dark:text-emerald-50',
+        'bg-emerald-50/50 py-16 text-emerald-800 backdrop-blur-xs dark:bg-emerald-800/50 dark:text-emerald-50',
         className
       )}
     >

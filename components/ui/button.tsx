@@ -9,17 +9,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
-        destructive: 'bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90',
-        outline: 'border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground',
+        default: 'bg-primary text-primary-foreground shadow-sm hover:bg-primary/90',
+        destructive: 'bg-destructive text-destructive-foreground shadow-xs hover:bg-destructive/90',
+        outline: 'border border-input bg-background shadow-xs hover:bg-accent hover:text-accent-foreground',
         'outline-primary':
-          'border bg-transparent shadow-sm text-primary hover:text-primary/60 focus:text-primary/60 border-primary',
+          'border bg-transparent shadow-xs text-primary hover:text-primary/60 focus:text-primary/60 border-primary',
         'outline-secondary':
-          'border bg-transparent shadow-sm text-secondary hover:text-secondary/60 focus:text-secondary/60 border-secondary',
-        secondary: 'bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80',
+          'border bg-transparent shadow-xs text-secondary hover:text-secondary/60 focus:text-secondary/60 border-secondary',
+        secondary: 'bg-secondary text-secondary-foreground shadow-xs hover:bg-secondary/80',
         ghost: 'hover:bg-accent hover:text-accent-foreground',
         link: 'text-primary underline-offset-4 hover:underline',
-        tertiary: 'bg-tertiary text-tertiary-foreground shadow hover:bg-tertiary/90',
+        tertiary: 'bg-tertiary text-tertiary-foreground shadow-sm hover:bg-tertiary/90',
       },
       size: {
         default: 'h-9 px-4 py-2',

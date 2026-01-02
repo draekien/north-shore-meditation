@@ -94,7 +94,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
           <TooltipProvider>
             <QueryClientProvider>
               <BackgroundGradientAnimation containerClassName="fixed -z-50" />
-              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow backdrop-blur-2xl dark:bg-slate-900/50 md:px-6">
+              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow-sm backdrop-blur-2xl dark:bg-slate-900/50 md:px-6">
                 <h3 className="container flex items-center gap-4 p-4">
                   <Link href="/" className="font-bold text-primary xl:text-2xl">
                     {dict.company}
@@ -119,7 +119,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                               <ul className="grid gap-3">
                                 <li>
                                   <a
-                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:bg-accent focus:shadow-md"
+                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden focus:bg-accent focus:shadow-md"
                                     href={dict.nav.tm.hero.href}
                                   >
                                     <Sparkles className={cn('h-6 w-6 text-amber-400')} />
@@ -192,7 +192,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                             <li className="row-span-3">
                               <NavigationMenuLink asChild>
                                 <a
-                                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                                   href={dict.nav.tm.hero.href}
                                 >
                                   <Sparkles className={cn('h-6 w-6 text-amber-400')} />

@@ -106,7 +106,7 @@ export default async function YourWayPage({ params }: GlobalPageProps) {
           <h2 className="mb-24 text-center text-primary">{way.sections.faq.title}</h2>
           <div className="mx-auto flex flex-col gap-4 md:w-2/3">
             {way.sections.faq.cards.map(({ q, a }) => (
-              <Card key={q} className="bg-card/60 shadow-sm backdrop-blur-xl">
+              <Card key={q} className="bg-card/60 shadow-xs backdrop-blur-xl">
                 <CardHeader>
                   <CardTitle>{q}</CardTitle>
                 </CardHeader>

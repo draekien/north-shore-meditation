@@ -69,7 +69,7 @@ export default async function JournalsPage({ searchParams, params }: GlobalPageP
             </>
           ) : (
             <div className="flex flex-col items-center justify-center gap-8">
-              <Alert className="w-full bg-background/70 backdrop-blur md:w-96">
+              <Alert className="w-full bg-background/70 backdrop-blur-sm md:w-96">
                 <BookDashed className="h-4 w-4" />
                 <AlertTitle>You&apos;re Early!</AlertTitle>
                 <AlertDescription>
