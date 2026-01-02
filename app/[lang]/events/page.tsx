@@ -117,7 +117,7 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
               </EmptyHeader>
             </Empty>
           ) : (
-            <ItemGroup className="container m-4">
+            <ItemGroup className="container gap-4">
               {items.map((item) => {
                 const startsAt = new Date(item.startsAt);
                 const endsAt = new Date(item.endsAt);
