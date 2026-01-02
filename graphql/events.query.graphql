@@ -1,0 +1,37 @@
+query Events(
+  $type: String
+  $audiences: [String]
+  $startsAtGte: DateTime!
+  $limit: Int = 10
+  $skip: Int = 0
+  $preview: Boolean = false
+) {
+  eventCollection(
+    where: { type: $type, audiences_contains_some: $audiences, startsAt_gte: $startsAtGte }
+    order: startsAt_ASC
+    limit: $limit
+    skip: $skip
+    preview: $preview
+  ) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      name
+      description
+      type
+      audiences
+      bookingUrl
+      startsAt
+      endsAt
+      physicalLocation {
+        lat
+        lon
+      }
+    }
+    skip
+    limit
+    total
+  }
+}

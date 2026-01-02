@@ -23,11 +23,13 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
+  Circle: { input: any; output: any; }
   DateTime: { input: any; output: any; }
   Dimension: { input: any; output: any; }
   HexColor: { input: any; output: any; }
   JSON: { input: any; output: any; }
   Quality: { input: any; output: any; }
+  Rectangle: { input: any; output: any; }
 };
 
 /** Represents a binary file in a space. An asset can be any file type. */
@@ -50,24 +52,28 @@ export type Asset = {
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetContentTypeArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetDescriptionArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetFileNameArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetHeightArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -80,12 +86,14 @@ export type AssetLinkedFromArgs = {
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetSizeArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetTitleArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -93,12 +101,14 @@ export type AssetTitleArgs = {
 export type AssetUrlArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   transform: InputMaybe<ImageTransformOptions>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetWidthArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type AssetCollection = {
@@ -190,6 +200,7 @@ export type AssetLinkingCollectionsBlogPostCollectionArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -198,6 +209,7 @@ export type AssetLinkingCollectionsEntryCollectionArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export enum AssetOrder {
@@ -244,12 +256,14 @@ export type BlogPost = Entry & _Node & {
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostAuthorArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostContentArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -257,6 +271,7 @@ export type BlogPostContentArgs = {
 export type BlogPostImageArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -273,6 +288,7 @@ export type BlogPostRelatedPostsCollectionArgs = {
   order: InputMaybe<Array<InputMaybe<BlogPostRelatedPostsCollectionOrder>>>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
   where: InputMaybe<BlogPostFilter>;
 };
 
@@ -280,24 +296,28 @@ export type BlogPostRelatedPostsCollectionArgs = {
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSeoArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSlugArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSummaryArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostTitleArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export type BlogPostCollection = {
@@ -414,6 +434,7 @@ export type BlogPostLinkingCollectionsBlogPostCollectionArgs = {
   order: InputMaybe<Array<InputMaybe<BlogPostLinkingCollectionsBlogPostCollectionOrder>>>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -422,6 +443,7 @@ export type BlogPostLinkingCollectionsEntryCollectionArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 export enum BlogPostLinkingCollectionsBlogPostCollectionOrder {
@@ -562,7 +584,190 @@ export enum EntryOrder {
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
 }
 
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type Event = Entry & _Node & {
+  __typename?: 'Event';
+  _id: Scalars['ID']['output'];
+  audiences: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+  bookingUrl: Maybe<Scalars['String']['output']>;
+  contentfulMetadata: ContentfulMetadata;
+  description: Maybe<Scalars['String']['output']>;
+  endsAt: Maybe<Scalars['DateTime']['output']>;
+  linkedFrom: Maybe<EventLinkingCollections>;
+  name: Maybe<Scalars['String']['output']>;
+  physicalLocation: Maybe<Location>;
+  startsAt: Maybe<Scalars['DateTime']['output']>;
+  sys: Sys;
+  type: Maybe<Scalars['String']['output']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventAudiencesArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventBookingUrlArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventDescriptionArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventEndsAtArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventLinkedFromArgs = {
+  allowedLocales: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventNameArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventPhysicalLocationArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventStartsAtArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventTypeArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type EventCollection = {
+  __typename?: 'EventCollection';
+  items: Array<Maybe<Event>>;
+  limit: Scalars['Int']['output'];
+  skip: Scalars['Int']['output'];
+  total: Scalars['Int']['output'];
+};
+
+export type EventFilter = {
+  AND: InputMaybe<Array<InputMaybe<EventFilter>>>;
+  OR: InputMaybe<Array<InputMaybe<EventFilter>>>;
+  audiences_contains_all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  audiences_contains_none: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  audiences_contains_some: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  audiences_exists: InputMaybe<Scalars['Boolean']['input']>;
+  bookingUrl: InputMaybe<Scalars['String']['input']>;
+  bookingUrl_contains: InputMaybe<Scalars['String']['input']>;
+  bookingUrl_exists: InputMaybe<Scalars['Boolean']['input']>;
+  bookingUrl_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  bookingUrl_not: InputMaybe<Scalars['String']['input']>;
+  bookingUrl_not_contains: InputMaybe<Scalars['String']['input']>;
+  bookingUrl_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contentfulMetadata: InputMaybe<ContentfulMetadataFilter>;
+  description: InputMaybe<Scalars['String']['input']>;
+  description_contains: InputMaybe<Scalars['String']['input']>;
+  description_exists: InputMaybe<Scalars['Boolean']['input']>;
+  description_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  description_not: InputMaybe<Scalars['String']['input']>;
+  description_not_contains: InputMaybe<Scalars['String']['input']>;
+  description_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  endsAt: InputMaybe<Scalars['DateTime']['input']>;
+  endsAt_exists: InputMaybe<Scalars['Boolean']['input']>;
+  endsAt_gt: InputMaybe<Scalars['DateTime']['input']>;
+  endsAt_gte: InputMaybe<Scalars['DateTime']['input']>;
+  endsAt_in: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  endsAt_lt: InputMaybe<Scalars['DateTime']['input']>;
+  endsAt_lte: InputMaybe<Scalars['DateTime']['input']>;
+  endsAt_not: InputMaybe<Scalars['DateTime']['input']>;
+  endsAt_not_in: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  name: InputMaybe<Scalars['String']['input']>;
+  name_contains: InputMaybe<Scalars['String']['input']>;
+  name_exists: InputMaybe<Scalars['Boolean']['input']>;
+  name_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  name_not: InputMaybe<Scalars['String']['input']>;
+  name_not_contains: InputMaybe<Scalars['String']['input']>;
+  name_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  physicalLocation_exists: InputMaybe<Scalars['Boolean']['input']>;
+  physicalLocation_within_circle: InputMaybe<Scalars['Circle']['input']>;
+  physicalLocation_within_rectangle: InputMaybe<Scalars['Rectangle']['input']>;
+  startsAt: InputMaybe<Scalars['DateTime']['input']>;
+  startsAt_exists: InputMaybe<Scalars['Boolean']['input']>;
+  startsAt_gt: InputMaybe<Scalars['DateTime']['input']>;
+  startsAt_gte: InputMaybe<Scalars['DateTime']['input']>;
+  startsAt_in: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  startsAt_lt: InputMaybe<Scalars['DateTime']['input']>;
+  startsAt_lte: InputMaybe<Scalars['DateTime']['input']>;
+  startsAt_not: InputMaybe<Scalars['DateTime']['input']>;
+  startsAt_not_in: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  sys: InputMaybe<SysFilter>;
+  type: InputMaybe<Scalars['String']['input']>;
+  type_contains: InputMaybe<Scalars['String']['input']>;
+  type_exists: InputMaybe<Scalars['Boolean']['input']>;
+  type_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  type_not: InputMaybe<Scalars['String']['input']>;
+  type_not_contains: InputMaybe<Scalars['String']['input']>;
+  type_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type EventLinkingCollections = {
+  __typename?: 'EventLinkingCollections';
+  entryCollection: Maybe<EntryCollection>;
+};
+
+
+export type EventLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale: InputMaybe<Scalars['String']['input']>;
+  preview: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export enum EventOrder {
+  BookingUrlAsc = 'bookingUrl_ASC',
+  BookingUrlDesc = 'bookingUrl_DESC',
+  EndsAtAsc = 'endsAt_ASC',
+  EndsAtDesc = 'endsAt_DESC',
+  NameAsc = 'name_ASC',
+  NameDesc = 'name_DESC',
+  StartsAtAsc = 'startsAt_ASC',
+  StartsAtDesc = 'startsAt_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TypeAsc = 'type_ASC',
+  TypeDesc = 'type_DESC'
+}
+
 export enum ImageFormat {
+  /** AVIF image format. */
   Avif = 'AVIF',
   /** JPG image format. */
   Jpg = 'JPG',
@@ -657,14 +862,23 @@ export type ImageTransformOptions = {
   width: InputMaybe<Scalars['Dimension']['input']>;
 };
 
+export type Location = {
+  __typename?: 'Location';
+  lat: Maybe<Scalars['Float']['output']>;
+  lon: Maybe<Scalars['Float']['output']>;
+};
+
 export type Query = {
   __typename?: 'Query';
   _node: Maybe<_Node>;
+  _nodes: Array<Maybe<_Node>>;
   asset: Maybe<Asset>;
   assetCollection: Maybe<AssetCollection>;
   blogPost: Maybe<BlogPost>;
   blogPostCollection: Maybe<BlogPostCollection>;
   entryCollection: Maybe<EntryCollection>;
+  event: Maybe<Event>;
+  eventCollection: Maybe<EventCollection>;
 };
 
 
@@ -672,6 +886,15 @@ export type Query_NodeArgs = {
   id: Scalars['ID']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type Query_NodesArgs = {
+  ids: Array<Scalars['ID']['input']>;
+  locale: InputMaybe<Scalars['String']['input']>;
+  preview: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -679,6 +902,7 @@ export type QueryAssetArgs = {
   id: Scalars['String']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -688,6 +912,7 @@ export type QueryAssetCollectionArgs = {
   order: InputMaybe<Array<InputMaybe<AssetOrder>>>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
   where: InputMaybe<AssetFilter>;
 };
 
@@ -696,6 +921,7 @@ export type QueryBlogPostArgs = {
   id: Scalars['String']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -705,6 +931,7 @@ export type QueryBlogPostCollectionArgs = {
   order: InputMaybe<Array<InputMaybe<BlogPostOrder>>>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
   where: InputMaybe<BlogPostFilter>;
 };
 
@@ -715,7 +942,27 @@ export type QueryEntryCollectionArgs = {
   order: InputMaybe<Array<InputMaybe<EntryOrder>>>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
   where: InputMaybe<EntryFilter>;
+};
+
+
+export type QueryEventArgs = {
+  id: Scalars['String']['input'];
+  locale: InputMaybe<Scalars['String']['input']>;
+  preview: InputMaybe<Scalars['Boolean']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+export type QueryEventCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  locale: InputMaybe<Scalars['String']['input']>;
+  order: InputMaybe<Array<InputMaybe<EventOrder>>>;
+  preview: InputMaybe<Scalars['Boolean']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+  where: InputMaybe<EventFilter>;
 };
 
 export type ResourceLink = {
@@ -786,6 +1033,13 @@ export type TaxonomyConcept = {
   id: Maybe<Scalars['String']['output']>;
 };
 
+export type TimelineFilterInput = {
+  /** Preview content starting from a given release date */
+  release_lte: InputMaybe<Scalars['String']['input']>;
+  /** Preview content starting from a given timestamp */
+  timestamp_lte: InputMaybe<Scalars['DateTime']['input']>;
+};
+
 export type _Node = {
   _id: Scalars['ID']['output'];
 };
@@ -850,6 +1104,18 @@ export type ArticlesQueryVariables = Exact<{
 
 
 export type ArticlesQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, url: string | null, description: string | null, width: number | null, height: number | null } | null } | null> } | null };
+
+export type EventsQueryVariables = Exact<{
+  type: InputMaybe<Scalars['String']['input']>;
+  audiences: InputMaybe<Array<InputMaybe<Scalars['String']['input']>> | InputMaybe<Scalars['String']['input']>>;
+  startsAtGte: Scalars['DateTime']['input'];
+  limit?: InputMaybe<Scalars['Int']['input']>;
+  skip?: InputMaybe<Scalars['Int']['input']>;
+  preview?: InputMaybe<Scalars['Boolean']['input']>;
+}>;
+
+
+export type EventsQuery = { __typename?: 'Query', eventCollection: { __typename?: 'EventCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'Event', name: string | null, description: string | null, type: string | null, audiences: Array<string | null> | null, bookingUrl: string | null, startsAt: any | null, endsAt: any | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, physicalLocation: { __typename?: 'Location', lat: number | null, lon: number | null } | null } | null> } | null };
 
 
 
@@ -1101,3 +1367,117 @@ useSuspenseInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) =
 
 
 useArticlesQuery.fetcher = (variables?: ArticlesQueryVariables, options?: RequestInit['headers']) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables, options);
+
+export const EventsDocument = `
+    query Events($type: String, $audiences: [String], $startsAtGte: DateTime!, $limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
+  eventCollection(
+    where: {type: $type, audiences_contains_some: $audiences, startsAt_gte: $startsAtGte}
+    order: startsAt_ASC
+    limit: $limit
+    skip: $skip
+    preview: $preview
+  ) {
+    items {
+      sys {
+        id
+        publishedAt
+      }
+      name
+      description
+      type
+      audiences
+      bookingUrl
+      startsAt
+      endsAt
+      physicalLocation {
+        lat
+        lon
+      }
+    }
+    skip
+    limit
+    total
+  }
+}
+    `;
+
+export const useEventsQuery = <
+      TData = EventsQuery,
+      TError = unknown
+    >(
+      variables: EventsQueryVariables,
+      options?: Omit<UseQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<EventsQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useQuery<EventsQuery, TError, TData>(
+      {
+    queryKey: ['Events', variables],
+    queryFn: fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables),
+    ...options
+  }
+    )};
+
+useEventsQuery.getKey = (variables: EventsQueryVariables) => ['Events', variables];
+
+export const useSuspenseEventsQuery = <
+      TData = EventsQuery,
+      TError = unknown
+    >(
+      variables: EventsQueryVariables,
+      options?: Omit<UseSuspenseQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<EventsQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useSuspenseQuery<EventsQuery, TError, TData>(
+      {
+    queryKey: ['EventsSuspense', variables],
+    queryFn: fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables),
+    ...options
+  }
+    )};
+
+useSuspenseEventsQuery.getKey = (variables: EventsQueryVariables) => ['EventsSuspense', variables];
+
+export const useInfiniteEventsQuery = <
+      TData = InfiniteData<EventsQuery>,
+      TError = unknown
+    >(
+      variables: EventsQueryVariables,
+      options: Omit<UseInfiniteQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<EventsQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useInfiniteQuery<EventsQuery, TError, TData>(
+      (() => {
+    const { queryKey: optionsQueryKey, ...restOptions } = options;
+    return {
+      queryKey: optionsQueryKey ?? ['Events.infinite', variables],
+      queryFn: (metaData) => fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      ...restOptions
+    }
+  })()
+    )};
+
+useInfiniteEventsQuery.getKey = (variables: EventsQueryVariables) => ['Events.infinite', variables];
+
+export const useSuspenseInfiniteEventsQuery = <
+      TData = InfiniteData<EventsQuery>,
+      TError = unknown
+    >(
+      variables: EventsQueryVariables,
+      options: Omit<UseSuspenseInfiniteQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<EventsQuery, TError, TData>['queryKey'] }
+    ) => {
+    
+    return useSuspenseInfiniteQuery<EventsQuery, TError, TData>(
+      (() => {
+    const { queryKey: optionsQueryKey, ...restOptions } = options;
+    return {
+      queryKey: optionsQueryKey ?? ['Events.infiniteSuspense', variables],
+      queryFn: (metaData) => fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, {...variables, ...(metaData.pageParam ?? {})})(),
+      ...restOptions
+    }
+  })()
+    )};
+
+useSuspenseInfiniteEventsQuery.getKey = (variables: EventsQueryVariables) => ['Events.infiniteSuspense', variables];
+
+
+useEventsQuery.fetcher = (variables: EventsQueryVariables, options?: RequestInit['headers']) => fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables, options);
