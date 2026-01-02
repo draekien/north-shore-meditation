@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { cn } from '@/lib/utils';
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
@@ -141,4 +141,3 @@ export {
   SelectTrigger,
   SelectValue,
 };
-

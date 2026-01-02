@@ -1,12 +1,12 @@
-import { baseKeywords } from "@/lib/constants";
-import { getEvents } from "@/lib/contentful-api";
-import { paginationParamsSchema } from "@/lib/schemas";
-import { GlobalPageProps } from "@/lib/types";
-import { Metadata } from "next";
-import { draftMode } from "next/headers";
-import { eventFiltersSchema } from "./schemas";
-import { EventsList } from "@/components/events-list";
-import { Suspense } from "react";
+import { baseKeywords } from '@/lib/constants';
+import { getEvents } from '@/lib/contentful-api';
+import { paginationParamsSchema } from '@/lib/schemas';
+import { GlobalPageProps } from '@/lib/types';
+import { Metadata } from 'next';
+import { draftMode } from 'next/headers';
+import { eventFiltersSchema } from './schemas';
+import { EventsList } from '@/components/events-list';
+import { Suspense } from 'react';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -14,7 +14,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
   return {
     metadataBase: new URL('https://www.northshoremeditation.au'),
     title: 'Events',
-    description: "Discover upcoming meditation events at North Shore Meditation. Join guided sessions, workshops, and retreats designed to reduce stress, build clarity, and support real-world mindfulness practice",
+    description:
+      'Discover upcoming meditation events at North Shore Meditation. Join guided sessions, workshops, and retreats designed to reduce stress, build clarity, and support real-world mindfulness practice',
     keywords: [...baseKeywords, 'events'],
     alternates: {
       canonical: `/${lang}/events`,
@@ -29,7 +30,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 }
 
 export default async function Page({ searchParams, params }: GlobalPageProps) {
-  if (!searchParams) throw new Error("Missing search params");
+  if (!searchParams) throw new Error('Missing search params');
 
   const search = await searchParams;
 
@@ -43,5 +44,5 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
     <Suspense fallback={<div>Loading events...</div>}>
       <EventsList page={page} {...filters} preview={preview} />
     </Suspense>
-  )
+  );
 }

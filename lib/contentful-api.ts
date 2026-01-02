@@ -1,6 +1,6 @@
 import {
-    EventsQuery,
-    EventsQueryVariables,
+  EventsQuery,
+  EventsQueryVariables,
   useArticlesBySlugQuery,
   useArticlesQuery,
   useEventsQuery,
@@ -35,7 +35,7 @@ export const getAllArticles = cache(async () => {
       if (!lastPage.blogPostCollection) return;
       if (lastPage.blogPostCollection.total <= lastPage.blogPostCollection.skip) return;
       return lastPage.blogPostCollection.limit + lastPage.blogPostCollection.skip;
-    }
+    },
   });
 
   return {
@@ -55,12 +55,12 @@ export const getArticlesBySlug = cache(async (variables: ArticlesBySlugQueryVari
 export const getEvents = cache(async (variables: EventsQueryVariables) => {
   const response = await queryClient.fetchQuery<EventsQuery>({
     queryKey: useEventsQuery.getKey(variables),
-    queryFn: useEventsQuery.fetcher(variables)
-  })
+    queryFn: useEventsQuery.fetcher(variables),
+  });
 
   return {
     items: response.eventCollection?.items.filter((x) => !!x) ?? [],
     total: response.eventCollection?.total,
     skip: response.eventCollection?.skip,
   };
-})
+});

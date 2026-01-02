@@ -1,4 +1,14 @@
-import { useQuery, useSuspenseQuery, useInfiniteQuery, useSuspenseInfiniteQuery, UseQueryOptions, UseSuspenseQueryOptions, UseInfiniteQueryOptions, InfiniteData, UseSuspenseInfiniteQueryOptions } from '@tanstack/react-query';
+import {
+  useQuery,
+  useSuspenseQuery,
+  useInfiniteQuery,
+  useSuspenseInfiniteQuery,
+  UseQueryOptions,
+  UseSuspenseQueryOptions,
+  UseInfiniteQueryOptions,
+  InfiniteData,
+  UseSuspenseInfiniteQueryOptions,
+} from '@tanstack/react-query';
 import { fetcher } from '@/lib/fetcher';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -9,25 +19,25 @@ export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> =
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 
 type FetchOptions = {
-cache?: RequestCache;
-next?: NextFetchRequestConfig;
+  cache?: RequestCache;
+  next?: NextFetchRequestConfig;
 };
 
-            type RequestInit = {
-              headers: (HeadersInit & FetchOptions) | FetchOptions;
-            };
+type RequestInit = {
+  headers: (HeadersInit & FetchOptions) | FetchOptions;
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string; }
-  String: { input: string; output: string; }
-  Boolean: { input: boolean; output: boolean; }
-  Int: { input: number; output: number; }
-  Float: { input: number; output: number; }
-  DateTime: { input: any; output: any; }
-  Dimension: { input: any; output: any; }
-  HexColor: { input: any; output: any; }
-  JSON: { input: any; output: any; }
-  Quality: { input: any; output: any; }
+  ID: { input: string; output: string };
+  String: { input: string; output: string };
+  Boolean: { input: boolean; output: boolean };
+  Int: { input: number; output: number };
+  Float: { input: number; output: number };
+  DateTime: { input: any; output: any };
+  Dimension: { input: any; output: any };
+  HexColor: { input: any; output: any };
+  JSON: { input: any; output: any };
+  Quality: { input: any; output: any };
 };
 
 /** Represents a binary file in a space. An asset can be any file type. */
@@ -46,13 +56,11 @@ export type Asset = {
   width: Maybe<Scalars['Int']['output']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetContentTypeArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetDescriptionArgs = {
@@ -60,13 +68,11 @@ export type AssetDescriptionArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetFileNameArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetHeightArgs = {
@@ -74,12 +80,10 @@ export type AssetHeightArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetLinkedFromArgs = {
   allowedLocales: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetSizeArgs = {
@@ -87,13 +91,11 @@ export type AssetSizeArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetTitleArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetUrlArgs = {
@@ -101,7 +103,6 @@ export type AssetUrlArgs = {
   transform: InputMaybe<ImageTransformOptions>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** Represents a binary file in a space. An asset can be any file type. */
 export type AssetWidthArgs = {
@@ -192,7 +193,6 @@ export type AssetLinkingCollections = {
   entryCollection: Maybe<EntryCollection>;
 };
 
-
 export type AssetLinkingCollectionsBlogPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale: InputMaybe<Scalars['String']['input']>;
@@ -200,7 +200,6 @@ export type AssetLinkingCollectionsBlogPostCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type AssetLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -230,26 +229,26 @@ export enum AssetOrder {
   UrlAsc = 'url_ASC',
   UrlDesc = 'url_DESC',
   WidthAsc = 'width_ASC',
-  WidthDesc = 'width_DESC'
+  WidthDesc = 'width_DESC',
 }
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
-export type BlogPost = Entry & _Node & {
-  __typename?: 'BlogPost';
-  _id: Scalars['ID']['output'];
-  author: Maybe<Scalars['String']['output']>;
-  content: Maybe<BlogPostContent>;
-  contentfulMetadata: ContentfulMetadata;
-  image: Maybe<Asset>;
-  linkedFrom: Maybe<BlogPostLinkingCollections>;
-  relatedPostsCollection: Maybe<BlogPostRelatedPostsCollection>;
-  seo: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  slug: Maybe<Scalars['String']['output']>;
-  summary: Maybe<Scalars['String']['output']>;
-  sys: Sys;
-  title: Maybe<Scalars['String']['output']>;
-};
-
+export type BlogPost = Entry &
+  _Node & {
+    __typename?: 'BlogPost';
+    _id: Scalars['ID']['output'];
+    author: Maybe<Scalars['String']['output']>;
+    content: Maybe<BlogPostContent>;
+    contentfulMetadata: ContentfulMetadata;
+    image: Maybe<Asset>;
+    linkedFrom: Maybe<BlogPostLinkingCollections>;
+    relatedPostsCollection: Maybe<BlogPostRelatedPostsCollection>;
+    seo: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+    slug: Maybe<Scalars['String']['output']>;
+    summary: Maybe<Scalars['String']['output']>;
+    sys: Sys;
+    title: Maybe<Scalars['String']['output']>;
+  };
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostAuthorArgs = {
@@ -257,13 +256,11 @@ export type BlogPostAuthorArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostContentArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostImageArgs = {
@@ -272,12 +269,10 @@ export type BlogPostImageArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostLinkedFromArgs = {
   allowedLocales: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostRelatedPostsCollectionArgs = {
@@ -290,13 +285,11 @@ export type BlogPostRelatedPostsCollectionArgs = {
   where: InputMaybe<BlogPostFilter>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSeoArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSlugArgs = {
@@ -304,13 +297,11 @@ export type BlogPostSlugArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostSummaryArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/blogPost) */
 export type BlogPostTitleArgs = {
@@ -425,7 +416,6 @@ export type BlogPostLinkingCollections = {
   entryCollection: Maybe<EntryCollection>;
 };
 
-
 export type BlogPostLinkingCollectionsBlogPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale: InputMaybe<Scalars['String']['input']>;
@@ -434,7 +424,6 @@ export type BlogPostLinkingCollectionsBlogPostCollectionArgs = {
   skip?: InputMaybe<Scalars['Int']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type BlogPostLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -460,7 +449,7 @@ export enum BlogPostLinkingCollectionsBlogPostCollectionOrder {
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
+  TitleDesc = 'title_DESC',
 }
 
 export enum BlogPostOrder {
@@ -479,7 +468,7 @@ export enum BlogPostOrder {
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
+  TitleDesc = 'title_DESC',
 }
 
 export type BlogPostRelatedPostsCollection = {
@@ -506,7 +495,7 @@ export enum BlogPostRelatedPostsCollectionOrder {
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC'
+  TitleDesc = 'title_DESC',
 }
 
 export type ContentfulMetadata = {
@@ -579,27 +568,27 @@ export enum EntryOrder {
   SysPublishedAtAsc = 'sys_publishedAt_ASC',
   SysPublishedAtDesc = 'sys_publishedAt_DESC',
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
-  SysPublishedVersionDesc = 'sys_publishedVersion_DESC'
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
 }
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
-export type Event = Entry & _Node & {
-  __typename?: 'Event';
-  _id: Scalars['ID']['output'];
-  audiences: Maybe<Array<Maybe<Scalars['String']['output']>>>;
-  bookingUrl: Maybe<Scalars['String']['output']>;
-  contentfulMetadata: ContentfulMetadata;
-  description: Maybe<Scalars['String']['output']>;
-  endsAt: Maybe<Scalars['DateTime']['output']>;
-  linkedFrom: Maybe<EventLinkingCollections>;
-  location: Maybe<Scalars['String']['output']>;
-  locationDescription: Maybe<Scalars['String']['output']>;
-  name: Maybe<Scalars['String']['output']>;
-  startsAt: Maybe<Scalars['DateTime']['output']>;
-  sys: Sys;
-  type: Maybe<Scalars['String']['output']>;
-};
-
+export type Event = Entry &
+  _Node & {
+    __typename?: 'Event';
+    _id: Scalars['ID']['output'];
+    audiences: Maybe<Array<Maybe<Scalars['String']['output']>>>;
+    bookingUrl: Maybe<Scalars['String']['output']>;
+    contentfulMetadata: ContentfulMetadata;
+    description: Maybe<Scalars['String']['output']>;
+    endsAt: Maybe<Scalars['DateTime']['output']>;
+    linkedFrom: Maybe<EventLinkingCollections>;
+    location: Maybe<Scalars['String']['output']>;
+    locationDescription: Maybe<Scalars['String']['output']>;
+    name: Maybe<Scalars['String']['output']>;
+    startsAt: Maybe<Scalars['DateTime']['output']>;
+    sys: Sys;
+    type: Maybe<Scalars['String']['output']>;
+  };
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventAudiencesArgs = {
@@ -607,13 +596,11 @@ export type EventAudiencesArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventBookingUrlArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventDescriptionArgs = {
@@ -621,19 +608,16 @@ export type EventDescriptionArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventEndsAtArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventLinkedFromArgs = {
   allowedLocales: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
-
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventLocationArgs = {
@@ -641,13 +625,11 @@ export type EventLocationArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventLocationDescriptionArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventNameArgs = {
@@ -655,13 +637,11 @@ export type EventNameArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventStartsAtArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
 export type EventTypeArgs = {
@@ -753,7 +733,6 @@ export type EventLinkingCollections = {
   entryCollection: Maybe<EntryCollection>;
 };
 
-
 export type EventLinkingCollectionsEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale: InputMaybe<Scalars['String']['input']>;
@@ -782,7 +761,7 @@ export enum EventOrder {
   SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
   SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
   TypeAsc = 'type_ASC',
-  TypeDesc = 'type_DESC'
+  TypeDesc = 'type_DESC',
 }
 
 export enum ImageFormat {
@@ -805,7 +784,7 @@ export enum ImageFormat {
    */
   Png8 = 'PNG8',
   /** WebP image format. */
-  Webp = 'WEBP'
+  Webp = 'WEBP',
 }
 
 export enum ImageResizeFocus {
@@ -830,7 +809,7 @@ export enum ImageResizeFocus {
   /** Focus the resizing on the top left. */
   TopLeft = 'TOP_LEFT',
   /** Focus the resizing on the top right. */
-  TopRight = 'TOP_RIGHT'
+  TopRight = 'TOP_RIGHT',
 }
 
 export enum ImageResizeStrategy {
@@ -848,7 +827,7 @@ export enum ImageResizeStrategy {
   /** Resizes the image to the specified dimensions, changing the original aspect ratio if needed. */
   Scale = 'SCALE',
   /** Creates a thumbnail from the image. */
-  Thumb = 'THUMB'
+  Thumb = 'THUMB',
 }
 
 export type ImageTransformOptions = {
@@ -894,14 +873,12 @@ export type Query = {
   eventCollection: Maybe<EventCollection>;
 };
 
-
 export type Query_NodeArgs = {
   id: Scalars['ID']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type Query_NodesArgs = {
   ids: Array<Scalars['ID']['input']>;
@@ -910,14 +887,12 @@ export type Query_NodesArgs = {
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
-
 export type QueryAssetArgs = {
   id: Scalars['String']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryAssetCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -929,14 +904,12 @@ export type QueryAssetCollectionArgs = {
   where: InputMaybe<AssetFilter>;
 };
 
-
 export type QueryBlogPostArgs = {
   id: Scalars['String']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryBlogPostCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -948,7 +921,6 @@ export type QueryBlogPostCollectionArgs = {
   where: InputMaybe<BlogPostFilter>;
 };
 
-
 export type QueryEntryCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
   locale: InputMaybe<Scalars['String']['input']>;
@@ -959,14 +931,12 @@ export type QueryEntryCollectionArgs = {
   where: InputMaybe<EntryFilter>;
 };
 
-
 export type QueryEventArgs = {
   id: Scalars['String']['input'];
   locale: InputMaybe<Scalars['String']['input']>;
   preview: InputMaybe<Scalars['Boolean']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
-
 
 export type QueryEventCollectionArgs = {
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1106,8 +1076,57 @@ export type ArticlesBySlugQueryVariables = Exact<{
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
-
-export type ArticlesBySlugQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, seo: Array<string | null> | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, content: { __typename?: 'BlogPostContent', json: any, links: { __typename?: 'BlogPostContentLinks', assets: { __typename?: 'BlogPostContentAssets', block: Array<{ __typename?: 'Asset', url: string | null, description: string | null, sys: { __typename?: 'Sys', id: string } } | null> } } } | null, image: { __typename?: 'Asset', url: string | null } | null, relatedPostsCollection: { __typename?: 'BlogPostRelatedPostsCollection', items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, description: string | null, url: string | null, width: number | null, height: number | null } | null } | null> } | null } | null> } | null };
+export type ArticlesBySlugQuery = {
+  __typename?: 'Query';
+  blogPostCollection: {
+    __typename?: 'BlogPostCollection';
+    items: Array<{
+      __typename?: 'BlogPost';
+      title: string | null;
+      slug: string | null;
+      summary: string | null;
+      seo: Array<string | null> | null;
+      author: string | null;
+      sys: { __typename?: 'Sys'; id: string; publishedAt: any | null };
+      content: {
+        __typename?: 'BlogPostContent';
+        json: any;
+        links: {
+          __typename?: 'BlogPostContentLinks';
+          assets: {
+            __typename?: 'BlogPostContentAssets';
+            block: Array<{
+              __typename?: 'Asset';
+              url: string | null;
+              description: string | null;
+              sys: { __typename?: 'Sys'; id: string };
+            } | null>;
+          };
+        };
+      } | null;
+      image: { __typename?: 'Asset'; url: string | null } | null;
+      relatedPostsCollection: {
+        __typename?: 'BlogPostRelatedPostsCollection';
+        items: Array<{
+          __typename?: 'BlogPost';
+          title: string | null;
+          slug: string | null;
+          summary: string | null;
+          author: string | null;
+          sys: { __typename?: 'Sys'; id: string; publishedAt: any | null };
+          image: {
+            __typename?: 'Asset';
+            title: string | null;
+            description: string | null;
+            url: string | null;
+            width: number | null;
+            height: number | null;
+          } | null;
+        } | null>;
+      } | null;
+    } | null>;
+  } | null;
+};
 
 export type ArticlesQueryVariables = Exact<{
   limit?: InputMaybe<Scalars['Int']['input']>;
@@ -1115,8 +1134,31 @@ export type ArticlesQueryVariables = Exact<{
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
-
-export type ArticlesQuery = { __typename?: 'Query', blogPostCollection: { __typename?: 'BlogPostCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'BlogPost', title: string | null, slug: string | null, summary: string | null, author: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, image: { __typename?: 'Asset', title: string | null, url: string | null, description: string | null, width: number | null, height: number | null } | null } | null> } | null };
+export type ArticlesQuery = {
+  __typename?: 'Query';
+  blogPostCollection: {
+    __typename?: 'BlogPostCollection';
+    skip: number;
+    limit: number;
+    total: number;
+    items: Array<{
+      __typename?: 'BlogPost';
+      title: string | null;
+      slug: string | null;
+      summary: string | null;
+      author: string | null;
+      sys: { __typename?: 'Sys'; id: string; publishedAt: any | null };
+      image: {
+        __typename?: 'Asset';
+        title: string | null;
+        url: string | null;
+        description: string | null;
+        width: number | null;
+        height: number | null;
+      } | null;
+    } | null>;
+  } | null;
+};
 
 export type EventsQueryVariables = Exact<{
   type: InputMaybe<Scalars['String']['input']>;
@@ -1127,10 +1169,28 @@ export type EventsQueryVariables = Exact<{
   preview?: InputMaybe<Scalars['Boolean']['input']>;
 }>;
 
-
-export type EventsQuery = { __typename?: 'Query', eventCollection: { __typename?: 'EventCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'Event', name: string | null, description: string | null, type: string | null, audiences: Array<string | null> | null, bookingUrl: string | null, startsAt: any | null, endsAt: any | null, location: string | null, locationDescription: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null } } | null> } | null };
-
-
+export type EventsQuery = {
+  __typename?: 'Query';
+  eventCollection: {
+    __typename?: 'EventCollection';
+    skip: number;
+    limit: number;
+    total: number;
+    items: Array<{
+      __typename?: 'Event';
+      name: string | null;
+      description: string | null;
+      type: string | null;
+      audiences: Array<string | null> | null;
+      bookingUrl: string | null;
+      startsAt: any | null;
+      endsAt: any | null;
+      location: string | null;
+      locationDescription: string | null;
+      sys: { __typename?: 'Sys'; id: string; publishedAt: any | null };
+    } | null>;
+  } | null;
+};
 
 export const ArticlesBySlugDocument = `
     query ArticlesBySlug($slug: String, $preview: Boolean = false) {
@@ -1186,86 +1246,96 @@ export const ArticlesBySlugDocument = `
 }
     `;
 
-export const useArticlesBySlugQuery = <
-      TData = ArticlesBySlugQuery,
-      TError = unknown
-    >(
-      variables?: ArticlesBySlugQueryVariables,
-      options?: Omit<UseQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useQuery<ArticlesBySlugQuery, TError, TData>(
-      {
+export const useArticlesBySlugQuery = <TData = ArticlesBySlugQuery, TError = unknown>(
+  variables?: ArticlesBySlugQueryVariables,
+  options?: Omit<UseQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useQuery<ArticlesBySlugQuery, TError, TData>({
     queryKey: variables === undefined ? ['ArticlesBySlug'] : ['ArticlesBySlug', variables],
     queryFn: fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables),
-    ...options
+    ...options,
+  });
+};
+
+useArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) =>
+  variables === undefined ? ['ArticlesBySlug'] : ['ArticlesBySlug', variables];
+
+export const useSuspenseArticlesBySlugQuery = <TData = ArticlesBySlugQuery, TError = unknown>(
+  variables?: ArticlesBySlugQueryVariables,
+  options?: Omit<UseSuspenseQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseSuspenseQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'];
   }
-    )};
-
-useArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlug'] : ['ArticlesBySlug', variables];
-
-export const useSuspenseArticlesBySlugQuery = <
-      TData = ArticlesBySlugQuery,
-      TError = unknown
-    >(
-      variables?: ArticlesBySlugQueryVariables,
-      options?: Omit<UseSuspenseQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useSuspenseQuery<ArticlesBySlugQuery, TError, TData>(
-      {
+) => {
+  return useSuspenseQuery<ArticlesBySlugQuery, TError, TData>({
     queryKey: variables === undefined ? ['ArticlesBySlugSuspense'] : ['ArticlesBySlugSuspense', variables],
     queryFn: fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables),
-    ...options
+    ...options,
+  });
+};
+
+useSuspenseArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) =>
+  variables === undefined ? ['ArticlesBySlugSuspense'] : ['ArticlesBySlugSuspense', variables];
+
+export const useInfiniteArticlesBySlugQuery = <TData = InfiniteData<ArticlesBySlugQuery>, TError = unknown>(
+  variables: ArticlesBySlugQueryVariables,
+  options: Omit<UseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'];
   }
-    )};
+) => {
+  return useInfiniteQuery<ArticlesBySlugQuery, TError, TData>(
+    (() => {
+      const { queryKey: optionsQueryKey, ...restOptions } = options;
+      return {
+        queryKey:
+          (optionsQueryKey ?? variables === undefined)
+            ? ['ArticlesBySlug.infinite']
+            : ['ArticlesBySlug.infinite', variables],
+        queryFn: (metaData) =>
+          fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, {
+            ...variables,
+            ...(metaData.pageParam ?? {}),
+          })(),
+        ...restOptions,
+      };
+    })()
+  );
+};
 
-useSuspenseArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlugSuspense'] : ['ArticlesBySlugSuspense', variables];
+useInfiniteArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) =>
+  variables === undefined ? ['ArticlesBySlug.infinite'] : ['ArticlesBySlug.infinite', variables];
 
-export const useInfiniteArticlesBySlugQuery = <
-      TData = InfiniteData<ArticlesBySlugQuery>,
-      TError = unknown
-    >(
-      variables: ArticlesBySlugQueryVariables,
-      options: Omit<UseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useInfiniteQuery<ArticlesBySlugQuery, TError, TData>(
-      (() => {
-    const { queryKey: optionsQueryKey, ...restOptions } = options;
-    return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['ArticlesBySlug.infinite'] : ['ArticlesBySlug.infinite', variables],
-      queryFn: (metaData) => fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, {...variables, ...(metaData.pageParam ?? {})})(),
-      ...restOptions
-    }
-  })()
-    )};
+export const useSuspenseInfiniteArticlesBySlugQuery = <TData = InfiniteData<ArticlesBySlugQuery>, TError = unknown>(
+  variables: ArticlesBySlugQueryVariables,
+  options: Omit<UseSuspenseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseSuspenseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useSuspenseInfiniteQuery<ArticlesBySlugQuery, TError, TData>(
+    (() => {
+      const { queryKey: optionsQueryKey, ...restOptions } = options;
+      return {
+        queryKey:
+          (optionsQueryKey ?? variables === undefined)
+            ? ['ArticlesBySlug.infiniteSuspense']
+            : ['ArticlesBySlug.infiniteSuspense', variables],
+        queryFn: (metaData) =>
+          fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, {
+            ...variables,
+            ...(metaData.pageParam ?? {}),
+          })(),
+        ...restOptions,
+      };
+    })()
+  );
+};
 
-useInfiniteArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlug.infinite'] : ['ArticlesBySlug.infinite', variables];
+useSuspenseInfiniteArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) =>
+  variables === undefined ? ['ArticlesBySlug.infiniteSuspense'] : ['ArticlesBySlug.infiniteSuspense', variables];
 
-export const useSuspenseInfiniteArticlesBySlugQuery = <
-      TData = InfiniteData<ArticlesBySlugQuery>,
-      TError = unknown
-    >(
-      variables: ArticlesBySlugQueryVariables,
-      options: Omit<UseSuspenseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<ArticlesBySlugQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useSuspenseInfiniteQuery<ArticlesBySlugQuery, TError, TData>(
-      (() => {
-    const { queryKey: optionsQueryKey, ...restOptions } = options;
-    return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['ArticlesBySlug.infiniteSuspense'] : ['ArticlesBySlug.infiniteSuspense', variables],
-      queryFn: (metaData) => fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, {...variables, ...(metaData.pageParam ?? {})})(),
-      ...restOptions
-    }
-  })()
-    )};
-
-useSuspenseInfiniteArticlesBySlugQuery.getKey = (variables?: ArticlesBySlugQueryVariables) => variables === undefined ? ['ArticlesBySlug.infiniteSuspense'] : ['ArticlesBySlug.infiniteSuspense', variables];
-
-
-useArticlesBySlugQuery.fetcher = (variables?: ArticlesBySlugQueryVariables, options?: RequestInit['headers']) => fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables, options);
+useArticlesBySlugQuery.fetcher = (variables?: ArticlesBySlugQueryVariables, options?: RequestInit['headers']) =>
+  fetcher<ArticlesBySlugQuery, ArticlesBySlugQueryVariables>(ArticlesBySlugDocument, variables, options);
 
 export const ArticlesDocument = `
     query Articles($limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
@@ -1300,86 +1370,94 @@ export const ArticlesDocument = `
 }
     `;
 
-export const useArticlesQuery = <
-      TData = ArticlesQuery,
-      TError = unknown
-    >(
-      variables?: ArticlesQueryVariables,
-      options?: Omit<UseQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useQuery<ArticlesQuery, TError, TData>(
-      {
+export const useArticlesQuery = <TData = ArticlesQuery, TError = unknown>(
+  variables?: ArticlesQueryVariables,
+  options?: Omit<UseQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseQueryOptions<ArticlesQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useQuery<ArticlesQuery, TError, TData>({
     queryKey: variables === undefined ? ['Articles'] : ['Articles', variables],
     queryFn: fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables),
-    ...options
+    ...options,
+  });
+};
+
+useArticlesQuery.getKey = (variables?: ArticlesQueryVariables) =>
+  variables === undefined ? ['Articles'] : ['Articles', variables];
+
+export const useSuspenseArticlesQuery = <TData = ArticlesQuery, TError = unknown>(
+  variables?: ArticlesQueryVariables,
+  options?: Omit<UseSuspenseQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseSuspenseQueryOptions<ArticlesQuery, TError, TData>['queryKey'];
   }
-    )};
-
-useArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['Articles'] : ['Articles', variables];
-
-export const useSuspenseArticlesQuery = <
-      TData = ArticlesQuery,
-      TError = unknown
-    >(
-      variables?: ArticlesQueryVariables,
-      options?: Omit<UseSuspenseQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useSuspenseQuery<ArticlesQuery, TError, TData>(
-      {
+) => {
+  return useSuspenseQuery<ArticlesQuery, TError, TData>({
     queryKey: variables === undefined ? ['ArticlesSuspense'] : ['ArticlesSuspense', variables],
     queryFn: fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables),
-    ...options
+    ...options,
+  });
+};
+
+useSuspenseArticlesQuery.getKey = (variables?: ArticlesQueryVariables) =>
+  variables === undefined ? ['ArticlesSuspense'] : ['ArticlesSuspense', variables];
+
+export const useInfiniteArticlesQuery = <TData = InfiniteData<ArticlesQuery>, TError = unknown>(
+  variables: ArticlesQueryVariables,
+  options: Omit<UseInfiniteQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseInfiniteQueryOptions<ArticlesQuery, TError, TData>['queryKey'];
   }
-    )};
+) => {
+  return useInfiniteQuery<ArticlesQuery, TError, TData>(
+    (() => {
+      const { queryKey: optionsQueryKey, ...restOptions } = options;
+      return {
+        queryKey:
+          (optionsQueryKey ?? variables === undefined) ? ['Articles.infinite'] : ['Articles.infinite', variables],
+        queryFn: (metaData) =>
+          fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, {
+            ...variables,
+            ...(metaData.pageParam ?? {}),
+          })(),
+        ...restOptions,
+      };
+    })()
+  );
+};
 
-useSuspenseArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['ArticlesSuspense'] : ['ArticlesSuspense', variables];
+useInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) =>
+  variables === undefined ? ['Articles.infinite'] : ['Articles.infinite', variables];
 
-export const useInfiniteArticlesQuery = <
-      TData = InfiniteData<ArticlesQuery>,
-      TError = unknown
-    >(
-      variables: ArticlesQueryVariables,
-      options: Omit<UseInfiniteQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useInfiniteQuery<ArticlesQuery, TError, TData>(
-      (() => {
-    const { queryKey: optionsQueryKey, ...restOptions } = options;
-    return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['Articles.infinite'] : ['Articles.infinite', variables],
-      queryFn: (metaData) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, {...variables, ...(metaData.pageParam ?? {})})(),
-      ...restOptions
-    }
-  })()
-    )};
+export const useSuspenseInfiniteArticlesQuery = <TData = InfiniteData<ArticlesQuery>, TError = unknown>(
+  variables: ArticlesQueryVariables,
+  options: Omit<UseSuspenseInfiniteQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseSuspenseInfiniteQueryOptions<ArticlesQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useSuspenseInfiniteQuery<ArticlesQuery, TError, TData>(
+    (() => {
+      const { queryKey: optionsQueryKey, ...restOptions } = options;
+      return {
+        queryKey:
+          (optionsQueryKey ?? variables === undefined)
+            ? ['Articles.infiniteSuspense']
+            : ['Articles.infiniteSuspense', variables],
+        queryFn: (metaData) =>
+          fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, {
+            ...variables,
+            ...(metaData.pageParam ?? {}),
+          })(),
+        ...restOptions,
+      };
+    })()
+  );
+};
 
-useInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['Articles.infinite'] : ['Articles.infinite', variables];
+useSuspenseInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) =>
+  variables === undefined ? ['Articles.infiniteSuspense'] : ['Articles.infiniteSuspense', variables];
 
-export const useSuspenseInfiniteArticlesQuery = <
-      TData = InfiniteData<ArticlesQuery>,
-      TError = unknown
-    >(
-      variables: ArticlesQueryVariables,
-      options: Omit<UseSuspenseInfiniteQueryOptions<ArticlesQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<ArticlesQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useSuspenseInfiniteQuery<ArticlesQuery, TError, TData>(
-      (() => {
-    const { queryKey: optionsQueryKey, ...restOptions } = options;
-    return {
-      queryKey: optionsQueryKey ?? variables === undefined ? ['Articles.infiniteSuspense'] : ['Articles.infiniteSuspense', variables],
-      queryFn: (metaData) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, {...variables, ...(metaData.pageParam ?? {})})(),
-      ...restOptions
-    }
-  })()
-    )};
-
-useSuspenseInfiniteArticlesQuery.getKey = (variables?: ArticlesQueryVariables) => variables === undefined ? ['Articles.infiniteSuspense'] : ['Articles.infiniteSuspense', variables];
-
-
-useArticlesQuery.fetcher = (variables?: ArticlesQueryVariables, options?: RequestInit['headers']) => fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables, options);
+useArticlesQuery.fetcher = (variables?: ArticlesQueryVariables, options?: RequestInit['headers']) =>
+  fetcher<ArticlesQuery, ArticlesQueryVariables>(ArticlesDocument, variables, options);
 
 export const EventsDocument = `
     query Events($type: String, $audiences: [String], $startsAtGte: DateTime!, $limit: Int = 10, $skip: Int = 0, $preview: Boolean = false) {
@@ -1412,83 +1490,77 @@ export const EventsDocument = `
 }
     `;
 
-export const useEventsQuery = <
-      TData = EventsQuery,
-      TError = unknown
-    >(
-      variables: EventsQueryVariables,
-      options?: Omit<UseQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseQueryOptions<EventsQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useQuery<EventsQuery, TError, TData>(
-      {
+export const useEventsQuery = <TData = EventsQuery, TError = unknown>(
+  variables: EventsQueryVariables,
+  options?: Omit<UseQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseQueryOptions<EventsQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useQuery<EventsQuery, TError, TData>({
     queryKey: ['Events', variables],
     queryFn: fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables),
-    ...options
-  }
-    )};
+    ...options,
+  });
+};
 
 useEventsQuery.getKey = (variables: EventsQueryVariables) => ['Events', variables];
 
-export const useSuspenseEventsQuery = <
-      TData = EventsQuery,
-      TError = unknown
-    >(
-      variables: EventsQueryVariables,
-      options?: Omit<UseSuspenseQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseQueryOptions<EventsQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useSuspenseQuery<EventsQuery, TError, TData>(
-      {
+export const useSuspenseEventsQuery = <TData = EventsQuery, TError = unknown>(
+  variables: EventsQueryVariables,
+  options?: Omit<UseSuspenseQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseSuspenseQueryOptions<EventsQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useSuspenseQuery<EventsQuery, TError, TData>({
     queryKey: ['EventsSuspense', variables],
     queryFn: fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables),
-    ...options
-  }
-    )};
+    ...options,
+  });
+};
 
 useSuspenseEventsQuery.getKey = (variables: EventsQueryVariables) => ['EventsSuspense', variables];
 
-export const useInfiniteEventsQuery = <
-      TData = InfiniteData<EventsQuery>,
-      TError = unknown
-    >(
-      variables: EventsQueryVariables,
-      options: Omit<UseInfiniteQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseInfiniteQueryOptions<EventsQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useInfiniteQuery<EventsQuery, TError, TData>(
-      (() => {
-    const { queryKey: optionsQueryKey, ...restOptions } = options;
-    return {
-      queryKey: optionsQueryKey ?? ['Events.infinite', variables],
-      queryFn: (metaData) => fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, {...variables, ...(metaData.pageParam ?? {})})(),
-      ...restOptions
-    }
-  })()
-    )};
+export const useInfiniteEventsQuery = <TData = InfiniteData<EventsQuery>, TError = unknown>(
+  variables: EventsQueryVariables,
+  options: Omit<UseInfiniteQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseInfiniteQueryOptions<EventsQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useInfiniteQuery<EventsQuery, TError, TData>(
+    (() => {
+      const { queryKey: optionsQueryKey, ...restOptions } = options;
+      return {
+        queryKey: optionsQueryKey ?? ['Events.infinite', variables],
+        queryFn: (metaData) =>
+          fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, { ...variables, ...(metaData.pageParam ?? {}) })(),
+        ...restOptions,
+      };
+    })()
+  );
+};
 
 useInfiniteEventsQuery.getKey = (variables: EventsQueryVariables) => ['Events.infinite', variables];
 
-export const useSuspenseInfiniteEventsQuery = <
-      TData = InfiniteData<EventsQuery>,
-      TError = unknown
-    >(
-      variables: EventsQueryVariables,
-      options: Omit<UseSuspenseInfiniteQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & { queryKey?: UseSuspenseInfiniteQueryOptions<EventsQuery, TError, TData>['queryKey'] }
-    ) => {
-    
-    return useSuspenseInfiniteQuery<EventsQuery, TError, TData>(
-      (() => {
-    const { queryKey: optionsQueryKey, ...restOptions } = options;
-    return {
-      queryKey: optionsQueryKey ?? ['Events.infiniteSuspense', variables],
-      queryFn: (metaData) => fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, {...variables, ...(metaData.pageParam ?? {})})(),
-      ...restOptions
-    }
-  })()
-    )};
+export const useSuspenseInfiniteEventsQuery = <TData = InfiniteData<EventsQuery>, TError = unknown>(
+  variables: EventsQueryVariables,
+  options: Omit<UseSuspenseInfiniteQueryOptions<EventsQuery, TError, TData>, 'queryKey'> & {
+    queryKey?: UseSuspenseInfiniteQueryOptions<EventsQuery, TError, TData>['queryKey'];
+  }
+) => {
+  return useSuspenseInfiniteQuery<EventsQuery, TError, TData>(
+    (() => {
+      const { queryKey: optionsQueryKey, ...restOptions } = options;
+      return {
+        queryKey: optionsQueryKey ?? ['Events.infiniteSuspense', variables],
+        queryFn: (metaData) =>
+          fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, { ...variables, ...(metaData.pageParam ?? {}) })(),
+        ...restOptions,
+      };
+    })()
+  );
+};
 
 useSuspenseInfiniteEventsQuery.getKey = (variables: EventsQueryVariables) => ['Events.infiniteSuspense', variables];
 
-
-useEventsQuery.fetcher = (variables: EventsQueryVariables, options?: RequestInit['headers']) => fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables, options);
+useEventsQuery.fetcher = (variables: EventsQueryVariables, options?: RequestInit['headers']) =>
+  fetcher<EventsQuery, EventsQueryVariables>(EventsDocument, variables, options);

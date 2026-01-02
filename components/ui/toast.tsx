@@ -1,4 +1,4 @@
-"use client"
+'use client';
 
 import { Cross2Icon } from '@radix-ui/react-icons';
 import * as ToastPrimitives from '@radix-ui/react-toast';
@@ -111,4 +111,3 @@ export {
   type ToastActionElement,
   type ToastProps,
 };
-
