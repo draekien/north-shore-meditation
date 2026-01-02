@@ -26,7 +26,7 @@ const itemVariants = cva(
       },
       size: {
         default: 'gap-4 p-4 ',
-        sm: 'gap-2.5 px-4 py-3',
+        sm: 'gap-2.5 px-4 py-2',
       },
     },
     defaultVariants: {
@@ -113,6 +113,7 @@ function ItemDescription({ className, ...props }: React.ComponentProps<'p'>) {
       className={cn(
         'line-clamp-2 text-balance text-sm font-normal leading-normal text-muted-foreground',
         '[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
+        '[&:not(:first-child)]:mt-0',
         className
       )}
       {...props}
