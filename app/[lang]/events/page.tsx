@@ -14,11 +14,14 @@ import PageContent from '@/components/ui/page-content';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
 import PageSectionContainer from '@/components/ui/page-section.container';
-import { EventItem } from '@/components/event-items';
+import { EventItem } from '@/components/events/event-items';
 import { Alert, AlertTitle } from '@/components/ui/alert';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
-import { EventFilters } from '@/components/event-filters';
+import { EventFilters } from '@/components/events/event-filters';
 import { Separator } from '@/components/ui/separator';
+import { Pagination } from '@/components/ui/pagination';
+import { EventDefaults } from '@/components/events/event-constants';
+import { EventPagination } from '@/components/events/event-pagination';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -57,8 +60,8 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
   fromStartOfDay.setHours(0, 0, 0, 0);
 
   const { items, total } = await getEvents({
-    skip: (page - 1) * 25,
-    limit: 25,
+    skip: (page - 1) * EventDefaults.PAGE_LIMIT,
+    limit: EventDefaults.PAGE_LIMIT,
     preview,
     audiences: audiences?.length ? audiences : null,
     type: type || null,
@@ -100,14 +103,16 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
               </EmptyHeader>
             </Empty>
           ) : (
-            <div className="container mx-auto max-w-3xl">
+            <>
               <ItemGroup className="gap-4">
                 {items.map((item) => (
                   <EventItem key={item.sys.id} {...item} />
                 ))}
               </ItemGroup>
-              <footer></footer>
-            </div>
+              <footer>
+                <EventPagination page={page} total={total || 0} />
+              </footer>
+            </>
           )}
         </PageSectionContainer>
       </SecondaryPageSection>

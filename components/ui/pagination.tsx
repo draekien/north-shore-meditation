@@ -32,7 +32,7 @@ type PaginationLinkProps = {
 const PaginationLink = ({ isActive, size = 'icon', ...props }: PaginationLinkProps) => (
   <ButtonLink
     aria-current={isActive ? 'page' : undefined}
-    variant={isActive ? 'outline-solid' : 'ghost'}
+    variant={isActive ? 'outline' : 'ghost'}
     {...props}
     size={size}
   />

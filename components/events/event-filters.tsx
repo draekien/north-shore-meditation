@@ -1,10 +1,10 @@
 'use client';
 
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
-import { ToggleGroup, ToggleGroupItem } from './ui/toggle-group';
+import { ToggleGroup, ToggleGroupItem } from '../ui/toggle-group';
 import { useCallback } from 'react';
 import { eventFiltersSchema } from '@/app/[lang]/events/schemas';
-import { Item, ItemGroup, ItemContent, ItemDescription } from './ui/item';
+import { Item, ItemGroup, ItemContent, ItemDescription } from '../ui/item';
 
 export function EventFilters() {
   const router = useRouter();

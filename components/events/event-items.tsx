@@ -8,9 +8,9 @@ import {
   ItemGroup,
   ItemMedia,
   ItemTitle,
-} from './ui/item';
+} from '../ui/item';
 import { Event } from '@/graphql/generated/gql.g';
-import { Badge } from './ui/badge';
+import { Badge } from '../ui/badge';
 import { EventItemCollection } from '@/lib/contentful-api';
 
 export function EventItem(item: EventItemCollection[number]) {
