@@ -64,3 +64,6 @@ export const getEvents = cache(async (variables: EventsQueryVariables) => {
     skip: response.eventCollection?.skip,
   };
 });
+
+export type EventsResponse = Awaited<ReturnType<typeof getEvents>>;
+export type EventItemCollection = EventsResponse['items'];

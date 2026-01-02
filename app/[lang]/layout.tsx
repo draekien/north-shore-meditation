@@ -94,9 +94,9 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
           <TooltipProvider>
             <QueryClientProvider>
               <BackgroundGradientAnimation containerClassName="fixed -z-50" />
-              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow-sm backdrop-blur-2xl dark:bg-slate-900/50 md:px-6">
+              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow-sm backdrop-blur-2xl md:px-6 dark:bg-slate-900/50">
                 <h3 className="container flex items-center gap-4 p-4">
-                  <Link href="/" className="font-bold text-primary xl:text-2xl">
+                  <Link href="/" className="text-primary font-bold xl:text-2xl">
                     {dict.company}
                   </Link>
                   <DisableDraftMode enabled={draftModeEnabled} />
@@ -119,12 +119,12 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                               <ul className="grid gap-3">
                                 <li>
                                   <a
-                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden focus:bg-accent focus:shadow-md"
+                                    className="from-muted/50 to-muted focus:bg-accent flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
                                     href={dict.nav.tm.hero.href}
                                   >
                                     <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                                    <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                                    <p className="text-sm leading-tight text-muted-foreground">
+                                    <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                    <p className="text-muted-foreground text-sm leading-tight">
                                       {dict.nav.tm.hero.description}
                                     </p>
                                   </a>
@@ -192,12 +192,12 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                             <li className="row-span-3">
                               <NavigationMenuLink asChild>
                                 <a
-                                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-linear-to-b from-muted/50 to-muted p-6 no-underline outline-hidden transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                  className="from-muted/50 to-muted hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden transition-colors select-none"
                                   href={dict.nav.tm.hero.href}
                                 >
                                   <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                                  <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                                  <p className="text-sm leading-tight text-muted-foreground">
+                                  <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                  <p className="text-muted-foreground text-sm leading-tight">
                                     {dict.nav.tm.hero.description}
                                   </p>
                                 </a>

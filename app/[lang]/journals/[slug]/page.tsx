@@ -103,7 +103,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
               </BreadcrumbList>
             </Breadcrumb>
             <h1 className="text-primary">{article.title}</h1>
-            <p className="mb-10 text-sm text-muted-foreground">
+            <p className="text-muted-foreground mb-10 text-sm">
               {article.author} | {new Date(article.sys.publishedAt).toLocaleDateString()}
             </p>
             <div className="max-w-[900px] space-y-4 md:text-xl lg:text-base xl:text-xl">
@@ -133,7 +133,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
                     return isEmpty ? (
                       <br />
                     ) : (
-                      <p className="text-base text-foreground md:text-xl lg:text-base xl:text-xl">{children}</p>
+                      <p className="text-foreground text-base md:text-xl lg:text-base xl:text-xl">{children}</p>
                     );
                   },
                 },
@@ -146,7 +146,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
         <SecondaryPageSection>
           <PageSectionContainer>
             <div className="space-y-14">
-              <h2 className="mb-8 text-center text-primary">Want to keep reading?</h2>
+              <h2 className="text-primary mb-8 text-center">Want to keep reading?</h2>
               <Articles articles={relatedArticles} lang={lang} />
             </div>
           </PageSectionContainer>

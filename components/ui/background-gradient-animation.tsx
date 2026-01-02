@@ -94,7 +94,7 @@ export const BackgroundGradientAnimation = ({
   return (
     <div
       className={cn(
-        'relative left-0 top-0 h-screen w-screen overflow-hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,var(--gradient-background-start),var(--gradient-background-end))] dark:bg-slate-950',
+        'relative top-0 left-0 h-screen w-screen overflow-hidden bg-white bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,var(--gradient-background-start),var(--gradient-background-end))] dark:bg-slate-950',
         containerClassName
       )}
       aria-hidden
@@ -118,7 +118,7 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,var(--first-color)_0,var(--first-color)_50%)_no-repeat]`,
-            `left-[calc(50%-var(--size)/2)] top-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
+            `top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
             `origin-[center_center]`,
             `animate-first`,
             opacity
@@ -127,7 +127,7 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,rgba(var(--second-color),0.8)_0,rgba(var(--second-color),0)_50%)_no-repeat]`,
-            `left-[calc(50%-var(--size)/2)] top-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
+            `top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
             `origin-[calc(50%-400px)]`,
             `animate-second`,
             opacity
@@ -136,7 +136,7 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,rgba(var(--third-color),0.8)_0,rgba(var(--third-color),0)_50%)_no-repeat]`,
-            `left-[calc(50%-var(--size)/2)] top-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
+            `top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
             `origin-[calc(50%+400px)]`,
             `animate-third`,
             opacity
@@ -145,7 +145,7 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,rgba(var(--fourth-color),0.8)_0,rgba(var(--fourth-color),0)_50%)_no-repeat]`,
-            `left-[calc(50%-var(--size)/2)] top-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
+            `top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
             `origin-[calc(50%-200px)]`,
             `animate-fourth`,
             opacity
@@ -154,7 +154,7 @@ export const BackgroundGradientAnimation = ({
         <div
           className={cn(
             `absolute [background:radial-gradient(circle_at_center,rgba(var(--fifth-color),0.8)_0,rgba(var(--fifth-color),0)_50%)_no-repeat]`,
-            `left-[calc(50%-var(--size)/2)] top-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
+            `top-[calc(50%-var(--size)/2)] left-[calc(50%-var(--size)/2)] h-(--size) w-(--size) [mix-blend-mode:var(--blending-value)]`,
             `origin-[calc(50%-800px)_calc(50%+800px)]`,
             `animate-fifth`,
             opacity
@@ -167,7 +167,7 @@ export const BackgroundGradientAnimation = ({
             onMouseMove={handleMouseMove}
             className={cn(
               `absolute [background:radial-gradient(circle_at_center,rgba(var(--pointer-color),0.8)_0,rgba(var(--pointer-color),0)_50%)_no-repeat]`,
-              `-left-1/2 -top-1/2 h-full w-full [mix-blend-mode:var(--blending-value)]`,
+              `-top-1/2 -left-1/2 h-full w-full [mix-blend-mode:var(--blending-value)]`,
               opacity
             )}
           ></div>

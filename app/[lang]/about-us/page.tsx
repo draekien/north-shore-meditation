@@ -51,7 +51,7 @@ export default async function AboutUsPage({ params }: GlobalPageProps) {
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="md:w-1/2">
               <h1 className="text-primary">{aboutUs.title}</h1>
-              <p className="mb-6 text-xl text-foreground">{aboutUs.subtitle}</p>
+              <p className="text-foreground mb-6 text-xl">{aboutUs.subtitle}</p>
             </div>
           </div>
         </PageSectionContainer>
@@ -73,7 +73,7 @@ export default async function AboutUsPage({ params }: GlobalPageProps) {
       </SecondaryPageSection>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-12 text-center text-primary">{aboutUs.sections.centre.title}</h2>
+          <h2 className="text-primary mb-12 text-center">{aboutUs.sections.centre.title}</h2>
           <div className="flex flex-col justify-center gap-8 md:min-h-[50dvh] md:flex-row md:flex-wrap md:gap-16">
             <div className="flex flex-col gap-8 lg:w-3/4 lg:flex-row-reverse">
               <div className="lg:w-1/2">

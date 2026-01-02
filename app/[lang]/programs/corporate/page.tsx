@@ -52,7 +52,7 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="md:w-1/2">
               <h1 className="text-primary">{corporateMeditation.title}</h1>
-              <p className="mb-6 text-xl text-foreground">{corporateMeditation.subtitle}</p>
+              <p className="text-foreground mb-6 text-xl">{corporateMeditation.subtitle}</p>
             </div>
           </div>
         </PageSectionContainer>
@@ -94,7 +94,7 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
                       <TooltipTrigger asChild>
                         <Link
                           href={citation.doi}
-                          className="w-full hover:text-primary focus:text-primary"
+                          className="hover:text-primary focus:text-primary w-full"
                           target="_blank"
                           rel="noreferrer noopener"
                         >

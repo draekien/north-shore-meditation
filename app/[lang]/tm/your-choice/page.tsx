@@ -63,7 +63,7 @@ export default async function YourChoicePage({ params }: GlobalPageProps) {
           <div className="flex flex-col items-center gap-8 py-8 md:min-h-[50dvh] md:flex-row">
             <div className="md:mb-0 md:w-1/2">
               <h1 className="text-primary">{choice.title}</h1>
-              <p className="text-xl text-foreground">{choice.subtitle}</p>
+              <p className="text-foreground text-xl">{choice.subtitle}</p>
             </div>
             <div className="md:mb-0 md:w-1/2">
               <Image src={omegaSvg} alt="" />
@@ -118,7 +118,7 @@ export default async function YourChoicePage({ params }: GlobalPageProps) {
                       <TooltipTrigger asChild>
                         <Link
                           href={citation.doi}
-                          className="w-full hover:text-primary focus:text-primary"
+                          className="hover:text-primary focus:text-primary w-full"
                           target="_blank"
                           rel="noreferrer noopener"
                         >
@@ -135,7 +135,7 @@ export default async function YourChoicePage({ params }: GlobalPageProps) {
             ))}
           </div>
           <div className="mt-8 flex flex-col gap-4 md:mt-16">
-            <h3 className="mb-4 text-primary">Definitions</h3>
+            <h3 className="text-primary mb-4">Definitions</h3>
             <dl>
               {choice.sections.science.definitions.map(({ key, value, href }) => (
                 <Fragment key={key}>

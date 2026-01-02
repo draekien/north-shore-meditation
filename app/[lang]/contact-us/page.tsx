@@ -40,7 +40,7 @@ export default async function ContactUsPage({ params }: GlobalPageProps) {
       <PrimaryPageSection>
         <PageSectionContainer>
           <h1 className="text-primary">{contactUs.title}</h1>
-          <p className="text-xl text-foreground">{contactUs.subtitle}</p>
+          <p className="text-foreground text-xl">{contactUs.subtitle}</p>
           <ContactUsForm {...contactUs} />
         </PageSectionContainer>
       </PrimaryPageSection>

@@ -68,7 +68,7 @@ export default async function Page({ params }: GlobalPageProps) {
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
               <h1 className="text-primary">{tmForWomen.title}</h1>
-              <p className="mb-6 text-xl text-foreground">{tmForWomen.subtitle}</p>
+              <p className="text-foreground mb-6 text-xl">{tmForWomen.subtitle}</p>
             </div>
             <div>
               <Image src={superWomanSvg} alt="" />
@@ -78,9 +78,9 @@ export default async function Page({ params }: GlobalPageProps) {
       </PrimaryPageSection>
       <SecondaryPageSection>
         <PageSectionContainer>
-          <h2 className="text-center text-primary">{tmForWomen.sections.community.title}</h2>
+          <h2 className="text-primary text-center">{tmForWomen.sections.community.title}</h2>
           {tmForWomen.sections.community.paragraphs.map((text) => (
-            <p key={text} className="mx-auto max-w-prose text-foreground">
+            <p key={text} className="text-foreground mx-auto max-w-prose">
               {text}
             </p>
           ))}
@@ -88,9 +88,9 @@ export default async function Page({ params }: GlobalPageProps) {
       </SecondaryPageSection>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-12 text-center text-primary">{tmForWomen.sections.why.title}</h2>
+          <h2 className="text-primary mb-12 text-center">{tmForWomen.sections.why.title}</h2>
           <div className="grid auto-rows-min grid-cols-1 gap-4 md:grid-cols-3">
-            <Card className="backdrop-blur-xl, border-0 bg-card/50">
+            <Card className="backdrop-blur-xl, bg-card/50 border-0">
               <CardHeader>
                 <CardTitle className="flex justify-between">
                   {tmForWomen.sections.why.cards.safe.title}
@@ -99,7 +99,7 @@ export default async function Page({ params }: GlobalPageProps) {
               </CardHeader>
               <CardContent>{tmForWomen.sections.why.cards.safe.description}</CardContent>
             </Card>
-            <Card className="backdrop-blur-xl, border-0 bg-card/50">
+            <Card className="backdrop-blur-xl, bg-card/50 border-0">
               <CardHeader>
                 <CardTitle className="flex justify-between">
                   {tmForWomen.sections.why.cards.support.title}
@@ -108,7 +108,7 @@ export default async function Page({ params }: GlobalPageProps) {
               </CardHeader>
               <CardContent>{tmForWomen.sections.why.cards.support.description}</CardContent>
             </Card>
-            <Card className="backdrop-blur-xl, border-0 bg-card/50">
+            <Card className="backdrop-blur-xl, bg-card/50 border-0">
               <CardHeader>
                 <CardTitle className="flex justify-between">
                   {tmForWomen.sections.why.cards.movement.title}
@@ -122,9 +122,9 @@ export default async function Page({ params }: GlobalPageProps) {
       </PrimaryPageSection>
       <SecondaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-12 text-center text-primary">{tmForWomen.sections.begin.title}</h2>
+          <h2 className="text-primary mb-12 text-center">{tmForWomen.sections.begin.title}</h2>
           <div className="mx-auto mb-8 grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
-            <Card className="flex flex-col justify-between bg-card/50 backdrop-blur-xl">
+            <Card className="bg-card/50 flex flex-col justify-between backdrop-blur-xl">
               <CardHeader>
                 <CardTitle className="flex gap-4">
                   <BookOpenIcon className="text-primary" />
@@ -140,7 +140,7 @@ export default async function Page({ params }: GlobalPageProps) {
                 </Button>
               </CardFooter>
             </Card>
-            <Card className="flex flex-col justify-between bg-card/50 backdrop-blur-xl">
+            <Card className="bg-card/50 flex flex-col justify-between backdrop-blur-xl">
               <CardHeader>
                 <CardTitle className="flex gap-4">
                   <CalendarIcon className="text-tertiary" />
@@ -156,15 +156,15 @@ export default async function Page({ params }: GlobalPageProps) {
                 </Button>
               </CardFooter>
             </Card>
-            <div className="mb-8 rounded-lg border border-emerald-100 bg-emerald-50/50 p-6 backdrop-blur-xl dark:border-emerald-900 dark:bg-emerald-900/30 md:col-span-2">
+            <div className="mb-8 rounded-lg border border-emerald-100 bg-emerald-50/50 p-6 backdrop-blur-xl md:col-span-2 dark:border-emerald-900 dark:bg-emerald-900/30">
               <p>
                 <strong className="text-primary">{tmForWomen.sections.begin.cards.choice.title}:</strong>{' '}
                 {tmForWomen.sections.begin.cards.choice.description}
               </p>
             </div>
             <div className="md:col-span-2">
-              <ShieldIcon className="mx-auto mb-4 size-12 text-primary" />
-              <h3 className="text-center text-primary">{tmForWomen.sections.certified.title}</h3>
+              <ShieldIcon className="text-primary mx-auto mb-4 size-12" />
+              <h3 className="text-primary text-center">{tmForWomen.sections.certified.title}</h3>
               <p className="mx-auto mb-4 max-w-prose">{tmForWomen.sections.certified.description}</p>
               <div className="flex justify-center">
                 <Button variant="link" asChild>

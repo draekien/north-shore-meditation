@@ -66,7 +66,7 @@ export default async function YourWayPage({ params }: GlobalPageProps) {
       </PrimaryPageSection>
       <SecondaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-24 text-center text-primary">{way.sections.steps.title}</h2>
+          <h2 className="text-primary mb-24 text-center">{way.sections.steps.title}</h2>
           <div className="mx-auto flex flex-col justify-around gap-24 md:w-2/3">
             {(
               [
@@ -87,7 +87,7 @@ export default async function YourWayPage({ params }: GlobalPageProps) {
                   <div className="mx-8 md:mx-0">
                     <Image src={src} alt="" />
                   </div>
-                  <div className="md:max-w-1/2 mx-8">
+                  <div className="mx-8 md:max-w-1/2">
                     <h3 className={textColor}>{title}</h3>
                     <p>{description}</p>
                     {action && (
@@ -103,7 +103,7 @@ export default async function YourWayPage({ params }: GlobalPageProps) {
       </SecondaryPageSection>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-24 text-center text-primary">{way.sections.faq.title}</h2>
+          <h2 className="text-primary mb-24 text-center">{way.sections.faq.title}</h2>
           <div className="mx-auto flex flex-col gap-4 md:w-2/3">
             {way.sections.faq.cards.map(({ q, a }) => (
               <Card key={q} className="bg-card/60 shadow-xs backdrop-blur-xl">

@@ -12,7 +12,7 @@ type Article = Awaited<ReturnType<typeof getArticles>>['items'][0] & { lang: Loc
 function ArticleCard({ title, summary, slug, image, author, sys, lang }: Article) {
   return (
     <article className="w-full md:max-w-80">
-      <Card className="overflow-clip bg-card/70 backdrop-blur-sm">
+      <Card className="bg-card/70 overflow-clip backdrop-blur-sm">
         {image?.url && (
           <Image
             src={image.url}
