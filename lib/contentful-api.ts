@@ -1,6 +1,9 @@
 import {
+    EventsQuery,
+    EventsQueryVariables,
   useArticlesBySlugQuery,
   useArticlesQuery,
+  useEventsQuery,
   useInfiniteArticlesQuery,
   type ArticlesBySlugQuery,
   type ArticlesBySlugQueryVariables,
@@ -48,3 +51,16 @@ export const getArticlesBySlug = cache(async (variables: ArticlesBySlugQueryVari
 
   return response.blogPostCollection?.items.at(0);
 });
+
+export const getEvents = cache(async (variables: EventsQueryVariables) => {
+  const response = await queryClient.fetchQuery<EventsQuery>({
+    queryKey: useEventsQuery.getKey(variables),
+    queryFn: useEventsQuery.fetcher(variables)
+  })
+
+  return {
+    items: response.eventCollection?.items.filter((x) => !!x) ?? [],
+    total: response.eventCollection?.total,
+    skip: response.eventCollection?.skip,
+  };
+})
