@@ -23,13 +23,11 @@ export type Scalars = {
   Boolean: { input: boolean; output: boolean; }
   Int: { input: number; output: number; }
   Float: { input: number; output: number; }
-  Circle: { input: any; output: any; }
   DateTime: { input: any; output: any; }
   Dimension: { input: any; output: any; }
   HexColor: { input: any; output: any; }
   JSON: { input: any; output: any; }
   Quality: { input: any; output: any; }
-  Rectangle: { input: any; output: any; }
 };
 
 /** Represents a binary file in a space. An asset can be any file type. */
@@ -594,8 +592,9 @@ export type Event = Entry & _Node & {
   description: Maybe<Scalars['String']['output']>;
   endsAt: Maybe<Scalars['DateTime']['output']>;
   linkedFrom: Maybe<EventLinkingCollections>;
+  location: Maybe<Scalars['String']['output']>;
+  locationDescription: Maybe<Scalars['String']['output']>;
   name: Maybe<Scalars['String']['output']>;
-  physicalLocation: Maybe<Location>;
   startsAt: Maybe<Scalars['DateTime']['output']>;
   sys: Sys;
   type: Maybe<Scalars['String']['output']>;
@@ -637,14 +636,21 @@ export type EventLinkedFromArgs = {
 
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
-export type EventNameArgs = {
+export type EventLocationArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
 /** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
-export type EventPhysicalLocationArgs = {
+export type EventLocationDescriptionArgs = {
+  locale: InputMaybe<Scalars['String']['input']>;
+  useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+
+/** An event that you will be running. Requires an external link to the event booking page. [See type definition](https://app.contentful.com/spaces/esa8rw88wody/content_types/event) */
+export type EventNameArgs = {
   locale: InputMaybe<Scalars['String']['input']>;
   useFallbackLocale: InputMaybe<Scalars['Boolean']['input']>;
 };
@@ -702,6 +708,20 @@ export type EventFilter = {
   endsAt_lte: InputMaybe<Scalars['DateTime']['input']>;
   endsAt_not: InputMaybe<Scalars['DateTime']['input']>;
   endsAt_not_in: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+  location: InputMaybe<Scalars['String']['input']>;
+  locationDescription: InputMaybe<Scalars['String']['input']>;
+  locationDescription_contains: InputMaybe<Scalars['String']['input']>;
+  locationDescription_exists: InputMaybe<Scalars['Boolean']['input']>;
+  locationDescription_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  locationDescription_not: InputMaybe<Scalars['String']['input']>;
+  locationDescription_not_contains: InputMaybe<Scalars['String']['input']>;
+  locationDescription_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  location_contains: InputMaybe<Scalars['String']['input']>;
+  location_exists: InputMaybe<Scalars['Boolean']['input']>;
+  location_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  location_not: InputMaybe<Scalars['String']['input']>;
+  location_not_contains: InputMaybe<Scalars['String']['input']>;
+  location_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   name: InputMaybe<Scalars['String']['input']>;
   name_contains: InputMaybe<Scalars['String']['input']>;
   name_exists: InputMaybe<Scalars['Boolean']['input']>;
@@ -709,9 +729,6 @@ export type EventFilter = {
   name_not: InputMaybe<Scalars['String']['input']>;
   name_not_contains: InputMaybe<Scalars['String']['input']>;
   name_not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  physicalLocation_exists: InputMaybe<Scalars['Boolean']['input']>;
-  physicalLocation_within_circle: InputMaybe<Scalars['Circle']['input']>;
-  physicalLocation_within_rectangle: InputMaybe<Scalars['Rectangle']['input']>;
   startsAt: InputMaybe<Scalars['DateTime']['input']>;
   startsAt_exists: InputMaybe<Scalars['Boolean']['input']>;
   startsAt_gt: InputMaybe<Scalars['DateTime']['input']>;
@@ -750,6 +767,8 @@ export enum EventOrder {
   BookingUrlDesc = 'bookingUrl_DESC',
   EndsAtAsc = 'endsAt_ASC',
   EndsAtDesc = 'endsAt_DESC',
+  LocationAsc = 'location_ASC',
+  LocationDesc = 'location_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
   StartsAtAsc = 'startsAt_ASC',
@@ -860,12 +879,6 @@ export type ImageTransformOptions = {
   resizeStrategy: InputMaybe<ImageResizeStrategy>;
   /** Desired width in pixels. Defaults to the original image width. */
   width: InputMaybe<Scalars['Dimension']['input']>;
-};
-
-export type Location = {
-  __typename?: 'Location';
-  lat: Maybe<Scalars['Float']['output']>;
-  lon: Maybe<Scalars['Float']['output']>;
 };
 
 export type Query = {
@@ -1115,7 +1128,7 @@ export type EventsQueryVariables = Exact<{
 }>;
 
 
-export type EventsQuery = { __typename?: 'Query', eventCollection: { __typename?: 'EventCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'Event', name: string | null, description: string | null, type: string | null, audiences: Array<string | null> | null, bookingUrl: string | null, startsAt: any | null, endsAt: any | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null }, physicalLocation: { __typename?: 'Location', lat: number | null, lon: number | null } | null } | null> } | null };
+export type EventsQuery = { __typename?: 'Query', eventCollection: { __typename?: 'EventCollection', skip: number, limit: number, total: number, items: Array<{ __typename?: 'Event', name: string | null, description: string | null, type: string | null, audiences: Array<string | null> | null, bookingUrl: string | null, startsAt: any | null, endsAt: any | null, location: string | null, locationDescription: string | null, sys: { __typename?: 'Sys', id: string, publishedAt: any | null } } | null> } | null };
 
 
 
@@ -1389,10 +1402,8 @@ export const EventsDocument = `
       bookingUrl
       startsAt
       endsAt
-      physicalLocation {
-        lat
-        lon
-      }
+      location
+      locationDescription
     }
     skip
     limit

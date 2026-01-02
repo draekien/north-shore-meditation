@@ -14,3 +14,7 @@ export const contactUsSchema = z.object({
 });
 
 export type ContactUsFormFields = z.infer<typeof contactUsSchema>;
+
+export const paginationParamsSchema = z.object({
+  page: z.coerce.number().min(1).optional().default(1)
+})

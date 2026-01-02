@@ -25,10 +25,8 @@ query Events(
       bookingUrl
       startsAt
       endsAt
-      physicalLocation {
-        lat
-        lon
-      }
+      location
+      locationDescription
     }
     skip
     limit
