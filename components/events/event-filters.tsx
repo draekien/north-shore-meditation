@@ -14,8 +14,10 @@ type EventFiltersProps = {
 export function EventFilters({ searchParams }: EventFiltersProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const readonlySearchParams = useSearchParams();
 
   const parsedParams = eventFiltersSchema.parse(searchParams);
+
   const audiences = parsedParams.audiences
     ? Array.isArray(parsedParams.audiences)
       ? parsedParams.audiences
@@ -25,7 +27,7 @@ export function EventFilters({ searchParams }: EventFiltersProps) {
 
   const replaceParams = useCallback(
     (name: string, values: string[]) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(readonlySearchParams.toString());
       params.delete(name);
 
       values.forEach((value) => params.append(name, value));
@@ -37,7 +39,7 @@ export function EventFilters({ searchParams }: EventFiltersProps) {
 
   const replaceParam = useCallback(
     (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams(readonlySearchParams.toString());
       params.set(name, value);
 
       return params.toString();
