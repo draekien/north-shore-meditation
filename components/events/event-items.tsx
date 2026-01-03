@@ -9,7 +9,6 @@ import {
   ItemMedia,
   ItemTitle,
 } from '../ui/item';
-import { Event } from '@/graphql/generated/gql.g';
 import { Badge } from '../ui/badge';
 import { EventItemCollection } from '@/lib/contentful-api';
 

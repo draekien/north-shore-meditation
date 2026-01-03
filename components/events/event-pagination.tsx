@@ -1,6 +1,6 @@
 'use client';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 import { useCallback } from 'react';
 import {
   Pagination,
@@ -18,7 +18,6 @@ type EventPaginationProps = {
 };
 
 export function EventPagination({ page, total }: EventPaginationProps) {
-  const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
 

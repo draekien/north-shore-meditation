@@ -18,5 +18,5 @@ export const useSuspenseNavigationEvents = (options: UseNavigationEventsOptions)
   useEffect(() => {
     const url = `${pathname}?${searchParams}`;
     options.onNavigate?.({ url, pathname, searchParams });
-  }, [pathname, searchParams]);
+  }, [pathname, searchParams, options]);
 };
