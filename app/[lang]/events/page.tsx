@@ -7,7 +7,7 @@ import { draftMode } from 'next/headers';
 import { eventFiltersSchema } from './schemas';
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from '@/components/ui/empty';
 import { CalendarSyncIcon } from 'lucide-react';
-import { ItemGroup } from '@/components/ui/item';
+import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemHeader, ItemTitle } from '@/components/ui/item';
 import PageContent from '@/components/ui/page-content';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
@@ -17,6 +17,7 @@ import { EventFilters } from '@/components/events/event-filters';
 import { Separator } from '@/components/ui/separator';
 import { EventDefaults } from '@/components/events/event-constants';
 import { EventPagination } from '@/components/events/event-pagination';
+import ButtonLink from '@/components/ui/button-link';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -109,6 +110,20 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
               </footer>
             </>
           )}
+          <Item>
+            <ItemContent>
+              <ItemTitle>Can&apos;t find an event that fits?</ItemTitle>
+              <ItemDescription>Let us know so you can get notified about upcoming events</ItemDescription>
+            </ItemContent>
+            <ItemActions>
+              <ButtonLink href={{
+                pathname: '/contact-us',
+                search: 'q=upcoming-events'
+              }}>
+                Contact Us
+              </ButtonLink>
+            </ItemActions>
+          </Item>
         </PageSectionContainer>
       </SecondaryPageSection>
     </PageContent>
