@@ -37,9 +37,14 @@
           "title": "Corporate Meditation"
         },
         {
-          "description": "Discover a support network dedicated to women practicing TM.",
+          "description": "Uncover a support network dedicated to women practicing TM",
           "title": "TM for Women",
           "href": "/tm-for-women"
+        },
+        {
+          "description": "Bridge the gap between \"trying\" and \"being\"",
+          "title": "TM Reset Studio",
+          "href": "/programs/reset-studio"
         }
       ],
       "title": "Programs"
@@ -658,6 +663,80 @@
         }
       ],
       "title": "Meditation Programs for You"
+    },
+    "resetStudio": {
+      "title": "TM Reset Studio",
+      "subtitle": "A half-day TM immersion to restore the ease, the confidence, and the quiet edge of regular practice",
+      "seo": {
+        "description": "Restore the ease of your Transcendental Meditation® practice at our TM Reset Studio. A premium 4.5-hour immersion designed to dissolve effort, refine technique, and regain clarity. Includes 3 months of ongoing support and personal checking."
+      },
+      "pillars": {
+        "title": "The Four Pillars of the Immersion",
+        "description": "If your TM practice has started to feel like work, or if the noise of a busy life has crowded out your 20 minutes of silence, this is your path back. Our TM Reset Studio is a structured, supportive sanctuary designed to help you dissolve the effort, refine your technique, and reclaim the stillness that once came so naturally.",
+        "items": [
+          {
+            "key": "pillar-1",
+            "icon": "tally-1",
+            "title": "Technique Refinement & Group Checking",
+            "description": "We return to the source. Dissolve the subtle habits of trying and regain the absolute confidence that you are meditating perfectly and effortlessly."
+          },
+          {
+            "key": "pillar-2",
+            "icon": "tally-2",
+            "title": "The Knowledge Masterclass",
+            "description": "We explore the mechanics of consciousness. The intellectual \"why\" that stabilizes your daily \"how\". Understand the profound physiological shift that happens every time you close your eyes."
+          },
+          {
+            "key": "pillar-3",
+            "icon": "tally-3",
+            "title": "Biological Alignment (Ayurveda & Natural Rhythm)",
+            "description": "Meditation doesn't end when you open your eyes. We discuss practical Ayurvedic principles to align your biology with your practice: Rhythm, diet, and stress management."
+          },
+          {
+            "key": "pillar-4",
+            "icon": "tally-4",
+            "title": "The Deep System Reset",
+            "description": "A curated sequence of Maharishi Yoga Asanas, Pranayama, and Gandharva Veda music, culminating in a profound, extended group meditation."
+          }
+        ],
+        "footer": {
+          "title": "A Note from your Facilitator",
+          "quote": "Throughout my years as a global corporate leader, TM was my non-negotiable foundation for clarity and resilience. I became a teacher because I know exactly how it feels when life crows out the silence. I designed this Studio to be the bridge back to the state of effortless being. A space for you to reset, no matter how long you&apos;ve been away.",
+          "author": "Grace Pei, Certified TM Teacher"
+        }
+      },
+      "path": {
+        "title": "Your 90 Day Success Path",
+        "subtitle": "We don't just leave you at the door. Your registration is a commitment to a consistent, rewarding practice for the long term.",
+        "investment": {
+          "title": "Your Investment"
+        },
+        "included": {
+          "title": "What's Included",
+          "items": [
+            {
+              "title": "The Half-Day Immersion",
+              "description": "4.5 hours spent at our Lane Cove Studio in order to re-immerse yourself in the TM technique."
+            },
+            {
+              "title": "The TM Renewal Circle",
+              "description": "3 months of continued support, including regular online group meditations and checking sessions to anchor your consistency."
+            }
+          ]
+        },
+        "preparation": {
+          "title": "Preparation & Details",
+          "comfort": "To ensure the most deeply personal experience, please bring your preferred yoga mat and meditation cushions.",
+          "capacity": {
+            "title": "Limited Capacity",
+            "description": "To maintain an intimate and supportive group, places are strictly limited."
+          }
+        },
+        "cta": {
+          "title": "Find our next TM Reset Studio",
+          "href": "/events?type=Retreat"
+        }
+      }
     },
     "privacyNotice": {
       "effectiveDate": "Effective Date: 13th Oct 2024",

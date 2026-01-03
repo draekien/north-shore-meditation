@@ -44,8 +44,8 @@ export default async function Image() {
           maxWidth: '800px',
         }}
       >
-        Our events are designed to meet you where you are. Whether you’re attending an intro session, committing
-        to a course, or stepping into a retreat, each event supports effortless meditation and lasting change.
+        Our events are designed to meet you where you are. Whether you’re attending an intro session, committing to a
+        course, or stepping into a retreat, each event supports effortless meditation and lasting change.
       </p>
     </div>,
     {

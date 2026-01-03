@@ -7,7 +7,15 @@ import { draftMode } from 'next/headers';
 import { eventFiltersSchema } from './schemas';
 import { Empty, EmptyHeader, EmptyMedia, EmptyTitle, EmptyDescription } from '@/components/ui/empty';
 import { CalendarSyncIcon } from 'lucide-react';
-import { Item, ItemActions, ItemContent, ItemDescription, ItemGroup, ItemHeader, ItemTitle } from '@/components/ui/item';
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemGroup,
+  ItemHeader,
+  ItemTitle,
+} from '@/components/ui/item';
 import PageContent from '@/components/ui/page-content';
 import PrimaryPageSection from '@/components/ui/page-section.primary';
 import SecondaryPageSection from '@/components/ui/page-section.secondary';
@@ -116,10 +124,12 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
               <ItemDescription>Let us know so you can get notified about upcoming events</ItemDescription>
             </ItemContent>
             <ItemActions>
-              <ButtonLink href={{
-                pathname: '/contact-us',
-                search: 'q=upcoming-events'
-              }}>
+              <ButtonLink
+                href={{
+                  pathname: '/contact-us',
+                  search: 'q=upcoming-events',
+                }}
+              >
                 Contact Us
               </ButtonLink>
             </ItemActions>

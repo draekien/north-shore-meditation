@@ -114,6 +114,7 @@ function ItemDescription({ className, ...props }: React.ComponentProps<'p'>) {
         'text-muted-foreground line-clamp-2 text-sm leading-normal font-normal text-balance',
         '[&>a:hover]:text-primary [&>a]:underline [&>a]:underline-offset-4',
         'not-first:mt-0',
+        'text-wrap wrap-anywhere',
         className
       )}
       {...props}
