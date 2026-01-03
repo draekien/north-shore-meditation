@@ -12,7 +12,11 @@ import {
 import { Badge } from '../ui/badge';
 import { EventItemCollection } from '@/lib/contentful-api';
 
-export function EventItem(item: EventItemCollection[number]) {
+type EventItemProps = {
+  lang: string;
+} & EventItemCollection[number];
+
+export function EventItem({ lang, ...item }: EventItemProps) {
   const startsAt = new Date(item.startsAt);
   const endsAt = new Date(item.endsAt);
 
@@ -41,8 +45,10 @@ export function EventItem(item: EventItemCollection[number]) {
                 <ItemContent>
                   <ItemTitle>
                     Starts at{' '}
-                    {startsAt.toLocaleString(navigator.languages, {
+                    {startsAt.toLocaleString(lang, {
                       timeZone: 'Australia/Sydney',
+                      dateStyle: 'medium',
+                      timeStyle: 'short',
                     })}
                   </ItemTitle>
                 </ItemContent>
@@ -54,8 +60,10 @@ export function EventItem(item: EventItemCollection[number]) {
                 <ItemContent>
                   <ItemTitle>
                     Ends at{' '}
-                    {endsAt.toLocaleString(navigator.languages, {
+                    {endsAt.toLocaleString(lang, {
                       timeZone: 'Australia/Sydney',
+                      dateStyle: 'medium',
+                      timeStyle: 'short',
                     })}
                   </ItemTitle>
                 </ItemContent>
