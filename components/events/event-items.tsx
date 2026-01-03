@@ -28,13 +28,11 @@ export function EventItem({ lang, ...item }: EventItemProps) {
         </ItemMedia>
         <ItemContent>
           <ItemTitle className="capitalize">{item.name}</ItemTitle>
-          {item.description && (
-            <ItemDescription className="text-wrap wrap-anywhere">{item.description}</ItemDescription>
-          )}
         </ItemContent>
         <ItemActions>
           <ExternalLinkIcon />
         </ItemActions>
+        {item.description && <ItemDescription className="text-wrap wrap-anywhere">{item.description}</ItemDescription>}
         <ItemFooter>
           <ItemGroup className="w-full">
             <ItemGroup className="md:grid md:grid-cols-2 md:gap-4">
