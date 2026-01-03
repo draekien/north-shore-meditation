@@ -40,6 +40,7 @@ import './globals.css';
 import { MobileNavigationMenuListItem } from '@/components/nav/mobile-nav';
 import { NavigationMenuListItem } from '@/components/nav/desktop-nav';
 import { SuspenseNavSheet } from '@/components/nav/nav-sheet';
+import { NavLink } from '@/components/nav/nav-link';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -155,6 +156,9 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                             </ul>
                           </AccordionContent>
                         </AccordionItem>
+                        <AccordionItem value="events" asChild>
+                          <NavLink href="/events" title={dict.nav.events} className="px-0" />
+                        </AccordionItem>
                         <AccordionItem value="more">
                           <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
                           <AccordionContent>
@@ -219,6 +223,11 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                             ))}
                           </ul>
                         </NavigationMenuContent>
+                      </NavigationMenuItem>
+                      <NavigationMenuItem>
+                        <NavigationMenuLink href="/events" className={navigationMenuTriggerStyle()}>
+                          {dict.nav.events}
+                        </NavigationMenuLink>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
                         <NavigationMenuLink href="/journals" className={navigationMenuTriggerStyle()}>

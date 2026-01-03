@@ -348,6 +348,10 @@
                 "value": "tm-women-events"
               },
               {
+                "text": "I want to get notified about upcoming events",
+                "value": "upcoming-events"
+              },
+              {
                 "text": "I want to attend a TM intro session",
                 "value": "intro-session"
               },
