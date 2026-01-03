@@ -1,6 +1,9 @@
 import {
+  EventsQuery,
+  EventsQueryVariables,
   useArticlesBySlugQuery,
   useArticlesQuery,
+  useEventsQuery,
   useInfiniteArticlesQuery,
   type ArticlesBySlugQuery,
   type ArticlesBySlugQueryVariables,
@@ -32,7 +35,7 @@ export const getAllArticles = cache(async () => {
       if (!lastPage.blogPostCollection) return;
       if (lastPage.blogPostCollection.total <= lastPage.blogPostCollection.skip) return;
       return lastPage.blogPostCollection.limit + lastPage.blogPostCollection.skip;
-    }
+    },
   });
 
   return {
@@ -48,3 +51,19 @@ export const getArticlesBySlug = cache(async (variables: ArticlesBySlugQueryVari
 
   return response.blogPostCollection?.items.at(0);
 });
+
+export const getEvents = cache(async (variables: EventsQueryVariables) => {
+  const response = await queryClient.fetchQuery<EventsQuery>({
+    queryKey: useEventsQuery.getKey(variables),
+    queryFn: useEventsQuery.fetcher(variables),
+  });
+
+  return {
+    items: response.eventCollection?.items.filter((x) => !!x) ?? [],
+    total: response.eventCollection?.total,
+    skip: response.eventCollection?.skip,
+  };
+});
+
+export type EventsResponse = Awaited<ReturnType<typeof getEvents>>;
+export type EventItemCollection = EventsResponse['items'];

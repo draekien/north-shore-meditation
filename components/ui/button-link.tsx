@@ -16,7 +16,7 @@ export default function ButtonLink({ variant, size, className, ...rest }: Button
       {...rest}
       className={cn(
         buttonVariants({ variant, size, className }),
-        'aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed aria-disabled:text-muted-foreground'
+        'aria-disabled:text-muted-foreground aria-disabled:pointer-events-none aria-disabled:cursor-not-allowed'
       )}
       tabIndex={rest['aria-disabled'] ? -1 : undefined}
     />

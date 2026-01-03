@@ -34,7 +34,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
 }
 
 export default async function JournalsPage({ searchParams, params }: GlobalPageProps) {
-  if (!searchParams) throw new Error("Missing search params");
+  if (!searchParams) throw new Error('Missing search params');
   const { page = 1 } = await searchParams;
   const { lang } = await params;
   const { isEnabled } = await draftMode();
@@ -52,7 +52,7 @@ export default async function JournalsPage({ searchParams, params }: GlobalPageP
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
               <h1 className="text-primary">Notes from Stillness</h1>
-              <p className="mb-6 text-xl text-foreground">
+              <p className="text-foreground mb-6 text-xl">
                 Take a deep dive into Transcendental Meditation® with the guidance of the teachers at North Shore
                 Meditation
               </p>
@@ -69,7 +69,7 @@ export default async function JournalsPage({ searchParams, params }: GlobalPageP
             </>
           ) : (
             <div className="flex flex-col items-center justify-center gap-8">
-              <Alert className="w-full bg-background/70 backdrop-blur md:w-96">
+              <Alert className="bg-background/70 w-full backdrop-blur-sm md:w-96">
                 <BookDashed className="h-4 w-4" />
                 <AlertTitle>You&apos;re Early!</AlertTitle>
                 <AlertDescription>

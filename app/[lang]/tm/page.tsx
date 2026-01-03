@@ -51,7 +51,7 @@ export default async function Tm({ params }: GlobalPageProps) {
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="mb-8 md:mb-0 md:w-1/2">
               <h1 className="text-primary">{tm.title}</h1>
-              <p className="mb-6 text-xl text-foreground">{tm.subtitle}</p>
+              <p className="text-foreground mb-6 text-xl">{tm.subtitle}</p>
             </div>
           </div>
         </PageSectionContainer>
@@ -63,7 +63,7 @@ export default async function Tm({ params }: GlobalPageProps) {
               <Image src={bird} alt="" className="rounded-xl opacity-90" placeholder="blur" />
             </div>
             <div className="mb-8 md:mb-0 md:w-1/2">
-              <h2 className="mx-auto mb-12 max-w-3xl text-primary">{tm.sections.whatIsTm.title}</h2>
+              <h2 className="text-primary mx-auto mb-12 max-w-3xl">{tm.sections.whatIsTm.title}</h2>
               <div className="mx-auto max-w-3xl">
                 {tm.sections.whatIsTm.paragraphs.map((text) => (
                   <p key={text} className="text-lg">
@@ -77,7 +77,7 @@ export default async function Tm({ params }: GlobalPageProps) {
       </SecondaryPageSection>
       <PrimaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-12 text-primary">{tm.sections.keyFeatures.title}</h2>
+          <h2 className="text-primary mb-12">{tm.sections.keyFeatures.title}</h2>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               { title: 'Effortless', icon: <Feather className="h-10 w-10 text-teal-500" /> },
@@ -109,12 +109,12 @@ export default async function Tm({ params }: GlobalPageProps) {
       </PrimaryPageSection>
       <SecondaryPageSection>
         <PageSectionContainer>
-          <h2 className="mb-8 text-center text-primary">{tm.sections.howItWorks.title}</h2>
+          <h2 className="text-primary mb-8 text-center">{tm.sections.howItWorks.title}</h2>
           <div className="mx-auto max-w-3xl">
             <ol className="mx-4 list-decimal space-y-6 text-lg">
               {tm.sections.howItWorks.steps.map((step) => (
                 <li key={step.title}>
-                  <h3 className="text-lg text-primary">{step.title}</h3>
+                  <h3 className="text-primary text-lg">{step.title}</h3>
                   {step.description}
                 </li>
               ))}

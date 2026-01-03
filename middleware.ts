@@ -3,7 +3,6 @@ import { match } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 import { NextResponse, type NextRequest } from 'next/server';
 
-
 function getLocale({ headers }: NextRequest) {
   const languageHeader = { 'accept-language': headers.get('accept-language') || '' };
   try {

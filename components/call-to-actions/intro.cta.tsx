@@ -37,15 +37,15 @@ export default function IntroCallToActionSection({
   video: { dialogTitle, dialogTrigger, dialogDescription, dialogFooter, dialogFooterCta },
 }: IntroCallToAction) {
   return (
-    <section className={cn('py-16 backdrop-blur-sm', className)}>
+    <section className={cn('py-16 backdrop-blur-xs', className)}>
       <div className="container mx-auto flex flex-col gap-8 px-4">
-        <h2 className="text-center text-secondary">{title}</h2>
+        <h2 className="text-secondary text-center">{title}</h2>
         <div className="flex flex-col justify-center md:flex-row md:gap-8">
           <div>
             <Image src={searching} alt="" height={300} />
           </div>
           <div className="md:w-1/2">
-            <p className="my-4 text-xl text-foreground">{subtitle}</p>
+            <p className="text-foreground my-4 text-xl">{subtitle}</p>
             <div className="flex flex-col gap-4 md:flex-row">
               <ButtonLink href={href} referrerPolicy="no-referrer" size="lg" variant="secondary">
                 {action}

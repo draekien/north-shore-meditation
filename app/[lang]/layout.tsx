@@ -10,18 +10,16 @@ import { Button } from '@/components/ui/button';
 import ButtonLink from '@/components/ui/button-link';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import {
-  MobileNavigationMenuListItem,
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuListItem,
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { Sheet, SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { baseKeywords, locales } from '@/lib/constants';
@@ -39,6 +37,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '..
 import { getDictionary } from './dictionaries';
 import { geistSans, maShanZheng, notoSans } from './fonts';
 import './globals.css';
+import { MobileNavigationMenuListItem } from '@/components/nav/mobile-nav';
+import { NavigationMenuListItem } from '@/components/nav/desktop-nav';
+import { SuspenseNavSheet } from '@/components/nav/nav-sheet';
+import { NavLink } from '@/components/nav/nav-link';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -94,14 +96,14 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
           <TooltipProvider>
             <QueryClientProvider>
               <BackgroundGradientAnimation containerClassName="fixed -z-50" />
-              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center bg-white/50 px-4 shadow backdrop-blur-2xl dark:bg-slate-900/50 md:px-6">
-                <h3 className="container flex items-center gap-4 p-4">
-                  <Link href="/" className="font-bold text-primary xl:text-2xl">
+              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center justify-between bg-white/50 px-4 shadow-sm backdrop-blur-2xl md:px-6 dark:bg-slate-900/50">
+                <h3 className="flex items-center gap-4 p-4">
+                  <Link href="/" className="text-primary font-bold xl:text-2xl">
                     {dict.company}
                   </Link>
                   <DisableDraftMode enabled={draftModeEnabled} />
                 </h3>
-                <Sheet>
+                <SuspenseNavSheet>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon" className="xl:hidden">
                       <MenuIcon className="h-6 w-6" />
@@ -118,28 +120,22 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                             <ScrollArea className="h-72">
                               <ul className="grid gap-3">
                                 <li>
-                                  <a
-                                    className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:bg-accent focus:shadow-md"
+                                  <Link
+                                    className="from-muted/50 to-muted focus:bg-accent flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
                                     href={dict.nav.tm.hero.href}
                                   >
                                     <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                                    <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                                    <p className="text-sm leading-tight text-muted-foreground">
+                                    <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                    <p className="text-muted-foreground text-sm leading-tight">
                                       {dict.nav.tm.hero.description}
                                     </p>
-                                  </a>
+                                  </Link>
                                 </li>
                                 {dict.nav.tm.items.map((item) => (
                                   <MobileNavigationMenuListItem key={item.title} title={item.title} href={item.href}>
                                     {item.description}
                                   </MobileNavigationMenuListItem>
                                 ))}
-                                <MobileNavigationMenuListItem
-                                  title={dict.nav.tmForWomen.title}
-                                  href={dict.nav.tmForWomen.href}
-                                >
-                                  {dict.nav.tmForWomen.description}
-                                </MobileNavigationMenuListItem>
                               </ul>
                             </ScrollArea>
                           </AccordionContent>
@@ -159,6 +155,9 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                               ))}
                             </ul>
                           </AccordionContent>
+                        </AccordionItem>
+                        <AccordionItem value="events" asChild>
+                          <NavLink href="/events" title={dict.nav.events} className="px-0" />
                         </AccordionItem>
                         <AccordionItem value="more">
                           <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
@@ -181,26 +180,24 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                       </ButtonLink>
                     </div>
                   </SheetContent>
-                </Sheet>
-                <div className="container mx-auto hidden items-center justify-between gap-4 p-4 xl:flex">
+                </SuspenseNavSheet>
+                <div className="hidden items-center justify-between gap-4 p-4 xl:flex">
                   <NavigationMenu>
                     <NavigationMenuList>
                       <NavigationMenuItem>
                         <NavigationMenuTrigger>{dict.nav.tm.title}</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+                          <ul className="grid gap-3 p-6 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
                             <li className="row-span-3">
-                              <NavigationMenuLink asChild>
-                                <a
-                                  className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                  href={dict.nav.tm.hero.href}
-                                >
-                                  <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                                  <div className="mb-2 mt-4 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                                  <p className="text-sm leading-tight text-muted-foreground">
-                                    {dict.nav.tm.hero.description}
-                                  </p>
-                                </a>
+                              <NavigationMenuLink
+                                className="from-muted/50 to-muted hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden transition-colors select-none"
+                                href={dict.nav.tm.hero.href}
+                              >
+                                <Sparkles className={cn('h-6 w-6 text-amber-400')} />
+                                <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                <p className="text-muted-foreground text-sm leading-tight">
+                                  {dict.nav.tm.hero.description}
+                                </p>
                               </NavigationMenuLink>
                             </li>
                             {dict.nav.tm.items.map((item) => (
@@ -212,14 +209,9 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                          <Link href={dict.nav.tmForWomen.href}>{dict.nav.tmForWomen.title}</Link>
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
                         <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
                         <NavigationMenuContent>
-                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                          <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
                             {dict.nav.programs.items.map((component) => (
                               <NavigationMenuListItem
                                 key={component.title}
@@ -233,18 +225,23 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                         </NavigationMenuContent>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                          <Link href="/journals">{dict.nav.journals}</Link>
+                        <NavigationMenuLink href="/events" className={navigationMenuTriggerStyle()}>
+                          {dict.nav.events}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                          <Link href="/about-us">{dict.nav.aboutUs}</Link>
+                        <NavigationMenuLink href="/journals" className={navigationMenuTriggerStyle()}>
+                          {dict.nav.journals}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                       <NavigationMenuItem>
-                        <NavigationMenuLink className={navigationMenuTriggerStyle()} asChild>
-                          <Link href="/contact-us">{dict.nav.contactUs}</Link>
+                        <NavigationMenuLink href="/about-us" className={navigationMenuTriggerStyle()}>
+                          {dict.nav.aboutUs}
+                        </NavigationMenuLink>
+                      </NavigationMenuItem>
+                      <NavigationMenuItem>
+                        <NavigationMenuLink href="/contact-us" className={navigationMenuTriggerStyle()}>
+                          {dict.nav.contactUs}
                         </NavigationMenuLink>
                       </NavigationMenuItem>
                     </NavigationMenuList>

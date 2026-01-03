@@ -16,6 +16,7 @@
   },
   "nav": {
     "aboutUs": "About Us",
+    "events": "Events",
     "callToAction": {
       "action": "Start Your Journey",
       "href": "/contact-us?q=group-course"
@@ -34,6 +35,11 @@
           "description": "Discover how our tailored meditation programs can help your business",
           "href": "/programs/corporate",
           "title": "Corporate Meditation"
+        },
+        {
+          "description": "Discover a support network dedicated to women practicing TM.",
+          "title": "TM for Women",
+          "href": "/tm-for-women"
         }
       ],
       "title": "Programs"
@@ -57,11 +63,6 @@
         }
       ],
       "title": "Transcendental Meditation®"
-    },
-    "tmForWomen": {
-      "title": "TM for Women",
-      "description": "Discover a support network dedicated to women practicing TM.",
-      "href": "/tm-for-women"
     },
     "toggleButtonAlt": "Toggle navigation menu"
   },
@@ -347,6 +348,10 @@
                 "value": "tm-women-events"
               },
               {
+                "text": "I want to get notified about upcoming events",
+                "value": "upcoming-events"
+              },
+              {
                 "text": "I want to attend a TM intro session",
                 "value": "intro-session"
               },
@@ -399,7 +404,7 @@
           "submitted": "Sent!"
         }
       },
-      "subtitle": "Send us an enquiry using the form below, or give us a ring!",
+      "subtitle": "Send us an enquiry using the form below, or give us a ring-3!",
       "title": "Let's get in touch"
     },
     "corporateMeditation": {

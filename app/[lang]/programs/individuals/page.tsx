@@ -45,7 +45,7 @@ export default async function IndividualProgramsPage({ params }: GlobalPageProps
           <div className="flex flex-col items-center md:min-h-[50dvh] md:flex-row">
             <div className="md:w-1/2">
               <h1 className="text-primary">{individualMeditation.title}</h1>
-              <p className="mb-6 text-xl text-foreground">{individualMeditation.subtitle}</p>
+              <p className="text-foreground mb-6 text-xl">{individualMeditation.subtitle}</p>
             </div>
           </div>
         </PageSectionContainer>
@@ -53,7 +53,7 @@ export default async function IndividualProgramsPage({ params }: GlobalPageProps
       <SecondaryPageSection>
         <PageSectionContainer>
           <Tabs defaultValue={individualMeditation.tabs[0].title}>
-            <TabsList className="h-auto flex-wrap bg-muted/50">
+            <TabsList className="bg-muted/50 h-auto flex-wrap">
               {individualMeditation.tabs.map((tab) => (
                 <TabsTrigger key={tab.title} value={tab.title}>
                   {tab.title}

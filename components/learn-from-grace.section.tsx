@@ -19,7 +19,7 @@ export default function LearnFromGraceSection({ title, paragraphs }: LearnFromGr
             placeholder="blur"
           />
           <div className="md:w-1/2 md:pl-12">
-            <h2 className="mb-4 text-3xl font-semibold text-primary">{title}</h2>
+            <h2 className="text-primary mb-4 text-3xl font-semibold">{title}</h2>
             {paragraphs.map((text) => (
               <p key={text}>{text}</p>
             ))}

@@ -102,7 +102,7 @@ export default function ContactUsForm({
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <Card className="mt-16 bg-card/80 backdrop-blur-xl md:w-1/2">
+        <Card className="bg-card/80 mt-16 backdrop-blur-xl md:w-1/2">
           <CardHeader></CardHeader>
           <CardContent className="space-y-4">
             <FormField
