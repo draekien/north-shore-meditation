@@ -39,6 +39,7 @@ import { geistSans, maShanZheng, notoSans } from './fonts';
 import './globals.css';
 import { MobileNavigationMenuListItem } from '@/components/nav/mobile-nav';
 import { NavigationMenuListItem } from '@/components/nav/desktop-nav';
+import { SuspenseNavSheet } from '@/components/nav/nav-sheet';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -101,7 +102,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                   </Link>
                   <DisableDraftMode enabled={draftModeEnabled} />
                 </h3>
-                <Sheet>
+                <SuspenseNavSheet>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon" className="xl:hidden">
                       <MenuIcon className="h-6 w-6" />
@@ -175,7 +176,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                       </ButtonLink>
                     </div>
                   </SheetContent>
-                </Sheet>
+                </SuspenseNavSheet>
                 <div className="hidden items-center justify-between gap-4 p-4 xl:flex">
                   <NavigationMenu>
                     <NavigationMenuList>
