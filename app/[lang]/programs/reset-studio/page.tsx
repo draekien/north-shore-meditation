@@ -17,7 +17,6 @@ import {
 import { ClassValue } from 'clsx';
 import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Separator } from '@/components/ui/separator';
 import ButtonLink from '@/components/ui/button-link';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 

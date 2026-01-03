@@ -1,7 +1,12 @@
 'use client';
 
-import { AppProgressBar } from 'next-nprogress-bar';
+import { ProgressProvider } from '@bprogress/next/app';
+import { PropsWithChildren } from 'react';
 
-export default function ProgressBar() {
-  return <AppProgressBar color="#059669" shallowRouting />;
+export default function ProgressBar({ children }: PropsWithChildren) {
+  return (
+    <ProgressProvider color="#059669" shallowRouting>
+      {children}
+    </ProgressProvider>
+  );
 }

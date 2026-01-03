@@ -56,7 +56,6 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
   const { page } = paginationParamsSchema.parse(search);
   const { audiences, type, from } = eventFiltersSchema.parse(search);
 
-  const { lang } = await params;
   const { isEnabled: preview } = await draftMode();
 
   const fromStartOfDay = from ?? new Date();
