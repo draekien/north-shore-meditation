@@ -106,7 +106,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
             <p className="text-muted-foreground mb-10 text-sm">
               {article.author} | {new Date(article.sys.publishedAt).toLocaleDateString()}
             </p>
-            <div className="max-w-[900px] space-y-4 md:text-xl lg:text-base xl:text-xl">
+            <div className="max-w-225 space-y-4 md:text-xl lg:text-base xl:text-xl">
               {documentToReactComponents(article.content.json, {
                 renderNode: {
                   [INLINES.HYPERLINK]: (node, children) => (

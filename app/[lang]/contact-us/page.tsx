@@ -36,7 +36,7 @@ export default async function ContactUsPage({ params }: GlobalPageProps) {
   } = await getDictionary(lang);
 
   return (
-    <PageContent className="min-h-[200px]">
+    <PageContent className="min-h-50">
       <PrimaryPageSection>
         <PageSectionContainer>
           <h1 className="text-primary">{contactUs.title}</h1>
