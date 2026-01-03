@@ -11,12 +11,12 @@ type UseNavigationEventsOptions = {
   onNavigate?: (e: OnNavigateEvent) => void;
 };
 
-export const useSuspenseNavigationEvents = (options: UseNavigationEventsOptions) => {
+export const useSuspenseNavigationEvents = ({ onNavigate }: UseNavigationEventsOptions) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
   useEffect(() => {
     const url = `${pathname}?${searchParams}`;
-    options.onNavigate?.({ url, pathname, searchParams });
-  }, [pathname, searchParams, options]);
+    onNavigate?.({ url, pathname, searchParams });
+  }, [pathname, searchParams, onNavigate]);
 };

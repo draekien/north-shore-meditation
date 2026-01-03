@@ -39,7 +39,12 @@ export function EventItem(item: EventItemCollection[number]) {
                   <CalendarClockIcon className="size-4" />
                 </ItemMedia>
                 <ItemContent>
-                  <ItemTitle>Starts at {startsAt.toLocaleString()}</ItemTitle>
+                  <ItemTitle>
+                    Starts at{' '}
+                    {startsAt.toLocaleString(navigator.languages, {
+                      timeZone: 'Australia/Sydney',
+                    })}
+                  </ItemTitle>
                 </ItemContent>
               </Item>
               <Item size="sm">
@@ -47,7 +52,12 @@ export function EventItem(item: EventItemCollection[number]) {
                   <CalendarClockIcon className="size-4" />
                 </ItemMedia>
                 <ItemContent>
-                  <ItemTitle>Ends at {endsAt.toLocaleString()}</ItemTitle>
+                  <ItemTitle>
+                    Ends at{' '}
+                    {endsAt.toLocaleString(navigator.languages, {
+                      timeZone: 'Australia/Sydney',
+                    })}
+                  </ItemTitle>
                 </ItemContent>
               </Item>
             </ItemGroup>
