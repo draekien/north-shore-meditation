@@ -5,11 +5,15 @@ import { ToggleGroup, ToggleGroupItem } from '../ui/toggle-group';
 import { useCallback } from 'react';
 import { eventFiltersSchema } from '@/app/[lang]/events/schemas';
 import { Item, ItemGroup, ItemContent, ItemDescription } from '../ui/item';
+import { GlobalPageProps } from '@/lib/types';
 
-export function EventFilters() {
+type EventFiltersProps = {
+  searchParams: NonNullable<Awaited<GlobalPageProps['searchParams']>>;
+};
+
+export function EventFilters({ searchParams }: EventFiltersProps) {
   const router = useRouter();
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   const parsedParams = eventFiltersSchema.parse(searchParams);
   const audiences = parsedParams.audiences
@@ -82,6 +86,7 @@ export function EventFilters() {
             <ToggleGroupItem value="Course">Course</ToggleGroupItem>
             <ToggleGroupItem value="Intro">Intro</ToggleGroupItem>
             <ToggleGroupItem value="Retreat">Retreat</ToggleGroupItem>
+            <ToggleGroupItem value="Reset">Reset Studio</ToggleGroupItem>
           </ToggleGroup>
         </ItemContent>
       </Item>

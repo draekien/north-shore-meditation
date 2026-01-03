@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Events Preview';
+export const alt = 'TM Reset Studio Preview';
 export const size = {
   width: 1200,
   height: 630,
@@ -33,7 +33,7 @@ export default async function Image() {
           lineHeight: 1.1,
         }}
       >
-        Upcoming Events
+        TM Reset Studio
       </h1>
       <p
         style={{
@@ -44,8 +44,7 @@ export default async function Image() {
           maxWidth: '800px',
         }}
       >
-        Our events are designed to meet you where you are. Whether you’re attending an intro session, committing to a
-        course, or stepping into a retreat, each event supports effortless meditation and lasting change.
+        A half-day TM immersion to restore the ease, the confidence, and the quiet edge of regular practice
       </p>
     </div>,
     {

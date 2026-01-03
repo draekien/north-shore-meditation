@@ -95,209 +95,211 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
         >
           <TooltipProvider>
             <QueryClientProvider>
-              <BackgroundGradientAnimation containerClassName="fixed -z-50" />
-              <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center justify-between bg-white/50 px-4 shadow-sm backdrop-blur-2xl md:px-6 dark:bg-slate-900/50">
-                <h3 className="flex items-center gap-4 p-4">
-                  <Link href="/" className="text-primary font-bold xl:text-2xl">
-                    {dict.company}
-                  </Link>
-                  <DisableDraftMode enabled={draftModeEnabled} />
-                </h3>
-                <SuspenseNavSheet>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="xl:hidden">
-                      <MenuIcon className="h-6 w-6" />
-                      <span className="sr-only">{dict.nav.toggleButtonAlt}</span>
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="right" className="bg-white backdrop-blur-md dark:bg-slate-950/75">
-                    <SheetTitle className="sr-only">Menu</SheetTitle>
-                    <div className="flex h-full flex-col justify-between gap-10 py-4">
-                      <Accordion type="single" defaultValue="tm" collapsible>
-                        <AccordionItem value="tm">
-                          <AccordionTrigger>{dict.nav.tm.title}</AccordionTrigger>
-                          <AccordionContent>
-                            <ScrollArea className="h-72">
+              <ProgressBar>
+                <BackgroundGradientAnimation containerClassName="fixed -z-50" />
+                <header className="sticky top-0 z-50 flex h-20 w-full shrink-0 items-center justify-between bg-white/50 px-4 shadow-sm backdrop-blur-2xl md:px-6 dark:bg-slate-900/50">
+                  <h3 className="flex items-center gap-4 p-4">
+                    <Link href="/" className="text-primary font-bold xl:text-2xl">
+                      {dict.company}
+                    </Link>
+                    <DisableDraftMode enabled={draftModeEnabled} />
+                  </h3>
+                  <SuspenseNavSheet>
+                    <SheetTrigger asChild>
+                      <Button variant="ghost" size="icon" className="xl:hidden">
+                        <MenuIcon className="h-6 w-6" />
+                        <span className="sr-only">{dict.nav.toggleButtonAlt}</span>
+                      </Button>
+                    </SheetTrigger>
+                    <SheetContent side="right" className="bg-white backdrop-blur-md dark:bg-slate-950/75">
+                      <SheetTitle className="sr-only">Menu</SheetTitle>
+                      <div className="flex h-full flex-col justify-between gap-10 py-4">
+                        <Accordion type="single" defaultValue="tm" collapsible>
+                          <AccordionItem value="tm">
+                            <AccordionTrigger>{dict.nav.tm.title}</AccordionTrigger>
+                            <AccordionContent>
+                              <ScrollArea className="h-72">
+                                <ul className="grid gap-3">
+                                  <li>
+                                    <Link
+                                      className="from-muted/50 to-muted focus:bg-accent flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
+                                      href={dict.nav.tm.hero.href}
+                                    >
+                                      <Sparkles className={cn('h-6 w-6 text-amber-400')} />
+                                      <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                      <p className="text-muted-foreground text-sm leading-tight">
+                                        {dict.nav.tm.hero.description}
+                                      </p>
+                                    </Link>
+                                  </li>
+                                  {dict.nav.tm.items.map((item) => (
+                                    <MobileNavigationMenuListItem key={item.title} title={item.title} href={item.href}>
+                                      {item.description}
+                                    </MobileNavigationMenuListItem>
+                                  ))}
+                                </ul>
+                              </ScrollArea>
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="programs">
+                            <AccordionTrigger>{dict.nav.programs.title}</AccordionTrigger>
+                            <AccordionContent>
                               <ul className="grid gap-3">
-                                <li>
-                                  <Link
-                                    className="from-muted/50 to-muted focus:bg-accent flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden select-none focus:shadow-md"
-                                    href={dict.nav.tm.hero.href}
+                                {dict.nav.programs.items.map((component) => (
+                                  <MobileNavigationMenuListItem
+                                    key={component.title}
+                                    title={component.title}
+                                    href={component.href}
                                   >
-                                    <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                                    <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                                    <p className="text-muted-foreground text-sm leading-tight">
-                                      {dict.nav.tm.hero.description}
-                                    </p>
-                                  </Link>
-                                </li>
-                                {dict.nav.tm.items.map((item) => (
-                                  <MobileNavigationMenuListItem key={item.title} title={item.title} href={item.href}>
-                                    {item.description}
+                                    {component.description}
                                   </MobileNavigationMenuListItem>
                                 ))}
                               </ul>
-                            </ScrollArea>
-                          </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="programs">
-                          <AccordionTrigger>{dict.nav.programs.title}</AccordionTrigger>
-                          <AccordionContent>
-                            <ul className="grid gap-3">
+                            </AccordionContent>
+                          </AccordionItem>
+                          <AccordionItem value="events" asChild>
+                            <NavLink href="/events" title={dict.nav.events} className="px-0" />
+                          </AccordionItem>
+                          <AccordionItem value="more">
+                            <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
+                            <AccordionContent>
+                              <ul className="grid gap-3">
+                                <MobileNavigationMenuListItem href="/journals" title={dict.nav.journals} />
+                                <MobileNavigationMenuListItem href="/about-us" title={dict.nav.aboutUs} />
+                                <MobileNavigationMenuListItem href="/contact-us" title={dict.nav.contactUs} />
+                              </ul>
+                            </AccordionContent>
+                          </AccordionItem>
+                        </Accordion>
+                        <ButtonLink
+                          href={dict.nav.callToAction.href}
+                          referrerPolicy="no-referrer"
+                          target="_blank"
+                          rel="noreferrer noopener"
+                        >
+                          {dict.nav.callToAction.action}
+                        </ButtonLink>
+                      </div>
+                    </SheetContent>
+                  </SuspenseNavSheet>
+                  <div className="hidden items-center justify-between gap-4 p-4 xl:flex">
+                    <NavigationMenu>
+                      <NavigationMenuList>
+                        <NavigationMenuItem>
+                          <NavigationMenuTrigger>{dict.nav.tm.title}</NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid gap-3 p-6 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
+                              <li className="row-span-3">
+                                <NavigationMenuLink
+                                  className="from-muted/50 to-muted hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden transition-colors select-none"
+                                  href={dict.nav.tm.hero.href}
+                                >
+                                  <Sparkles className={cn('h-6 w-6 text-amber-400')} />
+                                  <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
+                                  <p className="text-muted-foreground text-sm leading-tight">
+                                    {dict.nav.tm.hero.description}
+                                  </p>
+                                </NavigationMenuLink>
+                              </li>
+                              {dict.nav.tm.items.map((item) => (
+                                <NavigationMenuListItem key={item.href} href={item.href} title={item.title}>
+                                  {item.description}
+                                </NavigationMenuListItem>
+                              ))}
+                            </ul>
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                          <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
+                          <NavigationMenuContent>
+                            <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
                               {dict.nav.programs.items.map((component) => (
-                                <MobileNavigationMenuListItem
+                                <NavigationMenuListItem
                                   key={component.title}
                                   title={component.title}
                                   href={component.href}
                                 >
                                   {component.description}
-                                </MobileNavigationMenuListItem>
+                                </NavigationMenuListItem>
                               ))}
                             </ul>
-                          </AccordionContent>
-                        </AccordionItem>
-                        <AccordionItem value="events" asChild>
-                          <NavLink href="/events" title={dict.nav.events} className="px-0" />
-                        </AccordionItem>
-                        <AccordionItem value="more">
-                          <AccordionTrigger>{dict.nav.more}</AccordionTrigger>
-                          <AccordionContent>
-                            <ul className="grid gap-3">
-                              <MobileNavigationMenuListItem href="/journals" title={dict.nav.journals} />
-                              <MobileNavigationMenuListItem href="/about-us" title={dict.nav.aboutUs} />
-                              <MobileNavigationMenuListItem href="/contact-us" title={dict.nav.contactUs} />
-                            </ul>
-                          </AccordionContent>
-                        </AccordionItem>
-                      </Accordion>
-                      <ButtonLink
-                        href={dict.nav.callToAction.href}
-                        referrerPolicy="no-referrer"
-                        target="_blank"
-                        rel="noreferrer noopener"
-                      >
-                        {dict.nav.callToAction.action}
-                      </ButtonLink>
-                    </div>
-                  </SheetContent>
-                </SuspenseNavSheet>
-                <div className="hidden items-center justify-between gap-4 p-4 xl:flex">
-                  <NavigationMenu>
-                    <NavigationMenuList>
-                      <NavigationMenuItem>
-                        <NavigationMenuTrigger>{dict.nav.tm.title}</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul className="grid gap-3 p-6 md:w-100 lg:w-125 lg:grid-cols-[.75fr_1fr]">
-                            <li className="row-span-3">
-                              <NavigationMenuLink
-                                className="from-muted/50 to-muted hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex h-full w-full flex-col justify-end rounded-md bg-linear-to-b p-6 no-underline outline-hidden transition-colors select-none"
-                                href={dict.nav.tm.hero.href}
-                              >
-                                <Sparkles className={cn('h-6 w-6 text-amber-400')} />
-                                <div className="mt-4 mb-2 text-lg font-medium">{dict.nav.tm.hero.title}</div>
-                                <p className="text-muted-foreground text-sm leading-tight">
-                                  {dict.nav.tm.hero.description}
-                                </p>
-                              </NavigationMenuLink>
-                            </li>
-                            {dict.nav.tm.items.map((item) => (
-                              <NavigationMenuListItem key={item.href} href={item.href} title={item.title}>
-                                {item.description}
-                              </NavigationMenuListItem>
-                            ))}
-                          </ul>
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
-                        <NavigationMenuTrigger>{dict.nav.programs.title}</NavigationMenuTrigger>
-                        <NavigationMenuContent>
-                          <ul className="grid w-100 gap-3 p-4 md:w-125 md:grid-cols-2 lg:w-150">
-                            {dict.nav.programs.items.map((component) => (
-                              <NavigationMenuListItem
-                                key={component.title}
-                                title={component.title}
-                                href={component.href}
-                              >
-                                {component.description}
-                              </NavigationMenuListItem>
-                            ))}
-                          </ul>
-                        </NavigationMenuContent>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
-                        <NavigationMenuLink href="/events" className={navigationMenuTriggerStyle()}>
-                          {dict.nav.events}
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
-                        <NavigationMenuLink href="/journals" className={navigationMenuTriggerStyle()}>
-                          {dict.nav.journals}
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
-                        <NavigationMenuLink href="/about-us" className={navigationMenuTriggerStyle()}>
-                          {dict.nav.aboutUs}
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                      <NavigationMenuItem>
-                        <NavigationMenuLink href="/contact-us" className={navigationMenuTriggerStyle()}>
-                          {dict.nav.contactUs}
-                        </NavigationMenuLink>
-                      </NavigationMenuItem>
-                    </NavigationMenuList>
-                  </NavigationMenu>
-                  <ModeToggle />
-                  <ButtonLink
-                    href={dict.nav.callToAction.href}
-                    referrerPolicy="no-referrer"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                  >
-                    {dict.nav.callToAction.action}
-                  </ButtonLink>
-                </div>
-              </header>
-              <main>
-                {children}
+                          </NavigationMenuContent>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                          <NavigationMenuLink href="/events" className={navigationMenuTriggerStyle()}>
+                            {dict.nav.events}
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                          <NavigationMenuLink href="/journals" className={navigationMenuTriggerStyle()}>
+                            {dict.nav.journals}
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                          <NavigationMenuLink href="/about-us" className={navigationMenuTriggerStyle()}>
+                            {dict.nav.aboutUs}
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                        <NavigationMenuItem>
+                          <NavigationMenuLink href="/contact-us" className={navigationMenuTriggerStyle()}>
+                            {dict.nav.contactUs}
+                          </NavigationMenuLink>
+                        </NavigationMenuItem>
+                      </NavigationMenuList>
+                    </NavigationMenu>
+                    <ModeToggle />
+                    <ButtonLink
+                      href={dict.nav.callToAction.href}
+                      referrerPolicy="no-referrer"
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
+                      {dict.nav.callToAction.action}
+                    </ButtonLink>
+                  </div>
+                </header>
+                <main>
+                  {children}
 
-                <IntroCallToActionSection {...dict.sections.ctas.intro} />
-                <LearnCallToActionSection {...dict.sections.ctas.learn} />
-              </main>
-              <footer className="bg-emerald-900 py-8 text-white">
-                <div className="container mx-auto px-4">
-                  <div className="mb-8 flex flex-col items-center justify-between md:flex-row">
-                    <div className="mb-4 md:mb-0">
-                      <h2 className="text-2xl font-semibold">{dict.company}</h2>
-                      <p className="text-emerald-50">{dict.tagline}</p>
+                  <IntroCallToActionSection {...dict.sections.ctas.intro} />
+                  <LearnCallToActionSection {...dict.sections.ctas.learn} />
+                </main>
+                <footer className="bg-emerald-900 py-8 text-white">
+                  <div className="container mx-auto px-4">
+                    <div className="mb-8 flex flex-col items-center justify-between md:flex-row">
+                      <div className="mb-4 md:mb-0">
+                        <h2 className="text-2xl font-semibold">{dict.company}</h2>
+                        <p className="text-emerald-50">{dict.tagline}</p>
+                      </div>
+                      <ul className="text-center md:text-right">
+                        <li>{dict.contactDetails.address}</li>
+                        <li>
+                          Email:{' '}
+                          <Link
+                            href={dict.contactDetails.email.href}
+                            className="hover:text-emerald-100 focus:text-emerald-100"
+                          >
+                            {dict.contactDetails.email.display}
+                          </Link>
+                        </li>
+                        <li>
+                          Phone:{' '}
+                          <Link
+                            href={dict.contactDetails.phone.href}
+                            className="hover:text-emerald-100 focus:text-emerald-100"
+                          >
+                            {dict.contactDetails.phone.display}
+                          </Link>{' '}
+                        </li>
+                      </ul>
                     </div>
-                    <ul className="text-center md:text-right">
-                      <li>{dict.contactDetails.address}</li>
-                      <li>
-                        Email:{' '}
-                        <Link
-                          href={dict.contactDetails.email.href}
-                          className="hover:text-emerald-100 focus:text-emerald-100"
-                        >
-                          {dict.contactDetails.email.display}
-                        </Link>
-                      </li>
-                      <li>
-                        Phone:{' '}
-                        <Link
-                          href={dict.contactDetails.phone.href}
-                          className="hover:text-emerald-100 focus:text-emerald-100"
-                        >
-                          {dict.contactDetails.phone.display}
-                        </Link>{' '}
-                      </li>
-                    </ul>
+                    <div className="flex flex-wrap-reverse items-end justify-center gap-8 md:justify-between">
+                      <small className="w-80 md:w-1/3">{dict.footer.disclaimer}</small>
+                      <TmCentreMap />
+                    </div>
                   </div>
-                  <div className="flex flex-wrap-reverse items-end justify-center gap-8 md:justify-between">
-                    <small className="w-80 md:w-1/3">{dict.footer.disclaimer}</small>
-                    <TmCentreMap />
-                  </div>
-                </div>
-              </footer>
+                </footer>
+              </ProgressBar>
             </QueryClientProvider>
           </TooltipProvider>
           <Toaster />
@@ -305,7 +307,6 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
         <Analytics />
         <SpeedInsights />
         {shouldInjectToolbar && <VercelToolbar />}
-        <ProgressBar />
       </body>
     </html>
   );

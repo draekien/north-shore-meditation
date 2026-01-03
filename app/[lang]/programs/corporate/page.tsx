@@ -16,7 +16,7 @@ import Link from 'next/link';
 import { getDictionary } from '../../dictionaries';
 
 const DynamicChart = dynamic(() => import('@/components/tm-stats-chart'), {
-  loading: () => <Skeleton className="h-[200px] w-full" />,
+  loading: () => <Skeleton className="h-50 w-full" />,
 });
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
