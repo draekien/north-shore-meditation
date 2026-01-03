@@ -104,13 +104,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                     </Link>
                     <DisableDraftMode enabled={draftModeEnabled} />
                   </h3>
-                  <SuspenseNavSheet>
-                    <SheetTrigger asChild>
-                      <Button variant="ghost" size="icon" className="xl:hidden">
-                        <MenuIcon className="h-6 w-6" />
-                        <span className="sr-only">{dict.nav.toggleButtonAlt}</span>
-                      </Button>
-                    </SheetTrigger>
+                  <SuspenseNavSheet toggleButtonAlt={dict.nav.toggleButtonAlt}>
                     <SheetContent side="right" className="bg-white backdrop-blur-md dark:bg-slate-950/75">
                       <SheetTitle className="sr-only">Menu</SheetTitle>
                       <div className="flex h-full flex-col justify-between gap-10 py-4">

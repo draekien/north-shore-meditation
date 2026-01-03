@@ -26,7 +26,6 @@ import { Separator } from '@/components/ui/separator';
 import { EventDefaults } from '@/components/events/event-constants';
 import { EventPagination } from '@/components/events/event-pagination';
 import ButtonLink from '@/components/ui/button-link';
-import { Suspense } from 'react';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
