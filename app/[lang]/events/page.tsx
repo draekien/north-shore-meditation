@@ -52,6 +52,7 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
   if (!searchParams) throw new Error('Missing search params');
 
   const search = await searchParams;
+  const { lang } = await params;
 
   const { page } = paginationParamsSchema.parse(search);
   const { audiences, type, from } = eventFiltersSchema.parse(search);
@@ -109,7 +110,7 @@ export default async function Page({ searchParams, params }: GlobalPageProps) {
             <>
               <ItemGroup className="gap-4">
                 {items.map((item) => (
-                  <EventItem key={item.sys.id} {...item} />
+                  <EventItem key={item.sys.id} lang={lang} {...item} />
                 ))}
               </ItemGroup>
               <footer>
