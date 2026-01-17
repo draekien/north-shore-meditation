@@ -34,7 +34,7 @@ export function EventFilters({ searchParams }: EventFiltersProps) {
 
       return params.toString();
     },
-    [searchParams]
+    [readonlySearchParams]
   );
 
   const replaceParam = useCallback(
@@ -44,7 +44,7 @@ export function EventFilters({ searchParams }: EventFiltersProps) {
 
       return params.toString();
     },
-    [searchParams]
+    [readonlySearchParams]
   );
 
   return (
