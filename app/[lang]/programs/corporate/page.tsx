@@ -161,7 +161,7 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
           <ItemGroup className="md:grid md:grid-cols-3">
             <Item>
               <ItemContent>
-                <ItemTitle>The "Quiet Mind" at Work</ItemTitle>
+                <ItemTitle>The &quot;Quiet Mind&quot; at Work</ItemTitle>
                 <ItemDescription>
                   Specialized sessions on using clarity for better decision-making and emotional intelligence
                 </ItemDescription>
@@ -171,8 +171,8 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
               <ItemContent>
                 <ItemTitle>The Strategic Health Vision</ItemTitle>
                 <ItemDescription>
-                  A coaching session to build your "Health Business Plan", ensuring your physical resilience matches
-                  your long-term professional ambition
+                  A coaching session to build your &quot;Health Business Plan&quot;, ensuring your physical resilience
+                  matches your long-term professional ambition
                 </ItemDescription>
               </ItemContent>
             </Item>
@@ -235,8 +235,8 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
           <small>Strategic insights for your next wellbeing initiative or leadership retreat</small>
           <p>
             Looking for a high-impact session to plug into your annual wellbeing program or a special awareness day like
-            "R U OK Day"? We offer bespoke corporate talks designed to introduce the science of resilience to your
-            organization.
+            &quot;R U OK Day&quot;? We offer bespoke corporate talks designed to introduce the science of resilience to
+            your organization.
           </p>
           <ItemGroup className="mt-6 grid-cols-2 md:grid">
             <Item>
@@ -248,14 +248,16 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
             <Item>
               <ItemContent>
                 <ItemTitle>The Science of Stress Management</ItemTitle>
-                <ItemDescription>Understanding the "de-excitation" response and its impact on burnout</ItemDescription>
+                <ItemDescription>
+                  Understanding the &quot;de-excitation&quot; response and its impact on burnout
+                </ItemDescription>
               </ItemContent>
             </Item>
             <Item>
               <ItemContent>
                 <ItemTitle>Leadership from Within</ItemTitle>
                 <ItemDescription>
-                  How a "Quiet Mind" improves decision-making and emotional intelligence
+                  How a &quot;Quiet Mind&quot; improves decision-making and emotional intelligence
                 </ItemDescription>
               </ItemContent>
             </Item>
@@ -267,7 +269,7 @@ export default async function CorporateProgramsPage({ params }: GlobalPageProps)
             </Item>
             <Item>
               <ItemContent>
-                <ItemTitle>Women's Wellbeing &amp; Leadership</ItemTitle>
+                <ItemTitle>Women&apos;s Wellbeing &amp; Leadership</ItemTitle>
                 <ItemDescription>Supporting health and performance through every life stage</ItemDescription>
               </ItemContent>
             </Item>
