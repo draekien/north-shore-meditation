@@ -165,14 +165,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                             </AccordionContent>
                           </AccordionItem>
                         </Accordion>
-                        <ButtonLink
-                          href={dict.nav.callToAction.href}
-                          referrerPolicy="no-referrer"
-                          target="_blank"
-                          rel="noreferrer noopener"
-                        >
-                          {dict.nav.callToAction.action}
-                        </ButtonLink>
+                        <ButtonLink href={dict.nav.callToAction.href}>{dict.nav.callToAction.action}</ButtonLink>
                       </div>
                     </SheetContent>
                   </SuspenseNavSheet>
@@ -242,14 +235,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
                       </NavigationMenuList>
                     </NavigationMenu>
                     <ModeToggle />
-                    <ButtonLink
-                      href={dict.nav.callToAction.href}
-                      referrerPolicy="no-referrer"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                    >
-                      {dict.nav.callToAction.action}
-                    </ButtonLink>
+                    <ButtonLink href={dict.nav.callToAction.href}>{dict.nav.callToAction.action}</ButtonLink>
                   </div>
                 </header>
                 <main>
