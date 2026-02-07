@@ -6,7 +6,6 @@ import ProgressBar from '@/components/progress-bar';
 import QueryClientProvider from '@/components/query-client-provider';
 import { ThemeProvider } from '@/components/theme-provider';
 import { BackgroundGradientAnimation } from '@/components/ui/background-gradient-animation';
-import { Button } from '@/components/ui/button';
 import ButtonLink from '@/components/ui/button-link';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import {
@@ -19,7 +18,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { SheetContent, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { SheetContent, SheetTitle } from '@/components/ui/sheet';
 import { Toaster } from '@/components/ui/toaster';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { baseKeywords, locales } from '@/lib/constants';
@@ -28,7 +27,7 @@ import { cn } from '@/lib/utils';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { VercelToolbar } from '@vercel/toolbar/next';
-import { MenuIcon, Sparkles } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import { draftMode } from 'next/headers';
 import Link from 'next/link';
