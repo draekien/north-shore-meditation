@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "upgrade": "next upgrade",
     "lint": "eslint .",
     "pretty": "prettier --write .",
     "generate": "graphql-codegen --config codegen.ts"
@@ -54,6 +55,7 @@
     "@types/node": "^22.19.3",
     "@types/react": "19.2.13",
     "@types/react-dom": "19.2.3",
+    "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
