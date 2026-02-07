@@ -4,6 +4,8 @@ import VercelToolbar from '@vercel/toolbar/plugins/next';
 const nextConfig = {
   reactStrictMode: true,
   crossOrigin: 'anonymous',
+  reactCompiler: true,
+  typedRoutes: false,
   images: {
     remotePatterns: [
       {

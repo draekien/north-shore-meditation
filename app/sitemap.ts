@@ -69,6 +69,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     }),
     createSitemapEntry({
+      path: '/programs/reset-studio',
+      priority: 0.7,
+    }),
+    createSitemapEntry({
+      path: '/tm-for-women',
+      priority: 0.7,
+    }),
+    createSitemapEntry({
       path: '/journals',
       priority: 0.7,
     }),

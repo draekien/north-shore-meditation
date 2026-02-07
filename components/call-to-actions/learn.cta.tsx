@@ -20,7 +20,7 @@ export default function LearnCallToActionSection({ action, href, title, subtitle
           </div>
           <div className="text-right md:w-1/2">
             <p className="my-4 text-xl">{subtitle}</p>
-            <ButtonLink href={href} referrerPolicy="no-referrer" size="lg">
+            <ButtonLink href={href} size="lg">
               {action}
             </ButtonLink>
             <div className="mt-16 text-left text-sm md:text-right">
