@@ -69,6 +69,8 @@ export async function generateMetadata({ params }: GlobalPageProps): Promise<Met
     },
     openGraph: {
       url: `/${lang}/journals/${slug}`,
+      type: 'website',
+      siteName: 'North Shore Meditation',
     },
   };
 }

@@ -56,6 +56,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
     openGraph: {
       url: `/${lang}`,
       type: 'website',
+      siteName: 'North Shore Meditation',
     },
     title: {
       template: '%s | North Shore Meditation',

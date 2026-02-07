@@ -40,6 +40,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
     },
     openGraph: {
       url: `/${lang}/programs/reset-studio`,
+      type: 'website',
+      siteName: 'North Shore Meditation',
     },
   };
 }

@@ -44,6 +44,8 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
     },
     openGraph: {
       url: `/${lang}/events`,
+      type: 'website',
+      siteName: 'North Shore Meditation',
     },
   };
 }
