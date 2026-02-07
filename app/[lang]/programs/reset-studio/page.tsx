@@ -19,6 +19,7 @@ import { cn } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import ButtonLink from '@/components/ui/button-link';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { baseKeywords } from '@/lib/constants';
 
 export async function generateMetadata(props: GlobalPageProps): Promise<Metadata> {
   const { lang } = await props.params;
@@ -32,6 +33,13 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
     metadataBase: new URL('https://www.northshoremeditation.au'),
     title,
     description: seo.description,
+    keywords: [
+      ...baseKeywords,
+      'Reset Studio',
+      'Guided meditation workshop',
+      'Book meditation North Shore',
+      'Meditation program Sydney',
+    ],
     alternates: {
       canonical: `/${lang}/programs/reset-studio`,
       languages: {
