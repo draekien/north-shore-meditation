@@ -53,6 +53,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
       url: `/${lang}/tm-for-women`,
       type: 'website',
       siteName: 'North Shore Meditation',
+      images: [{ url: '/og/tm-for-women.jpg', alt: 'TM for women - meditation designed for the Modern Women.' }],
     },
   };
 }
