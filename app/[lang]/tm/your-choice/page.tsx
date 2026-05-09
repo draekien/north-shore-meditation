@@ -48,6 +48,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
       url: `/${lang}/tm/your-choice`,
       type: 'website',
       siteName: 'North Shore Meditation',
+      images: [{ url: '/og/tm-your-choice.jpg', alt: 'Transcendental Meditation is your choice for a better you' }],
     },
   };
 }

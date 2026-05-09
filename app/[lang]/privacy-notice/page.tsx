@@ -23,6 +23,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
       url: `/${lang}/privacy-notice`,
       type: 'website',
       siteName: 'North Shore Meditation',
+      images: [{ url: '/og/privacy-notice.jpg', alt: 'Privacy Notice' }],
     },
   };
 }

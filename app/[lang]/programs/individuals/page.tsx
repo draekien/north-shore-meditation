@@ -30,6 +30,12 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
       url: `/${lang}/programs/individuals`,
       type: 'website',
       siteName: 'North Shore Meditation',
+      images: [
+        {
+          url: '/og/programs-individuals.png',
+          alt: 'Meditation Programs for You. At North Shore Meditation, we offer a variety of different programs for learning and furthering your transcendental meditation® practice',
+        },
+      ],
     },
   };
 }

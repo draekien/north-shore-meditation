@@ -36,6 +36,7 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
       url: `/${lang}/about-us`,
       type: 'website',
       siteName: 'North Shore Meditation',
+      images: [{ url: '/og/about-us.jpg', alt: 'About North Shore Meditation' }],
     },
   };
 }

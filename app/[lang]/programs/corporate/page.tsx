@@ -38,6 +38,12 @@ export async function generateMetadata(props: GlobalPageProps): Promise<Metadata
       url: `/${lang}/programs/corporate`,
       type: 'website',
       siteName: 'North Shore Meditation',
+      images: [
+        {
+          url: '/og/programs-corporate.png',
+          alt: 'Meditation Programs for Your Business. Let North Shore Meditation help you enhance the workplace well-being and productivity of your business with our corporate meditation program.',
+        },
+      ],
     },
   };
 }
