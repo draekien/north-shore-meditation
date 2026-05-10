@@ -160,7 +160,7 @@ Color values below are documented as hex (sRGB) for tooling compatibility. The p
 
 **The One Voice Rule.** Sage Emerald is the working accent across the site. Honey Amber appears as a counter-note no more than once per surface, never as a fill across hero or section backgrounds. Dusk Iris is tertiary only. Never use all three on the same page.
 
-**The No-Iris-Atmosphere Rule.** Iris is forbidden in atmospheric / decorative roles: no purple radial gradients in heroes, no purple background washes, no purple tints on imagery overlays. Atmospheric purple reads as new-age cliché and contradicts the warm-craft brief. The current hero's `from-indigo-300 via-indigo-100` and `from-purple-300` radial gradients are documented drift; new work must not extend them.
+**The No-Iris-Atmosphere Rule.** The Dusk Iris token (`#8b43e8`) is forbidden in new atmospheric or decorative roles: no Iris background washes, no Iris tints on imagery overlays, no Iris-tinted hero gradients. Note: the hero's existing animated `indigo-300/purple-300` radial gradient layers are intentional — they add subtle movement and calm to the photograph. This rule prohibits adding the Iris token to NEW surfaces, not the established hero atmosphere.
 
 **The Warm-Paper Rule.** The page background is warm paper, never pure cool white. The current `#ffffff` is a known compromise; future tokens should drift the background to `oklch(99% 0.005 80)` (a near-imperceptible warm tint) to align with the warm-craft brief without sacrificing contrast.
 
@@ -201,7 +201,7 @@ The system is **flat with a single soft lift**. Surfaces are flat at rest. Layer
 
 **The Flat-By-Default Rule.** New components are flat. Lift is reserved for cards, popovers, dropdowns, and the hero CTA. If a component is asking for a second shadow tier, the answer is more space, not more elevation.
 
-**The No-Glass Rule.** Glassmorphism (`backdrop-blur` on tinted backgrounds) is forbidden as decoration. The existing `bg-white/30 backdrop-blur-3xl` cards on the Why-TM section are documented drift; new components must not adopt the pattern. If translucency is genuinely required (sticky nav over imagery), keep blur ≤ 8px and tint opacity ≥ 0.85.
+**The Subtle-Blur Rule.** A very light `backdrop-blur-xs` on section backgrounds is an intentional part of the system — it adds depth without visible frosting. This is distinct from glassmorphism. Heavy blur (`backdrop-blur-3xl`) on tinted card surfaces (`bg-white/30`) is the pattern to avoid: it reads as wellness-app sheen and undermines the warm-craft brief. If genuine translucency is needed (sticky nav over imagery), blur must stay ≤ 8px and tint opacity ≥ 0.85.
 
 ## 5. Components
 
@@ -223,7 +223,7 @@ The system is **flat with a single soft lift**. Surfaces are flat at rest. Layer
 - **Border:** 1px Fine Rule.
 - **Shadow:** rest-lift only. No hover lift unless the card is an actionable link (then add a single soft transform, no shadow change).
 - **Internal Padding:** 24px (`p-6`); header and content share the rhythm. Footer collapses padding-top.
-- **Anti-pattern (current drift):** `bg-white/30 backdrop-blur-3xl` translucent card variant on the Why-TM section. See No-Glass Rule.
+- **Anti-pattern:** `bg-white/30 backdrop-blur-3xl` heavy glass card variant. Section-level `backdrop-blur-xs` is intentional; card-level `backdrop-blur-3xl` with strong tint is not. See Subtle-Blur Rule.
 
 ### Inputs
 
@@ -244,7 +244,7 @@ The project ships three primitives (`page-section.container`, `page-section.prim
 
 ### Signature: Hero Section
 
-A 100dvh - nav-height first viewport with a real photograph of the studio or Grace, sitting full-bleed. Foreground content is centred with a clear primary + secondary CTA pair (Sage primary, Honey-Amber outlined secondary). The current implementation overlays indigo and purple radial gradients on top of the hero image and uses `text-yellow-900` foreground; this is documented drift. New hero variants should use a near-black foreground over a softly-darkened image (a single warm-tinted overlay at ~30% opacity), and rely on photography rather than gradient atmosphere.
+A 100dvh - nav-height first viewport with a real photograph of the studio or Grace, sitting full-bleed. Foreground content is centred with a clear primary + secondary CTA pair (Sage primary, Honey-Amber outlined secondary). Two animated radial gradient layers (`from-indigo-300/70 via-indigo-100/20` at top-right, `from-purple-300/70` at left) sit over the photograph — these are intentional, providing subtle movement and a sense of calm without obscuring the image. They must respond to `prefers-reduced-motion` by collapsing to a static frame. Foreground text uses `text-yellow-900` with `drop-shadow-2xl` for legibility over the layered background.
 
 ## 6. Do's and Don'ts
 
@@ -261,9 +261,8 @@ A 100dvh - nav-height first viewport with a real photograph of the studio or Gra
 
 ### Don't:
 
-- **Don't** use Dusk Iris in atmospheric or decorative roles. No purple radial gradients in heroes, no purple background washes, no purple-cosmos imagery. *(Carries PRODUCT.md anti-reference: "no chakra colour wheels, purple-cosmos imagery".)*
-- **Don't** revive the indigo/purple hero gradient pattern (`from-indigo-300 via-indigo-100`, `from-purple-300`). Documented drift; new work must not extend it. *(Carries: "no pastel gradient blobs".)*
-- **Don't** ship the translucent glass card variant (`bg-white/30 backdrop-blur-3xl`) as a default. Glassmorphism is rare and purposeful; on quiet sections it reads as wellness-app sheen. *(Carries: "no consumer-app sheen".)*
+- **Don't** use the Dusk Iris token (`#8b43e8`) in new atmospheric or decorative roles: no Iris background washes, no Iris overlays on imagery. The hero's existing indigo/purple animated gradient layers are intentional and established — the prohibition is on adding Iris to new surfaces. *(Carries PRODUCT.md anti-reference: "no chakra colour wheels, purple-cosmos imagery".)*
+- **Don't** use heavy glassmorphism (`bg-white/30 backdrop-blur-3xl`) on card surfaces — it reads as wellness-app sheen. Section-level `backdrop-blur-xs` is intentional and part of the system; heavy blur on cards is not. *(Carries: "no consumer-app sheen".)*
 - **Don't** place colour stripes on the side of cards, list items, or alerts (`border-left` greater than 1px as a colored accent). Use full borders, leading icons, or nothing.
 - **Don't** introduce a serif display font, a mono accent, or a script. Geist is the single English family. *(Carries: "no Sanskrit set in decorative display fonts".)*
 - **Don't** use ALL CAPS body, headings, or CTA labels. No track-spaced uppercase metadata; that's editorial-magazine voice.
