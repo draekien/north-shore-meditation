@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-05-10T00:00:00Z",
+  "title": "Design System: North Shore Meditation",
+  "extensions": {
+    "colorMeta": {
+      "sage-emerald": {
+        "role": "primary",
+        "displayName": "Sage Emerald",
+        "canonical": "oklch(57% 0.13 162)",
+        "tonalRamp": [
+          "oklch(20% 0.04 162)",
+          "oklch(30% 0.07 162)",
+          "oklch(40% 0.10 162)",
+          "oklch(50% 0.12 162)",
+          "oklch(60% 0.13 162)",
+          "oklch(72% 0.11 162)",
+          "oklch(85% 0.06 162)",
+          "oklch(95% 0.02 162)"
+        ]
+      },
+      "honey-amber": {
+        "role": "secondary",
+        "displayName": "Honey Amber",
+        "canonical": "oklch(75% 0.17 60)",
+        "tonalRamp": [
+          "oklch(25% 0.06 60)",
+          "oklch(38% 0.10 60)",
+          "oklch(50% 0.14 60)",
+          "oklch(62% 0.17 60)",
+          "oklch(75% 0.17 60)",
+          "oklch(85% 0.12 60)",
+          "oklch(92% 0.07 60)",
+          "oklch(97% 0.03 60)"
+        ]
+      },
+      "dusk-iris": {
+        "role": "tertiary",
+        "displayName": "Dusk Iris",
+        "canonical": "oklch(60% 0.22 295)",
+        "tonalRamp": [
+          "oklch(22% 0.08 295)",
+          "oklch(33% 0.13 295)",
+          "oklch(45% 0.18 295)",
+          "oklch(55% 0.22 295)",
+          "oklch(65% 0.20 295)",
+          "oklch(78% 0.14 295)",
+          "oklch(90% 0.06 295)",
+          "oklch(97% 0.02 295)"
+        ]
+      },
+      "warm-paper": {
+        "role": "neutral",
+        "displayName": "Warm Paper",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(20% 0.005 80)",
+          "oklch(35% 0.005 80)",
+          "oklch(50% 0.005 80)",
+          "oklch(65% 0.005 80)",
+          "oklch(80% 0.005 80)",
+          "oklch(90% 0.005 80)",
+          "oklch(96% 0.005 80)",
+          "oklch(100% 0 0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(15% 0.01 280)",
+        "tonalRamp": [
+          "oklch(10% 0.01 280)",
+          "oklch(15% 0.01 280)",
+          "oklch(25% 0.01 280)",
+          "oklch(40% 0.01 280)",
+          "oklch(55% 0.01 280)",
+          "oklch(70% 0.01 280)",
+          "oklch(85% 0.005 280)",
+          "oklch(96% 0.003 280)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Ink Soft",
+        "canonical": "oklch(55% 0.01 280)",
+        "tonalRamp": [
+          "oklch(20% 0.01 280)",
+          "oklch(30% 0.01 280)",
+          "oklch(40% 0.01 280)",
+          "oklch(50% 0.01 280)",
+          "oklch(60% 0.01 280)",
+          "oklch(72% 0.01 280)",
+          "oklch(85% 0.005 280)",
+          "oklch(95% 0.003 280)"
+        ]
+      },
+      "fine-rule": {
+        "role": "neutral",
+        "displayName": "Fine Rule",
+        "canonical": "oklch(91% 0.005 280)"
+      },
+      "signal-red": {
+        "role": "signal",
+        "displayName": "Signal Red",
+        "canonical": "oklch(64% 0.22 25)"
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero headlines only. One per page." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles. Renders as h2; underlined by border-b in base styles." },
+      "title": { "displayName": "Title", "purpose": "Sub-section and card titles. Renders as h3." },
+      "body": { "displayName": "Body", "purpose": "Reading text. Cap measure at 65 to 75ch." },
+      "label": { "displayName": "Label", "purpose": "Buttons, nav links, captions, metadata. Sentence case." },
+      "cjk-display": { "displayName": "CJK Display", "purpose": "Chinese hero and section headings. Ma Shan Zheng calligraphy." },
+      "cjk-body": { "displayName": "CJK Body", "purpose": "Chinese reading text. Noto Sans SC, line-height 1.8." }
+    },
+    "shadows": [
+      {
+        "name": "rest-lift",
+        "value": "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+        "purpose": "Default soft lift on cards and buttons at rest. The single sanctioned shadow tier."
+      },
+      {
+        "name": "focus-lift",
+        "value": "0 0 0 3px rgb(7 150 105 / 0.18)",
+        "purpose": "Keyboard focus ring on interactive controls. Sage Emerald at low alpha."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-soft",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default ease-out for state transitions. Quart-style, no bounce."
+      },
+      {
+        "name": "duration-state",
+        "value": "180ms",
+        "purpose": "Color and opacity transitions on hover/focus."
+      },
+      {
+        "name": "duration-reveal",
+        "value": "480ms",
+        "purpose": "Section reveals and entrance animations on scroll."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The working CTA across the site. Sage Emerald fill, Warm Paper text, soft rest-lift.",
+      "html": "<button class=\"ds-btn-primary\">Book an intro talk</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; background: #079669; color: #ffffff; border: none; border-radius: 6px; font: 500 14px/1.4 var(--font-geist-sans, system-ui), sans-serif; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); cursor: pointer; transition: background 180ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-primary:hover { background: oklch(57% 0.13 162 / 0.9); } .ds-btn-primary:focus-visible { outline: none; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05), 0 0 0 3px rgb(7 150 105 / 0.18); }"
+    },
+    {
+      "name": "Outline Secondary Button",
+      "kind": "button",
+      "refersTo": "button-outline-secondary",
+      "description": "Quiet counter-CTA. Used on the hero alongside the primary. Honey Amber stroke and text on transparent.",
+      "html": "<button class=\"ds-btn-outline-secondary\">Watch the intro</button>",
+      "css": ".ds-btn-outline-secondary { display: inline-flex; align-items: center; justify-content: center; height: 36px; padding: 0 16px; background: transparent; color: #f69109; border: 1px solid #f69109; border-radius: 6px; font: 500 14px/1.4 var(--font-geist-sans, system-ui), sans-serif; cursor: pointer; transition: color 180ms cubic-bezier(0.22, 1, 0.36, 1), border-color 180ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-btn-outline-secondary:hover { color: oklch(75% 0.17 60 / 0.6); border-color: oklch(75% 0.17 60 / 0.6); } .ds-btn-outline-secondary:focus-visible { outline: none; box-shadow: 0 0 0 3px rgb(246 145 9 / 0.2); }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Default content card. Warm Paper, 12px radius, 1px Fine Rule border, single soft shadow.",
+      "html": "<article class=\"ds-card\"><h3 class=\"ds-card-title\">A teacher's notebook</h3><p class=\"ds-card-body\">A short reflection from this week's group meditation, written for students who couldn't make it.</p></article>",
+      "css": ".ds-card { display: flex; flex-direction: column; gap: 12px; padding: 24px; background: #ffffff; color: #0a0a0f; border: 1px solid #e4e4e7; border-radius: 12px; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); } .ds-card-title { margin: 0; font: 600 24px/1.25 var(--font-geist-sans, system-ui), sans-serif; letter-spacing: -0.01em; } .ds-card-body { margin: 0; max-width: 65ch; font: 400 16px/1.7 var(--font-geist-sans, system-ui), sans-serif; color: #0a0a0f; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Form text field. Transparent background, Fine Rule stroke, Sage Emerald focus ring.",
+      "html": "<label class=\"ds-input-label\">Email<input class=\"ds-input\" type=\"email\" placeholder=\"you@example.com\"></label>",
+      "css": ".ds-input-label { display: flex; flex-direction: column; gap: 6px; font: 500 14px/1.4 var(--font-geist-sans, system-ui), sans-serif; color: #0a0a0f; } .ds-input { height: 36px; padding: 4px 12px; background: transparent; color: #0a0a0f; border: 1px solid #e4e4e7; border-radius: 6px; font: 400 14px/1.4 var(--font-geist-sans, system-ui), sans-serif; box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); transition: box-shadow 180ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-input::placeholder { color: #71717a; } .ds-input:focus-visible { outline: none; box-shadow: 0 0 0 3px rgb(7 150 105 / 0.18); }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Top-nav anchor. Label-typography link with Sage hover. No pill, no underline at rest.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link\" href=\"#\">About</a><a class=\"ds-nav-link ds-nav-link-active\" href=\"#\" aria-current=\"page\">Programs</a><a class=\"ds-nav-link\" href=\"#\">Journal</a></nav>",
+      "css": ".ds-nav { display: flex; gap: 8px; } .ds-nav-link { padding: 8px 12px; color: #0a0a0f; text-decoration: none; font: 500 14px/1.4 var(--font-geist-sans, system-ui), sans-serif; border-radius: 6px; transition: color 180ms cubic-bezier(0.22, 1, 0.36, 1); } .ds-nav-link:hover { color: #079669; } .ds-nav-link-active { color: #079669; } .ds-nav-link:focus-visible { outline: none; box-shadow: 0 0 0 3px rgb(7 150 105 / 0.18); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Long Breath",
+    "overview": "Pacing is the design. The site is read at the speed of someone considering a teacher, not converting on a funnel. Vertical rhythm is generous, transitions are slow, type breathes. The system sits in the warm-craft lane: independent yoga studios and boutique retreats, not consumer wellness apps. Surfaces are mostly paper-white, lifted only where lift earns its place. Color is used sparingly and warmly. Typography carries hierarchy, not chrome. Imagery is photographic and human. It explicitly rejects the wellness-app SaaS sheen, the new-age cliché, the corporate-startup template, and the devotional/ashram register.",
+    "keyCharacteristics": [
+      "Pacing first: generous spacing, unhurried motion, long scroll",
+      "Paper-white default surfaces with warm tinted neutrals",
+      "Restrained color: one accent at a time, never three at once",
+      "Photography of people and place, not stock serenity",
+      "Bilingual parity: the same craft in en and zh-Hans",
+      "Reduced-motion as a first-class state"
+    ],
+    "rules": [
+      { "name": "The One Voice Rule", "body": "Sage Emerald is the working accent. Honey Amber appears as a counter-note no more than once per surface. Dusk Iris is tertiary only. Never use all three on the same page.", "section": "colors" },
+      { "name": "The No-Iris-Atmosphere Rule", "body": "Iris is forbidden in atmospheric or decorative roles: no purple radial gradients, no purple background washes, no purple imagery overlays.", "section": "colors" },
+      { "name": "The Warm-Paper Rule", "body": "The page background is warm paper, never pure cool white. Drift toward oklch(99% 0.005 80) over time.", "section": "colors" },
+      { "name": "The One-Family Rule", "body": "English typography is a single Geist family. Voice comes from weight contrast, not from font pairing.", "section": "typography" },
+      { "name": "The Bilingual Parity Rule", "body": "CJK uses Ma Shan Zheng for display and Noto Sans SC for body, with line-height 1.8. Never reuse Latin line-heights on a CJK surface.", "section": "typography" },
+      { "name": "The Sentence-Case Rule", "body": "All headings, labels, and CTAs are sentence case. ALL CAPS and track-spaced uppercase are forbidden.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "New components are flat. Lift is reserved for cards, popovers, dropdowns, and the hero CTA. If a component is asking for a second shadow tier, the answer is more space.", "section": "elevation" },
+      { "name": "The No-Glass Rule", "body": "Glassmorphism (backdrop-blur on tinted backgrounds) is forbidden as decoration. The current bg-white/30 backdrop-blur-3xl pattern is documented drift.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep page surfaces Warm Paper, drifting toward oklch(99% 0.005 80). Sections alternate via Warm Paper Tinted, not via colour.",
+      "Do use Sage Emerald as the working accent. One voice per page.",
+      "Do cap body line length at 65 to 75ch and keep body line-height at 1.7 (1.8 for CJK).",
+      "Do treat prefers-reduced-motion as a first-class state. Animated background gradients must collapse to a static frame.",
+      "Do keep CJK typography on equal craft footing: Ma Shan Zheng display, Noto Sans SC body, line-height tuned per script.",
+      "Do lead with photography of Grace, the studio, and real people. One decisive image beats five mediocre ones.",
+      "Do use sentence case across headings, labels, and CTAs.",
+      "Do treat the focus ring as part of the design (Sage Emerald, 3px, low alpha). Never outline none without replacement."
+    ],
+    "donts": [
+      "Don't use Dusk Iris in atmospheric or decorative roles. No purple radial gradients, no purple washes, no purple-cosmos imagery.",
+      "Don't revive the indigo/purple hero gradient pattern. Documented drift; new work must not extend it.",
+      "Don't ship the translucent glass card variant (bg-white/30 backdrop-blur-3xl) as a default. Glassmorphism is rare and purposeful.",
+      "Don't place colour stripes on the side of cards, list items, or alerts. Use full borders, leading icons, or nothing.",
+      "Don't introduce a serif display font, a mono accent, or a script. Geist is the single English family.",
+      "Don't use ALL CAPS body, headings, or CTA labels. No track-spaced uppercase metadata.",
+      "Don't build hero-metric grids or identical-feature card rows.",
+      "Don't use stock soft-focus imagery, mandalas, lotus icons, or chakra colour wheels.",
+      "Don't write reverent or devotional copy. TM is a secular technique.",
+      "Don't treat the Chinese surface as a translation layer. Tune line-height, font, and rhythm per script.",
+      "Don't add a second shadow tier. If a component is asking for it, give it more space."
+    ]
+  }
+}
