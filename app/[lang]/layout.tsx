@@ -90,7 +90,7 @@ export default async function RootLayout({ children, params }: Readonly<PropsWit
   const { isEnabled: draftModeEnabled } = await draftMode();
 
   return (
-    <html lang={lang}>
+    <html lang={lang} suppressHydrationWarning>
       <body className={`${geistSans.variable} ${maShanZheng.variable} ${notoSans.variable} antialiased`}>
         <ThemeProvider
           attribute="class"
