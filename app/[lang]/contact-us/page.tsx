@@ -5,6 +5,7 @@ import { baseKeywords } from '@/lib/constants';
 import type { GlobalPageProps } from '@/lib/types';
 import type { Metadata } from 'next';
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 import { getDictionary } from '../dictionaries';
 
 const ContactUsForm = dynamic(() => import('@/components/forms/contact-us.form'));
@@ -44,7 +45,9 @@ export default async function ContactUsPage({ params }: GlobalPageProps) {
         <PageSectionContainer>
           <h1 className="text-primary">{contactUs.title}</h1>
           <p className="text-foreground text-xl">{contactUs.subtitle}</p>
-          <ContactUsForm {...contactUs} />
+          <Suspense>
+            <ContactUsForm {...contactUs} />
+          </Suspense>
         </PageSectionContainer>
       </PrimaryPageSection>
     </PageContent>
