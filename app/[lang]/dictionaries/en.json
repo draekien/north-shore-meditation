@@ -18,7 +18,7 @@
     "aboutUs": "About Us",
     "events": "Events",
     "callToAction": {
-      "action": "Start Your Journey",
+      "action": "Book a Course",
       "href": "https://tidycal.com/mnrg7q1/tm-course"
     },
     "journals": "Notes from Stillness",
@@ -985,13 +985,13 @@
         "video": {
           "dialogDescription": "Watch a short TM information session hosted by Bob Roth where he explains how the TM technique works.",
           "dialogFooter": "Curiosity sated? Learn TM now by enroling in a 4 day course with North Shore Meditation.",
-          "dialogFooterCta": "Start Your Journey",
+          "dialogFooterCta": "Enrol Now",
           "dialogTitle": "Introduction to Transcendental Meditation®",
           "dialogTrigger": "Watch a Video"
         }
       },
       "learn": {
-        "action": "Start Your Journey",
+        "action": "Book with Grace",
         "helpText": "Book in a 4 day paid Transcendental Meditation® course at the North Shore Meditation Centre.",
         "href": "https://tidycal.com/mnrg7q1/tm-course",
         "subtitle": "Enrol in a TM course through North Shore Meditation today",
@@ -1002,7 +1002,7 @@
       "action": "Start Your Journey",
       "author": "- Maharashi Maheshi Yogi -",
       "href": "https://tidycal.com/mnrg7q1/tm-course",
-      "session": "Free Info Session",
+      "session": "Attend a Free Talk",
       "sessionHref": "https://tidycal.com/mnrg7q1/tm-introductory-talk",
       "subtitle": "Discover the power of Transcendental Meditation® at North Shore Meditation",
       "title": "Success in Anything is Through Happiness"

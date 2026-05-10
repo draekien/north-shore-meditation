@@ -10,9 +10,13 @@ export type ButtonLinkProps = ComponentProps<typeof Link> &
     children: ReactNode;
   };
 
-export default function ButtonLink({ variant, size, className, ...rest }: ButtonLinkProps) {
+export default function ButtonLink({ variant, size, className, href, target, rel, ...rest }: ButtonLinkProps) {
+  const isExternal = typeof href === 'string' && /^https?:\/\//.test(href);
   return (
     <Link
+      href={href}
+      target={target ?? (isExternal ? '_blank' : undefined)}
+      rel={rel ?? (isExternal ? 'noopener noreferrer' : undefined)}
       {...rest}
       className={cn(
         buttonVariants({ variant, size, className }),

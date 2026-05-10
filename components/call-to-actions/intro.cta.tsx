@@ -47,7 +47,7 @@ export default function IntroCallToActionSection({
           <div className="md:w-1/2">
             <p className="text-foreground my-4 text-xl">{subtitle}</p>
             <div className="flex flex-col gap-4 md:flex-row">
-              <ButtonLink href={href} referrerPolicy="no-referrer" size="lg" variant="secondary">
+              <ButtonLink href={href} size="lg" variant="secondary">
                 {action}
               </ButtonLink>
               <Dialog>
@@ -67,7 +67,7 @@ export default function IntroCallToActionSection({
                   <DialogFooter>
                     <div className="flex items-center justify-between gap-4">
                       <small className="text-sm">{dialogFooter}</small>
-                      <ButtonLink href={href} referrerPolicy="no-referrer" variant="link" size="sm">
+                      <ButtonLink href={href} variant="link" size="sm">
                         {dialogFooterCta}
                       </ButtonLink>
                     </div>
