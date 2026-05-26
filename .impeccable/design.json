@@ -107,11 +107,17 @@
     },
     "typographyMeta": {
       "display": { "displayName": "Display", "purpose": "Hero headlines only. One per page." },
-      "headline": { "displayName": "Headline", "purpose": "Section titles. Renders as h2; underlined by border-b in base styles." },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles. Renders as h2; underlined by border-b in base styles."
+      },
       "title": { "displayName": "Title", "purpose": "Sub-section and card titles. Renders as h3." },
       "body": { "displayName": "Body", "purpose": "Reading text. Cap measure at 65 to 75ch." },
       "label": { "displayName": "Label", "purpose": "Buttons, nav links, captions, metadata. Sentence case." },
-      "cjk-display": { "displayName": "CJK Display", "purpose": "Chinese hero and section headings. Ma Shan Zheng calligraphy." },
+      "cjk-display": {
+        "displayName": "CJK Display",
+        "purpose": "Chinese hero and section headings. Ma Shan Zheng calligraphy."
+      },
       "cjk-body": { "displayName": "CJK Body", "purpose": "Chinese reading text. Noto Sans SC, line-height 1.8." }
     },
     "shadows": [
@@ -204,14 +210,46 @@
       "Reduced-motion as a first-class state"
     ],
     "rules": [
-      { "name": "The One Voice Rule", "body": "Sage Emerald is the working accent. Honey Amber appears as a counter-note no more than once per surface. Dusk Iris is tertiary only. Never use all three on the same page.", "section": "colors" },
-      { "name": "The No-Iris-Atmosphere Rule", "body": "Iris is forbidden in atmospheric or decorative roles: no purple radial gradients, no purple background washes, no purple imagery overlays.", "section": "colors" },
-      { "name": "The Warm-Paper Rule", "body": "The page background is warm paper, never pure cool white. Drift toward oklch(99% 0.005 80) over time.", "section": "colors" },
-      { "name": "The One-Family Rule", "body": "English typography is a single Geist family. Voice comes from weight contrast, not from font pairing.", "section": "typography" },
-      { "name": "The Bilingual Parity Rule", "body": "CJK uses Ma Shan Zheng for display and Noto Sans SC for body, with line-height 1.8. Never reuse Latin line-heights on a CJK surface.", "section": "typography" },
-      { "name": "The Sentence-Case Rule", "body": "All headings, labels, and CTAs are sentence case. ALL CAPS and track-spaced uppercase are forbidden.", "section": "typography" },
-      { "name": "The Flat-By-Default Rule", "body": "New components are flat. Lift is reserved for cards, popovers, dropdowns, and the hero CTA. If a component is asking for a second shadow tier, the answer is more space.", "section": "elevation" },
-      { "name": "The No-Glass Rule", "body": "Glassmorphism (backdrop-blur on tinted backgrounds) is forbidden as decoration. The current bg-white/30 backdrop-blur-3xl pattern is documented drift.", "section": "elevation" }
+      {
+        "name": "The One Voice Rule",
+        "body": "Sage Emerald is the working accent. Honey Amber appears as a counter-note no more than once per surface. Dusk Iris is tertiary only. Never use all three on the same page.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Iris-Atmosphere Rule",
+        "body": "Iris is forbidden in atmospheric or decorative roles: no purple radial gradients, no purple background washes, no purple imagery overlays.",
+        "section": "colors"
+      },
+      {
+        "name": "The Warm-Paper Rule",
+        "body": "The page background is warm paper, never pure cool white. Drift toward oklch(99% 0.005 80) over time.",
+        "section": "colors"
+      },
+      {
+        "name": "The One-Family Rule",
+        "body": "English typography is a single Geist family. Voice comes from weight contrast, not from font pairing.",
+        "section": "typography"
+      },
+      {
+        "name": "The Bilingual Parity Rule",
+        "body": "CJK uses Ma Shan Zheng for display and Noto Sans SC for body, with line-height 1.8. Never reuse Latin line-heights on a CJK surface.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence-Case Rule",
+        "body": "All headings, labels, and CTAs are sentence case. ALL CAPS and track-spaced uppercase are forbidden.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat-By-Default Rule",
+        "body": "New components are flat. Lift is reserved for cards, popovers, dropdowns, and the hero CTA. If a component is asking for a second shadow tier, the answer is more space.",
+        "section": "elevation"
+      },
+      {
+        "name": "The No-Glass Rule",
+        "body": "Glassmorphism (backdrop-blur on tinted backgrounds) is forbidden as decoration. The current bg-white/30 backdrop-blur-3xl pattern is documented drift.",
+        "section": "elevation"
+      }
     ],
     "dos": [
       "Do keep page surfaces Warm Paper, drifting toward oklch(99% 0.005 80). Sections alternate via Warm Paper Tinted, not via colour.",
