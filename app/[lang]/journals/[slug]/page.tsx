@@ -83,7 +83,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
 
   const article = await getArticlesBySlug({ slug, preview: isEnabled });
 
-  if (!article?.content) return notFound();
+  if (!article) return notFound();
 
   const relatedArticles = article.relatedPostsCollection?.items?.filter((x) => !!x) ?? [];
   const hasRelatedArticles = !!relatedArticles.length;
@@ -109,7 +109,7 @@ export default async function JournalPage({ params }: GlobalPageProps) {
               {article.author} | {new Date(article.sys.publishedAt).toLocaleDateString()}
             </p>
             <div className="max-w-225 space-y-4 md:text-xl lg:text-base xl:text-xl">
-              {documentToReactComponents(article.content.json, {
+              {article.content ? documentToReactComponents(article.content.json, {
                 renderNode: {
                   [INLINES.HYPERLINK]: (node, children) => (
                     <ButtonLink
@@ -139,7 +139,9 @@ export default async function JournalPage({ params }: GlobalPageProps) {
                     );
                   },
                 },
-              })}
+              }) : (
+                <p className="text-muted-foreground">Content coming soon.</p>
+              )}
             </div>
           </div>
         </PageSectionContainer>

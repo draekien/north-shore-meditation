@@ -32,8 +32,8 @@
     "next": "16.2.6",
     "next-themes": "^0.4.6",
     "radix-ui": "latest",
-    "react": "19.2.4",
-    "react-dom": "19.2.4",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "react-hook-form": "^7.69.0",
     "recharts": "^2.15.4",
     "resend": "^4.8.0",
@@ -53,13 +53,14 @@
     "@tailwindcss/postcss": "^4.1.18",
     "@types/negotiator": "^0.6.4",
     "@types/node": "^22.19.3",
-    "@types/react": "19.2.13",
+    "@types/react": "19.2.15",
     "@types/react-dom": "19.2.3",
     "babel-plugin-react-compiler": "^1.0.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.1.6",
     "eslint-config-prettier": "^10.1.8",
     "graphql": "^16.12.0",
+    "lefthook": "^2.1.8",
     "postcss": "^8.5.11",
     "prettier": "^3.7.4",
     "prettier-plugin-tailwindcss": "^0.7.2",
@@ -69,11 +70,5 @@
   "overrides": {
     "react-is": "^19"
   },
-  "packageManager": "pnpm@10.24.0+sha512.01ff8ae71b4419903b65c60fb2dc9d34cf8bb6e06d03bde112ef38f7a34d6904c424ba66bea5cdcf12890230bf39f9580473140ed9c946fef328b6e5238a345a",
-  "pnpm": {
-    "overrides": {
-      "@types/react": "19.2.13",
-      "@types/react-dom": "19.2.3"
-    }
-  }
+  "packageManager": "pnpm@11.3.0+sha512.2c403d6594527287672b1f7056343a1f7c3634036a67ffabfcc2b3d7595d843768f8787148d1b57cf7956c90606bbd192857c363af19e96d2d0ec9ec5741d215"
 }

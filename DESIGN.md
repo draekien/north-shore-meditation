@@ -2,107 +2,107 @@
 name: North Shore Meditation
 description: Warm-craft brand site for Grace, a Transcendental Meditation teacher on Sydney's North Shore.
 colors:
-  sage-emerald: "#079669"
-  sage-emerald-deep: "#10b981"
-  honey-amber: "#f69109"
-  honey-amber-deep: "#d97706"
-  dusk-iris: "#8b43e8"
-  warm-paper: "#ffffff"
-  warm-paper-tinted: "#f4f4f5"
-  ink: "#0a0a0f"
-  ink-soft: "#71717a"
-  fine-rule: "#e4e4e7"
-  signal-red: "#ef4444"
-  focus-ring: "#16a34a"
+  sage-emerald: '#079669'
+  sage-emerald-deep: '#10b981'
+  honey-amber: '#f69109'
+  honey-amber-deep: '#d97706'
+  dusk-iris: '#8b43e8'
+  warm-paper: '#ffffff'
+  warm-paper-tinted: '#f4f4f5'
+  ink: '#0a0a0f'
+  ink-soft: '#71717a'
+  fine-rule: '#e4e4e7'
+  signal-red: '#ef4444'
+  focus-ring: '#16a34a'
 typography:
   display:
-    fontFamily: "var(--font-geist-sans), system-ui, sans-serif"
-    fontSize: "clamp(2.25rem, 5vw + 1rem, 3.75rem)"
+    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif'
+    fontSize: 'clamp(2.25rem, 5vw + 1rem, 3.75rem)'
     fontWeight: 800
     lineHeight: 1.05
-    letterSpacing: "-0.02em"
+    letterSpacing: '-0.02em'
   headline:
-    fontFamily: "var(--font-geist-sans), system-ui, sans-serif"
-    fontSize: "clamp(1.75rem, 2vw + 1rem, 2.25rem)"
+    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif'
+    fontSize: 'clamp(1.75rem, 2vw + 1rem, 2.25rem)'
     fontWeight: 600
     lineHeight: 1.15
-    letterSpacing: "-0.015em"
+    letterSpacing: '-0.015em'
   title:
-    fontFamily: "var(--font-geist-sans), system-ui, sans-serif"
-    fontSize: "1.5rem"
+    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif'
+    fontSize: '1.5rem'
     fontWeight: 600
     lineHeight: 1.25
-    letterSpacing: "-0.01em"
+    letterSpacing: '-0.01em'
   body:
-    fontFamily: "var(--font-geist-sans), system-ui, sans-serif"
-    fontSize: "1rem"
+    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif'
+    fontSize: '1rem'
     fontWeight: 400
     lineHeight: 1.7
-    letterSpacing: "normal"
+    letterSpacing: 'normal'
   label:
-    fontFamily: "var(--font-geist-sans), system-ui, sans-serif"
-    fontSize: "0.875rem"
+    fontFamily: 'var(--font-geist-sans), system-ui, sans-serif'
+    fontSize: '0.875rem'
     fontWeight: 500
     lineHeight: 1.4
-    letterSpacing: "normal"
+    letterSpacing: 'normal'
   cjk-display:
     fontFamily: "var(--font-ma-shan-zheng), 'KaiTi', serif"
-    fontSize: "clamp(2.25rem, 5vw + 1rem, 3.75rem)"
+    fontSize: 'clamp(2.25rem, 5vw + 1rem, 3.75rem)'
     fontWeight: 400
     lineHeight: 1.15
-    letterSpacing: "normal"
+    letterSpacing: 'normal'
   cjk-body:
     fontFamily: "var(--font-noto-sans), 'PingFang SC', sans-serif"
-    fontSize: "1rem"
+    fontSize: '1rem'
     fontWeight: 400
     lineHeight: 1.8
-    letterSpacing: "normal"
+    letterSpacing: 'normal'
 rounded:
-  sm: "4px"
-  md: "6px"
-  lg: "8px"
-  xl: "12px"
+  sm: '4px'
+  md: '6px'
+  lg: '8px'
+  xl: '12px'
 spacing:
-  xs: "8px"
-  sm: "16px"
-  md: "24px"
-  lg: "48px"
-  xl: "96px"
+  xs: '8px'
+  sm: '16px'
+  md: '24px'
+  lg: '48px'
+  xl: '96px'
 components:
   button-primary:
-    backgroundColor: "{colors.sage-emerald}"
-    textColor: "{colors.warm-paper}"
-    rounded: "{rounded.md}"
-    padding: "8px 16px"
-    height: "36px"
+    backgroundColor: '{colors.sage-emerald}'
+    textColor: '{colors.warm-paper}'
+    rounded: '{rounded.md}'
+    padding: '8px 16px'
+    height: '36px'
   button-primary-hover:
-    backgroundColor: "{colors.sage-emerald-deep}"
-    textColor: "{colors.warm-paper}"
+    backgroundColor: '{colors.sage-emerald-deep}'
+    textColor: '{colors.warm-paper}'
   button-outline-secondary:
-    backgroundColor: "transparent"
-    textColor: "{colors.honey-amber}"
-    rounded: "{rounded.md}"
-    padding: "8px 16px"
+    backgroundColor: 'transparent'
+    textColor: '{colors.honey-amber}'
+    rounded: '{rounded.md}'
+    padding: '8px 16px'
   button-lg:
-    rounded: "{rounded.md}"
-    padding: "0 32px"
-    height: "40px"
+    rounded: '{rounded.md}'
+    padding: '0 32px'
+    height: '40px'
   card:
-    backgroundColor: "{colors.warm-paper}"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.xl}"
-    padding: "24px"
+    backgroundColor: '{colors.warm-paper}'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.xl}'
+    padding: '24px'
   input:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    rounded: "{rounded.md}"
-    padding: "4px 12px"
-    height: "36px"
+    backgroundColor: 'transparent'
+    textColor: '{colors.ink}'
+    rounded: '{rounded.md}'
+    padding: '4px 12px'
+    height: '36px'
   nav-link:
-    backgroundColor: "transparent"
-    textColor: "{colors.ink}"
-    padding: "8px 12px"
-    typography: "{typography.label}"
+    backgroundColor: 'transparent'
+    textColor: '{colors.ink}'
+    padding: '8px 12px'
+    typography: '{typography.label}'
 ---
 
 # Design System: North Shore Meditation
@@ -142,7 +142,7 @@ Color values below are documented as hex (sRGB) for tooling compatibility. The p
 
 ### Tertiary
 
-- **Dusk Iris** (`#8b43e8`, oklch(60% 0.22 295)): Reserved for tertiary-status signals (event categories, tag chips, journal taxonomy). Off-limits in hero, primary CTAs, and decorative gradients. *See the No-Iris-Atmosphere Rule below.*
+- **Dusk Iris** (`#8b43e8`, oklch(60% 0.22 295)): Reserved for tertiary-status signals (event categories, tag chips, journal taxonomy). Off-limits in hero, primary CTAs, and decorative gradients. _See the No-Iris-Atmosphere Rule below._
 
 ### Neutral
 
@@ -261,13 +261,13 @@ A 100dvh - nav-height first viewport with a real photograph of the studio or Gra
 
 ### Don't:
 
-- **Don't** use the Dusk Iris token (`#8b43e8`) in new atmospheric or decorative roles: no Iris background washes, no Iris overlays on imagery. The hero's existing indigo/purple animated gradient layers are intentional and established — the prohibition is on adding Iris to new surfaces. *(Carries PRODUCT.md anti-reference: "no chakra colour wheels, purple-cosmos imagery".)*
-- **Don't** use heavy glassmorphism (`bg-white/30 backdrop-blur-3xl`) on card surfaces — it reads as wellness-app sheen. Section-level `backdrop-blur-xs` is intentional and part of the system; heavy blur on cards is not. *(Carries: "no consumer-app sheen".)*
+- **Don't** use the Dusk Iris token (`#8b43e8`) in new atmospheric or decorative roles: no Iris background washes, no Iris overlays on imagery. The hero's existing indigo/purple animated gradient layers are intentional and established — the prohibition is on adding Iris to new surfaces. _(Carries PRODUCT.md anti-reference: "no chakra colour wheels, purple-cosmos imagery".)_
+- **Don't** use heavy glassmorphism (`bg-white/30 backdrop-blur-3xl`) on card surfaces — it reads as wellness-app sheen. Section-level `backdrop-blur-xs` is intentional and part of the system; heavy blur on cards is not. _(Carries: "no consumer-app sheen".)_
 - **Don't** place colour stripes on the side of cards, list items, or alerts (`border-left` greater than 1px as a colored accent). Use full borders, leading icons, or nothing.
-- **Don't** introduce a serif display font, a mono accent, or a script. Geist is the single English family. *(Carries: "no Sanskrit set in decorative display fonts".)*
+- **Don't** introduce a serif display font, a mono accent, or a script. Geist is the single English family. _(Carries: "no Sanskrit set in decorative display fonts".)_
 - **Don't** use ALL CAPS body, headings, or CTA labels. No track-spaced uppercase metadata; that's editorial-magazine voice.
-- **Don't** build hero-metric grids ("80% lower stress", "1M practitioners") or identical-feature card rows. *(Carries: "no hero-metric grid, no identical feature card rows".)*
-- **Don't** use stock soft-focus imagery of someone meditating on a beach at sunset, mandalas, lotus icons, or chakra colour wheels. *(Carries: "no AI-generated 'serene' stock photography".)*
-- **Don't** write reverent or devotional copy. TM is a secular technique; lineage is honoured as history, not invoked as authority. *(Carries: "no devotional, ashram-marketing, or culty framing".)*
+- **Don't** build hero-metric grids ("80% lower stress", "1M practitioners") or identical-feature card rows. _(Carries: "no hero-metric grid, no identical feature card rows".)_
+- **Don't** use stock soft-focus imagery of someone meditating on a beach at sunset, mandalas, lotus icons, or chakra colour wheels. _(Carries: "no AI-generated 'serene' stock photography".)_
+- **Don't** write reverent or devotional copy. TM is a secular technique; lineage is honoured as history, not invoked as authority. _(Carries: "no devotional, ashram-marketing, or culty framing".)_
 - **Don't** treat the Chinese surface as a translation layer. If line-height, font, or rhythm differs from English without per-script tuning, the bilingual-parity rule has been broken.
 - **Don't** add a second shadow tier. If a component is asking for it, give it more space instead.
