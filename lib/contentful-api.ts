@@ -4,7 +4,6 @@ import {
   useArticlesBySlugQuery,
   useArticlesQuery,
   useEventsQuery,
-  useInfiniteArticlesQuery,
   type ArticlesBySlugQuery,
   type ArticlesBySlugQueryVariables,
   type ArticlesQuery,
@@ -27,20 +26,19 @@ export const getArticles = cache(async (variables: ArticlesQueryVariables) => {
 });
 
 export const getAllArticles = cache(async () => {
-  const response = await queryClient.fetchInfiniteQuery({
-    queryKey: useInfiniteArticlesQuery.getKey(),
-    queryFn: (metaData) => useArticlesQuery.fetcher({ skip: metaData.pageParam })(),
-    initialPageParam: 0,
-    getNextPageParam: (lastPage: ArticlesQuery) => {
-      if (!lastPage.blogPostCollection) return;
-      if (lastPage.blogPostCollection.total <= lastPage.blogPostCollection.skip) return;
-      return lastPage.blogPostCollection.limit + lastPage.blogPostCollection.skip;
-    },
-  });
+  const limit = 100;
+  let skip = 0;
+  let total = Infinity;
+  const items: Awaited<ReturnType<typeof getArticles>>['items'] = [];
 
-  return {
-    items: response.pages.flatMap((x) => x.blogPostCollection?.items).filter(Boolean),
-  };
+  while (skip < total) {
+    const page = await getArticles({ limit, skip });
+    items.push(...page.items);
+    total = page.total ?? 0;
+    skip += limit;
+  }
+
+  return { items };
 });
 
 export const getArticlesBySlug = cache(async (variables: ArticlesBySlugQueryVariables) => {
